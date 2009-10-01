@@ -787,7 +787,7 @@ echo '<p>'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),ge
 <p><?php _e('More WordPress plugins by Mike Challis:', 'si-contact-form') ?></p>
 <ul>
 <li><a href="http://wordpress.org/extend/plugins/si-contact-form/" target="_blank"><?php echo esc_html( __('Fast and Secure Contact Form', 'visitor-maps')); ?></a></li>
-<li><a href="http://wordpress.org/extend/plugins/si-captcha-for-wordpress/" target="_blank"><?php echo esc_html( __('SI CAPTCHA', 'visitor-maps')); ?></a></li>
+<li><a href="http://wordpress.org/extend/plugins/si-captcha-for-wordpress/" target="_blank"><?php echo esc_html( __('SI CAPTCHA Anti-Spam', 'visitor-maps')); ?></a></li>
 <li><a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php echo esc_html( __('Visitor Maps and Who\'s Online', 'visitor-maps')); ?></a></li>
 </ul>
 </div>

@@ -11,7 +11,7 @@ Displays Visitor Maps with location pins, city, and country. Includes a Who's On
 
 == Description ==
 
-Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed. Easy and Quick 3 step install.
+Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed. Easy and Quick 4 step install.
 
 [Plugin URI]: (http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php)
 
@@ -66,13 +66,13 @@ Credits:
 
 3. screenshot-3.jpg is the Visitor Maps page.
 
-4. screenshot-3.jpg is the View Who's Online Dashboard.
+4. screenshot-4.jpg is the View Who's Online Dashboard.
 
-5. screenshot-3.jpg is the `Settings` page.
+5. screenshot-5.jpg is the `Settings` page.
 
-6. screenshot-3.jpg is adding the Who's Online sidebar.
+6. screenshot-6.jpg is adding the Who's Online sidebar.
 
-7. screenshot-4.jpg adding the shortcode `[visitor-maps]` in a Page.
+7. screenshot-7.jpg adding the shortcode `[visitor-maps]` in a Page.
 
 
 == Frequently Asked Questions ==
@@ -117,10 +117,10 @@ Yes but please wait until this plugin has been in release for a month or so beca
 == Changelog ==
 
 = 1.0.2 =
-- (30 Sep 2009) - Update title and descriptions.
+- (01 Oct 2009) - Update title and descriptions.
 
 = 1.0.1 =
-- (30 Sep 2009) - Optimize screenshots.
+- (01 Oct 2009) - Optimize screenshots.
 
 = 1.0 =
 - (30 Sep 2009) Initial Release.
