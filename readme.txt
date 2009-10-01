@@ -33,7 +33,6 @@ Requirements/Restrictions:
 -------------------------
  * Works with Wordpress 2.6+
  * PHP 4.3.9 or above with GD2 library support.
- * PHP register_globals and safe_mode must be set to OFF
  * 30 megs of server space(with geolocation enabled)
 
 Credits:
