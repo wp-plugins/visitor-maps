@@ -7,7 +7,7 @@ Requires at least: 2.6
 Tested up to: 2.8.4
 Stable tag: trunk
 
-Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. No API key needed.
+Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details. 
 
 == Description ==
 
