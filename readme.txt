@@ -7,7 +7,7 @@ Requires at least: 2.6
 Tested up to: 2.8.4
 Stable tag: trunk
 
-Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details. 
+Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details.
 
 == Description ==
 
@@ -37,7 +37,7 @@ Requirements/Restrictions:
 
 Credits:
 -------------------------
-* Programmed by [Mike Challis](http://profiles.wordpress.org/mikechallis/)
+* Programmed by [Mike Challis](http://profiles.wordpress.org/mikechallis/), [Contact Mike Challis](http://www.642weather.com/weather/contact_us.php)
 * Ported to Wordpress from the [Free Who's Online PHP Script by Mike Challis](http://www.642weather.com/weather/scripts-whos-online.php)
 * Inspired by the osCommerce contribution [Who's Online Enhancement](http://addons.oscommerce.com/info/824)
 * Geolocation map images contributed by [Jim McMurry](http://jcweather.us)
@@ -49,7 +49,7 @@ Credits:
 
 1. Upload the `visitor-maps` folder to the `/wp-content/plugins/` directory, or install automatically through the `Plugins`, `Add New` menu in WordPress.
 
-2. Activate the plugin through the `Plugins` menu in WordPress. Look for the Settings link to configure the Options. 
+2. Activate the plugin through the `Plugins` menu in WordPress. Look for the Settings link to configure the Options.
 
 3. To display visitor maps on your blog: add the shortcode `[visitor-maps]` in a Page(not a Post). That page will become your Visitor Maps page. Here is how: Log into your blog admin dashboard. Click `Pages`, click `Add New`, add a title to your page, enter the shortcode `[visitor-maps]` in the page, click `Publish`.
 
@@ -104,6 +104,7 @@ http://www.maxmind.com/app/locate_ip
 
 Probably not. Google analytics, webalizer, etc. are already good free web tracking statistics tools.
 I would still like to hear from you if you have an idea of how I can improve this. If your suggestion is useful and easy to code, I might add it.
+[Contact Mike Challis](http://www.642weather.com/weather/contact_us.php)
 
 = Is this plugin available in other languages? =
 
