@@ -102,7 +102,8 @@ http://www.maxmind.com/app/locate_ip
 
 = Can you add charts and graphs of visitor activity like Google Analytics? =
 
-No, I just want to keep this simple. Google analytics, webalizer, etc. are better free web tracking statistics tools than anything I have time to build.
+Probably not. Google analytics, webalizer, etc. are already good free web tracking statistics tools.
+I would still like to hear from you if you have an idea of how I can improve this. If your suggestion is useful and easy to code, I might add it.
 
 = Is this plugin available in other languages? =
 
@@ -113,6 +114,9 @@ Please wait until this plugin has been in release for a month or so because I ma
 Yes but please wait until this plugin has been in release for a month or so because I may update it frequently in the short term.
 
 == Changelog ==
+
+= 1.0.2 =
+- (30 Sep 2009) - Update title and descriptions.
 
 = 1.0.1 =
 - (30 Sep 2009) - Optimize screenshots.
