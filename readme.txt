@@ -1,4 +1,4 @@
-=== Visitor Maps ===
+=== Visitor Maps and Who's Online ===
 Contributors: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876
@@ -7,24 +7,24 @@ Requires at least: 2.6
 Tested up to: 2.8.4
 Stable tag: trunk
 
-Visitor Maps for WordPress.
+Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. No API key needed.
 
 == Description ==
 
-Displays visitor maps with location pins, city, and country. Includes an admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed. Easy and Quick 3 step install.
+Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed. Easy and Quick 3 step install.
 
 [Plugin URI]: (http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php)
 
 Features:
 --------
  * Configure Options from Admin panel.
- * Admin dashboard shows visitor details of search bots, members, guests, and you.
- * Optional stats widget for sidebar, or footer. Shows how many guests and members are viewing your blog.
+ * Who's Online Admin dashboard shows visitor details of search bots, members, guests, and you.
+ * Optional Who's Online widget for sidebar, or footer. Shows how many guests and members are viewing your blog.
  * Enable display of city, state, and country flag.
- * Enable geolocation.
+ * Enable geolocation for automatic location pin Visitor Maps.
  * Enable "Who Is" lookup.
  * Enable host lookups for IP addresses.
- * Visitor details is stored in a database table for about 30 days.
+ * Visitor details are stored in a database table for about 30 days.
  * Uses GeoLiteCity data created by MaxMind, available from www.maxmind.com
  * Valid coding for HTML and XHTML.
  * I18n language translation support (see FAQ)
