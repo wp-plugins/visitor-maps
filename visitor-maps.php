@@ -560,7 +560,7 @@ function visitor_maps_options_page() {
 <div id="message" class="updated fade"><p><strong><?php _e('Options saved.', 'visitor-maps') ?></strong></p></div>
 <?php endif; ?>
 <div class="wrap">
-<h2><?php _e('Visitor Maps Options', 'visitor-maps') ?></h2>
+<h2><?php _e('Visitor Maps and Who\'s Online Options', 'visitor-maps') ?></h2>
 
 <script type="text/javascript">
     function toggleVisibility(id) {
@@ -788,7 +788,7 @@ echo '<p>'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),ge
 <ul>
 <li><a href="http://wordpress.org/extend/plugins/si-contact-form/" target="_blank"><?php echo esc_html( __('Fast and Secure Contact Form', 'visitor-maps')); ?></a></li>
 <li><a href="http://wordpress.org/extend/plugins/si-captcha-for-wordpress/" target="_blank"><?php echo esc_html( __('SI CAPTCHA', 'visitor-maps')); ?></a></li>
-<li><a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php echo esc_html( __('Visitor Maps', 'visitor-maps')); ?></a></li>
+<li><a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php echo esc_html( __('Visitor Maps and Who\'s Online', 'visitor-maps')); ?></a></li>
 </ul>
 </div>
 <?php
