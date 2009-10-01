@@ -81,12 +81,15 @@ Credits:
 = Does this require a map API key? =
 
 No, this uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com/ it does not require registering an API.
+After you install this plugin, the GeoLiteCity data install is automatically processed by clicking a link on the settings page.
 
-= Can you add charts and graphs of visitor activity like Google Analytics? =
+= How often does the GeoLiteCity data need to be updated? =
 
-No, I just want to keep this simple. Google analytics, webalizer, etc. are better free web tracking statistics tools than anything I have time to build.
+About once monthly an update becomes available, usually around the 1st-3rd of the month.
+About 1-2% of the GeoLiteCity database changes each month.
+When the update is available, the admin will be notified on the Who's Online Dashboard. The update is automatically downloaded by clicking a link.
 
-= Why is Geolocation sometimes is not accurate? =
+= Why is Geolocation sometimes not accurate? =
 
 Sometimes geolocation is close to perfect, sometimes not. Usually only about 85% accuracy.
 The lat & lon, city, state parameters the database produces is for the location the ISP has reported for your current IP address.
@@ -98,10 +101,9 @@ This can cause the reported city, state, lat & lon from the IP to vary from your
 To check the database itself, enter the IP address in this online demo.
 http://www.maxmind.com/app/locate_ip
 
-= How often does the GeoLiteCity data need to be updated? =
-About once monthly an update becomes available, usually around the 1st-3rd of the month.
-About 1-2% of the GeoLiteCity database changes each month.
-When the update is available, the admin will be notified on the Who's Online Dashboard. The update is automatically downloaded by clicking a link.
+= Can you add charts and graphs of visitor activity like Google Analytics? =
+
+No, I just want to keep this simple. Google analytics, webalizer, etc. are better free web tracking statistics tools than anything I have time to build.
 
 = Is this plugin available in other languages? =
 
@@ -113,8 +115,11 @@ Yes but please wait until this plugin has been in release for a month or so beca
 
 == Changelog ==
 
+= 1.0.1 =
+- (30 Sep 2009) - Optimize screenshots.
+
 = 1.0 =
-- (30 Sep 2009) Initial Release
+- (30 Sep 2009) Initial Release.
 
 
 

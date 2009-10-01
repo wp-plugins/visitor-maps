@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps
 Plugin URI: http://www.642weather.com/weather/scripts-visitor-maps.php
 Description: Displays visitor maps with location pins, city, and country. Includes an admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.0
+Version: 1.0.1
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -618,10 +618,10 @@ if (!$visitor_maps_opt['donated']) {
 
 <h3><?php _e('Usage', 'visitor-maps') ?></h3>
 	<p>
-    <?php echo __('Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-6-vm.jpg" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
+    <?php echo __('Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-6.jpg" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
     </p>
    	<p>
-    <?php echo __('Add the Who\'s Online sidebar. Click on Appearance, Widgets, then drag the Who\'s Online widget to the sidebar column on the right.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-7-vm.jpg" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
+    <?php echo __('Add the Who\'s Online sidebar. Click on Appearance, Widgets, then drag the Who\'s Online widget to the sidebar column on the right.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-7.jpg" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
     </p>
 <?php echo '
 <p>
