@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.0.3
+Version: 1.0.4
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -1453,7 +1453,7 @@ $string .= "\n".'<!--[if lte IE 8 ]>
       }
 
       $string .= '<div style="cursor:pointer;position:absolute; top:'.$y.'px; left:'.$x.'px;">
-      <img src="'.$image_pin.'" width="'.$image_pin_width.'" height="'.$image_pin_height.'" alt="" title="'.$this->wo_sanitize_output($title).'" />
+      <img src="'.$image_pin.'" style="border:0; margin:0; padding:0;" width="'.$image_pin_width.'" height="'.$image_pin_height.'" alt="" title="'.$this->wo_sanitize_output($title).'" />
       </div>';
       $string .= "\n";
     }
@@ -1747,6 +1747,32 @@ function visitor_maps_widget($args) {
     echo $after_widget;
 } // end function visitor_maps_widget
 
+function visitor_maps_upgrader_backup() {
+    // prevent plugin updater from deleting the GeoLiteCity.dat file
+    $from = dirname(__FILE__).'/GeoLiteCity.dat';
+    $to = WP_CONTENT_DIR .'/visitor-maps-backup';
+    if (is_file($from)) {
+        if (!is_dir($to)) mkdir($to);
+        if (is_dir($to))  copy($from, $to.'/GeoLiteCity.dat');
+    }
+
+} // end function visitor_maps_upgrader_backup
+
+function visitor_maps_upgrader_restore() {
+    // prevent plugin updater from deleting the GeoLiteCity.dat file
+    $to = dirname(__FILE__).'/GeoLiteCity.dat';
+    $from = WP_CONTENT_DIR .'/visitor-maps-backup';
+    if (is_file($from.'/GeoLiteCity.dat')) {
+        copy($from.'/GeoLiteCity.dat', $to);
+        chmod($to, 0644);
+        unlink($from.'/GeoLiteCity.dat');
+	    rmdir($from);
+    }
+
+} // end function visitor_maps_upgrader_restore
+
+
+
 } // end of class
 } // end of if class
 
@@ -1825,6 +1851,10 @@ if (isset($visitor_maps)) {
   add_action('parse_request', array(&$visitor_maps,'visitor_maps_do_map_image'),2);
 
   register_activation_hook(__FILE__, array(&$visitor_maps, 'visitor_maps_install'), 1);
+
+  // prevent plugin updater from deleting the GeoLiteCity.dat file
+  add_filter('upgrader_pre_install', array(&$visitor_maps, 'visitor_maps_upgrader_backup'), 10, 2);
+  add_filter('upgrader_post_install', array(&$visitor_maps, 'visitor_maps_upgrader_restore'), 10, 2);
 
   // options deleted when this plugin is deleted in WP 2.7+
   if ( function_exists('register_uninstall_hook') )
