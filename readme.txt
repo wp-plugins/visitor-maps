@@ -70,9 +70,9 @@ Credits:
 
 5. screenshot-5.jpg is the `Settings` page.
 
-6. screenshot-6.jpg is adding the Who's Online sidebar.
+6. screenshot-6.jpg adding the shortcode `[visitor-maps]` in a Page.
 
-7. screenshot-7.jpg adding the shortcode `[visitor-maps]` in a Page.
+7. screenshot-7.jpg is adding the Who's Online sidebar.
 
 
 == Frequently Asked Questions ==
@@ -129,6 +129,12 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.0.4 =
+- (01 Oct 2009) - Fixed issue where after upgrading the plugin you have to click "Install" to download the Maxmind GeoLiteCity database again.
+(because the new code is needed before the upgrade to prevent this issue, you will also have to do it once after applying this update, sorry)
+- Fixed some themes cause the location pins to have border margins.
+- Fixed path problem in the GeoLiteCity updater class.
 
 = 1.0.3 =
 - (01 Oct 2009) - Added Turkish (tr_TR) - Translated by Cenkgursu
