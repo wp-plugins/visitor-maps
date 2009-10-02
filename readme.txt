@@ -108,13 +108,30 @@ I would still like to hear from you if you have an idea of how I can improve thi
 
 = Is this plugin available in other languages? =
 
-Please wait until this plugin has been in release for a month or so because I may update it frequently in the short term.
+Yes. To use a translated version, you need to obtain or make the language file for it.
+At this point it would be useful to read [Installing WordPress in Your Language](http://codex.wordpress.org/Installing_WordPress_in_Your_Language "Installing WordPress in Your Language") from the Codex. You will need an .mo file for this plugin that corresponds with the "WPLANG" setting in your wp-config.php file. Translations are listed below -- if a translation for your language is available, all you need to do is place it in the `/wp-content/plugins/visitor-maps/language` directory of your WordPress installation. If one is not available, and you also speak good English, please consider doing a translation yourself (see the next question).
+
+The following translations are included in the download zip file:
+
+* Turkish (tr_TR) - Translated by Cenkgursu
+* More are needed... Please help translate.
 
 = Can I provide a translation? =
 
-Yes but please wait until this plugin has been in release for a month or so because I may update it frequently in the short term.
+Of course! It will be very gratefully received. Use PoEdit, it makes translation easy. Please read [Translating WordPress](http://codex.wordpress.org/Translating_WordPress "Translating WordPress") first for background information on translating. Then obtain the latest [.pot file](http://svn.wp-plugins.org/visitor-maps/trunk/languages/visitor-maps.pot ".pot file") and translate it.
+* There are some strings with a space in front or end -- please make sure you remember the space!
+* When you have a translation ready, please send the .po and .mo files to wp-translation at 642weather dot com.
+* If you have any questions, feel free to email me also. Thanks!
+
+= Is it possible to merge the translation files I sent to you with the ones of the newest version? =
+
+If you use PoEdit to translate, it is easy to translate for a new version. You can open your current .po file, then select from the PoEdit menu: "Catalog" > "Update from POT file". Now all you have to change are the new language strings.
+
 
 == Changelog ==
+
+= 1.0.3 =
+- (01 Oct 2009) - Added Turkish (tr_TR) - Translated by Cenkgursu
 
 = 1.0.2 =
 - (01 Oct 2009) - Update title and descriptions.
