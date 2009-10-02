@@ -24,8 +24,8 @@ function get_settings() {
 
 // maxmind url to download from
 // note: if you hit this url too often(refresh, refresh), maxmind will ban you for a short time!
-//$this->setting['url'] = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz';
-$this->setting['url'] = 'http://192.168.1.86/GeoLiteCity.dat.gz'; // for testing
+$this->setting['url'] = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz';
+//$this->setting['url'] = 'http://192.168.1.86/GeoLiteCity.dat.gz'; // for testing
 
 // optional setting to set a directory where your GeoLiteCity.dat file is
 // for some users who want the GeoLiteCity.dat file in a different folder
