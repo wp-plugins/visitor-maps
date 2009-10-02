@@ -14,6 +14,7 @@ class WoProGeoLocUpdater {
 
 function get_settings() {
 
+
 //error_reporting(E_ALL ^ E_NOTICE);
 //ini_set('display_errors', 1);
 //ini_set('log_errors', 1);
@@ -23,13 +24,13 @@ function get_settings() {
 
 // maxmind url to download from
 // note: if you hit this url too often(refresh, refresh), maxmind will ban you for a short time!
-$this->setting['url'] = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz';
-//$this->setting['url'] = 'http://192.168.1.86/GeoLiteCity.dat.gz'; // for testing
+//$this->setting['url'] = 'http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz';
+$this->setting['url'] = 'http://192.168.1.86/GeoLiteCity.dat.gz'; // for testing
 
 // optional setting to set a directory where your GeoLiteCity.dat file is
 // for some users who want the GeoLiteCity.dat file in a different folder
 // use server path, NOT URL!!
-$this->setting['geolite_path'] = dirname(__FILE__).'/'; // default is blank, uses this folder
+$this->setting['geolite_path'] = WP_PLUGIN_DIR . '/visitor-maps/';
 //$this->setting['geolite_path'] = '/server/path/to/folder/'; // must be full path, always end with a slash
 
 // do not download if the Maxmind GeoLiteCity database is already up to date
@@ -218,7 +219,7 @@ clearstatcache();
  if ( !is_file($this->setting['geolite_path'] . 'GeoLiteCity.dat')  ) {
    $this->error_exit(__('test_lookup error: the GeoLiteCity.dat file was not found', 'visitor-maps'));
  }
- if ( !is_file(dirname(__FILE__) .'/include-whos-online-geoip.php')  ) {
+ if ( !is_file($this->setting['geolite_path'] .'include-whos-online-geoip.php')  ) {
    $this->error_exit(__('test_lookup error: the include-whos-online-geoip.php file was not found', 'visitor-maps'));
  }
 
@@ -407,7 +408,7 @@ function get_location_info($user_ip) {
   // lookup country info for this ip
   // geoip lookup
   if (!function_exists('geoip_open')) {
-    require_once(dirname(__FILE__) .'/include-whos-online-geoip.php');
+    require_once($this->setting['geolite_path'] .'include-whos-online-geoip.php');
   }
   $gi = geoip_open($this->setting['geolite_path'] . 'GeoLiteCity.dat', GEOIP_STANDARD);
 
