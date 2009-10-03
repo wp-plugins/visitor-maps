@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.0.4
+Version: 1.0.5
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -210,9 +210,9 @@ function visitor_maps_map_short_code() {
      $map_settings = array(
        // html map settings
        // set these settings as needed
-       'time'       => $visitor_maps_opt['track_time'],      // digits of time
+       'time'       => $visitor_maps_opt['track_time'], // digits of time
        'units'      => 'minutes', // minutes, hours, or days (with or without the "s")
-       'map'        => '1',       // 1,2 3, etc. (you can add more map images in settings)
+       'map'        => $visitor_maps_opt['default_map'], // 1,2 3, etc.
        'pin'        => '1',       // 1,2,3, etc. (you can add more pin images in settings)
        'pins'       => 'off',     // off (off is required for html map)
        'text'       => 'on',      // on or off
@@ -472,6 +472,7 @@ function visitor_maps_get_options() {
    'enable_blog_footer' =>     1,
    'enable_admin_footer' =>    1,
    'enable_credit_link' =>     1,
+   'default_map' =>            1,
 
  );
   // install the option defaults
@@ -530,7 +531,7 @@ function visitor_maps_options_page() {
    'enable_blog_footer' =>       (isset( $_POST['visitor_maps_enable_blog_footer'] ) ) ? 1 : 0,
    'enable_admin_footer' =>      (isset( $_POST['visitor_maps_enable_admin_footer'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
-
+   'default_map' =>              absint(trim($_POST['visitor_maps_default_map'])),
   );
 
     // deal with quotes
@@ -667,6 +668,34 @@ echo '<p>'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),ge
 
       <input name="visitor_maps_enable_state_display" id="visitor_maps_enable_state_display" type="checkbox" <?php if( $visitor_maps_opt['enable_state_display'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_state_display"><?php echo esc_html( __('Enable display of city, state next to country flag.', 'visitor-maps')); ?></label>
+      <br />
+
+      <label for="visitor_maps_default_map"><?php echo esc_html( __('Default Visitor Map', 'visitor-maps')); ?></label>
+      <select id="visitor_maps_default_map" name="visitor_maps_default_map">
+      <?php
+       $default_map_select_array = array(
+          '1'  => __('World (smallest)', 'visitor-maps'),
+          '2'  => __('World (small)', 'visitor-maps'),
+          '3'  => __('World (medium)', 'visitor-maps'),
+          '4'  => __('World (large)', 'visitor-maps'),
+           );
+
+      $selected = '';
+      foreach ($default_map_select_array as $k => $v)  {
+          if ($visitor_maps_opt['default_map'] == $k) {
+                    $selected = 'selected="selected"';
+          }
+          echo '<option value="' . esc_attr($k) . '" ' . $selected . '>' . esc_attr($v) . '</option>' . "\n";
+          $selected = '';
+      }
+
+      echo '</select>';
+
+      ?>
+      <a style="cursor:pointer;" title="<?php echo esc_html( __('Click for Help!', 'visitor-maps')); ?>" onclick="toggleVisibility('visitor_maps_default_map_tip');"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_default_map_tip">
+      <?php echo esc_html( __('Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one.', 'visitor-maps')); ?>
+      </div>
 
       </td>
     </tr>
@@ -1143,42 +1172,43 @@ function get_visitor_maps_worldmap ($MS = 0) {
 $C = $G = array();
 // worldmap image names
 // just image names only, do not add any paths
-$C['image_worldmap']    = 'wo-worldmap-small.jpg';         // World (small) do not delete this one, it is the default
-$C['image_worldmap_1']  = 'wo-worldmap-small.jpg';         // World (small) do not delete this one, it is the default
-$C['image_worldmap_2']  = 'wo-worldmap-medium.jpg';         // World (small)
-$C['image_worldmap_3']  = 'wo-worldmap-large.jpg';   // World (large)
-$C['image_worldmap_4']  = 'wo-us-black-map.png';     // US (black)
-$C['image_worldmap_5']  = 'wo-us-brown-map.png';     // US (brown)
-$C['image_worldmap_6']  = 'wo-akus-black-map.png';   // Canada and US (black)
-$C['image_worldmap_7']  = 'wo-akus-brown-map.png';   // Canada and US (brown)
-$C['image_worldmap_8']  = 'wo-asia-black-map.png';   // Asia (black)
-$C['image_worldmap_9']  = 'wo-asia-brown-map.png';   // Asia (brown)
-$C['image_worldmap_10'] = 'wo-aus-nz-black-map.png'; // Australia and NZ (black)
-$C['image_worldmap_11'] = 'wo-aus-nz-brown-map.png'; // Australia and NZ (brown)
-$C['image_worldmap_12'] = 'wo-ceu-black-map.png';    // Europe Central (black)
-$C['image_worldmap_13'] = 'wo-ceu-brown-map.png';    // Europe Central (brown)
-$C['image_worldmap_14'] = 'wo-eu-black-map.png';     // Europe (black)
-$C['image_worldmap_15'] = 'wo-eu-brown-map.png';     // Europe (brown)
-$C['image_worldmap_16'] = 'wo-fin-black-map.png';    // Finland (black)
-$C['image_worldmap_17'] = 'wo-fin-brown-map.png';    // Finland (brown)
-$C['image_worldmap_18'] = 'wo-gb-black-map.png';     // Great Britain (black)
-$C['image_worldmap_19'] = 'wo-gb-brown-map.png';     // Great Britain (brown)
-$C['image_worldmap_20'] = 'wo-mwus-black-map.png';   // US Midwest (black)
-$C['image_worldmap_21'] = 'wo-mwus-brown-map.png';   // US Midwest (brown)
-$C['image_worldmap_22'] = 'wo-ncus-black-map.png';   // US Upper Midwest (black)
-$C['image_worldmap_23'] = 'wo-ncus-brown-map.png';   // US Upper Midwest (brown)
-$C['image_worldmap_24'] = 'wo-neus-black-map.png';   // US Northeast (black)
-$C['image_worldmap_25'] = 'wo-neus-brown-map.png';   // US Northeast (brown)
-$C['image_worldmap_26'] = 'wo-nwus-black-map.png';   // US Northwest (black)
-$C['image_worldmap_27'] = 'wo-nwus-brown-map.png';   // US Northwest (brown)
-$C['image_worldmap_28'] = 'wo-rmus-black-map.png';   // US Rocky Mountain (black)
-$C['image_worldmap_29'] = 'wo-rmus-brown-map.png';   // US Rocky Mountain (brown)
-$C['image_worldmap_30'] = 'wo-scus-black-map.png';   // US South (black)
-$C['image_worldmap_31'] = 'wo-scus-brown-map.png';   // US South (brown)
-$C['image_worldmap_32'] = 'wo-seus-black-map.png';   // US Southeast (black)
-$C['image_worldmap_33'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
-$C['image_worldmap_34'] = 'wo-swus-black-map.png';   // US Southwest (black)
-$C['image_worldmap_35'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
+$C['image_worldmap']    = 'wo-worldmap-smallest.jpg';// World (smallest) do not delete this one, it is the default
+$C['image_worldmap_1']  = 'wo-worldmap-smallest.jpg';// World (smallest) do not delete this one, it is the default
+$C['image_worldmap_2']  = 'wo-worldmap-small.jpg';   // World (small)
+$C['image_worldmap_3']  = 'wo-worldmap-medium.jpg';  // World (medium)
+$C['image_worldmap_4']  = 'wo-worldmap-large.jpg';   // World (large)
+$C['image_worldmap_5']  = 'wo-us-black-map.png';     // US (black)
+$C['image_worldmap_6']  = 'wo-us-brown-map.png';     // US (brown)
+$C['image_worldmap_7']  = 'wo-akus-black-map.png';   // Canada and US (black)
+$C['image_worldmap_8']  = 'wo-akus-brown-map.png';   // Canada and US (brown)
+$C['image_worldmap_9']  = 'wo-asia-black-map.png';   // Asia (black)
+$C['image_worldmap_10']  = 'wo-asia-brown-map.png';   // Asia (brown)
+$C['image_worldmap_11']  = 'wo-aus-nz-black-map.png'; // Australia and NZ (black)
+$C['image_worldmap_12'] = 'wo-aus-nz-brown-map.png'; // Australia and NZ (brown)
+$C['image_worldmap_13'] = 'wo-ceu-black-map.png';    // Europe Central (black)
+$C['image_worldmap_14'] = 'wo-ceu-brown-map.png';    // Europe Central (brown)
+$C['image_worldmap_15'] = 'wo-eu-black-map.png';     // Europe (black)
+$C['image_worldmap_16'] = 'wo-eu-brown-map.png';     // Europe (brown)
+$C['image_worldmap_17'] = 'wo-fin-black-map.png';    // Finland (black)
+$C['image_worldmap_18'] = 'wo-fin-brown-map.png';    // Finland (brown)
+$C['image_worldmap_19'] = 'wo-gb-black-map.png';     // Great Britain (black)
+$C['image_worldmap_20'] = 'wo-gb-brown-map.png';     // Great Britain (brown)
+$C['image_worldmap_21'] = 'wo-mwus-black-map.png';   // US Midwest (black)
+$C['image_worldmap_22'] = 'wo-mwus-brown-map.png';   // US Midwest (brown)
+$C['image_worldmap_23'] = 'wo-ncus-black-map.png';   // US Upper Midwest (black)
+$C['image_worldmap_24'] = 'wo-ncus-brown-map.png';   // US Upper Midwest (brown)
+$C['image_worldmap_25'] = 'wo-neus-black-map.png';   // US Northeast (black)
+$C['image_worldmap_26'] = 'wo-neus-brown-map.png';   // US Northeast (brown)
+$C['image_worldmap_27'] = 'wo-nwus-black-map.png';   // US Northwest (black)
+$C['image_worldmap_28'] = 'wo-nwus-brown-map.png';   // US Northwest (brown)
+$C['image_worldmap_29'] = 'wo-rmus-black-map.png';   // US Rocky Mountain (black)
+$C['image_worldmap_30'] = 'wo-rmus-brown-map.png';   // US Rocky Mountain (brown)
+$C['image_worldmap_31'] = 'wo-scus-black-map.png';   // US South (black)
+$C['image_worldmap_32'] = 'wo-scus-brown-map.png';   // US South (brown)
+$C['image_worldmap_33'] = 'wo-seus-black-map.png';   // US Southeast (black)
+$C['image_worldmap_34'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
+$C['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (black)
+$C['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
 // you can add more, just increment the numbers
 
 $C['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default
@@ -1746,6 +1776,31 @@ function visitor_maps_widget($args) {
     }
     echo $after_widget;
 } // end function visitor_maps_widget
+
+function visitor_maps_manual_sidebar() {
+    global $visitor_maps_opt, $wpdb;
+
+    $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
+
+    $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+    WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+    WHERE user_id = '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+    $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+    WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+    $stats_visitors = sprintf( __('%d visitors online right now','visitor-maps'),$visitors_count);
+    $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
+    $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
+
+    echo '<h2>'. __('Who\'s Online','visitor-maps') .'</h2>';
+    echo "<p>$stats_visitors<br />$stats_guests, $stats_members</p>";
+    if ($visitor_maps_opt['enable_credit_link']) {
+      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+    }
+} // end visitor_maps_manual_sidebar
 
 function visitor_maps_upgrader_backup() {
     // prevent plugin updater from deleting the GeoLiteCity.dat file

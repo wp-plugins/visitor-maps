@@ -15,11 +15,11 @@ class WoMapPage {
 function do_map_page(){
      global $visitor_maps_opt, $visitor_maps;
 
-$map_time = 15;  // default
+$map_time = $visitor_maps_opt['track_time'];  // default
 $map_units = 'minutes'; // default
 $map_text_color = 'FBFB00';  // default
 $map_text_shadow_color = '3F3F3F';  // default
-$map_selected = 1;  // default
+$map_selected = $visitor_maps_opt['default_map'];  // default
 
 if (isset($_POST['time']) && is_numeric($_POST['time'])) {
   $map_time = floor($_POST['time']);
@@ -72,41 +72,42 @@ foreach ($map_units_array as $k => $v) {
 <select id="map" name="map">
 <?php
 $map_select_array = array(
-'1'  => __('World (small)', 'visitor-maps'),
-'2'  => __('World (medium)', 'visitor-maps'),
-'3'  => __('World (large)', 'visitor-maps'),
-'4'  => __('US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'5'  => __('US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'6'  => __('Canada and US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'7'  => __('Canada and US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'8'  => __('Asia', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'9'  => __('Asia', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'10' => __('Australia and NZ', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'11' => __('Australia and NZ', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'12' => __('Europe Central', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'13' => __('Europe Central', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'14' => __('Europe', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'15' => __('Europe', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'16' => __('Finland', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'17' => __('Finland', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'18' => __('Great Britain', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'19' => __('Great Britain', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'20' => __('US Midwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'21' => __('US Midwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'22' => __('US Upper Midwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'23' => __('US Upper Midwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'24' => __('US Northeast', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'25' => __('US Northeast', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'26' => __('US Northwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'27' => __('US Northwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'28' => __('US Rocky Mountain', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'29' => __('US Rocky Mountain', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'30' => __('US South', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'31' => __('US South', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'32' => __('US Southeast', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'33' => __('US Southeast', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'34' => __('US Southwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'35' => __('US Southwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'1'  => __('World (smallest)', 'visitor-maps'),
+'2'  => __('World (small)', 'visitor-maps'),
+'3'  => __('World (medium)', 'visitor-maps'),
+'4'  => __('World (large)', 'visitor-maps'),
+'5'  => __('US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'6'  => __('US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'7'  => __('Canada and US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'8'  => __('Canada and US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'9'  => __('Asia', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'10'  => __('Asia', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'11' => __('Australia and NZ', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'12' => __('Australia and NZ', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'13' => __('Europe Central', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'14' => __('Europe Central', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'15' => __('Europe', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'16' => __('Europe', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'17' => __('Finland', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'18' => __('Finland', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'19' => __('Great Britain', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'20' => __('Great Britain', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'21' => __('US Midwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'22' => __('US Midwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'23' => __('US Upper Midwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'24' => __('US Upper Midwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'25' => __('US Northeast', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'26' => __('US Northeast', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'27' => __('US Northwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'28' => __('US Northwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'29' => __('US Rocky Mountain', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'30' => __('US Rocky Mountain', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'31' => __('US South', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'32' => __('US South', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'33' => __('US Southeast', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'34' => __('US Southeast', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'35' => __('US Southwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'36' => __('US Southwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 );
 $selected = '';
 foreach ($map_select_array as $k => $v) {
@@ -125,46 +126,47 @@ foreach ($map_select_array as $k => $v) {
 // I just put these here for my reference, they are actually set in class-wo-worldmap.php and visitor-maps.php
 // worldmap image names
 /*
-$C['image_worldmap']    = 'wo-worldmap-small.jpg';         // World (small) do not delete this one, it is the default
-$C['image_worldmap_1']  = 'wo-worldmap-small.jpg';         // World (small) do not delete this one, it is the default
-$C['image_worldmap_2']  = 'wo-worldmap-medium.jpg';         // World (small)
-$C['image_worldmap_3']  = 'wo-worldmap-large.jpg';   // World (large)
-$C['image_worldmap_4']  = 'wo-us-black-map.png';     // US (black)
-$C['image_worldmap_5']  = 'wo-us-brown-map.png';     // US (brown)
-$C['image_worldmap_6']  = 'wo-akus-black-map.png';   // Canada and US (black)
-$C['image_worldmap_7']  = 'wo-akus-brown-map.png';   // Canada and US (brown)
-$C['image_worldmap_8']  = 'wo-asia-black-map.png';   // Asia (black)
-$C['image_worldmap_9']  = 'wo-asia-brown-map.png';   // Asia (brown)
-$C['image_worldmap_10']  = 'wo-aus-nz-black-map.png'; // Australia and NZ (black)
-$C['image_worldmap_11'] = 'wo-aus-nz-brown-map.png'; // Australia and NZ (brown)
-$C['image_worldmap_12'] = 'wo-ceu-black-map.png';    // Europe Central (black)
-$C['image_worldmap_13'] = 'wo-ceu-brown-map.png';    // Europe Central (brown)
-$C['image_worldmap_14'] = 'wo-eu-black-map.png';     // Europe (black)
-$C['image_worldmap_15'] = 'wo-eu-brown-map.png';     // Europe (brown)
-$C['image_worldmap_16'] = 'wo-fin-black-map.png';    // Finland (black)
-$C['image_worldmap_17'] = 'wo-fin-brown-map.png';    // Finland (brown)
-$C['image_worldmap_18'] = 'wo-gb-black-map.png';     // Great Britain (black)
-$C['image_worldmap_19'] = 'wo-gb-brown-map.png';     // Great Britain (brown)
-$C['image_worldmap_20'] = 'wo-mwus-black-map.png';   // US Midwest (black)
-$C['image_worldmap_21'] = 'wo-mwus-brown-map.png';   // US Midwest (brown)
-$C['image_worldmap_22'] = 'wo-ncus-black-map.png';   // US Upper Midwest (black)
-$C['image_worldmap_23'] = 'wo-ncus-brown-map.png';   // US Upper Midwest (brown)
-$C['image_worldmap_24'] = 'wo-neus-black-map.png';   // US Northeast (black)
-$C['image_worldmap_25'] = 'wo-neus-brown-map.png';   // US Northeast (brown)
-$C['image_worldmap_26'] = 'wo-nwus-black-map.png';   // US Northwest (black)
-$C['image_worldmap_27'] = 'wo-nwus-brown-map.png';   // US Northwest (brown)
-$C['image_worldmap_28'] = 'wo-rmus-black-map.png';   // US Rocky Mountain (black)
-$C['image_worldmap_29'] = 'wo-rmus-brown-map.png';   // US Rocky Mountain (brown)
-$C['image_worldmap_30'] = 'wo-scus-black-map.png';   // US South (black)
-$C['image_worldmap_31'] = 'wo-scus-brown-map.png';   // US South (brown)
-$C['image_worldmap_32'] = 'wo-seus-black-map.png';   // US Southeast (black)
-$C['image_worldmap_33'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
-$C['image_worldmap_34'] = 'wo-swus-black-map.png';   // US Southwest (black)
-$C['image_worldmap_35'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
+$C['image_worldmap']    = 'wo-worldmap-smallest.jpg';// World (smallest) do not delete this one, it is the default
+$C['image_worldmap_1']  = 'wo-worldmap-smallest.jpg';// World (smallest) do not delete this one, it is the default
+$C['image_worldmap_2']  = 'wo-worldmap-small.jpg';   // World (small)
+$C['image_worldmap_3']  = 'wo-worldmap-medium.jpg';  // World (medium)
+$C['image_worldmap_4']  = 'wo-worldmap-large.jpg';   // World (large)
+$C['image_worldmap_5']  = 'wo-us-black-map.png';     // US (black)
+$C['image_worldmap_6']  = 'wo-us-brown-map.png';     // US (brown)
+$C['image_worldmap_7']  = 'wo-akus-black-map.png';   // Canada and US (black)
+$C['image_worldmap_8']  = 'wo-akus-brown-map.png';   // Canada and US (brown)
+$C['image_worldmap_9']  = 'wo-asia-black-map.png';   // Asia (black)
+$C['image_worldmap_10']  = 'wo-asia-brown-map.png';   // Asia (brown)
+$C['image_worldmap_11']  = 'wo-aus-nz-black-map.png'; // Australia and NZ (black)
+$C['image_worldmap_12'] = 'wo-aus-nz-brown-map.png'; // Australia and NZ (brown)
+$C['image_worldmap_13'] = 'wo-ceu-black-map.png';    // Europe Central (black)
+$C['image_worldmap_14'] = 'wo-ceu-brown-map.png';    // Europe Central (brown)
+$C['image_worldmap_15'] = 'wo-eu-black-map.png';     // Europe (black)
+$C['image_worldmap_16'] = 'wo-eu-brown-map.png';     // Europe (brown)
+$C['image_worldmap_17'] = 'wo-fin-black-map.png';    // Finland (black)
+$C['image_worldmap_18'] = 'wo-fin-brown-map.png';    // Finland (brown)
+$C['image_worldmap_19'] = 'wo-gb-black-map.png';     // Great Britain (black)
+$C['image_worldmap_20'] = 'wo-gb-brown-map.png';     // Great Britain (brown)
+$C['image_worldmap_21'] = 'wo-mwus-black-map.png';   // US Midwest (black)
+$C['image_worldmap_22'] = 'wo-mwus-brown-map.png';   // US Midwest (brown)
+$C['image_worldmap_23'] = 'wo-ncus-black-map.png';   // US Upper Midwest (black)
+$C['image_worldmap_24'] = 'wo-ncus-brown-map.png';   // US Upper Midwest (brown)
+$C['image_worldmap_25'] = 'wo-neus-black-map.png';   // US Northeast (black)
+$C['image_worldmap_26'] = 'wo-neus-brown-map.png';   // US Northeast (brown)
+$C['image_worldmap_27'] = 'wo-nwus-black-map.png';   // US Northwest (black)
+$C['image_worldmap_28'] = 'wo-nwus-brown-map.png';   // US Northwest (brown)
+$C['image_worldmap_29'] = 'wo-rmus-black-map.png';   // US Rocky Mountain (black)
+$C['image_worldmap_30'] = 'wo-rmus-brown-map.png';   // US Rocky Mountain (brown)
+$C['image_worldmap_31'] = 'wo-scus-black-map.png';   // US South (black)
+$C['image_worldmap_32'] = 'wo-scus-brown-map.png';   // US South (brown)
+$C['image_worldmap_33'] = 'wo-seus-black-map.png';   // US Southeast (black)
+$C['image_worldmap_34'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
+$C['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (black)
+$C['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
 */
 
 if ($map_selected == 1) {
-echo '<!-- World (small) -->' . "\n";
+echo '<!-- World (smallest) -->' . "\n";
 $map_settings = array(
 // html map settings World (small)
 // set these settings as needed
@@ -189,7 +191,7 @@ echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
 if ($map_selected == 2) {
-echo '<!-- World (medium) -->' . "\n";
+echo '<!-- World (small) -->' . "\n";
 $map_settings = array(
 // html map settings World (small)
 // set these settings as needed
@@ -214,13 +216,38 @@ echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
 if ($map_selected == 3) {
+echo '<!-- World (medium) -->' . "\n";
+$map_settings = array(
+// html map settings World (small)
+// set these settings as needed
+'time'       => $map_time,      // digits of time
+'units'      => $map_units, // minutes, hours, or days (with or without the "s")
+'map'        => '3',       // 1,2 (you can add more map images in settings)
+'pin'        => '1',       // 1,2,3 (you can add more pin images in settings)
+'pins'       => 'off',     // off (off is required for html map)
+'text'       => 'on',      // on or off
+'textcolor'  => '000000',  // any hex color code
+'textshadow' => 'FFFFFF',  // any hex color code
+'textalign'  => 'cb',      // ll , ul, lr, ur, c, ct, cb  (these codes mean lower left, upper left, upper right, center, center top, center bottom)
+'ul_lat'     => '0',       // default 0 for worldmap
+'ul_lon'     => '0',       // default 0 for worldmap
+'lr_lat'     => '360',     // default 360 for worldmap
+'lr_lon'     => '180',     // default 180 for worldmap
+'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
+'type'       => 'jpg',     // jpg or png (map output type)
+);
+echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
+}
+
+if ($map_selected == 4) {
 echo '<!-- World (large) --> ' . "\n";
 $map_settings = array(
 // html map settings World (large)
 // set these settings as needed
 'time'       => $map_time,  // digits of time
 'units'      => $map_units, // minutes, hours, or days (with or without the "s")
-'map'        => '3',       // 1,2 (you can add more map images in settings)
+'map'        => '4',       // 1,2 (you can add more map images in settings)
 'pin'        => '1',       // 1,2,3 (you can add more pin images in settings)
 'pins'       => 'off',     // off (off is required for html map)
 'text'       => 'on',      // on or off
@@ -238,7 +265,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 4 || $map_selected == 5) {
+if ($map_selected == 5 || $map_selected == 6) {
 echo '<!-- US Map --> ' . "\n";
 $map_settings = array(
 // html map settings US Map
@@ -263,7 +290,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 6 || $map_selected == 7) {
+if ($map_selected == 7 || $map_selected == 8) {
 echo '<!-- Canada and US Map --> ' . "\n";
 $map_settings = array(
 // html map settings Canada and US Map
@@ -288,7 +315,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 8 || $map_selected == 9) {
+if ($map_selected == 0 || $map_selected == 10) {
 echo '<!-- Asia Map -->' . "\n";
 $map_settings = array(
 // html map settings Asia Map
@@ -313,7 +340,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 10 || $map_selected == 11) {
+if ($map_selected == 11 || $map_selected == 12) {
 echo '<!-- Australia and NZ Map --> ' . "\n";
 $map_settings = array(
 // html map settings Australia and NZ Map
@@ -338,7 +365,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 12 || $map_selected == 13) {
+if ($map_selected == 13 || $map_selected == 14) {
 echo '<!-- Europe Central Map  -->' . "\n";
 $map_settings = array(
 // html map settings Europe Central Map
@@ -363,7 +390,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 14 || $map_selected == 15) {
+if ($map_selected == 15 || $map_selected == 16) {
 echo '<!-- Europe Map  -->' . "\n";
 $map_settings = array(
 // html map settings Europe Map
@@ -388,7 +415,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 16 || $map_selected == 17) {
+if ($map_selected == 17 || $map_selected == 18) {
 echo '<!-- Finland Map --> ' . "\n";
 $map_settings = array(
 // html map settings Finland Map
@@ -413,7 +440,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 18 || $map_selected == 19) {
+if ($map_selected == 19 || $map_selected == 20) {
 echo '<!-- Great Britain Map  -->' . "\n";
 $map_settings = array(
 // html map settings Great Britain  Map
@@ -438,7 +465,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 20 || $map_selected == 21) {
+if ($map_selected == 21 || $map_selected == 22) {
 echo '<!-- US Midwest Map -->' . "\n";
 $map_settings = array(
 // html map settings US Midwest Map
@@ -463,7 +490,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 22 || $map_selected == 23) {
+if ($map_selected == 23 || $map_selected == 24) {
 echo '<!-- US Upper Midwest Map -->' . "\n";
 $map_settings = array(
 // html map settings US Upper Midwest Map
@@ -488,7 +515,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 24 || $map_selected == 25) {
+if ($map_selected == 25 || $map_selected == 26) {
 echo '<!-- US Northeast Map -->' . "\n";
 $map_settings = array(
 // html map settings US Northeast Map
@@ -513,7 +540,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 26 || $map_selected == 27) {
+if ($map_selected == 27 || $map_selected == 28) {
 echo '<!-- US Northwest Map -->' . "\n";
 $map_settings = array(
 // html map settings US Northwest Map
@@ -538,7 +565,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 28 || $map_selected == 29) {
+if ($map_selected == 29 || $map_selected == 30) {
 echo '<!-- US Rocky Mountain Map -->' . "\n";
 $map_settings = array(
 // html map settings US Rocky Mountain Map
@@ -563,7 +590,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 30 || $map_selected == 31) {
+if ($map_selected == 31 || $map_selected == 32) {
 echo '<!-- US South Map -->' . "\n";
 $map_settings = array(
 // html map settings US South Map
@@ -588,7 +615,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 32 || $map_selected == 33) {
+if ($map_selected == 33 || $map_selected == 34) {
 echo '<!-- US Southeast Map -->' . "\n";
 $map_settings = array(
 // html map settings US Southeast Map
@@ -613,7 +640,7 @@ $map_settings = array(
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
-if ($map_selected == 34 || $map_selected == 35) {
+if ($map_selected == 35 || $map_selected == 36) {
 echo '<!-- US Southwest Map -->' . "\n";
 $map_settings = array(
 // html map settings US Southwest Map

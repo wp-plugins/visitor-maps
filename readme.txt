@@ -54,6 +54,7 @@ Credits:
 3. To display visitor maps on your blog: add the shortcode `[visitor-maps]` in a Page(not a Post). That page will become your Visitor Maps page. Here is how: Log into your blog admin dashboard. Click `Pages`, click `Add New`, add a title to your page, enter the shortcode `[visitor-maps]` in the page, click `Publish`.
 
 4. To add the Who's Online sidebar: Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right.
+(If you do not use widgets and want to add this manually, see FAQ)
 
 5. Updates are automatic. Click on "Upgrade Automatically" if prompted from the admin menu.
 
@@ -100,6 +101,24 @@ This can cause the reported city, state, lat & lon from the IP to vary from your
 To check the database itself, enter the IP address in this online demo.
 http://www.maxmind.com/app/locate_ip
 
+= I don't use widgets. How can I add "Who's Online" to my sidebar manually? =
+
+Upgrade to version 1.0.5 or higher and add this code to your theme's sidebar.php:
+
+`
+<?php
+    // display Who's Online
+     if (class_exists("VisitorMaps")) {
+            $visitor_maps = new VisitorMaps();
+     }
+     if (isset($visitor_maps)) {
+           echo '<ul><li>';
+           $visitor_maps->visitor_maps_manual_sidebar();
+           echo '</li></ul>';
+     }
+?>
+`
+
 = Can you add charts and graphs of visitor activity like Google Analytics? =
 
 Probably not. Google analytics, webalizer, etc. are already good free web tracking statistics tools.
@@ -130,8 +149,13 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+
+= 1.0.5 =
+- (03 Oct 2009) - Added setting to select default map size for the Visitor Map page.
+- Added the ability to add the Who's Online to the sidebar manually if you do not use widgets. (See FAQ)
+
 = 1.0.4 =
-- (01 Oct 2009) - Fixed issue where after upgrading the plugin you have to click "Install" to download the Maxmind GeoLiteCity database again.
+- (02 Oct 2009) - Fixed issue where after upgrading the plugin you have to click "Install" to download the Maxmind GeoLiteCity database again.
 (because the new code is needed before the upgrade to prevent this issue, you will also have to do it once after applying this update, sorry)
 - Fixed some themes cause the location pins to have border margins.
 - Fixed path problem in the GeoLiteCity updater class.
