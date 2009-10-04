@@ -1016,11 +1016,11 @@ function visitor_maps_activity_do() {
        $wpdb->query("$query");
     }// end skip if empty
 
-    // set the day, month, year, all time records and return the 'visitors online right now' count
+    // set the day, month, year, all time records and return the 'visitors online now' count
     $visitors_count = $this->set_whos_records();
 
     // get the day, month, year, all time records for display on web site,
-    // recycle the 'visitors online right now' count ( I am feeling thrifty )
+    // recycle the 'visitors online now' count ( I am feeling thrifty )
     $visitor_maps_stats = $this->get_whos_records($visitors_count);
 
 
@@ -1060,7 +1060,7 @@ function get_location_info($user_ip) {
 
 function set_whos_records() {
   // this function updates the day, month, year, all time records
-  // and returns 'visitors online right now' count
+  // and returns 'visitors online now' count
     global $visitor_maps_opt, $wpdb;
 
     $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
@@ -1070,7 +1070,7 @@ function set_whos_records() {
   // now() adjusted to php timezone, othersize mysql date time could be off
   $mysql_now = date( 'Y-m-d H:i:s' );
 
-  // select the 'visitors online right now' count, except for our nickname friends not online now
+  // select the 'visitors online now' count, except for our nickname friends not online now
   $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
   WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
@@ -1106,14 +1106,14 @@ function set_whos_records() {
   WHERE count < '" . absint($visitors_count) . "'
   and type = 'all'");
 
-  // return the 'visitors online right now' count ( I recycle )
+  // return the 'visitors online now' count ( I recycle )
   return $visitors_count;
 
 } // end function set_whos_records
 
 function get_whos_records($visitors_count) {
   // get the day, month, year, all time records for display on web site,
-  // use the recycled the 'visitors online right now' count
+  // use the recycled the 'visitors online now' count
   global $visitor_maps_stats, $visitor_maps_opt, $wpdb;
 
   $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
@@ -1125,7 +1125,7 @@ function get_whos_records($visitors_count) {
   $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
   WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
-  $visitor_maps_stats['visitors'] = sprintf( __('%d visitors online right now','visitor-maps'),$visitors_count);
+  $visitor_maps_stats['visitors'] = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
   $visitor_maps_stats['guests'] = sprintf( __('%d guests','visitor-maps'),$guests_count);
   $visitor_maps_stats['members'] = sprintf( __('%d members','visitor-maps'),$members_count);
   $string = $visitor_maps_stats['visitors'] .'<br />';
@@ -1765,7 +1765,7 @@ function visitor_maps_widget($args) {
     $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
     WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
-    $stats_visitors = sprintf( __('%d visitors online right now','visitor-maps'),$visitors_count);
+    $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
     $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
     $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
 
@@ -1791,7 +1791,7 @@ function visitor_maps_manual_sidebar() {
     $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
     WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
-    $stats_visitors = sprintf( __('%d visitors online right now','visitor-maps'),$visitors_count);
+    $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
     $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
     $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
 
