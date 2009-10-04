@@ -149,6 +149,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.1.2 =
+- (04 Oct 2009) - Fix some WP themes were messing up the pin locations on the Visitor Maps Page
+
 = 1.1 =
 - (03 Oct 2009) - Fixed bug that caused NextGEN Gallery plugin admin subpanel links to not function. 
 Sorry about that, it is all fixed in this update.
