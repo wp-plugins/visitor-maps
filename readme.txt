@@ -150,6 +150,11 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.1.4 =
+- (05 Oct 2009) - Fixed Visitor Map Viewer link on settings page.
+- Added Setting to enable or disable the visitor map on Who's Online dashboard.
+- Fixed one string in the language translations.  
+
 = 1.1.3 =
 - (05 Oct 2009) - Added option setting to select default time and units for default map for the Visitor Map page.
 - Added Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)

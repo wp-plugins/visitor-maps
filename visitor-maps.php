@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.1.3
+Version: 1.1.4
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -49,7 +49,7 @@ function visitor_maps_admin_view(){
     $wo_view->view_whos_online();
 
 
-  if ($visitor_maps_opt['enable_location_plugin']) {
+  if ($visitor_maps_opt['enable_location_plugin'] && $visitor_maps_opt['enable_dash_map'] ) {
     // show the map on the bottom of the admin View Who's Online page
     $map_settings = array(
        // html map settings
@@ -73,9 +73,9 @@ function visitor_maps_admin_view(){
              );
     echo $this->get_visitor_maps_worldmap($map_settings);
     echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
-    if ($visitor_maps_opt['enable_credit_link']) {
-      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
-    }
+  }
+  if ($visitor_maps_opt['enable_credit_link']) {
+    echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
   }
   echo '</div>';
 
@@ -313,6 +313,21 @@ function wo_map_console(url) {
 <?php
   } // end if(isset($_GET['page'])
 
+// only load this header stuff on the whos online settings page
+if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps/visitor-maps.php' ) {
+?>
+<!-- begin visitor maps - settings page header code -->
+<script type="text/javascript" language="JavaScript">
+<!--
+function wo_map_console(url) {
+  window.open(url,"wo_map_console","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
+}
+//-->
+</script>
+<!-- end visitor maps - settings page header code -->
+<?php
+  } // end if(isset($_GET['page'])
+
 } // end function visitor_maps_view_header
 
 
@@ -476,6 +491,7 @@ function visitor_maps_get_options() {
    'enable_blog_footer' =>     1,
    'enable_admin_footer' =>    1,
    'enable_credit_link' =>     1,
+   'enable_dash_map' =>        1,
    'default_map' =>            1,
    'default_map_time' =>       30,
    'default_map_units' =>      'days',
@@ -537,6 +553,7 @@ function visitor_maps_options_page() {
    'enable_blog_footer' =>       (isset( $_POST['visitor_maps_enable_blog_footer'] ) ) ? 1 : 0,
    'enable_admin_footer' =>      (isset( $_POST['visitor_maps_enable_admin_footer'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
+   'enable_dash_map' =>          (isset( $_POST['visitor_maps_enable_dash_map'] ) ) ? 1 : 0,
    'default_map' =>          absint(trim($_POST['visitor_maps_default_map'])),
    'default_map_time' =>     absint(trim($_POST['visitor_maps_default_map_time'])),
    'default_map_units' =>           trim($_POST['visitor_maps_default_map_units']),
@@ -635,8 +652,9 @@ if (!$visitor_maps_opt['donated']) {
 <?php echo '
 <p>
 <a href="'.admin_url( 'index.php?page=visitor-maps').'">' . esc_html( __( 'View Who\'s Online', 'visitor-maps' ) ) . '</a>
-</p>';
-echo '<p>'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
+<br />
+'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').
+"</p>\n";
 ?>
 
 <h3><?php echo esc_html( __('Options', 'visitor-maps')) ?></h3>
@@ -677,6 +695,11 @@ echo '<p>'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),ge
       <input name="visitor_maps_enable_state_display" id="visitor_maps_enable_state_display" type="checkbox" <?php if( $visitor_maps_opt['enable_state_display'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_state_display"><?php echo esc_html( __('Enable display of city, state next to country flag.', 'visitor-maps')); ?></label>
       <br />
+
+      <input name="visitor_maps_enable_dash_map" id="visitor_maps_enable_dash_map" type="checkbox" <?php if( $visitor_maps_opt['enable_dash_map'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_enable_dash_map"><?php echo esc_html( __('Enable visitor map on Who\'s Online dashboard.', 'visitor-maps')); ?></label>
+      <br />
+
 
       <?php echo esc_html( __('Default Visitor Map', 'visitor-maps')); ?>
       <label for="visitor_maps_default_map_time"><?php echo esc_html(__('Time:', 'visitor-maps')); ?></label>
