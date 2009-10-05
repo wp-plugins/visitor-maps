@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.1.2
+Version: 1.1.3
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -211,8 +211,8 @@ function visitor_maps_map_short_code() {
 /*     $map_settings = array(
        // html map settings
        // set these settings as needed
-       'time'       => $visitor_maps_opt['track_time'], // digits of time
-       'units'      => 'minutes', // minutes, hours, or days (with or without the "s")
+       'time'       => $visitor_maps_opt['default_map_time'], // digits of time
+       'units'      => $visitor_maps_opt['default_map_units'], // minutes, hours, or days (with or without the "s")
        'map'        => $visitor_maps_opt['default_map'], // 1,2 3, etc.
        'pin'        => '1',       // 1,2,3, etc. (you can add more pin images in settings)
        'pins'       => 'off',     // off (off is required for html map)
@@ -231,7 +231,7 @@ function visitor_maps_map_short_code() {
      echo $this->get_visitor_maps_worldmap($map_settings);*/
 
      // had to disable the dynamic map and replace with this because some WP themes were messing up the pin locations
-     echo '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['track_time'].'&amp;units=minutes&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
+     echo '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
 
      echo '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
      if ($visitor_maps_opt['enable_credit_link']) {
@@ -477,6 +477,8 @@ function visitor_maps_get_options() {
    'enable_admin_footer' =>    1,
    'enable_credit_link' =>     1,
    'default_map' =>            1,
+   'default_map_time' =>       30,
+   'default_map_units' =>      'days',
 
  );
   // install the option defaults
@@ -535,7 +537,9 @@ function visitor_maps_options_page() {
    'enable_blog_footer' =>       (isset( $_POST['visitor_maps_enable_blog_footer'] ) ) ? 1 : 0,
    'enable_admin_footer' =>      (isset( $_POST['visitor_maps_enable_admin_footer'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
-   'default_map' =>              absint(trim($_POST['visitor_maps_default_map'])),
+   'default_map' =>          absint(trim($_POST['visitor_maps_default_map'])),
+   'default_map_time' =>     absint(trim($_POST['visitor_maps_default_map_time'])),
+   'default_map_units' =>           trim($_POST['visitor_maps_default_map_units']),
   );
 
     // deal with quotes
@@ -674,7 +678,29 @@ echo '<p>'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),ge
       <label for="visitor_maps_enable_state_display"><?php echo esc_html( __('Enable display of city, state next to country flag.', 'visitor-maps')); ?></label>
       <br />
 
-      <label for="visitor_maps_default_map"><?php echo esc_html( __('Default Visitor Map', 'visitor-maps')); ?></label>
+      <?php echo esc_html( __('Default Visitor Map', 'visitor-maps')); ?>
+      <label for="visitor_maps_default_map_time"><?php echo esc_html(__('Time:', 'visitor-maps')); ?></label>
+      <input type="text" id="visitor_maps_default_map_time" name="visitor_maps_default_map_time" value="<?php echo absint($visitor_maps_opt['default_map_time']) ?>" size="3" />
+      <label for="visitor_maps_default_map_units"><?php echo esc_html(__('Units:', 'visitor-maps')); ?></label>
+      <select id="visitor_maps_default_map_units" name="visitor_maps_default_map_units">
+<?php
+$map_units_array =array(
+'minutes' => esc_attr(__('minutes', 'visitor-maps')),
+'hours' => esc_attr(__('hours', 'visitor-maps')),
+'days' => esc_attr(__('days', 'visitor-maps')),
+);
+$selected = '';
+foreach ($map_units_array as $k => $v) {
+ if ($visitor_maps_opt['default_map_units'] == "$k")  $selected = ' selected="selected"';
+ echo '<option value="'.$k.'"'.$selected.'>'.$v.'</option>'."\n";
+ $selected = '';
+}
+?>
+</select>
+
+<label for="visitor_maps_default_map"><?php echo esc_html(__('Map:', 'visitor-maps')); ?></label>
+
+
       <select id="visitor_maps_default_map" name="visitor_maps_default_map">
       <?php
        $default_map_select_array = array(

@@ -1,0 +1,969 @@
+# Visitor Maps and Who's Online
+# This file is put in the public domain.
+#
+# Plugin URI: http://www.642weather.com/weather/scripts-visitor-maps.php
+# Description: Visitor Maps for WordPress.
+# Version: 1.1
+# Author: Mike Challis
+# Author URI: http://www.642weather.com/weather/scripts.php
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.1\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/whos-online-pro\n"
+"POT-Creation-Date: 2009-10-01 17:15+0000\n"
+"PO-Revision-Date: 2009-10-04 18:33+0100\n"
+"Last-Translator: Ton Strijbosch <Ton.Strijbosch@Westkreek.nl>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: class-wo-map-page.php:43
+#: class-wo-update.php:82
+#: visitor-maps.php:46
+#: visitor-maps.php:77
+#: visitor-maps.php:99
+#: visitor-maps.php:234
+#: visitor-maps.php:764
+#: visitor-maps.php:1739
+#: visitor-maps.php:1746
+#: visitor-maps.php:1775
+#: visitor-maps.php:1801
+msgid "Visitor Maps"
+msgstr "Visitor Maps"
+
+#: class-wo-map-page.php:45
+#, php-format
+msgid "Select a time period up to %d days ago"
+msgstr "Selecteer een periode tot %d dagen geleden"
+
+#: class-wo-map-page.php:46
+msgid "Time:"
+msgstr "Tijd:"
+
+#: class-wo-map-page.php:48
+msgid "Units:"
+msgstr "Eenheden:"
+
+#: class-wo-map-page.php:52
+#: class-wo-worldmap.php:134
+msgid "minutes"
+msgstr "minuten"
+
+#: class-wo-map-page.php:53
+#: class-wo-worldmap.php:138
+msgid "hours"
+msgstr "uren"
+
+#: class-wo-map-page.php:54
+#: class-wo-worldmap.php:142
+msgid "days"
+msgstr "dagen"
+
+#: class-wo-map-page.php:71
+msgid "Map:"
+msgstr "Kaart:"
+
+#: class-wo-map-page.php:75
+#: visitor-maps.php:677
+msgid "World (smallest)"
+msgstr "Wereld (kleinste)"
+
+#: class-wo-map-page.php:76
+#: visitor-maps.php:678
+msgid "World (small)"
+msgstr "Wereld (klein)"
+
+#: class-wo-map-page.php:77
+#: visitor-maps.php:679
+msgid "World (medium)"
+msgstr "Wereld (gemiddeld)"
+
+#: class-wo-map-page.php:78
+#: visitor-maps.php:680
+msgid "World (large)"
+msgstr "Wereld (groot)"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:80
+msgid "US"
+msgstr "VS"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:109
+msgid "(black)"
+msgstr "(zwart)"
+
+#: class-wo-map-page.php:80
+#: class-wo-map-page.php:82
+#: class-wo-map-page.php:84
+#: class-wo-map-page.php:86
+#: class-wo-map-page.php:88
+#: class-wo-map-page.php:90
+#: class-wo-map-page.php:92
+#: class-wo-map-page.php:94
+#: class-wo-map-page.php:96
+#: class-wo-map-page.php:98
+#: class-wo-map-page.php:100
+#: class-wo-map-page.php:102
+#: class-wo-map-page.php:104
+#: class-wo-map-page.php:106
+#: class-wo-map-page.php:108
+#: class-wo-map-page.php:110
+msgid "(brown)"
+msgstr "(bruin)"
+
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:82
+msgid "Canada and US"
+msgstr "Canada en de VS"
+
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:84
+msgid "Asia"
+msgstr "Azië"
+
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:86
+msgid "Australia and NZ"
+msgstr "Australië en NZ"
+
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:88
+msgid "Europe Central"
+msgstr "Centraal Europa"
+
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:90
+msgid "Europe"
+msgstr "Europa"
+
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:92
+msgid "Finland"
+msgstr "Finland"
+
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:94
+msgid "Great Britain"
+msgstr "Groot Brittanië"
+
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:96
+msgid "US Midwest"
+msgstr "VS Midwesten"
+
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:98
+msgid "US Upper Midwest"
+msgstr "VS Upper Midwesten"
+
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:100
+msgid "US Northeast"
+msgstr "VS Noordoost"
+
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:102
+msgid "US Northwest"
+msgstr "VS Noordwest"
+
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:104
+msgid "US Rocky Mountain"
+msgstr "VS Rocky Mountains"
+
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:106
+msgid "US South"
+msgstr "VS Zuid"
+
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:108
+msgid "US Southeast"
+msgstr "VS Zuidoost"
+
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:110
+msgid "US Southwest"
+msgstr "VS Zuidwest"
+
+#: class-wo-map-page.php:120
+msgid "Go"
+msgstr "Ga"
+
+#: class-wo-update.php:89
+msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
+msgstr "Voorbereiden van een eerste installatie van de Maxmind GeoLiteCity database"
+
+#: class-wo-update.php:94
+msgid "Checking for updates for the Maxmind GeoLiteCity database"
+msgstr "Zoeken naar updates voor de Maxmind GeoLiteCity database"
+
+#: class-wo-update.php:101
+msgid "Connecting to this URL:"
+msgstr "Verbinden met deze URL:"
+
+#: class-wo-update.php:142
+msgid "You have the latest available Maxmind GeoLiteCity database"
+msgstr "Je hebt de laatst beschikbare Maxmind GeoLiteCity database"
+
+#: class-wo-update.php:143
+msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
+msgstr "Let op:  Maxmind werkt GeoLiteCity normaal op de eerste van de maand bij, maar soms later!"
+
+#: class-wo-update.php:144
+#, php-format
+msgid "Maxmind last updated it %1$s (%2$d days ago)"
+msgstr "Maxmind is het laatste bijgewerkt op %1$s (%2$d dagen geleden)"
+
+#: class-wo-update.php:145
+#, php-format
+msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
+msgstr "dit is de <a href=\"%s\" target=\"_new\">laatst beschikbare bestand</a>"
+
+#: class-wo-update.php:147
+#, php-format
+msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
+msgstr "De huidige GeoLiteCity database is bijgewerkt op %s (%d dagen geleden)"
+
+#: class-wo-update.php:148
+msgid "No new updates are available today."
+msgstr "Er zijn vandaag geen nieuwe updates beschikbaar."
+
+#: class-wo-update.php:161
+msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
+msgstr "Fout: Download mislukt, het GeoLiteCity.dat.gz download bestand is niet gevonden"
+
+#: class-wo-update.php:164
+msgid "Download success, uncompressing file, please wait"
+msgstr "Download geslaagd, decomprimeren bestand, a.u.b. wachten"
+
+#: class-wo-update.php:170
+msgid "unzip error: opening GeoLiteCity.dat file"
+msgstr "unzip fout: openen GeoLiteCity.dat bestand"
+
+#: class-wo-update.php:172
+msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
+msgstr "unzip fout: gzopen openen GeoLiteCity.dat.gz bestand"
+
+#: class-wo-update.php:181
+msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
+msgstr "unzip fout: Chmod 0644 GeoLiteCity.dat bestand mislukt"
+
+#: class-wo-update.php:186
+msgid "Error: the GeoLiteCity.dat file was not found"
+msgstr "Fout: the GeoLiteCity.dat niet gevonden"
+
+#: class-wo-update.php:190
+msgid "Install/Update completed"
+msgstr "Installatie/Update compleet"
+
+#: class-wo-update.php:214
+msgid "Testing a lookup with your IP address:"
+msgstr "Testen van een lookup met jouw IP adres:"
+
+#: class-wo-update.php:220
+msgid "test_lookup error: the GeoLiteCity.dat file was not found"
+msgstr "test_lookup fout: the GeoLiteCity.dat file niet gevonden"
+
+#: class-wo-update.php:223
+msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
+msgstr "test_lookup fout: the include-whos-online-geoip.php file niet gevonden"
+
+#: class-wo-update.php:234
+msgid "IP:"
+msgstr "IP:"
+
+#: class-wo-update.php:235
+msgid "City:"
+msgstr "Plaats:"
+
+#: class-wo-update.php:236
+msgid "State Name:"
+msgstr "State Name:"
+
+#: class-wo-update.php:237
+msgid "State Code:"
+msgstr "State Code:"
+
+#: class-wo-update.php:238
+msgid "Country Name:"
+msgstr "Landnaam:"
+
+#: class-wo-update.php:239
+msgid "Country Code:"
+msgstr "Landcode:"
+
+#: class-wo-update.php:240
+msgid "Lat:"
+msgstr "Lat:"
+
+#: class-wo-update.php:241
+msgid "Lon: "
+msgstr "Lon: "
+
+#: class-wo-update.php:245
+msgid "Note: location information was not available, this is normal if on a private network."
+msgstr "Let op: locatie informatie is niet beschikbaar, dit is normaal op een private network."
+
+#: class-wo-update.php:254
+#: visitor-maps.php:35
+#: visitor-maps.php:46
+#: visitor-maps.php:629
+msgid "View Who's Online"
+msgstr "Wie is online"
+
+#: class-wo-update.php:255
+#: class-wo-view.php:103
+#: visitor-maps.php:34
+msgid "Visitor Maps Options"
+msgstr "Visitor maps opties"
+
+#: class-wo-update.php:284
+#: class-wo-view.php:680
+msgid "error: could not connect to remote file"
+msgstr "fout: kon niet verbinden met de remote file"
+
+#: class-wo-update.php:297
+#: class-wo-view.php:693
+msgid "error: fetching timestamp failed for URL, 404 not found?"
+msgstr "fout: ophalen timestamp mislukt voor URL, 404 niet gevonden?"
+
+#: class-wo-update.php:329
+#: class-wo-view.php:725
+msgid "error: fetching timestamp failed for URL 404 not found?"
+msgstr "fout: ophalen timestamp mislukt voor URL, 404 niet gevonden?"
+
+#: class-wo-update.php:342
+#: class-wo-view.php:738
+msgid "error: could not connect to remote URL"
+msgstr "fout: kon niet verbinden met URL"
+
+#: class-wo-update.php:347
+msgid "Please allow plenty of time for the approximately 19meg file to download."
+msgstr "Neem ruim de tijd voor het downloaden van bestand van ongeveer 19 MB."
+
+#: class-wo-update.php:348
+msgid "The time needed depends on your server download speed."
+msgstr "De benodigde tijd is afhankeljk van de download snelheid."
+
+#: class-wo-update.php:349
+msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
+msgstr "Er kan een timeout optreden als de verbinding erg langzaam is waardoor het meer dan 3 minuten duurt."
+
+#: class-wo-update.php:357
+msgid "error: reading or opening file"
+msgstr "fout: lezen of openen bestand"
+
+#: class-wo-update.php:358
+#: class-wo-update.php:376
+msgid "error: cannot write to file, check server permission settings"
+msgstr "fout: kan het bestand niet schrijven, controleer de rechten"
+
+#: class-wo-update.php:359
+msgid "Download started, (counting megs)"
+msgstr "Download gestart, (tellen van MB´s)"
+
+#: class-wo-update.php:383
+msgid "error: CHMOD 0644 download file failed"
+msgstr "fout: CHMOD 0644 van bestand is mislukt"
+
+#: class-wo-view.php:23
+#: class-wo-view.php:31
+msgid "None"
+msgstr "Geen"
+
+#: class-wo-view.php:32
+msgid "All"
+msgstr "Alle"
+
+#: class-wo-view.php:33
+#: class-wo-view.php:450
+msgid "Bots"
+msgstr "Bots"
+
+#: class-wo-view.php:34
+#: class-wo-view.php:446
+msgid "Guests"
+msgstr "Gasten"
+
+#: class-wo-view.php:98
+msgid "Refresh Rate:"
+msgstr "Verversingstijd:"
+
+#: class-wo-view.php:99
+msgid "Profile Display:"
+msgstr "Profiel Weergave:"
+
+#: class-wo-view.php:100
+msgid "Show Bots:"
+msgstr "Toon Bots:"
+
+#: class-wo-view.php:111
+#: class-wo-view.php:525
+msgid "Active Guest"
+msgstr "Actieve gast"
+
+#: class-wo-view.php:113
+#: class-wo-view.php:518
+msgid "Inactive Guest"
+msgstr "Inactieve gast"
+
+#: class-wo-view.php:117
+#: class-wo-view.php:512
+msgid "Active Bot"
+msgstr "Actieve bot"
+
+#: class-wo-view.php:119
+#: class-wo-view.php:509
+msgid "Inactive Bot"
+msgstr "Inactieve bot"
+
+#: class-wo-view.php:131
+msgid "Last refresh at"
+msgstr "Laatste verversing op"
+
+#: class-wo-view.php:142
+msgid "Online"
+msgstr "Online"
+
+#: class-wo-view.php:143
+msgid "Who"
+msgstr "Wie"
+
+#: class-wo-view.php:144
+msgid "IP Address"
+msgstr "IP Adres"
+
+#: class-wo-view.php:145
+msgid "Location"
+msgstr "Locatie"
+
+#: class-wo-view.php:146
+msgid "Entry"
+msgstr "Entry"
+
+#: class-wo-view.php:147
+msgid "Last Click"
+msgstr "Laaste klik"
+
+#: class-wo-view.php:150
+msgid "Last URL"
+msgstr "Laatste URL"
+
+#: class-wo-view.php:153
+msgid "Referer"
+msgstr "Referer"
+
+#: class-wo-view.php:261
+msgid "Guest"
+msgstr "Gast"
+
+#: class-wo-view.php:265
+#: class-wo-view.php:454
+msgid "You"
+msgstr "Jij"
+
+#: class-wo-view.php:283
+msgid "Error"
+msgstr "Fout"
+
+#: class-wo-view.php:298
+msgid "visits"
+msgstr "bezoeken"
+
+#: class-wo-view.php:303
+msgid "host lookups not enabled"
+msgstr "host lookups niet geënabled"
+
+#: class-wo-view.php:325
+msgid "unknown"
+msgstr "onbekend"
+
+#: class-wo-view.php:389
+msgid "No"
+msgstr "Nee"
+
+#: class-wo-view.php:391
+msgid "Yes"
+msgstr "Ja"
+
+#: class-wo-view.php:405
+msgid "Last URL:"
+msgstr "Laatste URL:"
+
+#: class-wo-view.php:428
+#, php-format
+msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
+msgstr "Bezoekers online (inactief na %1$d minuten. Verwijderd na %2$d minuten)"
+
+#: class-wo-view.php:435
+msgid "Duplicate IPs"
+msgstr "Dubbele IPs"
+
+#: class-wo-view.php:442
+msgid "Members (includes you)"
+msgstr "Leden (inclusief jezelf)"
+
+#: class-wo-view.php:446
+msgid "are active"
+msgstr "zijn actief"
+
+#: class-wo-view.php:460
+msgid "Your IP Address:"
+msgstr "Je IP Adres:"
+
+#: class-wo-view.php:466
+msgid "Your Host:"
+msgstr "Je Host:"
+
+#: class-wo-view.php:471
+#: visitor-maps.php:649
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr "Gebruikt GeoLiteCity data gecreëerd door MaxMind, beschikbaar van http://www.maxmind.com"
+
+#: class-wo-view.php:474
+#: class-wo-view.php:478
+#, php-format
+msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
+msgstr "De GeoLiteCity data was het laatst bijgewerkt op %1$s (%2$d dagen geleden)"
+
+#: class-wo-view.php:475
+msgid "an update is available"
+msgstr "Een update is beschikbaar"
+
+#: class-wo-view.php:476
+msgid "click here to update"
+msgstr "click here to update"
+
+#: class-wo-view.php:536
+msgid "User Agent:"
+msgstr "User Agent:"
+
+#: class-wo-view.php:542
+msgid "Host:"
+msgstr "Host:"
+
+#: class-wo-view.php:548
+msgid "Referer:"
+msgstr "Referer:"
+
+#: class-wo-worldmap.php:27
+#: visitor-maps.php:1169
+msgid "error: geolocation data not enabled or installed"
+msgstr "fout: geolocation data niet geënabled of geïnstalleerd"
+
+#: class-wo-worldmap.php:244
+#, php-format
+msgid "%1$d visitors since %2$d %3$s ago"
+msgstr "%1$d bezoekers sinds %2$d %3$s geleden"
+
+#: class-wo-worldmap.php:247
+#, php-format
+msgid "%1$d visitors since %2$d ago"
+msgstr "%1$d bezoekers sinds %2$d geleden"
+
+#: visitor-maps.php:42
+#: visitor-maps.php:498
+msgid "You do not have permissions for managing this option"
+msgstr "Je hebt geen rechten voor deze optie"
+
+#: visitor-maps.php:75
+#, php-format
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "Bekijk meer kaarten in de <a href=\"%s\">Visitor Map Viewer</a>"
+
+#: visitor-maps.php:77
+#: visitor-maps.php:234
+#: visitor-maps.php:764
+#: visitor-maps.php:1746
+#: visitor-maps.php:1775
+#: visitor-maps.php:1801
+msgid "Powered by"
+msgstr "Powered by"
+
+#: visitor-maps.php:168
+msgid "Close"
+msgstr "Sluit"
+
+#: visitor-maps.php:170
+msgid "Powered by Visitor Maps"
+msgstr "Powered by Visitor Maps"
+
+#: visitor-maps.php:175
+#: visitor-maps.php:237
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr "Visitor Maps geolocation is uitgeschakeld."
+
+#: visitor-maps.php:232
+msgid "View more maps in the "
+msgstr "Bekijk meer kaarten in de "
+
+#: visitor-maps.php:232
+msgid "Visitor Map Viewer"
+msgstr "Visitor Map Viewer"
+
+#: visitor-maps.php:348
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr "Visitor Maps plugin heeft de Maxmind GeoLiteCity database nodig."
+
+#: visitor-maps.php:348
+#: visitor-maps.php:651
+msgid "Install Now"
+msgstr "Installeer nu"
+
+#: visitor-maps.php:430
+msgid "Settings"
+msgstr "Instellingen"
+
+#: visitor-maps.php:561
+msgid "Options saved."
+msgstr "Instellingen bewaard."
+
+#: visitor-maps.php:564
+msgid "Visitor Maps and Who's Online Options"
+msgstr "Visitor Maps en Wie is Online Opties"
+
+#: visitor-maps.php:577
+msgid "Changelog"
+msgstr "Wijzigingen"
+
+#: visitor-maps.php:578
+msgid "FAQ"
+msgstr "FAQ"
+
+#: visitor-maps.php:579
+msgid "Rate This"
+msgstr "Rate This"
+
+#: visitor-maps.php:580
+msgid "Support"
+msgstr "Support"
+
+#: visitor-maps.php:581
+#: visitor-maps.php:589
+msgid "Donate"
+msgstr "Doneer"
+
+#: visitor-maps.php:582
+msgid "Free PHP Scripts"
+msgstr "Gratis PHP Scripts"
+
+#: visitor-maps.php:583
+msgid "Contact"
+msgstr "Contact"
+
+#: visitor-maps.php:601
+msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!"
+msgstr "Als je deze plugin nuttig vindt, denk er dan aan om een kleine donatie te doen als bijdrage voor de verdere ontwikkeling. Dank je wel voor je steun!"
+
+#: visitor-maps.php:617
+msgid "I have donated to help contribute for the development of this plugin."
+msgstr "Ik heb een donatie gedaan om bij te dragen aan de ontwikkeling van deze plugin."
+
+#: visitor-maps.php:620
+msgid "Usage"
+msgstr "Gebruik"
+
+#: visitor-maps.php:622
+msgid "Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "Voeg de code <b>[visitor-maps]</b> op een pagina (geen gewone Post). Die pagina wordt je Visitor Maps pagina."
+
+#: visitor-maps.php:622
+#: visitor-maps.php:625
+#: visitor-maps.php:695
+#: visitor-maps.php:708
+#: visitor-maps.php:715
+#: visitor-maps.php:722
+#: visitor-maps.php:735
+#: visitor-maps.php:778
+#: visitor-maps.php:785
+#: visitor-maps.php:792
+#: visitor-maps.php:799
+msgid "help"
+msgstr "help"
+
+#: visitor-maps.php:625
+msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
+msgstr "Voeg de Who's Online sidebar to. Klik op Weergave, Widgets, en sleep de Who's Online widget naar de sidebar kolom rechts."
+
+#: visitor-maps.php:631
+#, php-format
+msgid "<a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">Visitor Map Viewer</a>"
+
+#: visitor-maps.php:634
+msgid "Options"
+msgstr "Opties"
+
+#: visitor-maps.php:637
+#: visitor-maps.php:812
+msgid "Update Options"
+msgstr "Update Opties"
+
+#: visitor-maps.php:645
+msgid "GeoLocation:"
+msgstr "GeoLocation:"
+
+#: visitor-maps.php:651
+msgid "The Maxmind GeoLiteCity database is not yet installed."
+msgstr "De  Maxmind GeoLiteCity database is niet geïnstalleerd."
+
+#: visitor-maps.php:653
+msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
+msgstr "De Maxmind GeoLiteCity database is geïnstalleerd maar niet geënabled (controlleer de instelling)."
+
+#: visitor-maps.php:655
+msgid "The Maxmind GeoLiteCity database is installed and enabled."
+msgstr "De Maxmind GeoLiteCity database is geïnstalleerd en geënabled."
+
+#: visitor-maps.php:661
+msgid "Enable geolocation."
+msgstr "Enable geolocation."
+
+#: visitor-maps.php:662
+msgid "Update Now"
+msgstr "Nu bijwerken"
+
+#: visitor-maps.php:666
+msgid "Enable display of bots on geolocation maps."
+msgstr "Enable de weergave van bots op geolocation maps."
+
+#: visitor-maps.php:670
+msgid "Enable display of city, state next to country flag."
+msgstr "Enable de weergave van de stad, staat naast de landenvlag."
+
+#: visitor-maps.php:673
+msgid "Default Visitor Map"
+msgstr "Default Visitor Map"
+
+#: visitor-maps.php:695
+#: visitor-maps.php:708
+#: visitor-maps.php:715
+#: visitor-maps.php:722
+#: visitor-maps.php:735
+#: visitor-maps.php:778
+#: visitor-maps.php:785
+#: visitor-maps.php:792
+#: visitor-maps.php:799
+msgid "Click for Help!"
+msgstr "Klik voor Help!"
+
+#: visitor-maps.php:697
+msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
+msgstr "Default map die getoond wordt op de Visitor Maps pagina. Controleer de Visitor Maps pagina nadat dit geactiveerd is om er zeker van te zijn dat het goed past. Als de kaart te groot is, kies dan een kleinere."
+
+#: visitor-maps.php:704
+msgid "Visitors:"
+msgstr "Bezoekers:"
+
+#: visitor-maps.php:707
+msgid "Active time (minutes)"
+msgstr "Actieve tijd (minuten)"
+
+#: visitor-maps.php:710
+msgid "Seconds that a visitor is considered \"active\". Default is 5 minutes."
+msgstr "Seconden dat een bezoeker als  \"active\" wordt beschouwd. Default is 5 minuten."
+
+#: visitor-maps.php:714
+msgid "Inactive time (minutes)"
+msgstr "Inactieve tijd (minuten)"
+
+#: visitor-maps.php:717
+msgid "Seconds before a inactive visitor is removed from display. Default is 15 minutes."
+msgstr "Seconden voordat een een inactieve bezoeker verwijderd wordt uit de weergave. Default is 15 minuten."
+
+#: visitor-maps.php:721
+msgid "Days to store visitor data"
+msgstr "Aantal dagen dat bezoekgegevens worden bewaard."
+
+#: visitor-maps.php:724
+msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
+msgstr "Dagen dat bezoekgegevens in de databasetabel woden bewaard. De gegevens worden gebruikt voor de geolocations kaarten. De default is 30 dagen."
+
+#: visitor-maps.php:731
+msgid "Lookups:"
+msgstr "Lookups:"
+
+#: visitor-maps.php:734
+msgid "Who Is Lookup URL"
+msgstr "Wie is lookup URL"
+
+#: visitor-maps.php:737
+msgid "URL to open when an IP address is clicked on."
+msgstr "URL die geopend wordt als er op een IP adres wordt geklikt."
+
+#: visitor-maps.php:742
+msgid "Enable open Who Is Lookup URL on a pop-up."
+msgstr "Enable open Who Is Lookup URL in een pop-up"
+
+#: visitor-maps.php:746
+msgid "Enable host lookups for IP addresses."
+msgstr "Enable host lookups voor IP adressen."
+
+#: visitor-maps.php:753
+msgid "Stats:"
+msgstr "Stats:"
+
+#: visitor-maps.php:756
+msgid "Enable stats display in blog footer."
+msgstr "Enable stats weergave in de voet van de blog."
+
+#: visitor-maps.php:760
+msgid "Enable stats display in admin footer."
+msgstr "Enable stats weergave in de voet van de admin weergave"
+
+#: visitor-maps.php:764
+msgid "Enable plugin credit link:"
+msgstr "Enable plugin credit link:"
+
+#: visitor-maps.php:770
+msgid "Times:"
+msgstr "Tijden:"
+
+#: visitor-maps.php:774
+msgid "Table of date format characters."
+msgstr "Tabel van datum formatteer tekens"
+
+#: visitor-maps.php:777
+msgid "Time format (Max Users Today)"
+msgstr "Tijd formaat (Max Gebruikers Vandaag)"
+
+#: visitor-maps.php:780
+msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
+msgstr "Tijd formaat voor \"Max gebruikers vandaag\" en \"Laatste verversingstijd\" weergave. Default, h:i a T (02:25 pm PST)"
+
+#: visitor-maps.php:784
+msgid "Time format (Last Click)"
+msgstr "Tijd formaat (Laatste Klik)"
+
+#: visitor-maps.php:787
+msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
+msgstr "Tijd formaat voor \"Entry\" en \"Last Click\" weergave. Default, h:i:sa (02:25:25pm)"
+
+#: visitor-maps.php:791
+msgid "Date/Time format (All Time Records)"
+msgstr "Datum/Tijd formaat (Records)"
+
+#: visitor-maps.php:794
+msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Datum/Tijd formaat voor maand, jaar, en records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: visitor-maps.php:798
+msgid "Date/Time format (GeoLite data)"
+msgstr "Datum/Tijd formaat (GeoLite data)"
+
+#: visitor-maps.php:801
+msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Datum/Tijd formaat voor \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: visitor-maps.php:816
+msgid "More WordPress plugins by Mike Challis:"
+msgstr "Meer WordPress plugins van Mike Challis:"
+
+#: visitor-maps.php:818
+msgid "Fast and Secure Contact Form"
+msgstr "Snel en Veilig Contact Formulier"
+
+#: visitor-maps.php:819
+msgid "SI CAPTCHA Anti-Spam"
+msgstr "SI CAPTCHA Anti-Spam"
+
+#. #-#-#-#-#  plugin.pot (PACKAGE VERSION)  #-#-#-#-#
+#. Plugin Name of an extension
+#: visitor-maps.php:820
+msgid "Visitor Maps and Who's Online"
+msgstr "Visitor Maps en Wie is Online"
+
+#: visitor-maps.php:1128
+#: visitor-maps.php:1768
+#: visitor-maps.php:1794
+#, php-format
+msgid "%d visitors online right now"
+msgstr "%d bezoekers online"
+
+#: visitor-maps.php:1129
+#: visitor-maps.php:1769
+#: visitor-maps.php:1795
+#, php-format
+msgid "%d guests"
+msgstr "%d gasten"
+
+#: visitor-maps.php:1130
+#: visitor-maps.php:1770
+#: visitor-maps.php:1796
+#, php-format
+msgid "%d members"
+msgstr "%d leden"
+
+#: visitor-maps.php:1140
+#: visitor-maps.php:1141
+msgid "Max visitors today"
+msgstr "Max bezoekers vandaag"
+
+#: visitor-maps.php:1140
+#: visitor-maps.php:1141
+#: visitor-maps.php:1144
+#: visitor-maps.php:1145
+#: visitor-maps.php:1148
+#: visitor-maps.php:1149
+#: visitor-maps.php:1152
+#: visitor-maps.php:1153
+msgid "at"
+msgstr "op"
+
+#: visitor-maps.php:1144
+#: visitor-maps.php:1145
+msgid "This month"
+msgstr "Deze maand"
+
+#: visitor-maps.php:1148
+#: visitor-maps.php:1149
+msgid "This year"
+msgstr "Dit jaar"
+
+#: visitor-maps.php:1152
+#: visitor-maps.php:1153
+msgid "All time"
+msgstr "Totaal"
+
+#: visitor-maps.php:1739
+#: visitor-maps.php:1751
+#: visitor-maps.php:1772
+#: visitor-maps.php:1798
+msgid "Who's Online"
+msgstr "Wie is online"
+
+#. Plugin URI of an extension
+msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+msgstr "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+
+#. Description of an extension
+msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Donate</a>"
+msgstr "Toont Visitor Maps met locatie pins, stad, en land. Inclusief een Who's Online Sidebar die toont hoeveel gebruikers online zijn. Inclusief een Who's Online admin dashboard om de bezoeker details te zien. De bezoeker details bestaan uit: de pagina die bekeken wordt, IP adres, host lookup, online tijd, stad, staat, land, geolocation maps en meer. Geen API key nodig.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Doneer</a>"
+
+#. Author of an extension
+msgid "Mike Challis"
+msgstr "Mike Challis"
+
+#. Author URI of an extension
+msgid "http://www.642weather.com/weather/scripts.php"
+msgstr "http://www.642weather.com/weather/scripts.php"
+

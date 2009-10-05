@@ -15,8 +15,8 @@ class WoMapPage {
 function do_map_page(){
      global $visitor_maps_opt, $visitor_maps;
 
-$map_time = $visitor_maps_opt['track_time'];  // default
-$map_units = 'minutes'; // default
+$map_time = $visitor_maps_opt['default_map_time'];  // default
+$map_units = $visitor_maps_opt['default_map_units']; // default
 $map_text_color = 'FBFB00';  // default
 $map_text_shadow_color = '3F3F3F';  // default
 $map_selected = $visitor_maps_opt['default_map'];  // default

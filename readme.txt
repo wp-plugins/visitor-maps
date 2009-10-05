@@ -132,6 +132,7 @@ At this point it would be useful to read [Installing WordPress in Your Language]
 
 The following translations are included in the download zip file:
 
+* Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * Turkish (tr_TR) - Translated by Cenkgursu
 * More are needed... Please help translate.
 
@@ -149,6 +150,10 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.1.3 =
+- (05 Oct 2009) - Added option setting to select default time and units for default map for the Visitor Map page.
+- Added Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
+
 = 1.1.2 =
 - (04 Oct 2009) - Fix some WP themes were messing up the pin locations on the Visitor Maps Page
 
@@ -157,7 +162,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 Sorry about that, it is all fixed in this update.
 
 = 1.0.5 =
-- (03 Oct 2009) - Added setting to select default map size for the Visitor Map page.
+- (03 Oct 2009) - 
 - Added the ability to add the Who's Online to the sidebar manually if you do not use widgets. (See FAQ)
 
 = 1.0.4 =
