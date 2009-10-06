@@ -152,7 +152,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 == Changelog ==
 
 = 1.1.5 =
-- (06 Oct 2009) - - Added German (de_DE) - Translated by [JZDM](http://jzdm.de)
+- (06 Oct 2009) - Added German (de_DE) - Translated by [JZDM](http://jzdm.de)
 
 = 1.1.4 =
 - (05 Oct 2009) - Fixed Visitor Map Viewer link on settings page.
