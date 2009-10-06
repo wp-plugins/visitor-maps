@@ -133,6 +133,7 @@ At this point it would be useful to read [Installing WordPress in Your Language]
 The following translations are included in the download zip file:
 
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
+* German (de_DE) - Translated by [JZDM](http://jzdm.de)
 * Turkish (tr_TR) - Translated by Cenkgursu
 * More are needed... Please help translate.
 
@@ -149,6 +150,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.1.5 =
+- (06 Oct 2009) - - Added German (de_DE) - Translated by [JZDM](http://jzdm.de)
 
 = 1.1.4 =
 - (05 Oct 2009) - Fixed Visitor Map Viewer link on settings page.
