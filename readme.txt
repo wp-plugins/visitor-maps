@@ -31,7 +31,7 @@ Features:
 
 Requirements/Restrictions:
 -------------------------
- * Works with Wordpress 2.6+
+ * Works with Wordpress 2.6+, WPMU, and BuddyPress
  * PHP 4.3.9 or above with GD2 library support.
  * 30 megs of server space(with geolocation enabled)
 
