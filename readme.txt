@@ -134,6 +134,7 @@ The following translations are included in the download zip file:
 
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
+* Spanish (es_ES) - Translated by Natalia Pujol
 * Turkish (tr_TR) - Translated by Cenkgursu
 * More are needed... Please help translate.
 
@@ -152,7 +153,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 == Changelog ==
 
 = 1.1.6 =
-- (06 Oct 2009) - Added Spain/Portugal visitor maps.
+- (06 Oct 2009) - Added Spanish (es_ES) - Translated by Natalia Pujol
+- Added Spain/Portugal visitor maps.
 - Added setting to Enable hover labels for location pins on visitor map page (disabled by default).
 Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting. 
 
