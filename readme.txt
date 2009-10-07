@@ -2,7 +2,7 @@
 Contributors: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876
-Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual
+Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
 Requires at least: 2.6
 Tested up to: 2.8.4
 Stable tag: trunk
@@ -124,6 +124,9 @@ Upgrade to version 1.0.5 or higher and add this code to your theme's sidebar.php
 Probably not. Google analytics, webalizer, etc. are already good free web tracking statistics tools.
 I would still like to hear from you if you have an idea of how I can improve this. If your suggestion is useful and easy to code, I might add it.
 [Contact Mike Challis](http://www.642weather.com/weather/contact_us.php)
+
+= Does this work on WPMU or BuddyPress? =
+Yes, If you use WPMU or BuddyPress you can have multiple blogs with individual visitor maps on each one. On WPMU you would install it in `plugins`, not `mu-plugins`. Then each blog owner can have his own settings.
 
 = Is this plugin available in other languages? =
 
