@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.1.5
+Version: 1.1.6
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -207,31 +207,33 @@ function visitor_maps_map_short_code() {
 
    if ($visitor_maps_opt['enable_location_plugin']) {
      // show the map on View Who's Online page
+     if ($visitor_maps_opt['enable_visitor_map_hover']) {
+        $map_settings = array(
+          // html map settings
+          // set these settings as needed
+          'time'       => $visitor_maps_opt['default_map_time'], // digits of time
+          'units'      => $visitor_maps_opt['default_map_units'], // minutes, hours, or days (with or without the "s")
+          'map'        => $visitor_maps_opt['default_map'], // 1,2 3, etc.
+          'pin'        => '1',       // 1,2,3, etc. (you can add more pin images in settings)
+          'pins'       => 'off',     // off (off is required for html map)
+          'text'       => 'on',      // on or off
+          'textcolor'  => '000000',  // any hex color code
+          'textshadow' => 'FFFFFF',  // any hex color code
+          'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
+          'ul_lat'     => '0',       // default 0 for worldmap
+          'ul_lon'     => '0',       // default 0 for worldmap
+          'lr_lat'     => '360',     // default 360 for worldmap
+          'lr_lon'     => '180',     // default 180 for worldmap
+          'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+          'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
+          'type'       => 'png',     // jpg or png (map output type)
+             );
+         echo $this->get_visitor_maps_worldmap($map_settings);
 
-/*     $map_settings = array(
-       // html map settings
-       // set these settings as needed
-       'time'       => $visitor_maps_opt['default_map_time'], // digits of time
-       'units'      => $visitor_maps_opt['default_map_units'], // minutes, hours, or days (with or without the "s")
-       'map'        => $visitor_maps_opt['default_map'], // 1,2 3, etc.
-       'pin'        => '1',       // 1,2,3, etc. (you can add more pin images in settings)
-       'pins'       => 'off',     // off (off is required for html map)
-       'text'       => 'on',      // on or off
-       'textcolor'  => '000000',  // any hex color code
-       'textshadow' => 'FFFFFF',  // any hex color code
-       'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
-       'ul_lat'     => '0',       // default 0 for worldmap
-       'ul_lon'     => '0',       // default 0 for worldmap
-       'lr_lat'     => '360',     // default 360 for worldmap
-       'lr_lon'     => '180',     // default 180 for worldmap
-       'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
-       'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
-       'type'       => 'png',     // jpg or png (map output type)
-          );
-     echo $this->get_visitor_maps_worldmap($map_settings);*/
-
-     // had to disable the dynamic map and replace with this because some WP themes were messing up the pin locations
-     echo '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
+     } else {
+        // had to disable the dynamic map and replace with this because some WP themes were messing up the pin locations
+        echo '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
+     }
 
      echo '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
      if ($visitor_maps_opt['enable_credit_link']) {
@@ -488,6 +490,7 @@ function visitor_maps_get_options() {
    'enable_location_plugin' => 1,
    'enable_state_display' =>   1,
    'show_bots_on_worldmap' =>  1,
+   'enable_visitor_map_hover' => 0,
    'enable_blog_footer' =>     1,
    'enable_admin_footer' =>    1,
    'enable_credit_link' =>     1,
@@ -550,6 +553,7 @@ function visitor_maps_options_page() {
    'enable_location_plugin' =>   (isset( $_POST['visitor_maps_enable_location_plugin'] ) ) ? 1 : 0,
    'enable_state_display' =>     (isset( $_POST['visitor_maps_enable_state_display'] ) ) ? 1 : 0,
    'show_bots_on_worldmap' =>    (isset( $_POST['visitor_maps_show_bots_on_worldmap'] ) ) ? 1 : 0,
+   'enable_visitor_map_hover' => (isset( $_POST['visitor_maps_enable_visitor_map_hover'] ) ) ? 1 : 0,
    'enable_blog_footer' =>       (isset( $_POST['visitor_maps_enable_blog_footer'] ) ) ? 1 : 0,
    'enable_admin_footer' =>      (isset( $_POST['visitor_maps_enable_admin_footer'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
@@ -698,6 +702,14 @@ if (!$visitor_maps_opt['donated']) {
 
       <input name="visitor_maps_enable_dash_map" id="visitor_maps_enable_dash_map" type="checkbox" <?php if( $visitor_maps_opt['enable_dash_map'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_dash_map"><?php echo esc_html( __('Enable visitor map on Who\'s Online dashboard.', 'visitor-maps')); ?></label>
+      <br />
+
+      <input name="visitor_maps_enable_visitor_map_hover" id="visitor_maps_enable_visitor_map_hover" type="checkbox" <?php if( $visitor_maps_opt['enable_visitor_map_hover'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_enable_visitor_map_hover"><?php echo esc_html( __('Enable hover labels for location pins on visitor map page.', 'visitor-maps')); ?></label>
+      <a style="cursor:pointer;" title="<?php echo esc_html( __('Click for Help!', 'visitor-maps')); ?>" onclick="toggleVisibility('visitor_maps_enable_visitor_map_hover_tip');"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_enable_visitor_map_hover_tip">
+      <?php echo esc_html( __('Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting.', 'visitor-maps')); ?>
+      </div>
       <br />
 
 
@@ -1262,6 +1274,8 @@ $C['image_worldmap_33'] = 'wo-seus-black-map.png';   // US Southeast (black)
 $C['image_worldmap_34'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
 $C['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (black)
 $C['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
+$C['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal (black)
+$C['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
 // you can add more, just increment the numbers
 
 $C['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default

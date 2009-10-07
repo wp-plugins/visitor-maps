@@ -29,7 +29,7 @@ function display_map() {
 
 $this->set = array();
 $this->gvar = array();
-// worldmap image names
+// worldmap image names (also set in class-wo-map-page.php and visitor-maps.php)
 // just image names only, do not add any paths
 $this->set['image_worldmap']    = 'wo-worldmap-smallest.jpg';// World (smallest) do not delete this one, it is the default
 $this->set['image_worldmap_1']  = 'wo-worldmap-smallest.jpg';// World (smallest) do not delete this one, it is the default
@@ -68,6 +68,8 @@ $this->set['image_worldmap_33'] = 'wo-seus-black-map.png';   // US Southeast (bl
 $this->set['image_worldmap_34'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
 $this->set['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (black)
 $this->set['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
+$this->set['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal (black)
+$this->set['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
 // you can add more, just increment the numbers
 
 $this->set['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default

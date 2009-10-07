@@ -81,7 +81,7 @@ $map_select_array = array(
 '7'  => __('Canada and US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '8'  => __('Canada and US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '9'  => __('Asia', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'10'  => __('Asia', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'10' => __('Asia', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '11' => __('Australia and NZ', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '12' => __('Australia and NZ', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '13' => __('Europe Central', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
@@ -108,6 +108,8 @@ $map_select_array = array(
 '34' => __('US Southeast', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '35' => __('US Southwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '36' => __('US Southwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'37' => __('Spain/Portugal', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'38' => __('Spain/Portugal', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 );
 $selected = '';
 foreach ($map_select_array as $k => $v) {
@@ -163,6 +165,8 @@ $C['image_worldmap_33'] = 'wo-seus-black-map.png';   // US Southeast (black)
 $C['image_worldmap_34'] = 'wo-seus-brown-map.png';   // US Southeast (brown)
 $C['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (black)
 $C['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
+$C['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal (black)
+$C['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
 */
 
 if ($map_selected == 1) {
@@ -660,6 +664,31 @@ $map_settings = array(
 'lr_lon'     => '-97.54',  // default 180 for worldmap
 'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
 'offset_y'   => '10',      // + or - offset for y axis  - moves pins up,   + moves pins down
+'type'       => 'png',     // jpg or png (map output type)
+);
+echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
+}
+
+if ($map_selected == 37 || $map_selected == 38) {
+echo '<!-- Spain/Portugal Map -->' . "\n";
+$map_settings = array(
+// html map settings for Spain/Portugal Map
+// set these settings as needed
+'time'       => $map_time, // digits of time
+'units'      => $map_units,// minutes, hours, or days (with or without the "s")
+'map'        => $map_selected,  // 1,2,3 (you can add more map images in settings)
+'pin'        => '1',       // 1,2,3 (you can add more pin images in settings)
+'pins'       => 'off',     // off (off is required for html map)
+'text'       => 'on',      // on or off
+'textcolor'  => 'FBFB00',  // any hex color code
+'textshadow' => '3F3F3F',  // any hex color code
+'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
+'ul_lat'     => '45.01',   // default 0 for worldmap
+'ul_lon'     => '-10.69',  // default 0 for worldmap
+'lr_lat'     => '34.56',   // default 360 for worldmap
+'lr_lon'     => '3.13',    // default 180 for worldmap
+'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
 'type'       => 'png',     // jpg or png (map output type)
 );
 echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
