@@ -119,6 +119,21 @@ Upgrade to version 1.0.5 or higher and add this code to your theme's sidebar.php
 ?>
 `
 
+= I can't get the geolite database to install. When I click on it, it tells me "download_file error: cannot write to file, check server permission settings" or "download_file error: reading or opening file" =
+
+Your server's PHP settings is the cause. Possible causes: PHP safe_mode could be enabled, you should turn it off. 
+allow_url_fopen could be disabled, you should turn it on.
+
+If you can, edit your PHP.ini file (usually located in /etc/php.ini or the root folder of your web site) and make sure these two settings are like this:
+safe_mode = Off, allow_url_fopen = On
+
+The geolite database is really just 30 meg file. As a workaround, you can manually download the 
+[GeoLiteCity.dat.gz file from this URL](http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz), 
+unzip it and upload GeoLiteCity.dat to the `/plugins/visitor-maps/` folder. 
+The GeoLiteCity.dat file is the database for the location from IP feature. 
+If the file is missing, the blog should function fine. When the file is not installed, the location information for a user is skipped.
+
+
 = Can you add charts and graphs of visitor activity like Google Analytics? =
 
 Probably not. Google analytics, webalizer, etc. are already good free web tracking statistics tools.
