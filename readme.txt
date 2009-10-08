@@ -119,10 +119,10 @@ Upgrade to version 1.0.5 or higher and add this code to your theme's sidebar.php
 ?>
 `
 
+
 = I can't get the geolite database to install. When I click on it, it tells me "download_file error: cannot write to file, check server permission settings" or "download_file error: reading or opening file" =
 
-Your server's PHP settings is the cause. Possible causes: PHP `safe_mode` could be enabled, you should turn it off. 
-`allow_url_fopen` could be disabled, you should turn it on.
+Your server's PHP settings is the cause. Possible causes: PHP `safe_mode` could be enabled, you should turn it off. `allow_url_fopen` could be disabled, you should turn it on.
 
 If you can, edit your PHP.ini file (usually located in /etc/php.ini or the root folder of your web site) and make sure these two settings are like this:
 `safe_mode = Off`, `allow_url_fopen = On`
