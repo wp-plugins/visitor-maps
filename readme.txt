@@ -121,11 +121,11 @@ Upgrade to version 1.0.5 or higher and add this code to your theme's sidebar.php
 
 = I can't get the geolite database to install. When I click on it, it tells me "download_file error: cannot write to file, check server permission settings" or "download_file error: reading or opening file" =
 
-Your server's PHP settings is the cause. Possible causes: PHP safe_mode could be enabled, you should turn it off. 
-allow_url_fopen could be disabled, you should turn it on.
+Your server's PHP settings is the cause. Possible causes: PHP `safe_mode` could be enabled, you should turn it off. 
+`allow_url_fopen` could be disabled, you should turn it on.
 
 If you can, edit your PHP.ini file (usually located in /etc/php.ini or the root folder of your web site) and make sure these two settings are like this:
-safe_mode = Off, allow_url_fopen = On
+`safe_mode = Off`, `allow_url_fopen = On`
 
 The geolite database is really just 30 meg file. As a workaround, you can manually download the 
 [GeoLiteCity.dat.gz file from this URL](http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz), 
@@ -141,7 +141,7 @@ I would still like to hear from you if you have an idea of how I can improve thi
 [Contact Mike Challis](http://www.642weather.com/weather/contact_us.php)
 
 = Does this work on WPMU or BuddyPress? =
-Yes, If you use WPMU or BuddyPress you can have multiple blogs with individual visitor maps on each one. On WPMU you would install it in `plugins`, not `mu-plugins`. Then each blog owner can have his own settings.
+Yes, If you use WPMU or BuddyPress you can have multiple blogs with individual visitor maps on each one. On WPMU you would install it in `plugins`, not `mu-plugins`. Do not the plugin activate site wide, then each blog owner can have his own visitor map settings and dashboard view.
 
 = Is this plugin available in other languages? =
 
