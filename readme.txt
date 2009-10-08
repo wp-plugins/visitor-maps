@@ -127,7 +127,7 @@ Your server's PHP settings is the cause. Possible causes: PHP `safe_mode` could 
 If you can, edit your PHP.ini file (usually located in /etc/php.ini or the root folder of your web site) and make sure these two settings are like this:
 `safe_mode = Off`, `allow_url_fopen = On`
 
-The geolite database is really just 30 meg file. As a workaround, you can manually download the 
+The geolite database is really just a 30 meg file. As a workaround, you can manually download the 
 [GeoLiteCity.dat.gz file from this URL](http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz), 
 unzip it and upload GeoLiteCity.dat to the `/plugins/visitor-maps/` folder. 
 The GeoLiteCity.dat file is the database for the location from IP feature. 
