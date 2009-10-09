@@ -151,6 +151,7 @@ At this point it would be useful to read [Installing WordPress in Your Language]
 The following translations are included in the download zip file:
 
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
+* French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
@@ -179,7 +180,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 = 1.1.7 =
 - (08 Oct 2009) - Added Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
-- Added French (fr_FR) - Translated by [Whiler](blogs.wittwer.fr)
+- Added French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 
 = 1.1.6 =
 - (06 Oct 2009) - Added Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
