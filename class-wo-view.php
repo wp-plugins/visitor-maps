@@ -316,7 +316,7 @@ echo '<table border="0" width="99%">
                          }
 
                      if ($visitor_maps_opt['whois_url_popup']) {
-                        echo '<a href="'.$visitor_maps_opt['whois_url'] . $whos_online['ip_address'].'" onc="who_is(this.href); return false;" title="'.$this->wo_sanitize_output($this_host).'">'. $whos_online['ip_address'] . "$this_nick</a>" . "\n";
+                        echo '<a href="'.$visitor_maps_opt['whois_url'] . $whos_online['ip_address'].'" onclick="who_is(this.href); return false;" title="'.$this->wo_sanitize_output($this_host).'">'. $whos_online['ip_address'] . "$this_nick</a>" . "\n";
                      } else {
                         echo '<a href="'. $visitor_maps_opt['whois_url'] . $whos_online['ip_address'] . '" title="'.$this->wo_sanitize_output($this_host).'" target="_blank">'. $whos_online['ip_address'] . "$this_nick</a>" . "\n";
                      }

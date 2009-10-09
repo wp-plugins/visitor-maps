@@ -171,6 +171,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.1 =
+- (09 Oct 2009) - Fixed broken popup for IP lookup (broken since several versions ago)
 
 = 1.2 =
 - (09 Oct 2009) - Added feature: Who's Been Online Admin Dashboard
