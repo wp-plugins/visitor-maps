@@ -152,7 +152,7 @@ The following translations are included in the download zip file:
 
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
-* Russian (ru_RU) - Translated by Zhmenia
+* Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
 * Turkish (tr_TR) - Translated by Cenkgursu
 * More are needed... Please help translate.
@@ -176,7 +176,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 - (09 Oct 2009) - Added feature: Who's Been Online Admin Dashboard
 
 = 1.1.7 =
-- (08 Oct 2009) - Added Russian (ru_RU) - Translated by Zhmenia
+- (08 Oct 2009) - Added Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 - Added French (fr_FR) - Translated by [Whiler](blogs.wittwer.fr)
 
 = 1.1.6 =

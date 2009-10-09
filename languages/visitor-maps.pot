@@ -195,14 +195,6 @@ msgstr ""
 msgid "Referer:"
 msgstr ""
 
-#: class-wo-map-page.php:43 class-wo-update.php:82 visitor-maps.php:47
-#: visitor-maps.php:53 visitor-maps.php:67 visitor-maps.php:99
-#: visitor-maps.php:120 visitor-maps.php:256 visitor-maps.php:261
-#: visitor-maps.php:887 visitor-maps.php:1864 visitor-maps.php:1871
-#: visitor-maps.php:1900 visitor-maps.php:1926
-msgid "Visitor Maps"
-msgstr ""
-
 #: class-wo-map-page.php:45
 #, php-format
 msgid "Select a time period up to %d days ago"
