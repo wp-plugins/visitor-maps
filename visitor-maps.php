@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.1.7
+Version: 1.2
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -32,8 +32,29 @@ if (!class_exists('VisitorMaps')) {
 
 function visitor_maps_add_tabs() {
     add_submenu_page('plugins.php', __('Visitor Maps Options', 'visitor-maps'), __('Visitor Maps Options', 'visitor-maps'), 'manage_options', __FILE__,array(&$this,'visitor_maps_options_page'));
-    add_submenu_page('index.php', __('View Who\'s Online', 'visitor-maps'), __('View Who\'s Online', 'visitor-maps'), 'manage_options', 'visitor-maps',array(&$this,'visitor_maps_admin_view'));
+    add_submenu_page('index.php', __('Who\'s Online', 'visitor-maps'), __('Who\'s Online', 'visitor-maps'), 'manage_options', 'visitor-maps',array(&$this,'visitor_maps_admin_view'));
+    add_submenu_page('index.php', __('Who\'s Been Online', 'visitor-maps'), __('Who\'s Been Online', 'visitor-maps'), 'manage_options', 'whos-been-online',array(&$this,'visitor_maps_whos_been_online'));
 }
+
+function visitor_maps_whos_been_online(){
+     global $visitor_maps_opt;
+
+     if ( function_exists('current_user_can') && !current_user_can('manage_options') )
+         die(__('You do not have permissions for managing this option', 'visitor-maps'));
+
+    // show admin Who's Been Online page
+    echo '<div class="wrap">
+    <h2>'.__('Visitor Maps', 'visitor-maps').' - '.__('Who\'s Been Online', 'visitor-maps').'</h2>';
+    require_once(dirname(__FILE__) .'/class-wo-been.php');
+    $wo_view = new WoBeen();
+    $wo_view->view_whos_been_online();
+
+  if ($visitor_maps_opt['enable_credit_link']) {
+    echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+  }
+  echo '</div>';
+
+} // end function visitor_maps_whos_been_online
 
 function visitor_maps_admin_view(){
      global $visitor_maps_opt;
@@ -327,6 +348,43 @@ function wo_map_console(url) {
 //-->
 </script>
 <!-- end visitor maps - settings page header code -->
+<?php
+  } // end if(isset($_GET['page'])
+
+
+// only load this header stuff on the whos online settings page
+if(isset($_GET['page']) && $_GET['page'] == 'whos-been-online' ) {
+?>
+<!-- begin visitor maps - whos been online page header code -->
+<script type="text/javascript" language="JavaScript">
+<!--
+function who_is(url) {
+  window.open(url,"who_is_lookup","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
+}
+function wo_map_console(url) {
+  window.open(url,"wo_map_console","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
+}
+//-->
+</script>
+<style type="text/css">
+.table-top {
+  color: black;
+  background-color: #96C6F5;
+  text-align: left;
+  font-weight: bold;
+}
+.column-dark {
+  color: black;
+  background-color: #F1F8FE;
+  white-space: nowrap;
+}
+.column-light {
+  color: black;
+  background-color: white;
+  white-space: nowrap;
+}
+</style>
+<!-- end visitor maps - whos been online page header code -->
 <?php
   } // end if(isset($_GET['page'])
 

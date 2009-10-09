@@ -4,34 +4,61 @@ Visitor Maps PHP Script by Mike Challis
 Free PHP Scripts - www.642weather.com/weather/scripts.php
 */
 
-class WoView {
+class WoBeen {
     var $wo_visitor_ip;
     var $ip_addrs_active;
     var $set;
 
-function view_whos_online() {
+function view_whos_been_online() {
   global $wpdb, $visitor_maps_opt, $url_visitor_maps, $path_visitor_maps;
 
   $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
 
-// Automatic refresh times in seconds and display names
-//   Time and Display Text order must match between the arrays
-//   "None" is handled separately in the code
-  $refresh_time = array(     30,    60,     120,     300,    600 );
-  $refresh_display = array( '0:30', '1:00', '2:00', '5:00', '10:00' );
-  $refresh_values = array();
-  $refresh_values[] = array('id' => 'none', 'text' => esc_attr( __( 'None', 'visitor-maps' ) ) );
-  $refresh_values[] = array('id' => '30', 'text' => '0:30');
-  $refresh_values[] = array('id' => '60', 'text' => '1:00');
-  $refresh_values[] = array('id' => '120', 'text' => '2:00');
-  $refresh_values[] = array('id' => '300', 'text' => '5:00');
-  $refresh_values[] = array('id' => '600', 'text' => '10:00');
 
-  $show_type = array();
-  $show_type[] = array('id' => '',       'text' => esc_attr( __( 'None', 'visitor-maps' ) ));
-  $show_type[] = array('id' => 'all',    'text' => esc_attr( __( 'All', 'visitor-maps' ) ));
-  $show_type[] = array('id' => 'bots',   'text' => esc_attr( __( 'Bots', 'visitor-maps' ) ));
-  $show_type[] = array('id' => 'guests', 'text' => esc_attr( __( 'Guests', 'visitor-maps' ) ));
+  $show_arr = array();
+  $show_arr[] = array('id' => '',       'text' => esc_attr( __( 'None', 'visitor-maps' ) ));
+  $show_arr[] = array('id' => 'all',    'text' => esc_attr( __( 'All', 'visitor-maps' ) ));
+  $show_arr[] = array('id' => 'bots',   'text' => esc_attr( __( 'Bots', 'visitor-maps' ) ));
+  $show_arr[] = array('id' => 'guests', 'text' => esc_attr( __( 'Guests', 'visitor-maps' ) ));
+
+  $show = '';
+  if ( isset($_GET['show']) && $this->validate_show($_GET['show'])) {
+    $show = $_GET['show'];
+  }
+
+  $sort_by_arr = array();
+  $sort_by_arr[] = array('id' => 'who',      'text' => esc_attr( __( 'Who', 'visitor-maps' ) ));
+  $sort_by_arr[] = array('id' => 'visits',   'text' => esc_attr( __( 'Visits', 'visitor-maps' ) ));
+  $sort_by_arr[] = array('id' => 'time',     'text' => esc_attr( __( 'Last Visit', 'visitor-maps' ) ));
+  $sort_by_arr[] = array('id' => 'ip',       'text' => esc_attr( __( 'IP Address', 'visitor-maps' ) ));
+  $sort_by_arr[] = array('id' => 'location', 'text' => esc_attr( __( 'Location', 'visitor-maps' ) ));
+  $sort_by_arr[] = array('id' => 'url',      'text' => esc_attr( __( 'Last URL', 'visitor-maps' ) ));
+
+  $sort_by_ar = array();
+  $sort_by_ar['who'] = 'name';
+  $sort_by_ar['visits'] = 'num_visits';
+  $sort_by_ar['time'] = 'time_last_click';
+  $sort_by_ar['ip'] = 'ip_address';
+  $sort_by_ar['location'] = 'country_name, city_name';
+  $sort_by_ar['url'] = 'last_page_url';
+
+  $sort_by = 'time';
+  if ( isset($_GET['sort_by']) && $this->validate_sort_by($_GET['sort_by'])) {
+    $sort_by = $_GET['sort_by'];
+  }
+
+  $order_arr = array();
+  $order_arr[] = array('id' => 'desc', 'text' => esc_attr( __( 'Descending', 'visitor-maps' ) ));
+  $order_arr[] = array('id' => 'asc',  'text' => esc_attr( __( 'Ascending', 'visitor-maps' ) ));
+
+  $order_ar = array();
+  $order_ar['desc'] = 'DESC';
+  $order_ar['asc'] = 'ASC';
+
+  $order = 'desc';
+  if ( isset($_GET['order']) && $this->validate_order($_GET['order'])) {
+    $order = $_GET['order'];
+  }
 
   $this->set = array();
   $this->set['allow_refresh'] = 1;
@@ -62,46 +89,34 @@ function view_whos_online() {
   $this->wo_visitor_ip = $this->get_ip_address();
 
 
-$geoip_old = 0;
-if( $visitor_maps_opt['enable_location_plugin'] ){
-  $geoip_file_time = filemtime($this->set['geolite_path'].'GeoLiteCity.dat');
-  //$geoip_file_time = strtotime("-1 month"); // for testing the need to update link
-  // how many calendar days ago?
-  $geoip_days_ago = floor((strtotime(date('Y-m-d'). ' 00:00:00') - strtotime(date('Y-m-d', $geoip_file_time). ' 00:00:00')) / (60*60*24));
-  // is it older than the first of this month?
-  $geoip_begin_month = strtotime( '01-' .date('m') .'-'. date('Y') );
-  if ($geoip_begin_month > $geoip_file_time) {
-    $geoip_old = $this->check_geoip_date($geoip_file_time);
-  }
-
-}
+  // http://www.tonymarston.net/php-mysql/pagination.html
+  if (isset($_GET['pageno']) && is_numeric($_GET['pageno'])) {
+     $pageno = $_GET['pageno'];
+  } else {
+     $pageno = 1;
+  } // if
 
   $numrows = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo);
   $since = $wpdb->get_var("SELECT time_last_click FROM " . $wo_table_wo ." ORDER BY time_last_click ASC LIMIT 1");
-
-// Time to remove old entries
-$xx_mins_ago = (time() - absint(($visitor_maps_opt['track_time'] * 60)));
-
-if ($visitor_maps_opt['store_days'] > 0) {
-       // remove visitor entries that have expired after $visitor_maps_opt['store_days'], save nickname friends
-       $xx_days_ago_time = (time() - (absint($visitor_maps_opt['store_days']) * 60*60*24));
-       $wpdb->query("DELETE from " . $wo_table_wo . "
-                 WHERE (time_last_click < '" . absint($xx_days_ago_time) . "' and nickname = '')
-                  OR   (time_last_click < '" . absint($xx_days_ago_time) . "' and nickname IS NULL)");
-} else {
-       // remove visitor entries that have expired after $visitor_maps_opt['track_time'], save nickname friends
-       $wpdb->query("DELETE from " . $wo_table_wo . "
-                 WHERE (time_last_click < '" . absint($xx_mins_ago) . "' and nickname = '')
-                  OR   (time_last_click < '" . absint($xx_mins_ago) . "' and nickname IS NULL)");
-}
+  $rows_per_page = 25;
+  $lastpage      = ceil($numrows/$rows_per_page);
+  $pageno = (int)$pageno;
+  if ($pageno > $lastpage) {
+      $pageno = $lastpage;
+  }
+  if ($pageno < 1) {
+     $pageno = 1;
+  }
+  $limit = 'LIMIT ' .($pageno - 1) * $rows_per_page .',' .$rows_per_page;
+  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by;
 
 echo '<table border="0" width="99%">
  <tr><td>
-  <form name="wo_view" action="'.admin_url( 'index.php?page=visitor-maps' ).'" method="get">';
-  if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_type, (isset($_GET['show']))? $_GET['show'] : '', 'onchange="this.form.submit();"') . ' ';                             
-  if ($this->set['allow_refresh']) echo esc_html( __( 'Refresh Rate:', 'visitor-maps' ) ) . ' ' . $this->draw_pull_down_menu('refresh', $refresh_values, (isset($_GET['refresh']))? $_GET['refresh'] : '', 'onchange="this.form.submit();"') . ' ';
-  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' <input type="checkbox" name="bots" value="1" onclick="this.form.submit()"' . (isset($_GET['bots']) ? ' checked="checked"': '') . ' /> ';
-  echo '<input type="hidden" name="page" value="visitor-maps" />
+  <form name="wo_been" action="'.admin_url( 'index.php?page=whos-been-online' ).'" method="get">';
+  if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_arr, $show, 'onchange="this.form.submit();"') . ' ';
+  echo esc_html( __( 'Sort:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('sort_by', $sort_by_arr, $sort_by, 'onchange="this.form.submit();"').' ';
+  echo  $this->draw_pull_down_menu('order', $order_arr, $order, 'onchange="this.form.submit();"') . '<br />';
+  echo '<input type="hidden" name="page" value="whos-been-online" />
   </form>
   <a href="'.admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php').'">' . esc_html( __( 'Visitor Maps Options', 'visitor-maps' ) ) . "</a>\n";
   if ( $visitor_maps_opt['enable_location_plugin'] ) {
@@ -133,14 +148,31 @@ echo '<table border="0" width="99%">
 
 
  <table border="0" cellspacing="2" cellpadding="2" width="99%">
-  <tr>
+ <tr>
    <td align="center">
      <b><?php echo sprintf(__('%1$d visitors since %2$s', 'visitor-maps'),(int)$numrows,date($visitor_maps_opt['date_time_format'],(int)$since)); ?></b>
    </td>
  </tr>
- <tr>
-   <td align="center">
-     <b><?php echo esc_html( __( 'Last refresh at', 'visitor-maps' ) ) .' '.  date( $visitor_maps_opt['time_format'] ); ?></b>
+  <tr>
+   <td align="left">
+     <?php
+   if ($pageno == 1) {
+     echo ' &laquo;'.__( 'FIRST', 'visitor-maps' ).' &lsaquo;'.__( 'PREV', 'visitor-maps' );
+   } else {
+       echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=1$getstring>&laquo;".__( 'FIRST', 'visitor-maps' )."</a> ";
+          $prevpage = $pageno-1;
+       echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=$prevpage$getstring>&lsaquo;".__( 'PREV', 'visitor-maps' )."</a> ";
+   } // if
+    echo ' ('.sprintf(__('Page %1$d of %2$d','visitor-maps'),$pageno, $lastpage).') ';
+   if ($pageno == $lastpage) {
+      echo " ".__( 'NEXT', 'visitor-maps' )."&rsaquo; ".__( 'LAST', 'visitor-maps' )."&raquo; ";
+   } else {
+     $nextpage = $pageno+1;
+     echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=$nextpage$getstring>".__( 'NEXT', 'visitor-maps' )."&rsaquo;</a> ";
+     echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=$lastpage$getstring>".__( 'LAST', 'visitor-maps' )."&raquo;</a> ";
+   } // if
+
+   ?>
    </td>
  </tr>
  <tr>
@@ -151,12 +183,12 @@ echo '<table border="0" width="99%">
                <table border="0" cellspacing="0" cellpadding="2" width="99%">
                <tr class="table-top">
                   <td>&nbsp;</td>
-                  <td>&nbsp;<?php echo esc_html( __( 'Online', 'visitor-maps' ) );  ?></td>
                   <td>&nbsp;<?php echo esc_html( __( 'Who', 'visitor-maps' ) ); ?></td>
+                  <td>&nbsp;<?php echo esc_html( __( 'Visits', 'visitor-maps' ) ) ; ?></td>
+                  <td>&nbsp;<?php echo esc_html( __( 'Last Visit', 'visitor-maps' ) ) ; ?></td>
                   <?php if ($this->set['allow_ip_display']) echo '<td>&nbsp;'. esc_html( __( 'IP Address', 'visitor-maps' ) ) .'</td> '; ?>
                   <?php if ($visitor_maps_opt['enable_location_plugin']) echo '<td>&nbsp;'. esc_html( __( 'Location', 'visitor-maps' ) )  .'</td> '; ?>
-                  <td>&nbsp;<?php echo esc_html( __( 'Entry', 'visitor-maps' ) ) ; ?></td>
-                  <td>&nbsp;<?php echo esc_html( __( 'Last Click', 'visitor-maps' ) ) ; ?></td>
+
                   <?php
                                     if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( !isset($_GET['show']) || $_GET['show'] == '' ) )  ) {
                     echo '<td>&nbsp;'. esc_html( __( 'Last URL', 'visitor-maps' ) ) .'</td> ';
@@ -198,8 +230,8 @@ echo '<table border="0" width="99%">
         time_last_click,
         num_visits
             FROM " . $wo_table_wo . "
-            WHERE time_last_click > '" . $xx_mins_ago . "'
-            ORDER BY time_last_click DESC", ARRAY_A);
+            ORDER BY ".$sort_by_ar[$sort_by]." ".$order_ar[$order]." $limit", ARRAY_A);
+
 
   $total_sess = 0;
   foreach ($whos_online_arr as $whos_online) {
@@ -261,9 +293,6 @@ echo '<table border="0" width="99%">
         <!-- Status Light -->
         <td align="left" valign="top"><?php echo $this->check_status($whos_online); ?></td>
 
-        <!-- Time Online -->
-        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo $this->time_online($time_online); ?></font></td>
-
         <!-- Name -->
         <?php
         echo '
@@ -298,6 +327,15 @@ echo '<table border="0" width="99%">
 
               if ($this->set['allow_ip_display']) {
               ?>
+
+
+        <!-- Visits -->
+        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo $whos_online['num_visits'] ?></font></td>
+
+        <!-- Last Visit -->
+        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo date($visitor_maps_opt['date_time_format'], $whos_online['time_last_click']); ?></font></td>
+
+
 
         <!-- IP Address -->
         <td valign="top">&nbsp;
@@ -368,11 +406,6 @@ echo '<table border="0" width="99%">
          }
         ?>
 
-        <!-- Time Entry -->
-        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo date($visitor_maps_opt['time_format_hms'], $whos_online['time_entry']); ?></font></td>
-
-        <!-- Last Click -->
-        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo date($visitor_maps_opt['time_format_hms'], $whos_online['time_last_click']); ?></font></td>
 
               <?php
               if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( !isset($_GET['show']) || $_GET['show'] == '' ) )  ) {
@@ -432,69 +465,7 @@ echo '<table border="0" width="99%">
         } // closes if (!($is_bot
    } // closes while ($whos_online
 ?>
-                        <tr>
-                          <td colspan="9"><br />
-                            <table border="0" cellpadding="0" cellspacing="3" width="600">
-                              <tr>
-                              <td align="right"><?php print "$total_sess" ?></td>
-                              <td align="left"><?php echo sprintf( __( 'Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)', 'visitor-maps'),absint($visitor_maps_opt['active_time']),absint($visitor_maps_opt['track_time'])  );?></td>
-                                </tr>
-                                <?php
-                                if ($total_dupes > 0) {
-                                ?>
-                                <tr>
-                                    <td align="right"><?php print "$total_dupes" ?></td>
-                                    <td align="left""><?php echo esc_html( __( 'Duplicate IPs', 'visitor-maps' ) ); ?></td>
-                                </tr>
-                                <?php
-                                }
-                                ?>
-                                <tr>
-                                    <td align="right"><?php print "$total_users" ?></td>
-                                    <td><?php echo esc_html( __( 'Members (includes you)', 'visitor-maps' ) ); ?></td>
-                                </tr>
-                                <tr>
-                                    <td align="right"><?php print "$total_guests" ?></td>
-                                    <td><?php echo esc_html( __( 'Guests', 'visitor-maps' ) ); if(count($this->ip_addrs_active) > 0) echo ', <font color="' . $this->set['color_guest'] . '">' . count($this->ip_addrs_active) . ' '.esc_html( __( 'are active', 'visitor-maps' ) ) . '</font>'; ?></td>
-                                </tr>
-                                <tr>
-                                    <td align="right"><?php print "$total_bots" ?></td>
-                                    <td><?php echo esc_html( __( 'Bots', 'visitor-maps' ) ); ?></td>
-                                </tr>
-                                <tr>
-                                <td align="right"><?php print "$total_admin" ?></td>
-                                <td><?php echo esc_html( __( 'You', 'visitor-maps' ) ); ?></td>
-                              </tr>
-                            </table>
-                            <br />
-                            <?php
-                            if ($this->set['allow_ip_display']) {
-                              echo esc_html( __( 'Your IP Address:', 'visitor-maps' ) ) . ' '.$this->wo_sanitize_output($this->wo_visitor_ip);
-                            }
-                            if ($visitor_maps_opt['enable_host_lookups']) {
-                              $this_host = ($this->set['hostname'] != '') ? $this->host_to_domain($this->set['hostname']) : 'n/a';
-                              // Display Hostname
-                              echo '<br />
-                              '.esc_html( __( 'Your Host:', 'visitor-maps' ) ).' (' . $this->wo_sanitize_output($this_host) . ') '. $this->wo_sanitize_output($this->set['hostname']);
-                            }
 
-                            //------------------------ geoip lookup -------------------------
-                            if ( $visitor_maps_opt['enable_location_plugin'] ) {
-                               echo '<p>'.esc_html( __( 'Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com', 'visitor-maps' ) ).'<br />';
-                               if( $geoip_old ){
-                                   echo '<span style="color:red">'.
-                                   sprintf( __('The GeoLiteCity data was last updated on %1$s (%2$d days ago)','visitor-maps'),date($visitor_maps_opt['geoip_date_format'], $geoip_file_time),$geoip_days_ago).' '.
-                                   esc_html( __( 'an update is available', 'visitor-maps' ) ).',
-                                   <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&do_geo=1">'.esc_html( __( 'click here to update', 'visitor-maps' ) ).'</a></span>';
-                               } else {
-                                   echo sprintf(__('The GeoLiteCity data was last updated on %1$s (%2$d days ago)','visitor-maps'),date($visitor_maps_opt['geoip_date_format'], $geoip_file_time),$geoip_days_ago);                                               ;
-                               }
-                               echo '</p>';
-                            }
-                            //------------------------ geoip lookup -------------------------
-                            ?>
-                          </td>
-                        </tr>
                       </table>
                     </td>
 
@@ -502,6 +473,28 @@ echo '<table border="0" width="99%">
                 </table>
               </td>
             </tr>
+              <tr>
+   <td align="left">
+     <?php
+   if ($pageno == 1) {
+     echo ' &laquo;'.__( 'FIRST', 'visitor-maps' ).' &lsaquo;'.__( 'PREV', 'visitor-maps' );
+   } else {
+       echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=1$getstring>&laquo;".__( 'FIRST', 'visitor-maps' )."</a> ";
+          $prevpage = $pageno-1;
+       echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=$prevpage$getstring>&lsaquo;".__( 'PREV', 'visitor-maps' )."</a> ";
+   } // if
+    echo ' ('.sprintf(__('Page %1$d of %2$d','visitor-maps'),$pageno, $lastpage).') ';
+   if ($pageno == $lastpage) {
+      echo " ".__( 'NEXT', 'visitor-maps' )."&rsaquo; ".__( 'LAST', 'visitor-maps' )."&raquo; ";
+   } else {
+     $nextpage = $pageno+1;
+     echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=$nextpage$getstring>".__( 'NEXT', 'visitor-maps' )."&rsaquo;</a> ";
+     echo " <a href=".admin_url( 'index.php?page=whos-been-online' )."&amp;pageno=$lastpage$getstring>".__( 'LAST', 'visitor-maps' )."&raquo;</a> ";
+   } // if
+
+   ?>
+   </td>
+ </tr>
           </table>
 
 <?php
@@ -572,7 +565,7 @@ echo '<table border="0" width="99%">
 
     if ($this->wo_not_null($parameters)) $field .= ' ' . $parameters;
 
-    $field .= '>';
+    $field .= '>'."\n";
 
     if (empty($default) && ( (isset($_GET[$name]) && is_string($_GET[$name])) || (isset($_POST[$name]) && is_string($_POST[$name])) ) ) {
       if (isset($_GET[$name]) && is_string($_GET[$name])) {
@@ -588,9 +581,9 @@ echo '<table border="0" width="99%">
         $field .= ' selected="selected"';
       }
 
-      $field .= '>' . $this->wo_output_string($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>';
+      $field .= '>' . $this->wo_output_string($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>'."\n";
     }
-    $field .= '</select>';
+    $field .= '</select>'."\n";
 
     if ($required == true) $field .= 'Required';
 
@@ -606,150 +599,6 @@ function time_online ($time_online) {
     $secs = (int) intval($time_online / 1);
     return sprintf("%02d:%02d:%02d", $hrs, $mns, $secs);
  }
-
-function check_geoip_date($geoip_file_time) {
-   global $visitor_maps_opt, $wpdb, $path_visitor_maps;
-
-  // checking for a newer maxmind geo database update file
-  // Maxmind usually updates their file on the 1st of the month, but sometimes it is the 2nd, or 3rd of the month.
-  // Now it only notifies you when there actually is a new file available.
-
-  $wo_table_ge = $wpdb->prefix . 'visitor_maps_ge';
-
-  // check timestamp
-  $time_last_check = $wpdb->get_var("SELECT time_last_check FROM " . $wo_table_ge);
-
-  // was a timestamp there?
-  if (!$time_last_check ) {
-     // jump start the timestamp now
-     //echo "jump starting the timestamp now...<br />";
-     $time_last_check   = time() - (7 * 60*60);
-     $wpdb->query("INSERT INTO " . $wo_table_ge . " (`time_last_check`) VALUES ('" .absint($time_last_check ) . "');");
-  }
-
-  // have I checked this already in the last 6 hours?
-  if ($time_last_check < time() - (6 * 60*60) ) { // $time_last_check more than 6 hours ago
-           // time to check it again, reset the needs_update flag first
-           //echo "resetting the needs_update flag...<br />";
-           $wpdb->query("UPDATE " . $wo_table_ge . " SET needs_update = '0'");
-
-           // get last updated time of the maxmind geo database remote file
-           // echo "checking the maxmind timestamp now...<br />";
-           $remote_file_time = $this->curl_last_mod('http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz');
-  } else {
-          // using the cached results
-          // check needs_update flag
-          $update_flag  = $wpdb->get_var("SELECT needs_update FROM " . $wo_table_ge);
-          if ($update_flag == 1) {
-                  //echo "needs update (cached result)...<br />";
-                  return 1;
-          } else {
-                 //echo "does not need update(cached result from less than 6 hours ago)...<br />";
-                 return 0;
-          }
-  }
-
-  // set a new timestamp
-  //echo "set a new timestamp (now)...<br />";
-  $wpdb->query("UPDATE " . $wo_table_ge . " SET time_last_check = '" . time() . "'");
-
-  // sanity check the remote date
-  if ($remote_file_time < (time() - (365*24*60*60)) ) { // $remote_file_time less than 1 year ago
-           echo "Warning: The last modified date of the Maxmind GeoLiteCity database ($remote_file_time) is out of expected range<br />";
-           return 0;
-  }
-  if ($remote_file_time > $geoip_file_time ) {
-         //echo "needs update...<br />";
-         // set needs_update flag
-         $wpdb->query("UPDATE " . $wo_table_ge . " SET needs_update = '1'");
-         return 1;
-  }
-  //echo "does not need update...<br />";
-  return 0;
-} // end function check_geoip_date
-
-
-function curl_last_mod($remote_file) {
-    // return unix timestamp (last_modified) from a remote URL file
-
-    if ( !function_exists('curl_init') ) {
-       return $this->http_last_mod($remote_file,1);
-    }
-
-    $last_modified = $ch = $resultString = $headers = '';
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)');
-    curl_setopt($ch, CURLOPT_URL, $remote_file);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 15); // 5 sec timeout
-    curl_setopt($ch, CURLOPT_HEADER, 1);  // make sure we get the header
-    curl_setopt($ch, CURLOPT_NOBODY, 1);  // make it a http HEAD request
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // write the response to a variable
-    curl_setopt($ch, CURLOPT_FILETIME, 1 );
-
-    $i = 1;
-    while ($i++ <= 2) {
-       if(curl_exec($ch) === false){
-               $this->error_exit('curl_last_mod '. __( 'error: could not connect to remote file', 'visitor-maps' )); // could not connect
-               //   echo 'Curl error: ' . curl_error($ch);
-               //   exit;
-       }
-       $headers = curl_getinfo($ch);
-       if ($headers['http_code'] != 200) {
-          sleep(3);  // Let's wait 3 seconds to see if its a temporary network issue.
-       } else if ($headers['http_code'] == 200) {
-          // we got a good response, drop out of loop.
-          break;
-       }
-    }
-    $last_modified = $headers['filetime'];
-    if ($headers['http_code'] != 200) $this->error_exit('curl_last_mod '. __( 'error: fetching timestamp failed for URL, 404 not found?', 'visitor-maps' )); // remote file not found
-    curl_close ($ch);
-
-  // sanity check the remote_file date
-  // sometimes CURL returns -1 instead of the timestamp on some peoples servers
-  // use http to check the date instead.
-  if ($last_modified < (time() - (365*24*60*60)) ) { // $remote_file_time less than 1 year ago
-       return $this->http_last_mod($remote_file,1);
-  }
-
-    return $last_modified;
-} // end of curl_last_mod function
-
-function http_last_mod($url,$format=0) {
-  $url_info=parse_url($url);
-  $port = isset($url_info['port']) ? $url_info['port'] : 80;
-  $fp=fsockopen($url_info['host'], $port, $errno, $errstr, 15);
-  if($fp) {
-    $head = "HEAD ".@$url_info['path']."?".@$url_info['query'];
-    $head .= " HTTP/1.0\r\n";
-    $head .= "Host: ".@$url_info['host']."\r\n";
-    $head .= "User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)\r\n\r\n";
-    fputs($fp, $head);
-    while(!feof($fp)) {
-      if($header=trim(fgets($fp, 1024))) {
-        if($format == 1) {
-          $h2 = explode(': ',$header);
-          // the first element is the http header type, such as HTTP/1.1 200 OK,
-          // it doesn't have a separate name, so we have to check for it.
-          if($h2[0] == $header) {
-            $headers['status'] = $header;
-              if (! preg_match('|HTTP/1.* 200 OK|i',$header)) {
-                $this->error_exit('http_last_mod'. __( 'error: fetching timestamp failed for URL 404 not found?', 'visitor-maps' ));
-              }
-          } else {
-            $headers[strtolower($h2[0])] = trim($h2[1]);
-          }
-        } else {
-          $headers[] = $header;
-        }
-      }
-    }
-          fclose($fp);
-          return strtotime($headers['last-modified']);
-  } else {
-         $this->error_exit('http_last_mod'. __( 'error: could not connect to remote URL', 'visitor-maps' ));
-  }
-} // end of function http_last_mod
 
 function get_ip_address() {
    // determine the visitors ip address
@@ -909,6 +758,32 @@ function wo_sanitize_output($output) {
     return htmlspecialchars($output);
 } // end function wo_sanitize_output
 
+ function validate_sort_by($string) {
+ // only allow if in array
+  $allowed = array('who','visits','time','ip','location','url');
+ if ( in_array($string, $allowed) ) {
+    return true;
+ }
+ return false;
+} // end function validate_sort_by
+
+ function validate_order($string) {
+ // only allow if in array
+  $allowed = array('desc','asc');
+ if ( in_array($string, $allowed) ) {
+    return true;
+ }
+ return false;
+} // end function validate_order
+
+ function validate_show($string) {
+ // only allow if in array
+  $allowed = array('all','bots','guests');
+ if ( in_array($string, $allowed) ) {
+    return true;
+ }
+ return false;
+} // end function validate_show
 
 function error_exit($error) {
 

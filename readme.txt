@@ -171,6 +171,10 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+
+= 1.2 =
+- (09 Oct 2009) - Added feature: Who's Been Online Admin Dashboard
+
 = 1.1.7 =
 - (08 Oct 2009) - Added Russian (ru_RU) - Translated by Zhmenia
 - Added French (fr_FR) - Translated by [Whiler](blogs.wittwer.fr)
