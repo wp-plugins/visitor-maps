@@ -134,6 +134,10 @@ The GeoLiteCity.dat file is the database for the location from IP feature.
 If the file is missing, the blog should function fine. When the file is not installed, the location information for a user is skipped.
 
 
+= Why are all the location pins about 10 pixels too low on the visitor map? =
+Some themes interfere with the proper display of the location pins on the Visitor Maps page. 
+Uncheck the setting "Enable hover labels for location pins on visitor map page."  
+
 = Can you add charts and graphs of visitor activity like Google Analytics? =
 
 Probably not. Google analytics, webalizer, etc. are already good free web tracking statistics tools.
