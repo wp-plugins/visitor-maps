@@ -60,6 +60,11 @@ function view_whos_been_online() {
     $order = $_GET['order'];
   }
 
+  $bots = '';
+  if ( isset($_GET['bots']) && $_GET['bots'] == 'show') {
+    $bots = 'show';
+  }
+
   $this->set = array();
   $this->set['allow_refresh'] = 1;
   $this->set['allow_profile_display'] = 1;
@@ -108,14 +113,15 @@ function view_whos_been_online() {
      $pageno = 1;
   }
   $limit = 'LIMIT ' .($pageno - 1) * $rows_per_page .',' .$rows_per_page;
-  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by;
+  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by.'&amp;bots='.$bots;
 
 echo '<table border="0" width="99%">
  <tr><td>
   <form name="wo_been" action="'.admin_url( 'index.php?page=whos-been-online' ).'" method="get">';
   if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_arr, $show, 'onchange="this.form.submit();"') . ' ';
   echo esc_html( __( 'Sort:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('sort_by', $sort_by_arr, $sort_by, 'onchange="this.form.submit();"').' ';
-  echo  $this->draw_pull_down_menu('order', $order_arr, $order, 'onchange="this.form.submit();"') . '<br />';
+  echo  $this->draw_pull_down_menu('order', $order_arr, $order, 'onchange="this.form.submit();"') . ' ';
+  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' <input type="checkbox" name="bots" value="show" onclick="this.form.submit()"' . ($_GET['bots'] == 'show' ? ' checked="checked"': '') . ' /><br />';
   echo '<input type="hidden" name="page" value="whos-been-online" />
   </form>
   <a href="'.admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php').'">' . esc_html( __( 'Visitor Maps Options', 'visitor-maps' ) ) . "</a>\n";

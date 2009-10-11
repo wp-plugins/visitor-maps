@@ -176,6 +176,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.2 =
+- (10 Oct 2009) - Fixed show bots on Who's Been Online Admin Dashboard
+
 = 1.2.1 =
 - (09 Oct 2009) - Fixed broken popup for IP lookup (broken since several versions ago)
 

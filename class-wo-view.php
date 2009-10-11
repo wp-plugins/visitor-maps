@@ -572,7 +572,7 @@ echo '<table border="0" width="99%">
 
     if ($this->wo_not_null($parameters)) $field .= ' ' . $parameters;
 
-    $field .= '>';
+    $field .= '>'."\n";
 
     if (empty($default) && ( (isset($_GET[$name]) && is_string($_GET[$name])) || (isset($_POST[$name]) && is_string($_POST[$name])) ) ) {
       if (isset($_GET[$name]) && is_string($_GET[$name])) {
@@ -588,9 +588,9 @@ echo '<table border="0" width="99%">
         $field .= ' selected="selected"';
       }
 
-      $field .= '>' . $this->wo_output_string($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>';
+      $field .= '>' . $this->wo_output_string($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>'."\n";
     }
-    $field .= '</select>';
+    $field .= '</select>'."\n";
 
     if ($required == true) $field .= 'Required';
 
