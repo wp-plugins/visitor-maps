@@ -473,10 +473,10 @@ echo '<table border="0" width="99%">
                               echo esc_html( __( 'Your IP Address:', 'visitor-maps' ) ) . ' '.$this->wo_sanitize_output($this->wo_visitor_ip);
                             }
                             if ($visitor_maps_opt['enable_host_lookups']) {
-                              $this_host = ($this->set['hostname'] != '') ? $this->host_to_domain($this->set['hostname']) : 'n/a';
+                              $this_host = (isset($this->set['hostname']) && $this->set['hostname'] != '') ? $this->host_to_domain($this->set['hostname']) : 'n/a';
                               // Display Hostname
                               echo '<br />
-                              '.esc_html( __( 'Your Host:', 'visitor-maps' ) ).' (' . $this->wo_sanitize_output($this_host) . ') '. $this->wo_sanitize_output($this->set['hostname']);
+                              '.esc_html( __( 'Your Host:', 'visitor-maps' ) ).' (' . $this->wo_sanitize_output($this_host) . ') '. $this->wo_sanitize_output((isset($this->set['hostname']) && $this->set['hostname'] != '') ? $this->set['hostname'] : 'n/a');
                             }
 
                             //------------------------ geoip lookup -------------------------

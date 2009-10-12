@@ -157,6 +157,7 @@ The following translations are included in the download zip file:
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
+* Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
 * Turkish (tr_TR) - Translated by Cenkgursu
@@ -175,6 +176,11 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.2.4 =
+- (12 Oct 2009) - Added Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
+- Fixed UTF-8 encoding for geolocation city names.
+- Fixed preservation of GeoLiteCity.dat file timestamp during plugin upgrade.
 
 = 1.2.3 =
 - (11 Oct 2009) - Fixed visitor map images not working on systems with PHP `allow_url_fopen` disabled.

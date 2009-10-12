@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.2.3
+Version: 1.2.4
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -1178,6 +1178,17 @@ function get_location_info($user_ip) {
   $location_info['latitude']     = (isset($record->latitude)) ? $record->latitude : '0';
   $location_info['longitude']    = (isset($record->longitude)) ? $record->longitude : '0';
 
+  // this fixes accent characters on UTF-8
+  if ($location_info['city_name'] != '' && strtolower(get_option('blog_charset')) == 'utf-8') {
+     $location_info['city_name'] = utf8_encode($location_info['city_name']);
+  }
+  if ($location_info['state_name'] != '' && strtolower(get_option('blog_charset')) == 'utf-8') {
+     $location_info['state_name'] = utf8_encode($location_info['state_name']);
+  }
+  if ($location_info['country_name'] != '' && strtolower(get_option('blog_charset')) == 'utf-8') {
+     $location_info['country_name'] = utf8_encode($location_info['country_name']);
+  }
+
   return $location_info;
 }
 
@@ -1443,7 +1454,7 @@ $C['image_pin_3'] = 'wo-pin-green5x5.jpg';
   if ( isset($MS['pin']) && is_numeric($MS['pin']) ) {
      $G['pin'] = floor($MS['pin']);
      $image_pin = $url_visitor_maps . 'images/'. $C['image_pin_'.$G['pin']];
-     $image_pin_path = $path_visitor_maps . 'images/'. $C['image_pin_'.$G['pin']]; 
+     $image_pin_path = $path_visitor_maps . 'images/'. $C['image_pin_'.$G['pin']];
      if (!file_exists($path_visitor_maps .'images/' . $C['image_pin_'.$G['pin']])) {
           $image_pin = $url_visitor_maps .'images/' . $C['image_pin'];  // default
           $image_pin_path = $path_visitor_maps .'images/' . $C['image_pin'];  // default
@@ -1939,7 +1950,7 @@ function visitor_maps_upgrader_backup() {
     $to = WP_CONTENT_DIR .'/visitor-maps-backup';
     if (is_file($from)) {
         if (!is_dir($to)) mkdir($to);
-        if (is_dir($to))  copy($from, $to.'/GeoLiteCity.dat');
+        if (is_dir($to))  rename($from, $to.'/GeoLiteCity.dat');
     }
 
 } // end function visitor_maps_upgrader_backup
@@ -1949,9 +1960,8 @@ function visitor_maps_upgrader_restore() {
     $to = dirname(__FILE__).'/GeoLiteCity.dat';
     $from = WP_CONTENT_DIR .'/visitor-maps-backup';
     if (is_file($from.'/GeoLiteCity.dat')) {
-        copy($from.'/GeoLiteCity.dat', $to);
+        rename($from.'/GeoLiteCity.dat', $to);
         chmod($to, 0644);
-        unlink($from.'/GeoLiteCity.dat');
 	    rmdir($from);
     }
 
