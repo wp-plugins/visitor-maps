@@ -1178,15 +1178,17 @@ function get_location_info($user_ip) {
   $location_info['latitude']     = (isset($record->latitude)) ? $record->latitude : '0';
   $location_info['longitude']    = (isset($record->longitude)) ? $record->longitude : '0';
 
-  // this fixes accent characters on UTF-8
-  if ($location_info['city_name'] != '' && strtolower(get_option('blog_charset')) == 'utf-8') {
-     $location_info['city_name'] = utf8_encode($location_info['city_name']);
-  }
-  if ($location_info['state_name'] != '' && strtolower(get_option('blog_charset')) == 'utf-8') {
-     $location_info['state_name'] = utf8_encode($location_info['state_name']);
-  }
-  if ($location_info['country_name'] != '' && strtolower(get_option('blog_charset')) == 'utf-8') {
-     $location_info['country_name'] = utf8_encode($location_info['country_name']);
+  // this fixes accent characters on UTF-8, only when the blog charset is set to UTF-8
+  if ( strtolower(get_option('blog_charset')) == 'utf-8' && function_exists('utf8_encode') ) {
+    if ($location_info['city_name'] != '' ) {
+       $location_info['city_name'] = utf8_encode($location_info['city_name']);
+    }
+    if ($location_info['state_name'] != '') {
+       $location_info['state_name'] = utf8_encode($location_info['state_name']);
+    }
+    if ($location_info['country_name'] != '') {
+       $location_info['country_name'] = utf8_encode($location_info['country_name']);
+    }
   }
 
   return $location_info;
