@@ -176,6 +176,10 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.3 =
+- (11 Oct 2009) - Fixed visitor map images not working on systems with PHP `allow_url_fopen` disabled.
+- Added link on who's online page to who's been online page.
+
 = 1.2.2 =
 - (10 Oct 2009) - Fixed show bots on Who's Been Online Admin Dashboard
 

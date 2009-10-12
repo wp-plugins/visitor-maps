@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.2.2
+Version: 1.2.3
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -1424,23 +1424,29 @@ $C['image_pin_3'] = 'wo-pin-green5x5.jpg';
 
   // select map image
   $image_worldmap = $url_visitor_maps .'images/' . $C['image_worldmap'];  // default
+  $image_worldmap_path = $path_visitor_maps .'images/' . $C['image_worldmap'];  // default
   $G['map'] = 1;
   if ( isset($MS['map']) && is_numeric($MS['map']) ) {
      $G['map'] = floor($MS['map']);
      $image_worldmap = $url_visitor_maps . 'images/' . $C['image_worldmap_'.$G['map']];
+     $image_worldmap_path = $path_visitor_maps . 'images/' . $C['image_worldmap_'.$G['map']];
      if (!file_exists($path_visitor_maps . 'images/' . $C['image_worldmap_'.$G['map']])) {
           $image_worldmap = $url_visitor_maps . 'images/' . $C['image_worldmap'];  // default
+          $image_worldmap_path = $path_visitor_maps . 'images/' . $C['image_worldmap'];  // default
           $G['map'] = 1;
      }
   }
   // select pin image
   $image_pin = $url_visitor_maps .'images/' . $C['image_pin'];  // default
+  $image_pin_path = $path_visitor_maps .'images/' . $C['image_pin'];  // default
   $G['pin'] = 1;
   if ( isset($MS['pin']) && is_numeric($MS['pin']) ) {
      $G['pin'] = floor($MS['pin']);
      $image_pin = $url_visitor_maps . 'images/'. $C['image_pin_'.$G['pin']];
+     $image_pin_path = $path_visitor_maps . 'images/'. $C['image_pin_'.$G['pin']]; 
      if (!file_exists($path_visitor_maps .'images/' . $C['image_pin_'.$G['pin']])) {
           $image_pin = $url_visitor_maps .'images/' . $C['image_pin'];  // default
+          $image_pin_path = $path_visitor_maps .'images/' . $C['image_pin'];  // default
           $G['pin'] = 1;
      }
   }
@@ -1455,8 +1461,8 @@ $C['image_pin_3'] = 'wo-pin-green5x5.jpg';
 
   $xx_secs_ago = (time() - $seconds_ago);
   // get image data
-  list($image_worldmap_width, $image_worldmap_height, $image_worldmap_type) = getimagesize($image_worldmap);
-  list($image_pin_width, $image_pin_height, $image_pin_type) = getimagesize($image_pin);
+  list($image_worldmap_width, $image_worldmap_height, $image_worldmap_type) = getimagesize($image_worldmap_path);
+  list($image_pin_width, $image_pin_height, $image_pin_type) = getimagesize($image_pin_path);
 
   // map parameters
   $scale = 360 / $image_worldmap_width;

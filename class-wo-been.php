@@ -121,9 +121,10 @@ echo '<table border="0" width="99%">
   if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_arr, $show, 'onchange="this.form.submit();"') . ' ';
   echo esc_html( __( 'Sort:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('sort_by', $sort_by_arr, $sort_by, 'onchange="this.form.submit();"').' ';
   echo  $this->draw_pull_down_menu('order', $order_arr, $order, 'onchange="this.form.submit();"') . ' ';
-  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' <input type="checkbox" name="bots" value="show" onclick="this.form.submit()"' . ($_GET['bots'] == 'show' ? ' checked="checked"': '') . ' /><br />';
+  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' <input type="checkbox" name="bots" value="show" onclick="this.form.submit()"' . ($bots == 'show' ? ' checked="checked"': '') . ' /><br />';
   echo '<input type="hidden" name="page" value="whos-been-online" />
   </form>
+  <a href="'.admin_url( 'index.php?page=visitor-maps').'">' . esc_html( __( 'Who\'s Online', 'visitor-maps' ) ) . '</a><br />
   <a href="'.admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php').'">' . esc_html( __( 'Visitor Maps Options', 'visitor-maps' ) ) . "</a>\n";
   if ( $visitor_maps_opt['enable_location_plugin'] ) {
     echo '<br />'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;')."\n";

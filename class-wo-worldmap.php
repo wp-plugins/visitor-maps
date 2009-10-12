@@ -152,25 +152,31 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
 
   // select map image
   $image_worldmap = $url_visitor_maps .'images/' . $this->set['image_worldmap'];  // default
+  $image_worldmap_path = $path_visitor_maps .'images/' . $this->set['image_worldmap'];  // default
   if ( isset($_GET['map']) && is_numeric($_GET['map']) ) {
      $image_worldmap = $url_visitor_maps . 'images/' . $this->set['image_worldmap_'.floor($_GET['map'])];
+     $image_worldmap_path = $path_visitor_maps . 'images/' . $this->set['image_worldmap_'.floor($_GET['map'])];
      if (!file_exists($path_visitor_maps . 'images/' . $this->set['image_worldmap_'.floor($_GET['map'])])) {
           $image_worldmap = $url_visitor_maps . 'images/' . $this->set['image_worldmap'];  // default
+          $image_worldmap_path = $path_visitor_maps . 'images/' . $this->set['image_worldmap'];  // default
      }
   }
 
   // select pin image
   $image_pin = $url_visitor_maps .'images/' . $this->set['image_pin'];  // default
+  $image_pin_path = $path_visitor_maps .'images/' . $this->set['image_pin'];  // default
   if ( isset($_GET['pin']) && is_numeric($_GET['pin']) ) {
      $image_pin = $url_visitor_maps . 'images/'. $this->set['image_pin_'.floor($_GET['pin'])];
+     $image_pin_path = $path_visitor_maps . 'images/'. $this->set['image_pin_'.floor($_GET['pin'])];
      if (!file_exists($path_visitor_maps . 'images/'. $this->set['image_pin_'.floor($_GET['pin'])])) {
           $image_pin = $url_visitor_maps . 'images/'. $this->set['image_pin'];  // default
+          $image_pin_path = $path_visitor_maps . 'images/'. $this->set['image_pin'];  // default
      }
   }
 
   // get image data
-  list($image_worldmap_width, $image_worldmap_height, $image_worldmap_type) = getimagesize($image_worldmap);
-  list($image_pin_width, $image_pin_height, $image_pin_type) = getimagesize($image_pin);
+  list($image_worldmap_width, $image_worldmap_height, $image_worldmap_type) = getimagesize($image_worldmap_path);
+  list($image_pin_width, $image_pin_height, $image_pin_type) = getimagesize($image_pin_path);
 
   switch($image_worldmap_type) {
         case "1": $map_im = imagecreatefromgif("$image_worldmap");
