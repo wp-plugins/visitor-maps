@@ -389,7 +389,7 @@ echo '<table border="0" width="99%">
                    $newguy = true; // Holds the italicized "new lookup" indication for 1 refresh cycle
                  }
              if ($whos_online['city_name'] != '') {
-                if ($whos_online['country_name'] == 'United States') {
+                if ($whos_online['country_code'] == 'US') {
                      $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']);
                      if ($whos_online['state_code'] != '')
                              $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($whos_online['state_code']));

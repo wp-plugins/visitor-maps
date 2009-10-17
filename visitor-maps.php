@@ -1610,7 +1610,7 @@ $string .= "\n".'<!--[if lte IE 8 ]>
 	  $title = '';
       if ( $visitor_maps_opt['enable_state_display'] ) {
               if ($row['city_name'] != '') {
-                if ($row['country_name'] == 'United States') {
+                if ($row['country_code'] == 'US') {
                      $title = $this->wo_sanitize_output($row['city_name']);
                      if ($row['state_code'] != '')
                              $title = $this->wo_sanitize_output($row['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($row['state_code']));
