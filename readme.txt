@@ -154,6 +154,7 @@ At this point it would be useful to read [Installing WordPress in Your Language]
 
 The following translations are included in the download zip file:
 
+* Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
@@ -176,6 +177,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+- Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
 
 = 1.2.4 =
 - (12 Oct 2009) - Added Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
