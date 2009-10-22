@@ -4,7 +4,7 @@ Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876
 Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
 Requires at least: 2.6
-Tested up to: 2.8.4
+Tested up to: 2.8.5
 Stable tag: trunk
 
 Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details.
@@ -178,7 +178,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
-- Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
+= 1.2.5 =
+- (21 Oct 2009) - Fixed problems with state names and "Show bots" on dashboard pages.
+- Added Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
 
 = 1.2.4 =
 - (12 Oct 2009) - Added Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)

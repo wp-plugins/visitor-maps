@@ -113,8 +113,11 @@ function view_whos_been_online() {
      $pageno = 1;
   }
   $limit = 'LIMIT ' .($pageno - 1) * $rows_per_page .',' .$rows_per_page;
-  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by.'&amp;bots='.$bots;
-
+  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by;
+  if ($bots != '') {
+    $getstring .= '&amp;bots='.$bots;
+  }
+  
 echo '<table border="0" width="99%">
  <tr><td>
   <form name="wo_been" action="'.admin_url( 'index.php?page=whos-been-online' ).'" method="get">';
@@ -389,7 +392,7 @@ echo '<table border="0" width="99%">
                    $newguy = true; // Holds the italicized "new lookup" indication for 1 refresh cycle
                  }
              if ($whos_online['city_name'] != '') {
-                if ($whos_online['country_code'] == 'US') {
+                if ($whos_online['country_code'] == 'us') {
                      $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']);
                      if ($whos_online['state_code'] != '')
                              $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($whos_online['state_code']));
