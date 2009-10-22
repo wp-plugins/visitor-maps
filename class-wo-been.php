@@ -60,6 +60,15 @@ function view_whos_been_online() {
     $order = $_GET['order'];
   }
 
+  if ($order == 'asc' && $sort_by == 'location') {
+     $order_ar['asc'] = '';
+     $sort_by_ar['location'] = 'country_name ASC, city_name ASC';
+  }
+  if ($order == 'desc' && $sort_by == 'location') {
+     $order_ar['desc'] = '';
+     $sort_by_ar['location'] = 'country_name DESC, city_name DESC';
+  }
+
   $bots = '';
   if ( isset($_GET['bots']) && $_GET['bots'] == 'show') {
     $bots = 'show';
@@ -117,7 +126,7 @@ function view_whos_been_online() {
   if ($bots != '') {
     $getstring .= '&amp;bots='.$bots;
   }
-  
+
 echo '<table border="0" width="99%">
  <tr><td>
   <form name="wo_been" action="'.admin_url( 'index.php?page=whos-been-online' ).'" method="get">';

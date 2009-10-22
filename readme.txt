@@ -180,6 +180,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 = 1.2.5 =
 - (21 Oct 2009) - Fixed problems with state names and "Show bots" on dashboard pages.
+- Fixed location decending selectiion on who's been online page.
 - Added Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
 
 = 1.2.4 =
