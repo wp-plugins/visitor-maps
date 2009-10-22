@@ -350,7 +350,7 @@ function pre_download_file() {
     if ($this->setting['non_buffer']) {
        $this->non_buffer();
     }
-    !$this->setting['safe_mode'] and set_time_limit(180);
+    @set_time_limit(180);
 } // end function pre_download_file
 
 function download_file($file_source, $file_target) {
@@ -381,7 +381,7 @@ function download_file($file_source, $file_target) {
   fclose($rh);
   fclose($wh);
   if ($this->setting['chmod']) chmod($file_target, 0644) or $this->error_exit('download_file '. __('error: CHMOD 0644 download file failed', 'visitor-maps'));
-  !$this->setting['safe_mode'] and set_time_limit(30);
+  @set_time_limit(30);
   echo '.<br />';
     if ($this->setting['non_buffer']) {
        $this->non_buffer_fast();
