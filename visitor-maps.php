@@ -49,6 +49,32 @@ function visitor_maps_whos_been_online(){
     $wo_view = new WoBeen();
     $wo_view->view_whos_been_online();
 
+    if ($visitor_maps_opt['enable_location_plugin'] && $visitor_maps_opt['enable_dash_map'] ) {
+     echo '<br /><br />';
+    // show the map on the bottom of the admin View Who's Online page
+    $map_settings = array(
+       // html map settings
+       // set these settings as needed
+       'time'       => $visitor_maps_opt['track_time'],      // digits of time
+       'units'      => 'minutes', // minutes, hours, or days (with or without the "s")
+       'map'        => '2',       // 1,2 3, etc. (you can add more map images in settings)
+       'pin'        => '1',       // 1,2,3, etc. (you can add more pin images in settings)
+       'pins'       => 'off',     // off (off is required for html map)
+       'text'       => 'on',      // on or off
+       'textcolor'  => '000000',  // any hex color code
+       'textshadow' => 'FFFFFF',  // any hex color code
+       'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
+       'ul_lat'     => '0',       // default 0 for worldmap
+       'ul_lon'     => '0',       // default 0 for worldmap
+       'lr_lat'     => '360',     // default 360 for worldmap
+       'lr_lon'     => '180',     // default 180 for worldmap
+       'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+       'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
+       'type'       => 'png',     // jpg or png (map output type)
+             );
+    echo $this->get_visitor_maps_worldmap($map_settings);
+    echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
+  }
   if ($visitor_maps_opt['enable_credit_link']) {
     echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
   }
