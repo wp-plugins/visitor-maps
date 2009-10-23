@@ -76,7 +76,7 @@ function visitor_maps_whos_been_online(){
     echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
   }
   if ($visitor_maps_opt['enable_credit_link']) {
-    echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+    echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
   }
   echo '</div>';
 
@@ -122,7 +122,7 @@ function visitor_maps_admin_view(){
     echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
   }
   if ($visitor_maps_opt['enable_credit_link']) {
-    echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+    echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
   }
   echo '</div>';
 
@@ -284,7 +284,7 @@ function visitor_maps_map_short_code() {
 
      echo '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
      if ($visitor_maps_opt['enable_credit_link']) {
-          echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+          echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
      }
   } else {
     echo '<p>'.__('Visitor Maps geolocation is disabled in settings.', 'visitor-maps').'</p>';
@@ -910,7 +910,7 @@ foreach ($map_units_array as $k => $v) {
       <br />
 
       <input name="visitor_maps_enable_credit_link" id="visitor_maps_enable_credit_link" type="checkbox" <?php if ( $visitor_maps_opt['enable_credit_link'] ) echo ' checked="checked" '; ?> />
-      <label for="visitor_maps_enable_credit_link"><?php echo esc_html( __('Enable plugin credit link:', 'visitor-maps')) ?></label> <small><?php echo __('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps'); ?></a></small>
+      <label for="visitor_maps_enable_credit_link"><?php echo esc_html( __('Enable plugin credit link:', 'visitor-maps')) ?></label> <small><?php echo __('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps'); ?></a></small>
 
       </td>
     </tr>
@@ -1913,7 +1913,7 @@ function visitor_maps_dashboard_widget() {
 
     echo "<p>$visitor_maps_stats</p>";
     if ($visitor_maps_opt['enable_credit_link']) {
-      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
     }
 
 }
@@ -1942,7 +1942,7 @@ function visitor_maps_widget($args) {
     echo $before_widget . $before_title . __('Who\'s Online','visitor-maps') .$after_title;
     echo "<p>$stats_visitors<br />$stats_guests, $stats_members</p>";
     if ($visitor_maps_opt['enable_credit_link']) {
-      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
     }
     echo $after_widget;
 } // end function visitor_maps_widget
@@ -1968,7 +1968,7 @@ function visitor_maps_manual_sidebar() {
     echo '<h2>'. __('Who\'s Online','visitor-maps') .'</h2>';
     echo "<p>$stats_visitors<br />$stats_guests, $stats_members</p>";
     if ($visitor_maps_opt['enable_credit_link']) {
-      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
     }
 } // end visitor_maps_manual_sidebar
 
