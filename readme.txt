@@ -178,6 +178,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.7 =
+- (04 Nov 2009) - Fix error: WordPress database error Duplicate entry ...
+
 = 1.2.6 =
 - (03 Nov 2009) - Fix settings were not being deleted when plugin is deleted from admin page.
 
