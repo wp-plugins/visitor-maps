@@ -3,12 +3,12 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.2.5
+Version: 1.2.6
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
 
-/*  Copyright (C) 2008 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
+/*  Copyright (C) 2008-2009 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -24,6 +24,24 @@ Author URI: http://www.642weather.com/weather/scripts.php
     along with this program; if not, write to the Free Software
     Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 */
+
+// settings get deleted when plugin is deleted from admin plugins page
+// this must be outside the class or it does not work
+// called when deleting plugin
+function visitor_maps_unset_options() {
+   	global $wpdb, $wp_version;
+
+  $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
+  $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
+  $wo_table_ge = $wpdb->prefix . 'visitor_maps_ge';
+
+  $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_wo . "`");
+  $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_st . "`");
+  $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_ge . "`");
+
+  delete_option('visitor_maps');
+
+} // end function visitor_maps_unset_options
 
 if (!class_exists('VisitorMaps')) {
 
@@ -507,24 +525,6 @@ function visitor_maps_install() {
 	}
 
 } // end function visitor_maps_install
-
-
-// called when deleting plugin
-function visitor_maps_unset_options() {
-   	global $wpdb, $wp_version;
-
-  $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
-  $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
-  $wo_table_ge = $wpdb->prefix . 'visitor_maps_ge';
-
-  $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_wo . "`");
-  $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_st . "`");
-  $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_ge . "`");
-
-  delete_option('visitor_maps');
-
-} // end function visitor_maps_unset_options
-
 
 function visitor_maps_plugin_action_links( $links, $file ) {
     //Static so we don't call plugin_basename on every plugin row.
@@ -2082,7 +2082,7 @@ if (isset($visitor_maps)) {
 
   // options deleted when this plugin is deleted in WP 2.7+
   if ( function_exists('register_uninstall_hook') )
-     register_uninstall_hook(__FILE__, array(&$visitor_maps, 'visitor_maps_unset_options'), 1);
+     register_uninstall_hook(__FILE__, 'visitor_maps_unset_options');
 }
 
 ?>

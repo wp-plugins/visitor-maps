@@ -178,6 +178,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.6 =
+- (03 Nov 2009) - Fix settings were not being deleted when plugin is deleted from admin page.
+
 = 1.2.5 =
 - (21 Oct 2009) - Fixed problems with state names and "Show bots" on dashboard pages.
 - Fixed location decending selectiion on who's been online page.
