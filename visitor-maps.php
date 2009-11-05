@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.2.7
+Version: 1.2.8
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -270,6 +270,8 @@ if( isset($_GET['do_wo_map']) ) {
 function visitor_maps_map_short_code() {
    global $visitor_maps_opt;
 
+   $string = '';
+
    if ($visitor_maps_opt['enable_location_plugin']) {
      // show the map on View Who's Online page
      if ($visitor_maps_opt['enable_visitor_map_hover']) {
@@ -293,20 +295,22 @@ function visitor_maps_map_short_code() {
           'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
           'type'       => 'png',     // jpg or png (map output type)
              );
-         echo $this->get_visitor_maps_worldmap($map_settings);
+         $string .= $this->get_visitor_maps_worldmap($map_settings);
 
      } else {
         // had to disable the dynamic map and replace with this because some WP themes were messing up the pin locations
-        echo '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
+        $string .= '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
      }
 
-     echo '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
+     $string .= '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
      if ($visitor_maps_opt['enable_credit_link']) {
-          echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
+          $string .= '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
      }
   } else {
-    echo '<p>'.__('Visitor Maps geolocation is disabled in settings.', 'visitor-maps').'</p>';
+    $string .= '<p>'.__('Visitor Maps geolocation is disabled in settings.', 'visitor-maps').'</p>';
   }
+
+  return $string;
 
 } // end function visitor_maps_map_short_code
 
@@ -540,7 +544,7 @@ function visitor_maps_plugin_action_links( $links, $file ) {
 
 function visitor_maps_init() {
 
-  // should set timezone according to wp general options  (PHP5 only)
+ // set timezone according to wp admin - settings - general - timezone  (PHP5 only)
  // If you've updated to WordPress v2.8 and the new Timezone support isn't available to you,
  // check the version of PHP your blog is working with.
  // If it's still using PHP4, then ask the hosting company how to get PHP5 enabled.
@@ -548,7 +552,6 @@ function visitor_maps_init() {
       // Set timezone in PHP5 manner
       @date_default_timezone_set( $timezone_string );
  }
-
 
  if (function_exists('load_plugin_textdomain')) {
       load_plugin_textdomain('visitor-maps', WP_PLUGIN_DIR.'/'.dirname(plugin_basename(__FILE__)).'/languages', dirname(plugin_basename(__FILE__)).'/languages' );

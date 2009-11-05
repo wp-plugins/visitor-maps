@@ -178,6 +178,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.8 =
+- (05 Nov 2009) - Fix for shortcode was not printing from a specific location on the page.
+
 = 1.2.7 =
 - (04 Nov 2009) - Fix error: WordPress database error Duplicate entry ...
 
