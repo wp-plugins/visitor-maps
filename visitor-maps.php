@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.2.8
+Version: 1.2.9
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -606,10 +606,10 @@ function visitor_maps_get_options() {
 function visitor_maps_options_page() {
   global $visitor_maps_opt, $visitor_maps_option_defaults;
 
-      if ( function_exists('current_user_can') && !current_user_can('manage_options') )
+ if (isset($_GET['do_geo']) ) {
+          if ( function_exists('current_user_can') && !current_user_can('manage_options') )
                         die(__('You do not have permissions for managing this option', 'visitor-maps'));
 
- if (isset($_GET['do_geo']) ) {
     check_admin_referer( 'visitor-maps-geo_update'); // nonce
     // install or update the geolocation data file
     require_once(dirname(__FILE__) .'/class-wo-update.php');
@@ -622,6 +622,8 @@ function visitor_maps_options_page() {
  }
 
   if (isset($_POST['submit'])) {
+          if ( function_exists('current_user_can') && !current_user_can('manage_options') )
+                        die(__('You do not have permissions for managing this option', 'visitor-maps'));
    check_admin_referer( 'visitor-maps-options_update'); // nonce
    // post changes to the options array
    $optionarray_update = array(
@@ -993,16 +995,13 @@ function visitor_maps_activity_do() {
     // see if the user is a spider (bot) or not
     // based on a list of spiders in spiders.txt file
     $spider_flag = 0;
-    if ($this->wo_not_null($user_agent_lower)) {
-      $spiders = file($path_visitor_maps.'spiders.txt') or die('visitor-maps plugin could not open spiders.txt');
-      for ($i=0, $n=sizeof($spiders); $i<$n; $i++) {
-        if ($this->wo_not_null($spiders[$i])) {
-          if (is_integer(strpos($user_agent_lower, trim($spiders[$i])))) {
-            $spider_flag = $spiders[$i];
-            break;
-          }
-        }
-      }
+    if ($this->wo_not_null($user_agent_lower) && $spiders = file($path_visitor_maps.'spiders.txt') ) {
+       for ($i=0, $n=sizeof($spiders); $i<$n; $i++) {
+         if ($this->wo_not_null($spiders[$i]) && is_integer(strpos($user_agent_lower, trim($spiders[$i]))) ) {
+           $spider_flag = $spiders[$i];
+           break;
+         }
+       }
     }
 
     // see if WP user
@@ -2065,7 +2064,7 @@ if (isset($visitor_maps)) {
   // add map link javascript header hooks
   add_action('wp_head', array(&$visitor_maps,'visitor_maps_public_header'),2);
 
-  // use shortcode ina page for the visitor maps feature
+  // use shortcode in a page for the visitor maps feature
   add_shortcode('visitor-maps', array(&$visitor_maps,'visitor_maps_map_short_code'),1);
 
   // header for the admin whos online view page

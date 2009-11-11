@@ -178,6 +178,10 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.2.9 =
+- (10 Nov 2009) - Fix potential admin permissions problem. 
+- Stability fix for missing spiders.txt could cause fatal error message.
+
 = 1.2.8 =
 - (05 Nov 2009) - Fix for shortcode was not printing from a specific location on the page.
 
