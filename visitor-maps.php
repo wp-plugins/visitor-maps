@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.2.9
+Version: 1.3
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -1187,13 +1187,13 @@ function get_location_info($user_ip) {
 
   // lookup country info for this ip
   // geoip lookup
-  if (!function_exists('geoip_open')) {
-     require_once($path_visitor_maps.'include-whos-online-geoip.php');
-  }
-  $gi = geoip_open($path_visitor_maps.'GeoLiteCity.dat', GEOIP_STANDARD);
 
-  $record = geoip_record_by_addr($gi, "$user_ip");
-  geoip_close($gi);
+  require_once($path_visitor_maps.'include-whos-online-geoip.php');
+
+  $gi = geoip_open_VMWO($path_visitor_maps.'GeoLiteCity.dat', VMWO_GEOIP_STANDARD);
+
+  $record = geoip_record_by_addr_VMWO($gi, "$user_ip");
+  geoip_close_VMWO($gi);
 
   $location_info = array();    // Create Result Array
 

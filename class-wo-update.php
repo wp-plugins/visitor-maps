@@ -407,13 +407,13 @@ function get_location_info($user_ip) {
   // and returns country_info array
   // lookup country info for this ip
   // geoip lookup
-  if (!function_exists('geoip_open')) {
-    require_once($this->setting['geolite_path'] .'include-whos-online-geoip.php');
-  }
-  $gi = geoip_open($this->setting['geolite_path'] . 'GeoLiteCity.dat', GEOIP_STANDARD);
 
-  $record = geoip_record_by_addr($gi, "$user_ip");
-  geoip_close($gi);
+  require_once($this->setting['geolite_path'] .'include-whos-online-geoip.php');
+
+  $gi = geoip_open_VMWO($this->setting['geolite_path'] . 'GeoLiteCity.dat', VMWO_GEOIP_STANDARD);
+
+  $record = geoip_record_by_addr_VMWO($gi, "$user_ip");
+  geoip_close_VMWO($gi);
 
   $location_info = array();    // Create Result Array
 

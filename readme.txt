@@ -178,6 +178,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.3 =
+- (30 Nov 2009) - Fix to be compatible with other plugins that also use the Maxmind Geolocation Database.
+
 = 1.2.9 =
 - (10 Nov 2009) - Fix potential admin permissions problem. 
 - Stability fix for missing spiders.txt could cause fatal error message.
