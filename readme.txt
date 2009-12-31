@@ -158,6 +158,7 @@ The following translations are included in the download zip file:
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
+* Hungarian (hu_HU) - Translated by [varnyu]
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
@@ -177,6 +178,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+- Added Hungarian (hu_HU) - Translated by [varnyu]
 
 = 1.3.1 =
 - (12 Dec 2009) - Fix Days to store visitor data setting to not allow integers greater than 10000
