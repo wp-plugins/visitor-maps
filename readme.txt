@@ -179,7 +179,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
-- Added Hungarian (hu_HU) - Translated by [varnyu]
+- Added Hungarian (hu_HU) - Translated by [varnyu](http://varnyu.info)
 
 = 1.3.1 =
 - (12 Dec 2009) - Fix Days to store visitor data setting to not allow integers greater than 10000
