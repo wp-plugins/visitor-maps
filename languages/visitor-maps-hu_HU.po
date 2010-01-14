@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/whos-online-pro\n"
 "POT-Creation-Date: 2009-10-01 17:15+0000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: varnyu anna <varnyu@c2.hu>\n"
+"Last-Translator: \n"
 "Language-Team: Baroteam and Varnyu <varnyucska@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -921,16 +921,16 @@ msgid "Active time (minutes)"
 msgstr "Aktiv idő (percekben)"
 
 #: visitor-maps.php:864
-msgid "Seconds that a visitor is considered \"active\". Default is 5 minutes."
-msgstr "Ennyi másodpercig minősiti a plugin a látogatót aktivnak. A szokvány beállitás 5 perc."
+msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
+msgstr "Ennyi perc minősiti a plugin a látogatót aktivnak. A szokvány beállitás 5 perc."
 
 #: visitor-maps.php:868
 msgid "Inactive time (minutes)"
 msgstr "Inaktivitás ideje (percekben)"
 
 #: visitor-maps.php:871
-msgid "Seconds before a inactive visitor is removed from display. Default is 15 minutes."
-msgstr "Másodperc, mielőtt a plugin eltávolitja az inaktiv látogatót a kijelzőtőtl. A szokváby beállitás 15 perc."
+msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
+msgstr "Perc, mielőtt a plugin eltávolitja az inaktiv látogatót a kijelzőtőtl. A szokváby beállitás 15 perc."
 
 #: visitor-maps.php:875
 msgid "Days to store visitor data"

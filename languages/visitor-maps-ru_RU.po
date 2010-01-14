@@ -4,7 +4,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/whos-online-pro\n"
 "POT-Creation-Date: 2009-10-01 17:15+0000\n"
 "PO-Revision-Date: \n"
-"Last-Translator: zhmenia <zhmenia@qip.ru>\n"
+"Last-Translator: \n"
 "Language-Team: zh-translate <zhmenia@qip.ru>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -918,16 +918,16 @@ msgid "Active time (minutes)"
 msgstr "Время активности (минут):"
 
 #: visitor-maps.php:833
-msgid "Seconds that a visitor is considered \"active\". Default is 5 minutes."
-msgstr "Количество секунд, в течение которых посетитель считается \"активным\". По умолчанию 5 минут."
+msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
+msgstr "минут секунд, в течение которых посетитель считается \"активным\". По умолчанию 5 минут."
 
 #: visitor-maps.php:837
 msgid "Inactive time (minutes)"
 msgstr "Неактивен (минут):"
 
 #: visitor-maps.php:840
-msgid "Seconds before a inactive visitor is removed from display. Default is 15 minutes."
-msgstr "Количество секунд, после которых неактивный пользователь будет удален. По умолчанию - 15 минут."
+msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
+msgstr "минут секунд, после которых неактивный пользователь будет удален. По умолчанию - 15 минут."
 
 #: visitor-maps.php:844
 msgid "Days to store visitor data"

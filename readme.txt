@@ -179,6 +179,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.3.2 =
+- (14 Jan 2010) - Fixed typo on settings page.
 - Added Hungarian (hu_HU) - Translated by [varnyu](http://varnyu.info)
 
 = 1.3.1 =

@@ -3,11 +3,10 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.3.1
+Version: 1.3.2
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
-
 /*  Copyright (C) 2008-2009 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
 
     This program is free software; you can redistribute it and/or modify
@@ -861,14 +860,14 @@ foreach ($map_units_array as $k => $v) {
       <label for="visitor_maps_active_time"><?php echo esc_html( __('Active time (minutes)', 'visitor-maps')); ?>:</label><input name="visitor_maps_active_time" id="visitor_maps_active_time" type="text" value="<?php echo absint($visitor_maps_opt['active_time']);  ?>" size="3" />
       <a style="cursor:pointer;" title="<?php echo esc_html( __('Click for Help!', 'visitor-maps')); ?>" onclick="toggleVisibility('visitor_maps_active_time_tip');"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_active_time_tip">
-      <?php echo esc_html( __('Seconds that a visitor is considered "active". Default is 5 minutes.', 'visitor-maps')); ?>
+      <?php echo esc_html( __('Minutes that a visitor is considered "active". Default is 5 minutes.', 'visitor-maps')); ?>
       </div>
       <br />
 
       <label for="visitor_maps_track_time"><?php echo esc_html( __('Inactive time (minutes)', 'visitor-maps')); ?>:</label><input name="visitor_maps_track_time" id="visitor_maps_track_time" type="text" value="<?php echo absint($visitor_maps_opt['track_time']);  ?>" size="3" />
       <a style="cursor:pointer;" title="<?php echo esc_html( __('Click for Help!', 'visitor-maps')); ?>" onclick="toggleVisibility('visitor_maps_track_time_tip');"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_track_time_tip">
-      <?php echo esc_html( __('Seconds before a inactive visitor is removed from display. Default is 15 minutes.', 'visitor-maps')); ?>
+      <?php echo esc_html( __('Minutes until an inactive visitor is removed from display. Default is 15 minutes.', 'visitor-maps')); ?>
       </div>
       <br />
 
