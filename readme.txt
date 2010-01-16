@@ -180,7 +180,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 == Changelog ==
 
 = 1.3.3 =
-- (15 Jan 2010) - Aded new setting to fix when the map image does not work on some servers because of lack of TTF support.
+- (15 Jan 2010) - Added new setting to fix when the map image does not work on some servers because of lack of TTF support.
 see: http://wordpress.org/support/topic/337775
 
 = 1.3.2 =
