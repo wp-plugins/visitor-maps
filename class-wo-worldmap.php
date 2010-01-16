@@ -240,7 +240,7 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
     }
   }
 
-  if ( $this->gvar['text_display'] ) {
+  if ( $this->gvar['text_display'] && !$visitor_maps_opt['hide_text_on_worldmap']) {
      if ($units_filtered != '') {
              // 5 visitors since 15 (minutes|hours|days) ago
             $text = sprintf( __('%1$d visitors since %2$d %3$s ago', 'visitor-maps'),$count,$time,$units_lang) ;

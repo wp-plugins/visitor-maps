@@ -179,6 +179,10 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.3.3 =
+- (15 Jan 2010) - Aded new setting to fix when the map image does not work on some servers because of lack of TTF support.
+see: http://wordpress.org/support/topic/337775
+
 = 1.3.2 =
 - (14 Jan 2010) - Fixed typo on settings page.
 - Added Hungarian (hu_HU) - Translated by [varnyu](http://varnyu.info)
