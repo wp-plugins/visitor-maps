@@ -88,8 +88,8 @@ $map_select_array = array(
 '14' => __('Europe Central', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '15' => __('Europe', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '16' => __('Europe', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
-'17' => __('Finland', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'18' => __('Finland', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'17' => __('Scandinavia', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'18' => __('Scandinavia', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '19' => __('Great Britain', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '20' => __('Great Britain', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '21' => __('US Midwest', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
@@ -110,6 +110,9 @@ $map_select_array = array(
 '36' => __('US Southwest', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '37' => __('Spain/Portugal', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '38' => __('Spain/Portugal', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'39' => __('Finland', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'40' => __('Finland', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'41' => __('Finland', 'visitor-maps').' '. __('(yellow)', 'visitor-maps'),
 );
 $selected = '';
 foreach ($map_select_array as $k => $v) {
@@ -145,8 +148,8 @@ $C['image_worldmap_13'] = 'wo-ceu-black-map.png';    // Europe Central (black)
 $C['image_worldmap_14'] = 'wo-ceu-brown-map.png';    // Europe Central (brown)
 $C['image_worldmap_15'] = 'wo-eu-black-map.png';     // Europe (black)
 $C['image_worldmap_16'] = 'wo-eu-brown-map.png';     // Europe (brown)
-$C['image_worldmap_17'] = 'wo-fin-black-map.png';    // Finland (black)
-$C['image_worldmap_18'] = 'wo-fin-brown-map.png';    // Finland (brown)
+$C['image_worldmap_17'] = 'wo-scan-black-map.png';    // Scandinavia (black)
+$C['image_worldmap_18'] = 'wo-scan-brown-map.png';    // Scandinavia (brown)
 $C['image_worldmap_19'] = 'wo-gb-black-map.png';     // Great Britain (black)
 $C['image_worldmap_20'] = 'wo-gb-brown-map.png';     // Great Britain (brown)
 $C['image_worldmap_21'] = 'wo-mwus-black-map.png';   // US Midwest (black)
@@ -167,6 +170,9 @@ $C['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (black)
 $C['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
 $C['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal (black)
 $C['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
+$C['image_worldmap_39'] = 'wo-finland-black-map.png';   // Finland (black)
+$C['image_worldmap_40'] = 'wo-finland-brown-map.png';   // Finland (brown)
+$C['image_worldmap_41'] = 'wo-finland-yellow-map.png';   // Finland (yellow)
 */
 
 if ($map_selected == 1) {
@@ -420,9 +426,9 @@ echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 }
 
 if ($map_selected == 17 || $map_selected == 18) {
-echo '<!-- Finland Map --> ' . "\n";
+echo '<!-- Scandinavia Map --> ' . "\n";
 $map_settings = array(
-// html map settings Finland Map
+// html map settings Scandinavia Map
 // set these settings as needed
 'time'       => $map_time,  // digits of time
 'units'      => $map_units, // minutes, hours, or days (with or without the "s")
@@ -687,6 +693,31 @@ $map_settings = array(
 'ul_lon'     => '-10.69',  // default 0 for worldmap
 'lr_lat'     => '34.56',   // default 360 for worldmap
 'lr_lon'     => '3.13',    // default 180 for worldmap
+'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
+'type'       => 'png',     // jpg or png (map output type)
+);
+echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
+}
+
+if (  $map_selected == 39 || $map_selected == 40 || $map_selected == 41) {
+echo '<!-- Finland -->' . "\n";
+$map_settings = array(
+// html map settings for Finland Map
+// set these settings as needed
+'time'       => $map_time, // digits of time
+'units'      => $map_units,// minutes, hours, or days (with or without the "s")
+'map'        => $map_selected,  // 1,2,3 (you can add more map images in settings)
+'pin'        => '2',       // 1,2,3 (you can add more pin images in settings)
+'pins'       => 'off',     // off (off is required for html map)
+'text'       => 'on',      // on or off
+'textcolor'  => 'FBFB00',  // any hex color code
+'textshadow' => '3F3F3F',  // any hex color code
+'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
+'ul_lat'     => '70.06',   // default 0 for worldmap
+'ul_lon'     => '19.11',  // default 0 for worldmap
+'lr_lat'     => '59.57',   // default 360 for worldmap
+'lr_lon'     => '31.90',    // default 180 for worldmap
 'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
 'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
 'type'       => 'png',     // jpg or png (map output type)

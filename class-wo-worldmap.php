@@ -48,8 +48,8 @@ $this->set['image_worldmap_13'] = 'wo-ceu-black-map.png';    // Europe Central (
 $this->set['image_worldmap_14'] = 'wo-ceu-brown-map.png';    // Europe Central (brown)
 $this->set['image_worldmap_15'] = 'wo-eu-black-map.png';     // Europe (black)
 $this->set['image_worldmap_16'] = 'wo-eu-brown-map.png';     // Europe (brown)
-$this->set['image_worldmap_17'] = 'wo-fin-black-map.png';    // Finland (black)
-$this->set['image_worldmap_18'] = 'wo-fin-brown-map.png';    // Finland (brown)
+$this->set['image_worldmap_17'] = 'wo-scan-black-map.png';    // Scandinavia (black)
+$this->set['image_worldmap_18'] = 'wo-scan-brown-map.png';    // Scandinavia (brown)
 $this->set['image_worldmap_19'] = 'wo-gb-black-map.png';     // Great Britain (black)
 $this->set['image_worldmap_20'] = 'wo-gb-brown-map.png';     // Great Britain (brown)
 $this->set['image_worldmap_21'] = 'wo-mwus-black-map.png';   // US Midwest (black)
@@ -70,6 +70,9 @@ $this->set['image_worldmap_35'] = 'wo-swus-black-map.png';   // US Southwest (bl
 $this->set['image_worldmap_36'] = 'wo-swus-brown-map.png';   // US Southwest (brown)
 $this->set['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal (black)
 $this->set['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
+$this->set['image_worldmap_39'] = 'wo-finland-black-map.png';   // Finland (black)
+$this->set['image_worldmap_40'] = 'wo-finland-brown-map.png';   // Finland (brown)
+$this->set['image_worldmap_41'] = 'wo-finland-yellow-map.png';   // Finland (yellow)
 // you can add more, just increment the numbers
 
 $this->set['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default
