@@ -160,6 +160,7 @@ The following translations are included in the download zip file:
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
 * Hungarian (hu_HU) - Translated by [varnyu]
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
+* Portuguese (pt_PT) - Translated by Jose
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
 * Turkish (tr_TR) - Translated by Cenkgursu
@@ -178,6 +179,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+- Added Portuguese (pt_PT) - Translated by Jose
 
 = 1.3.4 =
 - (16 Jan 2010) - Fix for Finland map was actually Scandanavia. Added Finland Map. Thanks to Michael Swanson for the correct maps.
