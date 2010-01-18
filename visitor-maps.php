@@ -1027,6 +1027,8 @@ function visitor_maps_activity_do() {
       // is not a bot, must be a regular visitor
       $name = 'Guest';
     }
+    // truncate to 64 chars or less
+    $name = substr($name,0,64);
 
     if ($visitor_maps_opt['store_days'] > 0) {
             // remove visitor entries that have expired after $visitor_maps_opt['store_days'], save nickname friends
@@ -1386,7 +1388,7 @@ $C['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal (black)
 $C['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
 $C['image_worldmap_39'] = 'wo-finland-black-map.png';   // Finland (black)
 $C['image_worldmap_40'] = 'wo-finland-brown-map.png';   // Finland (brown)
-$C['image_worldmap_41'] = 'wo-finland-yellow-map.png';   // Finland (yellow) 
+$C['image_worldmap_41'] = 'wo-finland-yellow-map.png';   // Finland (yellow)
 // you can add more, just increment the numbers
 
 $C['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default
