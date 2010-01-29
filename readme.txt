@@ -180,6 +180,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+
+= 1.3.5 =
+- (29 Jan 2010) - Fix HTML Strict validation
 - Added Portuguese (pt_PT) - Translated by Jose
 
 = 1.3.4 =

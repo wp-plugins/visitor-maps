@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.3.4
+Version: 1.3.5
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -318,7 +318,7 @@ function visitor_maps_public_header() {
   global $visitor_maps_opt;
 ?>
 <!-- begin visitor maps header code -->
-<script type="text/javascript" language="JavaScript">
+<script type="text/javascript">
 <!--
 function wo_map_console(url) {
   window.open(url,"wo_map_console","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
@@ -351,7 +351,7 @@ if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps' ) {
           ';
   }
 ?>
-<script type="text/javascript" language="JavaScript">
+<script type="text/javascript">
 <!--
 function who_is(url) {
   window.open(url,"who_is_lookup","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
@@ -387,7 +387,7 @@ function wo_map_console(url) {
 if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps/visitor-maps.php' ) {
 ?>
 <!-- begin visitor maps - settings page header code -->
-<script type="text/javascript" language="JavaScript">
+<script type="text/javascript">
 <!--
 function wo_map_console(url) {
   window.open(url,"wo_map_console","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
@@ -403,7 +403,7 @@ function wo_map_console(url) {
 if(isset($_GET['page']) && $_GET['page'] == 'whos-been-online' ) {
 ?>
 <!-- begin visitor maps - whos been online page header code -->
-<script type="text/javascript" language="JavaScript">
+<script type="text/javascript">
 <!--
 function who_is(url) {
   window.open(url,"who_is_lookup","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
