@@ -180,6 +180,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.3.6 =
+- (03 Feb 2010) - Fix Fatal error: Call to undefined function wp_timezone_supported
 
 = 1.3.5 =
 - (29 Jan 2010) - Fix HTML Strict validation
