@@ -181,6 +181,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.3.7 =
+- (26 Mar 2010) - Added optional setting: Do not show administrators on the maps.
+- Added optional setting: Optional list of IP addresses for visitors you do not want shown on maps.   
 - Added Brazilian Portuguese (pt_BR) - Translated by Miguel Netto
 
 = 1.3.6 =

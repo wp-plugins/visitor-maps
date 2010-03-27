@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.3.6
+Version: 1.3.7
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -566,6 +566,8 @@ function visitor_maps_get_options() {
    'active_time' => 5,
    'track_time' =>  15,
    'store_days' =>  30,
+   'hide_administrators' =>  0,
+   'ips_to_ignore' =>          '',
    'time_format' =>            'h:i a T',
    'time_format_hms' =>        'h:i:sa' ,
    'date_time_format' =>       'm-d-Y h:i a T',
@@ -632,6 +634,8 @@ function visitor_maps_options_page() {
    'active_time' =>          absint(trim($_POST['visitor_maps_active_time'])),
    'track_time' =>           absint(trim($_POST['visitor_maps_track_time'])),
    'store_days' =>          ( is_numeric(trim($_POST['visitor_maps_store_days'])) && trim($_POST['visitor_maps_store_days']) <= 10000 ) ? absint(trim($_POST['visitor_maps_store_days'])) : $visitor_maps_option_defaults['store_days'],
+   'hide_administrators' =>      (isset( $_POST['visitor_maps_hide_administrators'] ) ) ? 1 : 0,
+   'ips_to_ignore' =>               trim($_POST['visitor_maps_ips_to_ignore']),  // can be empty
    'time_format' =>               ( trim($_POST['visitor_maps_time_format']) != '' ) ? trim($_POST['visitor_maps_time_format']) : $visitor_maps_option_defaults['time_format'], // use default if empty
    'time_format_hms' =>           ( trim($_POST['visitor_maps_time_format_hms']) != '' ) ? trim($_POST['visitor_maps_time_format_hms']) : $visitor_maps_option_defaults['time_format_hms'],
    'date_time_format' =>          ( trim($_POST['visitor_maps_date_time_format']) != '' ) ? trim($_POST['visitor_maps_date_time_format']) : $visitor_maps_option_defaults['date_time_format'],
@@ -887,6 +891,24 @@ foreach ($map_units_array as $k => $v) {
       <?php echo esc_html( __('Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days.', 'visitor-maps')); ?>
       </div>
 
+      <br />
+      <input name="visitor_maps_hide_administrators" id="visitor_maps_hide_administrators" type="checkbox" <?php if( $visitor_maps_opt['hide_administrators'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_hide_administrators"><?php echo esc_html( __('Do not show administrators on the maps.', 'visitor-maps')); ?></label>
+
+      <br />
+      <label name="visitor_maps_ips_to_ignore" for="visitor_maps_ips_to_ignore"><?php echo esc_html( __('IP Adresses to ignore', 'si-contact-form')); ?>:</label>
+      <a style="cursor:pointer;" title="<?php echo esc_html( __('Click for Help!', 'visitor_maps')); ?>" onclick="toggleVisibility('visitor_maps_ips_to_ignore_tip');"><?php echo esc_html( __('help', 'visitor_maps')); ?></a> <br />
+      <div style="text-align:left; display:none" id="visitor_maps_ips_to_ignore_tip">
+        <?php _e('Optional list of IP addresses for visitors you do not want shown on maps.', 'visitor_maps') ?><br />
+        <?php _e('Start each entry on a new line.', 'visitor_maps'); ?><br />
+        <?php _e('Use <strong>*</strong> for wildcards.', 'visitor_maps'); ?><br />
+		<?php _e('Examples:', 'visitor_maps'); ?>
+		<p style="margin: 2px 0"><span dir="ltr">192.168.1.100</span></p>
+		<p style="margin: 2px 0"><span dir="ltr">192.168.1.*</span></p>
+		<p style="margin: 2px 0"><span dir="ltr">192.168.*.*</span></p>
+      </div>
+      <textarea rows="4" cols="20" name="visitor_maps_ips_to_ignore" id="visitor_maps_ips_to_ignore"><?php echo $visitor_maps_opt['ips_to_ignore']; ?></textarea>
+
       </td>
     </tr>
 
@@ -1061,6 +1083,32 @@ function visitor_maps_activity_do() {
              // give up, this way the whole site does not error
              $visitor_maps_opt['enable_location_plugin'] = 0;
        }
+    }
+
+    // ignore these IPs
+    $ips_to_ignore = array();
+    $ips_to_ignore = explode("\n",$visitor_maps_opt['ips_to_ignore']);
+
+	if(!empty($ips_to_ignore) && !empty($ip_address)) {
+		foreach($ips_to_ignore as $checked_ip) {
+			$regexp = str_replace ('.', '\\.', $checked_ip);
+			$regexp = str_replace ('*', '.+', $regexp);
+			if(preg_match("/^$regexp$/", $ip_address)) {
+			    // ignore this user
+                $wpdb->query("DELETE from " . $wo_table_wo . " WHERE ip_address = '" . $ip_address . "'");
+                $ip_address = '';
+                break;
+			}
+		}
+	}
+
+
+    // see if WP user
+    // get_currentuserinfo(); ... already got this some lines above
+    if ($visitor_maps_opt['hide_administrators'] && $user_ID != '' && current_user_can('level_10') ){
+      // hide admin activity
+      $ip_address = '';
+      $wpdb->query("DELETE from " . $wo_table_wo . " WHERE name = '" . $name . "'");
     }
 
     if ($name != '' && $ip_address != '') { // skip if empty
@@ -1616,6 +1664,7 @@ $string .= "\n".'<!--[if lte IE 8 ]>
 <![endif]-->';
   $string .= "\n";
 
+ $rows_arr = array();
   if ($visitor_maps_opt['show_bots_on_worldmap']) {
        // all visitors
        $rows_arr = $wpdb->get_results("
@@ -1633,6 +1682,7 @@ $string .= "\n".'<!--[if lte IE 8 ]>
 
   // create pin on the map
   $count = 0;
+if ($rows_arr) { // check of there are any visitors
   foreach($rows_arr as $row) {
     if ($row['longitude'] != '0.0000' && $row['latitude'] != '0.0000') {
       if ($ul_lat == 0) { // must be the world map
@@ -1681,6 +1731,7 @@ $string .= "\n".'<!--[if lte IE 8 ]>
       $string .= "\n";
     }
   } // end foreach
+ } // end if ($rows_arr) {
   $string .= '<!--[if lte IE 8 ]>
 </div>
 <![endif]-->';

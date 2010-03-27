@@ -169,7 +169,7 @@ echo '<table border="0" width="99%">
  <table border="0" cellspacing="2" cellpadding="2" width="99%">
  <tr>
    <td align="center">
-     <b><?php echo sprintf(__('%1$d visitors since %2$s', 'visitor-maps'),(int)$numrows,date($visitor_maps_opt['date_time_format'],(int)$since)); ?></b>
+     <b><?php echo sprintf(__('%1$d visitors since %2$s', 'visitor-maps'),(int)$numrows,($numrows > 0)? date($visitor_maps_opt['date_time_format'],(int)$since): __( 'installation', 'visitor-maps' )); ?></b>
    </td>
  </tr>
   <tr>
@@ -226,6 +226,7 @@ echo '<table border="0" width="99%">
   $total_dupes = 0;
   $this->ip_addrs_active = array();
   $ip_addrs = array();
+  $whos_online_arr = array();
   $even_odd = 0;
 
   $whos_online_arr = $wpdb->get_results("SELECT
@@ -253,6 +254,7 @@ echo '<table border="0" width="99%">
 
 
   $total_sess = 0;
+ if ($whos_online_arr) { // check of there are any visitors
   foreach ($whos_online_arr as $whos_online) {
 
     // skip empty row just incase
@@ -481,6 +483,7 @@ echo '<table border="0" width="99%">
               } // end if ($this->set['allow_profile_display']
         } // closes if (!($is_bot
    } // closes while ($whos_online
+  } // closes if ($whos_online_arr)
 ?>
 
                       </table>

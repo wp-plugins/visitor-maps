@@ -72,7 +72,7 @@ $this->set['image_worldmap_37'] = 'wo-es-pt-black-map.png';   // Spain/Portugal 
 $this->set['image_worldmap_38'] = 'wo-es-pt-brown-map.png';   // Spain/Portugal (brown)
 $this->set['image_worldmap_39'] = 'wo-finland-black-map.png';   // Finland (black)
 $this->set['image_worldmap_40'] = 'wo-finland-brown-map.png';   // Finland (brown)
-$this->set['image_worldmap_41'] = 'wo-finland-yellow-map.png';   // Finland (yellow)
+$this->set['image_worldmap_41'] = 'wo-finland-yellow-map.png';  // Finland (yellow)
 // you can add more, just increment the numbers
 
 $this->set['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default
@@ -200,6 +200,7 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
   // Time to remove old entries
   $xx_secs_ago = (time() - $seconds_ago);
 
+  $rows_arr = array();
   if ($visitor_maps_opt['show_bots_on_worldmap']) {
        $rows_arr = $wpdb->get_results("SELECT longitude, latitude FROM ".$wo_table_wo."
                  WHERE time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
@@ -210,6 +211,7 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
 
   $count = 0;
   // create pins on the map
+  if ($rows_arr) { // check of there are any visitors
    foreach($rows_arr as $row) {
     if ($row['longitude'] != '0.0000' && $row['latitude'] != '0.0000') {
 
@@ -241,7 +243,8 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
         imagecopy($map_im, $pin_im, $x, $y, 0, 0, $image_pin_width, $image_pin_height);
       }
     }
-  }
+   } // end foreach
+ } // end if ($rows_arr) {
 
   if ( $this->gvar['text_display'] && !$visitor_maps_opt['hide_text_on_worldmap']) {
      if ($units_filtered != '') {
