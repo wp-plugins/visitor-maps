@@ -364,6 +364,3 @@ $maps_in_tables and $string .= '</td>
  </tr>
 </table>
 ';
-
-  return $string;
-  

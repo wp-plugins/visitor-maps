@@ -182,6 +182,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.3.9 =
+- (16 Apr 2010) - Fixed missing map image in version 1.3.8
+
 = 1.3.8 =
 - (16 Apr 2010) - Split code into smaller files for better memory performance.
 - Added PHP Memory Limit increase code in GeoLiteCity data updater/installer.
