@@ -154,6 +154,7 @@ At this point it would be useful to read [Installing WordPress in Your Language]
 
 The following translations are included in the download zip file:
 
+* Belorussian (be_BY) - Translated by [Marcis G](http://pc.de)
 * Brazilian Portuguese (pt_BR) - Translated by Miguel Netto
 * Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
@@ -180,6 +181,11 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.3.8 =
+- (16 Apr 2010) - Split code into smaller files for better memory performance.
+- Added PHP Memory Limit increase code in GeoLiteCity data updater/installer.
+- Added Belorussian (be_BY) - Translated by [Marcis G](http://pc.de)
 
 = 1.3.7 =
 - (26 Mar 2010) - Added optional setting: Do not show administrators on the maps.

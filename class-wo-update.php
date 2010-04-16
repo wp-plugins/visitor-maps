@@ -67,6 +67,7 @@ function update_now() {
 
    $this->get_settings();
 
+
 // Check for safe mode
 $this->setting['safe_mode'] = 0;
 if( @strtolower(ini_get('safe_mode')) == 'on' || @ini_get('safe_mode') === 1 ){
@@ -97,6 +98,29 @@ if ( !is_file($this->setting['geolite_path'] . 'GeoLiteCity.dat') ) {
            $this->non_buffer();
         }
 }
+
+$vm_mem_limit = 'unknown';
+$vm_mem_increase = '64M';
+$vm_mem_limit = @ini_get('memory_limit');
+if ($vm_mem_limit == 'unknown') {
+    echo __('PHP Memory Limit is unknown, increase is not available.','visitor-maps').'<br />';
+} else if ( function_exists('memory_get_usage')  && ( (int) @ini_get('memory_limit') < abs(intval($vm_mem_increase)) ) ) {
+    echo sprintf( __('PHP Memory Limit is %1$s, temporarily increasing to %2$s','visitor-maps'),$vm_mem_limit,$vm_mem_increase);
+	@ini_set('memory_limit', $vm_mem_increase);
+    $vm_mem_limit = @ini_get('memory_limit');
+    echo ' ';
+    if($vm_mem_limit == $vm_mem_increase) {
+       echo __('completed.','visitor-maps').'<br />';
+    } else {
+       echo __('failed.','visitor-maps').'<br />';
+    }
+
+} else {
+    echo sprintf( __('PHP Memory Limit is %s, increasing is not needed.','visitor-maps'),$vm_mem_limit).'<br />';
+}
+    if ($this->setting['non_buffer']) {
+         $this->non_buffer();
+    }
 
    echo __('Connecting to this URL:', 'visitor-maps').' '.$this->setting['url'].'<br />';
     if ($this->setting['non_buffer']) {
