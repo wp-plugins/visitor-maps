@@ -61,19 +61,19 @@ Credits:
 
 == Screenshots ==
 
-1. screenshot-1.jpg is the Who's Online sidebar.
+1. screenshot-1.gif is the Who's Online sidebar.
 
-2. screenshot-2.jpg is the Visitor Maps Viewer.
+2. screenshot-2.gif is the Visitor Maps Viewer.
 
-3. screenshot-3.jpg is the Visitor Maps page.
+3. screenshot-3.gif is the Visitor Maps page.
 
-4. screenshot-4.jpg is the View Who's Online Dashboard.
+4. screenshot-4.gif is the View Who's Online Dashboard.
 
-5. screenshot-5.jpg is the `Settings` page.
+5. screenshot-5.gif is the `Settings` page.
 
-6. screenshot-6.jpg adding the shortcode `[visitor-maps]` in a Page.
+6. screenshot-6.gif adding the shortcode `[visitor-maps]` in a Page.
 
-7. screenshot-7.jpg is adding the Who's Online sidebar.
+7. screenshot-7.gif is adding the Who's Online sidebar.
 
 
 == Frequently Asked Questions ==
