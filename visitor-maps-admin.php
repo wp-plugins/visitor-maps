@@ -136,10 +136,10 @@ if (!$visitor_maps_opt['donated']) {
 
 <h3><?php _e('Usage', 'visitor-maps') ?></h3>
 	<p>
-    <?php echo __('Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-6.jpg" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
+    <?php echo __('Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-6.gif" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
     </p>
    	<p>
-    <?php echo __('Add the Who\'s Online sidebar. Click on Appearance, Widgets, then drag the Who\'s Online widget to the sidebar column on the right.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-7.jpg" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
+    <?php echo __('Add the Who\'s Online sidebar. Click on Appearance, Widgets, then drag the Who\'s Online widget to the sidebar column on the right.', 'visitor-maps'); ?> <a href="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/screenshot-7.gif" target="_new"><?php echo esc_html( __('help', 'visitor-maps')); ?></a>
     </p>
 <?php echo '
 <p>

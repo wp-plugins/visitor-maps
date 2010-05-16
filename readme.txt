@@ -4,7 +4,7 @@ Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876
 Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
 Requires at least: 2.6
-Tested up to: 2.9.2
+Tested up to: 3.0
 Stable tag: trunk
 
 Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details.
@@ -181,6 +181,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.4 =
+- (15 May 2010) - Made WP3 Compatible
 
 = 1.3.9 =
 - (16 Apr 2010) - Fixed missing map image in version 1.3.8
