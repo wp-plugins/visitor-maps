@@ -97,7 +97,7 @@
 <a href="http://wordpress.org/tags/visitor-maps?forum_id=10" target="_blank"><?php echo esc_html( __('Support', 'visitor-maps')); ?></a> |
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876" target="_blank"><?php echo esc_html( __('Donate', 'visitor-maps')); ?></a> |
 <a href="http://www.642weather.com/weather/scripts.php" target="_blank"><?php echo esc_html( __('Free PHP Scripts', 'visitor-maps')); ?></a> |
-<a href="http://www.642weather.com/weather/contact_us.php" target="_blank"><?php echo esc_html( __('Contact', 'visitor-maps')); ?> Mike Challis</a>
+<a href="http://www.642weather.com/weather/wxblog/support/" target="_blank"><?php echo esc_html( __('Contact', 'visitor-maps')); ?> Mike Challis</a>
 </p>
 
 <?php
