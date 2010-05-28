@@ -182,6 +182,13 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.4.1 =
+- (28 May 2010) - New setting: Enable visitor map link on Who's Online widget.  
+- New setting: Enable stats display on map page.
+- Updated spiders.txt
+- New setting to allow multi-blog sharing of GeoLiteCity.dat (contact me if you need information)
+
+
 = 1.4 =
 - (15 May 2010) - Made WP3 Compatible
 

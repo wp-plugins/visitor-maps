@@ -58,13 +58,13 @@ function view_whos_online() {
   $this->set['image_inactive_guest'] = 'inactive_user.gif'; // inactive user
   $this->set['image_active_bot']     = 'active_bot.gif'; // active bot
   $this->set['image_inactive_bot']   = 'inactive_bot.gif'; // inactive bot
-  $this->set['geolite_path'] = dirname(__FILE__).'/';
+  //$this->set['geolite_path'] = dirname(__FILE__).'/';
   $this->wo_visitor_ip = $this->get_ip_address();
 
 
 $geoip_old = 0;
 if( $visitor_maps_opt['enable_location_plugin'] ){
-  $geoip_file_time = filemtime($this->set['geolite_path'].'GeoLiteCity.dat');
+  $geoip_file_time = filemtime($path_visitor_maps.'GeoLiteCity.dat');
   //$geoip_file_time = strtotime("-1 month"); // for testing the need to update link
   // how many calendar days ago?
   $geoip_days_ago = floor((strtotime(date('Y-m-d'). ' 00:00:00') - strtotime(date('Y-m-d', $geoip_file_time). ' 00:00:00')) / (60*60*24));

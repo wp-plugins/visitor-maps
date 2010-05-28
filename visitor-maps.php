@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.4
+Version: 1.4.1
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -267,7 +267,7 @@ if( isset($_GET['do_wo_map']) ) {
 
 // this function prints a whos online map on a blog page
 function visitor_maps_map_short_code() {
-   global $visitor_maps_opt;
+   global $visitor_maps_opt, $wpdb;
 
    $string = '';
 
@@ -302,6 +302,32 @@ function visitor_maps_map_short_code() {
      }
 
      $string .= '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
+
+   if ($visitor_maps_opt['enable_records_page']) {
+     $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
+     // fetch the day, month, year, all time records
+     $visitors_arr = $wpdb->get_results("SELECT type, count, time FROM " . $wo_table_st, ARRAY_A);
+
+     foreach( $visitors_arr as $visitors ) {
+        if($visitors['type'] == 'day')
+           $day = esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime($visitors['time']));
+        if($visitors['type'] == 'month')
+           $month = esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
+        if($visitors['type'] == 'year')
+           $year = esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
+        if($visitors['type'] == 'all')
+           $all = esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
+     }
+
+     $string .= '<p>'.__('Records of the most visitors online at once:', 'visitor-maps');
+     $string .= "<br />$day";
+     $string .= "<br />$month";
+     $string .= "<br />$year";
+     $string .= "<br />$all";
+     $string .= '</p>';
+   }
+
+
      if ($visitor_maps_opt['enable_credit_link']) {
           $string .= '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
      }
@@ -580,8 +606,10 @@ function visitor_maps_get_options() {
    'show_bots_on_worldmap' =>  1,
    'hide_text_on_worldmap' =>  0,
    'enable_visitor_map_hover' => 0,
-   'enable_blog_footer' =>     1,
+   'enable_blog_footer' =>     0,
    'enable_admin_footer' =>    1,
+   'enable_records_page' =>    1,
+   'enable_widget_link' =>     1,
    'enable_credit_link' =>     1,
    'enable_dash_map' =>        1,
    'default_map' =>            1,
@@ -606,7 +634,7 @@ function visitor_maps_get_options() {
 } // end function visitor_maps_get_options
 
 function visitor_maps_options_page() {
-  global $visitor_maps_opt, $visitor_maps_option_defaults;
+  global $visitor_maps_opt, $path_visitor_maps, $visitor_maps_option_defaults;
 
     require_once(dirname(__FILE__) .'/visitor-maps-admin.php');
 
@@ -1245,7 +1273,7 @@ function visitor_maps_register_widget() {
 	register_sidebar_widget( __('Who\'s Online', 'visitor-maps'), array(&$this,'visitor_maps_widget'));
 }
 function visitor_maps_widget($args) {
-    global $visitor_maps_opt, $wpdb;
+    global $visitor_maps_stats, $visitor_maps_opt, $wpdb;
     extract($args);
 
     $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
@@ -1264,10 +1292,12 @@ function visitor_maps_widget($args) {
     $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
 
     echo $before_widget . $before_title . __('Who\'s Online','visitor-maps') .$after_title;
-    echo "<p>$stats_visitors<br />$stats_guests, $stats_members</p>";
-    if ($visitor_maps_opt['enable_credit_link']) {
-      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
-    }
+    echo "<p>$stats_visitors<br />$stats_guests, $stats_members";
+    if ($visitor_maps_opt['enable_widget_link'])
+      echo '<br />'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+    if ($visitor_maps_opt['enable_credit_link'])
+      echo '<br /><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
+    echo "</p>";
     echo $after_widget;
 } // end function visitor_maps_widget
 
@@ -1290,15 +1320,18 @@ function visitor_maps_manual_sidebar() {
     $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
 
     echo '<h2>'. __('Who\'s Online','visitor-maps') .'</h2>';
-    echo "<p>$stats_visitors<br />$stats_guests, $stats_members</p>";
-    if ($visitor_maps_opt['enable_credit_link']) {
-      echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
-    }
+    echo "<p>$stats_visitors<br />$stats_guests, $stats_members";
+    if ($visitor_maps_opt['enable_widget_link'])
+      echo '<br />'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+    if ($visitor_maps_opt['enable_credit_link'])
+      echo '<br /><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
+    echo "</p>";
 } // end visitor_maps_manual_sidebar
 
 function visitor_maps_upgrader_backup() {
+    global $path_visitor_maps;
     // prevent plugin updater from deleting the GeoLiteCity.dat file
-    $from = dirname(__FILE__).'/GeoLiteCity.dat';
+    $from = $path_visitor_maps.'GeoLiteCity.dat';
     $to = WP_CONTENT_DIR .'/visitor-maps-backup';
     if (is_file($from)) {
         if (!is_dir($to)) mkdir($to);
@@ -1308,8 +1341,9 @@ function visitor_maps_upgrader_backup() {
 } // end function visitor_maps_upgrader_backup
 
 function visitor_maps_upgrader_restore() {
+    global $path_visitor_maps;
     // prevent plugin updater from deleting the GeoLiteCity.dat file
-    $to = dirname(__FILE__).'/GeoLiteCity.dat';
+    $to = $path_visitor_maps.'GeoLiteCity.dat';
     $from = WP_CONTENT_DIR .'/visitor-maps-backup';
     if (is_file($from.'/GeoLiteCity.dat')) {
         rename($from.'/GeoLiteCity.dat', $to);
@@ -1345,7 +1379,15 @@ if (class_exists("VisitorMaps")) {
 if (isset($visitor_maps)) {
 
   $url_visitor_maps  = WP_PLUGIN_URL . '/visitor-maps/';
-  $path_visitor_maps = WP_PLUGIN_DIR . '/visitor-maps/';
+
+  if ( defined('PATH_VISITOR_MAPS') ) {
+      // define('PATH_VISITOR_MAPS', '/home/nflfirst/public_html/nfl_blog/wp-content/plugins/visitor-maps/');
+     $path_visitor_maps = PATH_VISITOR_MAPS;
+  } else {
+     $path_visitor_maps = WP_PLUGIN_DIR . '/visitor-maps/';
+  }
+
+
 
   // visitor_maps init plugin
   add_action('init', array(&$visitor_maps, 'visitor_maps_init'));
@@ -1359,9 +1401,9 @@ if (isset($visitor_maps)) {
 
   // remind admin to install the GeoLite database
   if (
-     (isset($_POST['visitor_maps_enable_location_plugin']) && !is_file(dirname(__FILE__) .'/GeoLiteCity.dat') )
+     (isset($_POST['visitor_maps_enable_location_plugin']) && !is_file($path_visitor_maps.'GeoLiteCity.dat') )
    ||
-     (!isset($_POST['visitor_maps_set']) && !isset($_GET['do_geo']) && $visitor_maps_opt['enable_location_plugin'] && !is_file(dirname(__FILE__) .'/GeoLiteCity.dat'))
+     (!isset($_POST['visitor_maps_set']) && !isset($_GET['do_geo']) && $visitor_maps_opt['enable_location_plugin'] && !is_file($path_visitor_maps.'GeoLiteCity.dat'))
    ) {
 
       add_action( 'admin_notices', array(&$visitor_maps,'visitor_maps_activation_notice'),1);

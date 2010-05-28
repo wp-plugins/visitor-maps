@@ -44,6 +44,8 @@
    'enable_visitor_map_hover' => (isset( $_POST['visitor_maps_enable_visitor_map_hover'] ) ) ? 1 : 0,
    'enable_blog_footer' =>       (isset( $_POST['visitor_maps_enable_blog_footer'] ) ) ? 1 : 0,
    'enable_admin_footer' =>      (isset( $_POST['visitor_maps_enable_admin_footer'] ) ) ? 1 : 0,
+   'enable_records_page' =>      (isset( $_POST['visitor_maps_enable_records_page'] ) ) ? 1 : 0, 
+   'enable_widget_link' =>       (isset( $_POST['visitor_maps_enable_widget_link'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
    'enable_dash_map' =>          (isset( $_POST['visitor_maps_enable_dash_map'] ) ) ? 1 : 0,
    'default_map' =>          absint(trim($_POST['visitor_maps_default_map'])),
@@ -165,7 +167,7 @@ if (!$visitor_maps_opt['donated']) {
 
       <?php
       echo '<strong>'. esc_html( __('Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com', 'visitor-maps')) .'</strong><br />';
-      if ( !is_file(dirname(__FILE__) .'/GeoLiteCity.dat') ) {
+      if ( !is_file($path_visitor_maps.'GeoLiteCity.dat') ) {
         echo '<span style="background-color:#FFE991; padding:4px;"><strong>'. esc_html( __('The Maxmind GeoLiteCity database is not yet installed.', 'visitor-maps')). ' <a style="color:red" href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Install Now', 'visitor-maps'). '</a></strong></span>';
       } else if (!$visitor_maps_opt['enable_location_plugin']) {
               echo '<span style="background-color:#FFE991; padding:4px;"><strong>'. esc_html( __('The Maxmind GeoLiteCity database is installed but not enabled (check the setting below).', 'visitor-maps')). '</strong></span>';
@@ -177,7 +179,7 @@ if (!$visitor_maps_opt['donated']) {
       <br />
       <input name="visitor_maps_enable_location_plugin" id="visitor_maps_enable_location_plugin" type="checkbox" <?php if( $visitor_maps_opt['enable_location_plugin'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_location_plugin"><?php echo esc_html( __('Enable geolocation.', 'visitor-maps')); ?></label>
-      <?php if( $visitor_maps_opt['enable_location_plugin'] && is_file(dirname(__FILE__) .'/GeoLiteCity.dat')) echo ' <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Update Now', 'visitor-maps'). '</a>';?>
+      <?php if( $visitor_maps_opt['enable_location_plugin'] && is_file($path_visitor_maps.'GeoLiteCity.dat')) echo ' <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Update Now', 'visitor-maps'). '</a>';?>
       <br />
 
       <input name="visitor_maps_show_bots_on_worldmap" id="visitor_maps_show_bots_on_worldmap" type="checkbox" <?php if( $visitor_maps_opt['show_bots_on_worldmap'] ) echo 'checked="checked"'; ?> />
@@ -198,6 +200,10 @@ if (!$visitor_maps_opt['donated']) {
 
       <input name="visitor_maps_enable_dash_map" id="visitor_maps_enable_dash_map" type="checkbox" <?php if( $visitor_maps_opt['enable_dash_map'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_dash_map"><?php echo esc_html( __('Enable visitor map on Who\'s Online dashboard.', 'visitor-maps')); ?></label>
+      <br />
+
+      <input name="visitor_maps_enable_widget_link" id="visitor_maps_enable_widget_link" type="checkbox" <?php if( $visitor_maps_opt['enable_widget_link'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_enable_widget_link"><?php echo esc_html( __('Enable visitor map link on Who\'s Online widget.', 'visitor-maps')); ?></label>
       <br />
 
       <input name="visitor_maps_enable_visitor_map_hover" id="visitor_maps_enable_visitor_map_hover" type="checkbox" <?php if( $visitor_maps_opt['enable_visitor_map_hover'] ) echo 'checked="checked"'; ?> />
@@ -337,6 +343,10 @@ foreach ($map_units_array as $k => $v) {
 
       <input name="visitor_maps_enable_admin_footer" id="visitor_maps_enable_admin_footer" type="checkbox" <?php if( $visitor_maps_opt['enable_admin_footer'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_admin_footer"><?php echo esc_html( __('Enable stats display in admin footer.', 'visitor-maps')); ?></label>
+      <br />
+
+      <input name="visitor_maps_enable_records_page" id="visitor_maps_enable_records_page" type="checkbox" <?php if( $visitor_maps_opt['enable_records_page'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_enable_records_page"><?php echo esc_html( __('Enable stats display on map page.', 'visitor-maps')); ?></label>
       <br />
 
       <input name="visitor_maps_enable_credit_link" id="visitor_maps_enable_credit_link" type="checkbox" <?php if ( $visitor_maps_opt['enable_credit_link'] ) echo ' checked="checked" '; ?> />

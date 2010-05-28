@@ -13,7 +13,7 @@ class WoProGeoLocUpdater {
     var $setting;
 
 function get_settings() {
-
+  global $path_visitor_maps;
 
 //error_reporting(E_ALL ^ E_NOTICE);
 //ini_set('display_errors', 1);
@@ -30,8 +30,8 @@ $this->setting['url'] = 'http://geolite.maxmind.com/download/geoip/database/GeoL
 // optional setting to set a directory where your GeoLiteCity.dat file is
 // for some users who want the GeoLiteCity.dat file in a different folder
 // use server path, NOT URL!!
-$this->setting['geolite_path'] = WP_PLUGIN_DIR . '/visitor-maps/';
-//$this->setting['geolite_path'] = '/server/path/to/folder/'; // must be full path, always end with a slash
+$this->setting['geolite_path'] = $path_visitor_maps;
+//$this->setting['geolite_path'] = '/server/path/to/visitor-maps/'; // must be full path, always end with a slash
 
 // do not download if the Maxmind GeoLiteCity database is already up to date
 // can be disabled if you want to force the download to test the script.
