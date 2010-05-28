@@ -1,4 +1,4 @@
-# Translation of the WordPress plugin Visitor Maps and Who's Online 1.3.8 by Mike Challis.
+# Translation of the WordPress plugin Visitor Maps and Who's Online 1.4.1 by Mike Challis.
 # Copyright (C) 2010 Mike Challis
 # This file is distributed under the same license as the Visitor Maps and Who's Online package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Visitor Maps and Who's Online 1.3.8\n"
+"Project-Id-Version: Visitor Maps and Who's Online 1.4.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
-"POT-Creation-Date: 2010-04-16 18:56+0000\n"
+"POT-Creation-Date: 2010-05-28 08:28+0000\n"
 "PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -76,8 +76,8 @@ msgstr ""
 msgid "Show Bots:"
 msgstr ""
 
-#: class-wo-been.php:139 visitor-maps.php:52 visitor-maps.php:1231
-#: visitor-maps.php:1243 visitor-maps.php:1264 visitor-maps.php:1290
+#: class-wo-been.php:139 visitor-maps.php:52 visitor-maps.php:1261
+#: visitor-maps.php:1273 visitor-maps.php:1294 visitor-maps.php:1322
 msgid "Who's Online"
 msgstr ""
 
@@ -86,7 +86,7 @@ msgstr ""
 msgid "Visitor Maps Options"
 msgstr ""
 
-#: class-wo-been.php:142 class-wo-view.php:109 visitor-maps-admin.php:148
+#: class-wo-been.php:142 class-wo-view.php:109 visitor-maps-admin.php:150
 #, php-format
 msgid "<a href=\"%s\">Visitor Map Viewer</a>"
 msgstr ""
@@ -197,11 +197,11 @@ msgstr ""
 msgid "Referer:"
 msgstr ""
 
-#: class-wo-map-page.php:43 class-wo-update.php:83 visitor-maps-admin.php:343
+#: class-wo-map-page.php:43 class-wo-update.php:83 visitor-maps-admin.php:353
 #: visitor-maps.php:64 visitor-maps.php:96 visitor-maps.php:110
 #: visitor-maps.php:142 visitor-maps.php:163 visitor-maps.php:301
-#: visitor-maps.php:306 visitor-maps.php:1231 visitor-maps.php:1238
-#: visitor-maps.php:1267 visitor-maps.php:1293
+#: visitor-maps.php:332 visitor-maps.php:1261 visitor-maps.php:1268
+#: visitor-maps.php:1299 visitor-maps.php:1327
 msgid "Visitor Maps"
 msgstr ""
 
@@ -210,46 +210,46 @@ msgstr ""
 msgid "Select a time period up to %d days ago"
 msgstr ""
 
-#: class-wo-map-page.php:46 visitor-maps-admin.php:213
+#: class-wo-map-page.php:46 visitor-maps-admin.php:219
 msgid "Time:"
 msgstr ""
 
-#: class-wo-map-page.php:48 visitor-maps-admin.php:215
+#: class-wo-map-page.php:48 visitor-maps-admin.php:221
 msgid "Units:"
 msgstr ""
 
 #: class-wo-map-page.php:52 class-wo-worldmap.php:139
-#: visitor-maps-admin.php:219
+#: visitor-maps-admin.php:225
 msgid "minutes"
 msgstr ""
 
 #: class-wo-map-page.php:53 class-wo-worldmap.php:143
-#: visitor-maps-admin.php:220
+#: visitor-maps-admin.php:226
 msgid "hours"
 msgstr ""
 
 #: class-wo-map-page.php:54 class-wo-worldmap.php:147
-#: visitor-maps-admin.php:221
+#: visitor-maps-admin.php:227
 msgid "days"
 msgstr ""
 
-#: class-wo-map-page.php:71 visitor-maps-admin.php:232
+#: class-wo-map-page.php:71 visitor-maps-admin.php:238
 msgid "Map:"
 msgstr ""
 
-#: class-wo-map-page.php:75 visitor-maps-admin.php:238
+#: class-wo-map-page.php:75 visitor-maps-admin.php:244
 msgid "World (smallest)"
 msgstr ""
 
-#: class-wo-map-page.php:76 visitor-maps-admin.php:239
+#: class-wo-map-page.php:76 visitor-maps-admin.php:245
 msgid "World (small)"
 msgstr ""
 
-#: class-wo-map-page.php:77 visitor-maps-admin.php:240
+#: class-wo-map-page.php:77 visitor-maps-admin.php:246
 msgid "World (medium)"
 msgstr ""
 
-#: class-wo-map-page.php:78 visitor-maps-admin.php:241
+#: class-wo-map-page.php:78 visitor-maps-admin.php:247
 msgid "World (large)"
 msgstr ""
 
@@ -497,7 +497,7 @@ msgid ""
 "network."
 msgstr ""
 
-#: class-wo-update.php:278 visitor-maps-admin.php:146 visitor-maps.php:110
+#: class-wo-update.php:278 visitor-maps-admin.php:148 visitor-maps.php:110
 msgid "View Who's Online"
 msgstr ""
 
@@ -599,7 +599,7 @@ msgstr ""
 msgid "Your Host:"
 msgstr ""
 
-#: class-wo-view.php:487 visitor-maps-admin.php:167
+#: class-wo-view.php:487 visitor-maps-admin.php:169
 msgid ""
 "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind."
 "com"
@@ -637,135 +637,135 @@ msgstr ""
 msgid "You do not have permissions for managing this option"
 msgstr ""
 
-#: visitor-maps-admin.php:78
+#: visitor-maps-admin.php:80
 msgid "Options saved."
 msgstr ""
 
-#: visitor-maps-admin.php:81
+#: visitor-maps-admin.php:83
 msgid "Visitor Maps and Who's Online Options"
 msgstr ""
 
-#: visitor-maps-admin.php:94
+#: visitor-maps-admin.php:96
 msgid "Changelog"
 msgstr ""
 
-#: visitor-maps-admin.php:95
+#: visitor-maps-admin.php:97
 msgid "FAQ"
 msgstr ""
 
-#: visitor-maps-admin.php:96
+#: visitor-maps-admin.php:98
 msgid "Rate This"
 msgstr ""
 
-#: visitor-maps-admin.php:97
+#: visitor-maps-admin.php:99
 msgid "Support"
 msgstr ""
 
-#: visitor-maps-admin.php:98 visitor-maps-admin.php:106
+#: visitor-maps-admin.php:100 visitor-maps-admin.php:108
 msgid "Donate"
 msgstr ""
 
-#: visitor-maps-admin.php:99
+#: visitor-maps-admin.php:101
 msgid "Free PHP Scripts"
 msgstr ""
 
-#: visitor-maps-admin.php:100
+#: visitor-maps-admin.php:102
 msgid "Contact"
 msgstr ""
 
-#: visitor-maps-admin.php:118
+#: visitor-maps-admin.php:120
 msgid ""
 "If you find this plugin useful to you, please consider making a small "
 "donation to help contribute to further development. Thanks for your kind "
 "support!"
 msgstr ""
 
-#: visitor-maps-admin.php:134
+#: visitor-maps-admin.php:136
 msgid "I have donated to help contribute for the development of this plugin."
 msgstr ""
 
-#: visitor-maps-admin.php:137
+#: visitor-maps-admin.php:139
 msgid "Usage"
 msgstr ""
 
-#: visitor-maps-admin.php:139
+#: visitor-maps-admin.php:141
 msgid ""
 "Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page "
 "will become your Visitor Maps page."
 msgstr ""
 
-#: visitor-maps-admin.php:139 visitor-maps-admin.php:142
-#: visitor-maps-admin.php:189 visitor-maps-admin.php:205
-#: visitor-maps-admin.php:256 visitor-maps-admin.php:269
-#: visitor-maps-admin.php:276 visitor-maps-admin.php:283
-#: visitor-maps-admin.php:294 visitor-maps-admin.php:314
-#: visitor-maps-admin.php:357 visitor-maps-admin.php:364
-#: visitor-maps-admin.php:371 visitor-maps-admin.php:378
+#: visitor-maps-admin.php:141 visitor-maps-admin.php:144
+#: visitor-maps-admin.php:191 visitor-maps-admin.php:211
+#: visitor-maps-admin.php:262 visitor-maps-admin.php:275
+#: visitor-maps-admin.php:282 visitor-maps-admin.php:289
+#: visitor-maps-admin.php:300 visitor-maps-admin.php:320
+#: visitor-maps-admin.php:367 visitor-maps-admin.php:374
+#: visitor-maps-admin.php:381 visitor-maps-admin.php:388
 msgid "help"
 msgstr ""
 
-#: visitor-maps-admin.php:142
+#: visitor-maps-admin.php:144
 msgid ""
 "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the "
 "Who's Online widget to the sidebar column on the right."
 msgstr ""
 
-#: visitor-maps-admin.php:152
+#: visitor-maps-admin.php:154
 msgid "Options"
 msgstr ""
 
-#: visitor-maps-admin.php:155 visitor-maps-admin.php:391
+#: visitor-maps-admin.php:157 visitor-maps-admin.php:401
 msgid "Update Options"
 msgstr ""
 
-#: visitor-maps-admin.php:163
+#: visitor-maps-admin.php:165
 msgid "GeoLocation:"
 msgstr ""
 
-#: visitor-maps-admin.php:169
+#: visitor-maps-admin.php:171
 msgid "The Maxmind GeoLiteCity database is not yet installed."
 msgstr ""
 
-#: visitor-maps-admin.php:169 visitor-maps.php:474
+#: visitor-maps-admin.php:171 visitor-maps.php:500
 msgid "Install Now"
 msgstr ""
 
-#: visitor-maps-admin.php:171
+#: visitor-maps-admin.php:173
 msgid ""
 "The Maxmind GeoLiteCity database is installed but not enabled (check the "
 "setting below)."
 msgstr ""
 
-#: visitor-maps-admin.php:173
+#: visitor-maps-admin.php:175
 msgid "The Maxmind GeoLiteCity database is installed and enabled."
 msgstr ""
 
-#: visitor-maps-admin.php:179
+#: visitor-maps-admin.php:181
 msgid "Enable geolocation."
 msgstr ""
 
-#: visitor-maps-admin.php:180
+#: visitor-maps-admin.php:182
 msgid "Update Now"
 msgstr ""
 
-#: visitor-maps-admin.php:184
+#: visitor-maps-admin.php:186
 msgid "Enable display of bots on geolocation maps."
 msgstr ""
 
-#: visitor-maps-admin.php:188
+#: visitor-maps-admin.php:190
 msgid "Disable text on geolocation maps (missing map background fix)."
 msgstr ""
 
-#: visitor-maps-admin.php:189 visitor-maps-admin.php:205
-#: visitor-maps-admin.php:256 visitor-maps-admin.php:269
-#: visitor-maps-admin.php:276 visitor-maps-admin.php:283
-#: visitor-maps-admin.php:294 visitor-maps-admin.php:314
-#: visitor-maps-admin.php:357 visitor-maps-admin.php:364
-#: visitor-maps-admin.php:371 visitor-maps-admin.php:378
+#: visitor-maps-admin.php:191 visitor-maps-admin.php:211
+#: visitor-maps-admin.php:262 visitor-maps-admin.php:275
+#: visitor-maps-admin.php:282 visitor-maps-admin.php:289
+#: visitor-maps-admin.php:300 visitor-maps-admin.php:320
+#: visitor-maps-admin.php:367 visitor-maps-admin.php:374
+#: visitor-maps-admin.php:381 visitor-maps-admin.php:388
 msgid "Click for Help!"
 msgstr ""
 
-#: visitor-maps-admin.php:191
+#: visitor-maps-admin.php:193
 msgid ""
 "Some PHP servers do not have full support for printing text on the Visitor "
 "Map image. Only if the Visitor Map just displays pins and no image for the "
@@ -773,19 +773,23 @@ msgid ""
 "your visitor maps page to see if the map is now working."
 msgstr ""
 
-#: visitor-maps-admin.php:196
+#: visitor-maps-admin.php:198
 msgid "Enable display of city, state next to country flag."
 msgstr ""
 
-#: visitor-maps-admin.php:200
+#: visitor-maps-admin.php:202
 msgid "Enable visitor map on Who's Online dashboard."
 msgstr ""
 
-#: visitor-maps-admin.php:204
+#: visitor-maps-admin.php:206
+msgid "Enable visitor map link on Who's Online widget."
+msgstr ""
+
+#: visitor-maps-admin.php:210
 msgid "Enable hover labels for location pins on visitor map page."
 msgstr ""
 
-#: visitor-maps-admin.php:207
+#: visitor-maps-admin.php:213
 msgid ""
 "Some themes interfere with the proper display of the location pins on the "
 "Visitor Maps page. After enabling this setting, check your visitor maps page "
@@ -793,179 +797,183 @@ msgid ""
 "too low on the map, undo this setting."
 msgstr ""
 
-#: visitor-maps-admin.php:212
+#: visitor-maps-admin.php:218
 msgid "Default Visitor Map"
 msgstr ""
 
-#: visitor-maps-admin.php:258
+#: visitor-maps-admin.php:264
 msgid ""
 "Default map to display on the Visitor Maps page. After setting this, check "
 "your visitor maps page to make sure it fits correctly. If the map is too "
 "wide, select the next smaller one."
 msgstr ""
 
-#: visitor-maps-admin.php:265
+#: visitor-maps-admin.php:271
 msgid "Visitors:"
 msgstr ""
 
-#: visitor-maps-admin.php:268
+#: visitor-maps-admin.php:274
 msgid "Active time (minutes)"
 msgstr ""
 
-#: visitor-maps-admin.php:271
+#: visitor-maps-admin.php:277
 msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
 msgstr ""
 
-#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:281
 msgid "Inactive time (minutes)"
 msgstr ""
 
-#: visitor-maps-admin.php:278
+#: visitor-maps-admin.php:284
 msgid ""
 "Minutes until an inactive visitor is removed from display. Default is 15 "
 "minutes."
 msgstr ""
 
-#: visitor-maps-admin.php:282
+#: visitor-maps-admin.php:288
 msgid "Days to store visitor data"
 msgstr ""
 
-#: visitor-maps-admin.php:285
+#: visitor-maps-admin.php:291
 msgid ""
 "Days to store visitor data in database table. This data is used for the "
 "geolocation maps. Default is 30 days."
 msgstr ""
 
-#: visitor-maps-admin.php:290
+#: visitor-maps-admin.php:296
 msgid "Do not show administrators on the maps."
 msgstr ""
 
-#: visitor-maps-admin.php:293
+#: visitor-maps-admin.php:299
 msgid "IP Adresses to ignore"
 msgstr ""
 
-#: visitor-maps-admin.php:296
+#: visitor-maps-admin.php:302
 msgid ""
 "Optional list of IP addresses for visitors you do not want shown on maps."
 msgstr ""
 
-#: visitor-maps-admin.php:297
+#: visitor-maps-admin.php:303
 msgid "Start each entry on a new line."
 msgstr ""
 
-#: visitor-maps-admin.php:298
+#: visitor-maps-admin.php:304
 msgid "Use <strong>*</strong> for wildcards."
 msgstr ""
 
-#: visitor-maps-admin.php:299
+#: visitor-maps-admin.php:305
 msgid "Examples:"
 msgstr ""
 
-#: visitor-maps-admin.php:310
+#: visitor-maps-admin.php:316
 msgid "Lookups:"
 msgstr ""
 
-#: visitor-maps-admin.php:313
+#: visitor-maps-admin.php:319
 msgid "Who Is Lookup URL"
 msgstr ""
 
-#: visitor-maps-admin.php:316
+#: visitor-maps-admin.php:322
 msgid "URL to open when an IP address is clicked on."
 msgstr ""
 
-#: visitor-maps-admin.php:321
+#: visitor-maps-admin.php:327
 msgid "Enable open Who Is Lookup URL on a pop-up."
 msgstr ""
 
-#: visitor-maps-admin.php:325
+#: visitor-maps-admin.php:331
 msgid "Enable host lookups for IP addresses."
 msgstr ""
 
-#: visitor-maps-admin.php:332
+#: visitor-maps-admin.php:338
 msgid "Stats:"
 msgstr ""
 
-#: visitor-maps-admin.php:335
+#: visitor-maps-admin.php:341
 msgid "Enable stats display in blog footer."
 msgstr ""
 
-#: visitor-maps-admin.php:339
+#: visitor-maps-admin.php:345
 msgid "Enable stats display in admin footer."
 msgstr ""
 
-#: visitor-maps-admin.php:343
-msgid "Enable plugin credit link:"
-msgstr ""
-
-#: visitor-maps-admin.php:343 visitor-maps.php:96 visitor-maps.php:142
-#: visitor-maps.php:306 visitor-maps.php:1238 visitor-maps.php:1267
-#: visitor-maps.php:1293
-msgid "Powered by"
-msgstr ""
-
 #: visitor-maps-admin.php:349
-msgid "Times:"
+msgid "Enable stats display on map page."
 msgstr ""
 
 #: visitor-maps-admin.php:353
-msgid "Table of date format characters."
+msgid "Enable plugin credit link:"
 msgstr ""
 
-#: visitor-maps-admin.php:356
-msgid "Time format (Max Users Today)"
+#: visitor-maps-admin.php:353 visitor-maps.php:96 visitor-maps.php:142
+#: visitor-maps.php:332 visitor-maps.php:1268 visitor-maps.php:1299
+#: visitor-maps.php:1327
+msgid "Powered by"
 msgstr ""
 
 #: visitor-maps-admin.php:359
+msgid "Times:"
+msgstr ""
+
+#: visitor-maps-admin.php:363
+msgid "Table of date format characters."
+msgstr ""
+
+#: visitor-maps-admin.php:366
+msgid "Time format (Max Users Today)"
+msgstr ""
+
+#: visitor-maps-admin.php:369
 msgid ""
 "Time format for \"Max users today\" and \"Last refresh time\" display. "
 "Default, h:i a T (02:25 pm PST)"
 msgstr ""
 
-#: visitor-maps-admin.php:363
+#: visitor-maps-admin.php:373
 msgid "Time format (Last Click)"
 msgstr ""
 
-#: visitor-maps-admin.php:366
+#: visitor-maps-admin.php:376
 msgid ""
 "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa "
 "(02:25:25pm)"
 msgstr ""
 
-#: visitor-maps-admin.php:370
+#: visitor-maps-admin.php:380
 msgid "Date/Time format (All Time Records)"
 msgstr ""
 
-#: visitor-maps-admin.php:373
+#: visitor-maps-admin.php:383
 msgid ""
 "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a "
 "T (12-14-2008 02:25 pm PST)"
 msgstr ""
 
-#: visitor-maps-admin.php:377
+#: visitor-maps-admin.php:387
 msgid "Date/Time format (GeoLite data)"
 msgstr ""
 
-#: visitor-maps-admin.php:380
+#: visitor-maps-admin.php:390
 msgid ""
 "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-"
 "d-Y h:i a T (12-14-2008 02:25 pm PST)"
 msgstr ""
 
-#: visitor-maps-admin.php:395
+#: visitor-maps-admin.php:405
 msgid "More WordPress plugins by Mike Challis:"
 msgstr ""
 
-#: visitor-maps-admin.php:397
+#: visitor-maps-admin.php:407
 msgid "Fast and Secure Contact Form"
 msgstr ""
 
-#: visitor-maps-admin.php:398
+#: visitor-maps-admin.php:408
 msgid "SI CAPTCHA Anti-Spam"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.3.8)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.4.1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
-#: visitor-maps-admin.php:399
+#: visitor-maps-admin.php:409
 msgid "Visitor Maps and Who's Online"
 msgstr ""
 
@@ -982,7 +990,7 @@ msgstr ""
 msgid "Powered by Visitor Maps"
 msgstr ""
 
-#: visitor-maps.php:239 visitor-maps.php:309
+#: visitor-maps.php:239 visitor-maps.php:335
 msgid "Visitor Maps geolocation is disabled in settings."
 msgstr ""
 
@@ -994,49 +1002,59 @@ msgstr ""
 msgid "Visitor Map Viewer"
 msgstr ""
 
-#: visitor-maps.php:474
+#: visitor-maps.php:313 visitor-maps.php:995 visitor-maps.php:996
+msgid "Max visitors today"
+msgstr ""
+
+#: visitor-maps.php:313 visitor-maps.php:315 visitor-maps.php:317
+#: visitor-maps.php:319 visitor-maps.php:995 visitor-maps.php:996
+#: visitor-maps.php:999 visitor-maps.php:1000 visitor-maps.php:1003
+#: visitor-maps.php:1004 visitor-maps.php:1007 visitor-maps.php:1008
+msgid "at"
+msgstr ""
+
+#: visitor-maps.php:315 visitor-maps.php:999 visitor-maps.php:1000
+msgid "This month"
+msgstr ""
+
+#: visitor-maps.php:317 visitor-maps.php:1003 visitor-maps.php:1004
+msgid "This year"
+msgstr ""
+
+#: visitor-maps.php:319 visitor-maps.php:1007 visitor-maps.php:1008
+msgid "All time"
+msgstr ""
+
+#: visitor-maps.php:322
+msgid "Records of the most visitors online at once:"
+msgstr ""
+
+#: visitor-maps.php:500
 msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
 msgstr ""
 
-#: visitor-maps.php:538
+#: visitor-maps.php:564
 msgid "Settings"
 msgstr ""
 
-#: visitor-maps.php:955 visitor-maps.php:1260 visitor-maps.php:1286
+#: visitor-maps.php:983 visitor-maps.php:1290 visitor-maps.php:1318
 #, php-format
 msgid "%d visitors online now"
 msgstr ""
 
-#: visitor-maps.php:956 visitor-maps.php:1261 visitor-maps.php:1287
+#: visitor-maps.php:984 visitor-maps.php:1291 visitor-maps.php:1319
 #, php-format
 msgid "%d guests"
 msgstr ""
 
-#: visitor-maps.php:957 visitor-maps.php:1262 visitor-maps.php:1288
+#: visitor-maps.php:985 visitor-maps.php:1292 visitor-maps.php:1320
 #, php-format
 msgid "%d members"
 msgstr ""
 
-#: visitor-maps.php:967 visitor-maps.php:968
-msgid "Max visitors today"
-msgstr ""
-
-#: visitor-maps.php:967 visitor-maps.php:968 visitor-maps.php:971
-#: visitor-maps.php:972 visitor-maps.php:975 visitor-maps.php:976
-#: visitor-maps.php:979 visitor-maps.php:980
-msgid "at"
-msgstr ""
-
-#: visitor-maps.php:971 visitor-maps.php:972
-msgid "This month"
-msgstr ""
-
-#: visitor-maps.php:975 visitor-maps.php:976
-msgid "This year"
-msgstr ""
-
-#: visitor-maps.php:979 visitor-maps.php:980
-msgid "All time"
+#: visitor-maps.php:1297 visitor-maps.php:1325
+#, php-format
+msgid "<a href=\"%s\">Map of Visitors</a>"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
