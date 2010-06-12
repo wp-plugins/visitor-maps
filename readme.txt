@@ -182,6 +182,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+- Updated German (de_DE) - Translated by [JZDM](http://jzdm.de)
+
 = 1.4.1 =
 - (28 May 2010) - New setting: Enable visitor map link on Who's Online widget.  
 - New setting: Enable stats display on map page.
