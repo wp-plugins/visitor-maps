@@ -4972,7 +4972,7 @@ class geoipdnsrecord_VMWO {
   var $org;
 }
 
-function getrecordwithdnsservice($str){
+function getrecordwithdnsservice_VMWO($str){
   $record = new geoipdnsrecord_VMWO;
   $keyvalue = explode(";",$str);
   foreach ($keyvalue as $keyvalue2){
