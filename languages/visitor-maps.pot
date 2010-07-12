@@ -1,4 +1,4 @@
-# Translation of the WordPress plugin Visitor Maps and Who's Online 1.4.1 by Mike Challis.
+# Translation of the WordPress plugin Visitor Maps and Who's Online 1.4.2 by Mike Challis.
 # Copyright (C) 2010 Mike Challis
 # This file is distributed under the same license as the Visitor Maps and Who's Online package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
@@ -6,9 +6,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Visitor Maps and Who's Online 1.4.1\n"
+"Project-Id-Version: Visitor Maps and Who's Online 1.4.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
-"POT-Creation-Date: 2010-07-12 02:42+0000\n"
+"POT-Creation-Date: 2010-07-12 06:03+0000\n"
 "PO-Revision-Date: 2010-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -971,7 +971,7 @@ msgstr ""
 msgid "SI CAPTCHA Anti-Spam"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.4.1)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.4.2)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: visitor-maps-admin.php:409
 msgid "Visitor Maps and Who's Online"
