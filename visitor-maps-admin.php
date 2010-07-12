@@ -296,7 +296,7 @@ foreach ($map_units_array as $k => $v) {
       <label for="visitor_maps_hide_administrators"><?php echo esc_html( __('Do not show administrators on the maps.', 'visitor-maps')); ?></label>
 
       <br />
-      <label name="visitor_maps_ips_to_ignore" for="visitor_maps_ips_to_ignore"><?php echo esc_html( __('IP Adresses to ignore', 'si-contact-form')); ?>:</label>
+      <label name="visitor_maps_ips_to_ignore" for="visitor_maps_ips_to_ignore"><?php echo esc_html( __('IP Adresses to ignore', 'visitor-maps')); ?>:</label>
       <a style="cursor:pointer;" title="<?php echo esc_html( __('Click for Help!', 'visitor_maps')); ?>" onclick="toggleVisibility('visitor_maps_ips_to_ignore_tip');"><?php echo esc_html( __('help', 'visitor_maps')); ?></a> <br />
       <div style="text-align:left; display:none" id="visitor_maps_ips_to_ignore_tip">
         <?php _e('Optional list of IP addresses for visitors you do not want shown on maps.', 'visitor_maps') ?><br />
@@ -402,7 +402,7 @@ foreach ($map_units_array as $k => $v) {
         </p>
 </form>
 
-<p><?php _e('More WordPress plugins by Mike Challis:', 'si-contact-form') ?></p>
+<p><?php _e('More WordPress plugins by Mike Challis:', 'visitor-maps') ?></p>
 <ul>
 <li><a href="http://wordpress.org/extend/plugins/si-contact-form/" target="_blank"><?php echo esc_html( __('Fast and Secure Contact Form', 'visitor-maps')); ?></a></li>
 <li><a href="http://wordpress.org/extend/plugins/si-captcha-for-wordpress/" target="_blank"><?php echo esc_html( __('SI CAPTCHA Anti-Spam', 'visitor-maps')); ?></a></li>

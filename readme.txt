@@ -157,6 +157,7 @@ The following translations are included in the download zip file:
 * Belorussian (be_BY) - Translated by [Marcis G](http://pc.de)
 * Brazilian Portuguese (pt_BR) - Translated by Miguel Netto
 * Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
+* Danish (da_DK) - Translated by [GeorgWP](http://wordpress.blogos.dk/wpdadkdownloads/)
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
@@ -182,6 +183,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+- Added Danish (da_DK) - Translated by [GeorgWP](http://wordpress.blogos.dk/wpdadkdownloads/)
 - Updated German (de_DE) - Translated by [JZDM](http://jzdm.de)
 
 = 1.4.1 =
