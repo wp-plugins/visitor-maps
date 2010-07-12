@@ -9,7 +9,7 @@ Visitor Maps PHP Script by Mike Challis
 Free PHP Scripts - www.642weather.com/weather/scripts.php
 */
 
- 
+
 class WoViewMaps {
     var $set;
     var $gvar;
@@ -295,7 +295,7 @@ function textoverlay($text, $image_p, $new_width, $new_height) {
     $fontstyle = 5; // 1,2,3,4 or 5
     $fontcolor = $this->gvar['text_color'];
     $fontshadowcolor = $this->gvar['text_shadow_color'];
-    $ttfont = (isset($this->set['map_text_font'])) ? $this->set['map_text_font'] : '';
+    $ttfont = (isset($this->set['map_text_font'])) ? $this->set['map_text_font'] : WP_PLUGIN_DIR . '/visitor-maps/vmfont.ttf';
     $fontsize = 12; # size for True Type Font $ttfont only (8-18 recommended)
     $textalign = $this->gvar['text_align'];
     $xmargin = 5;

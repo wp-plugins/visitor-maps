@@ -183,6 +183,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.4.2 =
+- (11 Jul 2010) - Fixed problem with accent characters on the text on the map images.
 - Added Danish (da_DK) - Translated by [GeorgWP](http://wordpress.blogos.dk/wpdadkdownloads/)
 - Updated German (de_DE) - Translated by [JZDM](http://jzdm.de)
 
