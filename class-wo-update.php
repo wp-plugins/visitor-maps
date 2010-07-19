@@ -69,8 +69,8 @@ function update_now() {
 
 
 // Check for safe mode
-$this->setting['safe_mode'] = 0;
-if( @strtolower(ini_get('safe_mode')) == 'on' || @ini_get('safe_mode') === 1 ){
+$this->setting['safe_mode'] = ((boolean)@ini_get('safe_mode') === false) ? 0 : 1;
+if( $this->setting['safe_mode'] ){
     // Do it the safe mode way
     $this->setting['safe_mode'] = 1;
     $this->setting['chmod'] = 0;
@@ -114,6 +114,9 @@ if ($vm_mem_limit == 'unknown') {
     } else {
        echo __('failed.','visitor-maps').'<br />';
     }
+    if ($this->setting['non_buffer']) {
+         $this->non_buffer();
+    }
 
 } else {
     echo sprintf( __('PHP Memory Limit is %s, increasing is not needed.','visitor-maps'),$vm_mem_limit).'<br />';
@@ -123,6 +126,36 @@ if ($vm_mem_limit == 'unknown') {
     }
 
    echo __('Connecting to this URL:', 'visitor-maps').' '.$this->setting['url'].'<br />';
+    if ($this->setting['non_buffer']) {
+         $this->non_buffer();
+    }
+
+
+   // Check for safe mode
+    if($this->setting['safe_mode']){
+      echo '<br /><span style="color:red;">'. __('Warning: Your web host has PHP safe_mode turned on.', 'visitor-maps');
+      echo '</span> ';
+      echo __('PHP safe_mode can cause problems with this updater such as file permission errors.', 'visitor-maps')."<br />\n";
+      echo __('PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support.', 'visitor-maps')."<br />\n";
+    }
+
+    // Check for allow_url_fopen
+    $allow_url_fopen = ((boolean)@ini_get('allow_url_fopen') === false) ? 0 : 1;
+    if(!$allow_url_fopen){
+      echo '<br /><span style="color:red;">'. __('Warning: Your web host has the PHP setting allow_url_fopen turned off.', 'visitor-maps')." \n";
+      echo '</span> ';
+      echo __('PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support.', 'visitor-maps')." \n";
+      echo __('The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz', 'visitor-maps')."<br />\n";
+      echo __('Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. ', 'visitor-maps')."<br />\n";
+    }
+
+    // Check for older than PHP5
+   if (phpversion() < 5) {
+      echo '<br /><span style="color:red;">'. __('Warning: Your web host has not upgraded from PHP4 to PHP5.', 'visitor-maps');
+      echo '</span> ';
+      echo __('PHP4 was officially discontinued August 8, 2008 and is no longer considered safe.', 'visitor-maps')."<br />\n";
+      echo __('PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support.', 'visitor-maps')."<br /><br />\n";
+    }
     if ($this->setting['non_buffer']) {
          $this->non_buffer();
     }
