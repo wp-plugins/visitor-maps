@@ -183,6 +183,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.4.3 =
+- (26 Jul 2010) - Fixed MySQL database performance by adding index key.
 - Improved GeoLiteCity database updater error reporting. 
 
 = 1.4.2 =

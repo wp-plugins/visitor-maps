@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.4.2
+Version: 1.4.3
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -39,13 +39,28 @@ function visitor_maps_unset_options() {
   $wpdb->query("DROP TABLE IF EXISTS `". $wo_table_ge . "`");
 
   delete_option('visitor_maps');
+  delete_option('visitor_maps_upgrade_1');
 
 } // end function visitor_maps_unset_options
+
+
 
 if (!class_exists('VisitorMaps')) {
 
  class VisitorMaps {
      var $visitor_maps_error;
+
+ // upgrade path from version 1.4.2 or older
+function visitor_maps_upgrade_1() {
+  global $wpdb, $wp_version;
+  if (!get_option('visitor_maps_upgrade_1')) {
+    // just now updating, run upgrade patch
+    $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
+    $wpdb->query("ALTER TABLE `". $wo_table_wo . "`
+    ADD INDEX nickname_time_last_click (`nickname`, `time_last_click`)");
+    add_option('visitor_maps_upgrade_1',  array( 'upgraded' => 'true' ), '', 'yes');
+  }
+} // end function visitor_maps_upgrade_1
 
 function visitor_maps_add_tabs() {
     add_submenu_page('plugins.php', __('Visitor Maps Options', 'visitor-maps'), __('Visitor Maps Options', 'visitor-maps'), 'manage_options', __FILE__,array(&$this,'visitor_maps_options_page'));
@@ -507,7 +522,6 @@ function visitor_maps_install() {
     $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
     $wo_table_ge = $wpdb->prefix . 'visitor_maps_ge';
 
-
 	if($wpdb->get_var("show tables like '". $wo_table_wo . "'") != $wo_table_wo) {
 	   $wpdb->query("CREATE TABLE IF NOT EXISTS `". $wo_table_wo . "` (
        `session_id`      varchar(128) NOT NULL default '',
@@ -530,7 +544,8 @@ function visitor_maps_install() {
        `time_entry`      int(10) unsigned NOT NULL default '0',
        `time_last_click` int(10) unsigned NOT NULL default '0',
        `num_visits`      int(10) unsigned NOT NULL default '0',
-        PRIMARY KEY  (`session_id`) )");
+        PRIMARY KEY  (`session_id`),
+        KEY `nickname_time_last_click` (`nickname`,`time_last_click`))");
 	}
 
     if($wpdb->get_var("show tables like '". $wo_table_st . "'") != $wo_table_st) {
@@ -544,7 +559,6 @@ function visitor_maps_install() {
        $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('month', '1', now())");
        $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('year', '1', now())");
        $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('all', '1', now())");
-
 	}
 
     if($wpdb->get_var("show tables like '". $wo_table_ge . "'") != $wo_table_ge) {
@@ -552,6 +566,9 @@ function visitor_maps_install() {
          `time_last_check` int(10) unsigned NOT NULL default '0',
          `needs_update` tinyint(1) unsigned NOT NULL default '0')");
 	}
+
+    // add this so the upgrade patch will not be triggered on a fresh install
+    add_option('visitor_maps_upgrade_1',  array( 'upgraded' => 'true' ), '', 'yes');
 
 } // end function visitor_maps_install
 
@@ -1394,6 +1411,12 @@ if (isset($visitor_maps)) {
 
   // get the options now
   $visitor_maps->visitor_maps_get_options();
+
+  // versions upgraded from < 1.4.2 need a forced database table patch
+  // will not be triggered on a fresh install
+  if ( !get_option('visitor_maps_upgrade_1') ) {
+     $visitor_maps->visitor_maps_upgrade_1();
+  }
 
   add_action('plugins_loaded', array(&$visitor_maps,'visitor_maps_register_widget'));
 
