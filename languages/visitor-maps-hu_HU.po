@@ -1,15 +1,20 @@
+# Translation of the WordPress plugin Visitor Maps and Who's Online 1.4.3 by Mike Challis.
+# Copyright (C) 2010 Mike Challis
+# This file is distributed under the same license as the Visitor Maps and Who's Online package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: Visitor Maps and Who's Online 1.3.1\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/whos-online-pro\n"
-"POT-Creation-Date: 2009-10-01 17:15+0000\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: Baroteam and Varnyu <varnyucska@gmail.com>\n"
+"Project-Id-Version: Visitor Maps and Who's Online 1.4.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
+"POT-Creation-Date: 2010-07-26 19:26+0000\n"
+"PO-Revision-Date: 2010-08-05 17:26+0100\n"
+"Last-Translator: varnyu <varnyucska@gmail.com>\n"
+"Language-Team: varnyu <varnyucska@gmail.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: tegezés\n"
+"Plural-Forms: tegezes\n"
 "X-Poedit-Language: Hungarian\n"
 "X-Poedit-Country: HUNGARY\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -27,13 +32,13 @@ msgstr "mindenki"
 
 #: class-wo-been.php:21
 #: class-wo-view.php:33
-#: class-wo-view.php:463
+#: class-wo-view.php:466
 msgid "Bots"
 msgstr "robot"
 
 #: class-wo-been.php:22
 #: class-wo-view.php:34
-#: class-wo-view.php:459
+#: class-wo-view.php:462
 msgid "Guests"
 msgstr "vendég"
 
@@ -57,13 +62,13 @@ msgstr "Utolsó látogatás"
 #: class-wo-been.php:208
 #: class-wo-view.php:157
 msgid "IP Address"
-msgstr "IP cim"
+msgstr "IP cím"
 
 #: class-wo-been.php:34
 #: class-wo-been.php:209
 #: class-wo-view.php:158
 msgid "Location"
-msgstr "Hely"
+msgstr "Hely "
 
 #: class-wo-been.php:35
 #: class-wo-been.php:213
@@ -73,11 +78,11 @@ msgstr "Utolsó URL"
 
 #: class-wo-been.php:51
 msgid "Descending"
-msgstr "Leszálló"
+msgstr "Csökkenő"
 
 #: class-wo-been.php:52
 msgid "Ascending"
-msgstr "Felszálló"
+msgstr "Emelkedő"
 
 #: class-wo-been.php:133
 #: class-wo-view.php:101
@@ -91,58 +96,58 @@ msgstr "Sorbarendezés:"
 #: class-wo-been.php:136
 #: class-wo-view.php:103
 msgid "Show Bots:"
-msgstr "Robotok:"
+msgstr "Mutassa a robotokat:"
 
 #: class-wo-been.php:139
-#: visitor-maps.php:53
-#: visitor-maps.php:1911
-#: visitor-maps.php:1923
-#: visitor-maps.php:1944
-#: visitor-maps.php:1970
+#: visitor-maps.php:67
+#: visitor-maps.php:1278
+#: visitor-maps.php:1290
+#: visitor-maps.php:1311
+#: visitor-maps.php:1339
 msgid "Who's Online"
 msgstr "Online lista"
 
 #: class-wo-been.php:140
-#: class-wo-update.php:255
+#: class-wo-update.php:312
 #: class-wo-view.php:107
-#: visitor-maps.php:52
+#: visitor-maps.php:66
 msgid "Visitor Maps Options"
 msgstr "Visitor Maps beállitásai"
 
 #: class-wo-been.php:142
 #: class-wo-view.php:109
-#: visitor-maps.php:749
+#: visitor-maps-admin.php:150
 #, php-format
 msgid "<a href=\"%s\">Visitor Map Viewer</a>"
-msgstr "<a href=\"%s\">Térkép nézö</a>"
+msgstr "<a href=\"%s\">Térkép néző</a>"
 
 #: class-wo-been.php:152
-#: class-wo-been.php:547
+#: class-wo-been.php:550
 #: class-wo-view.php:119
-#: class-wo-view.php:538
+#: class-wo-view.php:541
 msgid "Active Guest"
-msgstr "aktiv vendég"
+msgstr "Aktiv vendég"
 
 #: class-wo-been.php:154
-#: class-wo-been.php:540
+#: class-wo-been.php:543
 #: class-wo-view.php:121
-#: class-wo-view.php:531
+#: class-wo-view.php:534
 msgid "Inactive Guest"
-msgstr "inaktiv vendég"
+msgstr "Inaktiv vendég"
 
 #: class-wo-been.php:158
-#: class-wo-been.php:534
+#: class-wo-been.php:537
 #: class-wo-view.php:125
-#: class-wo-view.php:525
+#: class-wo-view.php:528
 msgid "Active Bot"
-msgstr "aktiv robot"
+msgstr "Aktiv robot"
 
 #: class-wo-been.php:160
-#: class-wo-been.php:531
+#: class-wo-been.php:534
 #: class-wo-view.php:127
-#: class-wo-view.php:522
+#: class-wo-view.php:525
 msgid "Inactive Bot"
-msgstr "inaktiv robot"
+msgstr "Inaktiv robot"
 
 #: class-wo-been.php:172
 #: class-wo-view.php:139
@@ -150,37 +155,42 @@ msgstr "inaktiv robot"
 msgid "%1$d visitors since %2$s"
 msgstr "%1$d látogató %2$s óta"
 
+#: class-wo-been.php:172
+#: class-wo-view.php:139
+msgid "installation"
+msgstr "telepités"
+
 #: class-wo-been.php:179
 #: class-wo-been.php:181
-#: class-wo-been.php:497
-#: class-wo-been.php:499
+#: class-wo-been.php:500
+#: class-wo-been.php:502
 msgid "FIRST"
 msgstr "ELSŐ"
 
 #: class-wo-been.php:179
 #: class-wo-been.php:183
-#: class-wo-been.php:497
-#: class-wo-been.php:501
+#: class-wo-been.php:500
+#: class-wo-been.php:504
 msgid "PREV"
 msgstr "ELŐZŐ"
 
 #: class-wo-been.php:185
-#: class-wo-been.php:503
+#: class-wo-been.php:506
 #, php-format
 msgid "Page %1$d of %2$d"
 msgstr "%1$d oldal a %2$d közül"
 
 #: class-wo-been.php:187
 #: class-wo-been.php:190
-#: class-wo-been.php:505
 #: class-wo-been.php:508
+#: class-wo-been.php:511
 msgid "NEXT"
 msgstr "KÖVETKEZŐ"
 
 #: class-wo-been.php:187
 #: class-wo-been.php:191
-#: class-wo-been.php:505
-#: class-wo-been.php:509
+#: class-wo-been.php:508
+#: class-wo-been.php:512
 msgid "LAST"
 msgstr "UTOLSÓ"
 
@@ -189,139 +199,139 @@ msgstr "UTOLSÓ"
 msgid "Referer"
 msgstr "Referer"
 
-#: class-wo-been.php:321
-#: class-wo-view.php:274
+#: class-wo-been.php:323
+#: class-wo-view.php:276
 msgid "Guest"
-msgstr "vendég"
+msgstr "Vendég"
 
-#: class-wo-been.php:325
-#: class-wo-view.php:278
-#: class-wo-view.php:467
+#: class-wo-been.php:327
+#: class-wo-view.php:280
+#: class-wo-view.php:470
 msgid "You"
-msgstr "ez vagy Te"
+msgstr "Te vagy"
 
-#: class-wo-been.php:343
-#: class-wo-view.php:296
+#: class-wo-been.php:345
+#: class-wo-view.php:298
 msgid "Error"
 msgstr "Hiba"
 
-#: class-wo-been.php:365
-#: class-wo-view.php:311
+#: class-wo-been.php:367
+#: class-wo-view.php:313
 msgid "visits"
 msgstr "látogatás"
 
-#: class-wo-been.php:370
-#: class-wo-view.php:316
+#: class-wo-been.php:372
+#: class-wo-view.php:318
 msgid "host lookups not enabled"
 msgstr "a host megtekintése nem lehetséges"
 
-#: class-wo-been.php:392
-#: class-wo-view.php:338
+#: class-wo-been.php:394
+#: class-wo-view.php:340
 msgid "unknown"
 msgstr "ismeretlen"
 
-#: class-wo-been.php:451
-#: class-wo-view.php:402
+#: class-wo-been.php:453
+#: class-wo-view.php:404
 msgid "No"
 msgstr "Nem"
 
-#: class-wo-been.php:453
-#: class-wo-view.php:404
+#: class-wo-been.php:455
+#: class-wo-view.php:406
 msgid "Yes"
 msgstr "Igen"
 
-#: class-wo-been.php:467
-#: class-wo-view.php:418
+#: class-wo-been.php:469
+#: class-wo-view.php:420
 msgid "Last URL:"
 msgstr "Utolsó URL:"
 
-#: class-wo-been.php:558
-#: class-wo-view.php:549
+#: class-wo-been.php:561
+#: class-wo-view.php:552
 msgid "User Agent:"
 msgstr "User Agent:"
 
-#: class-wo-been.php:564
-#: class-wo-view.php:555
+#: class-wo-been.php:567
+#: class-wo-view.php:558
 msgid "Host:"
 msgstr "Host:"
 
-#: class-wo-been.php:570
-#: class-wo-view.php:561
+#: class-wo-been.php:573
+#: class-wo-view.php:564
 msgid "Referer:"
 msgstr "Referer:"
 
 #: class-wo-map-page.php:43
-#: class-wo-update.php:82
-#: visitor-maps.php:65
-#: visitor-maps.php:97
+#: class-wo-update.php:83
+#: visitor-maps-admin.php:353
+#: visitor-maps.php:79
 #: visitor-maps.php:111
-#: visitor-maps.php:143
-#: visitor-maps.php:164
-#: visitor-maps.php:302
-#: visitor-maps.php:307
-#: visitor-maps.php:918
-#: visitor-maps.php:1911
-#: visitor-maps.php:1918
-#: visitor-maps.php:1947
-#: visitor-maps.php:1973
+#: visitor-maps.php:125
+#: visitor-maps.php:157
+#: visitor-maps.php:178
+#: visitor-maps.php:316
+#: visitor-maps.php:347
+#: visitor-maps.php:1278
+#: visitor-maps.php:1285
+#: visitor-maps.php:1316
+#: visitor-maps.php:1344
 msgid "Visitor Maps"
 msgstr "Visitor Maps"
 
 #: class-wo-map-page.php:45
 #, php-format
 msgid "Select a time period up to %d days ago"
-msgstr "Válaszz egy idö periódust az utolsó %d napon belül"
+msgstr "Válassz egy időperiódust az utolsó %d napon belül"
 
 #: class-wo-map-page.php:46
-#: visitor-maps.php:806
+#: visitor-maps-admin.php:219
 msgid "Time:"
 msgstr "Idő:"
 
 #: class-wo-map-page.php:48
-#: visitor-maps.php:808
+#: visitor-maps-admin.php:221
 msgid "Units:"
 msgstr "Egység:"
 
 #: class-wo-map-page.php:52
-#: class-wo-worldmap.php:136
-#: visitor-maps.php:812
+#: class-wo-worldmap.php:139
+#: visitor-maps-admin.php:225
 msgid "minutes"
 msgstr "perc"
 
 #: class-wo-map-page.php:53
-#: class-wo-worldmap.php:140
-#: visitor-maps.php:813
+#: class-wo-worldmap.php:143
+#: visitor-maps-admin.php:226
 msgid "hours"
 msgstr "óra"
 
 #: class-wo-map-page.php:54
-#: class-wo-worldmap.php:144
-#: visitor-maps.php:814
+#: class-wo-worldmap.php:147
+#: visitor-maps-admin.php:227
 msgid "days"
 msgstr "nap"
 
 #: class-wo-map-page.php:71
-#: visitor-maps.php:825
+#: visitor-maps-admin.php:238
 msgid "Map:"
 msgstr "Térkép:"
 
 #: class-wo-map-page.php:75
-#: visitor-maps.php:831
+#: visitor-maps-admin.php:244
 msgid "World (smallest)"
 msgstr "Világtérkép (legkisebb)"
 
 #: class-wo-map-page.php:76
-#: visitor-maps.php:832
+#: visitor-maps-admin.php:245
 msgid "World (small)"
 msgstr "Világtérkép (kicsi)"
 
 #: class-wo-map-page.php:77
-#: visitor-maps.php:833
+#: visitor-maps-admin.php:246
 msgid "World (medium)"
 msgstr "Világtérkép (közepes)"
 
 #: class-wo-map-page.php:78
-#: visitor-maps.php:834
+#: visitor-maps-admin.php:247
 msgid "World (large)"
 msgstr "Világtérkép (nagy)"
 
@@ -347,6 +357,7 @@ msgstr "USA"
 #: class-wo-map-page.php:107
 #: class-wo-map-page.php:109
 #: class-wo-map-page.php:111
+#: class-wo-map-page.php:113
 msgid "(black)"
 msgstr "(fekete)"
 
@@ -367,6 +378,7 @@ msgstr "(fekete)"
 #: class-wo-map-page.php:108
 #: class-wo-map-page.php:110
 #: class-wo-map-page.php:112
+#: class-wo-map-page.php:114
 msgid "(brown)"
 msgstr "(barna)"
 
@@ -397,8 +409,8 @@ msgstr "Európa"
 
 #: class-wo-map-page.php:91
 #: class-wo-map-page.php:92
-msgid "Finland"
-msgstr "Finnország"
+msgid "Scandinavia"
+msgstr "Skandinávia"
 
 #: class-wo-map-page.php:93
 #: class-wo-map-page.php:94
@@ -433,7 +445,7 @@ msgstr "USA Sziklás Hegység"
 #: class-wo-map-page.php:105
 #: class-wo-map-page.php:106
 msgid "US South"
-msgstr "USA Dél"
+msgstr "USA Dé"
 
 #: class-wo-map-page.php:107
 #: class-wo-map-page.php:108
@@ -450,177 +462,249 @@ msgstr "USA Dél-nyugat"
 msgid "Spain/Portugal"
 msgstr "Spanyolország és Portugália"
 
-#: class-wo-map-page.php:122
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:115
+msgid "Finland"
+msgstr "Finnország"
+
+#: class-wo-map-page.php:115
+msgid "(yellow)"
+msgstr "(sárga)"
+
+#: class-wo-map-page.php:125
 msgid "Go"
 msgstr "Menj"
 
-#: class-wo-update.php:89
+#: class-wo-update.php:90
 msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
 msgstr "A Maxmind GeoLiteCity adatbázis előkészitése az első telepitéshez"
 
-#: class-wo-update.php:94
+#: class-wo-update.php:95
 msgid "Checking for updates for the Maxmind GeoLiteCity database"
 msgstr "Maxmind GeoLiteCity adatbázis frissitésének keresése"
 
-#: class-wo-update.php:101
+#: class-wo-update.php:106
+msgid "PHP Memory Limit is unknown, increase is not available."
+msgstr "PHP Memória Korlát ismeretlen, növelése nem elérhető."
+
+#: class-wo-update.php:108
+#, php-format
+msgid "PHP Memory Limit is %1$s, temporarily increasing to %2$s"
+msgstr "PHP Memória Korlát %1$s, eddig növelhető:  %2$s"
+
+#: class-wo-update.php:113
+msgid "completed."
+msgstr "kész."
+
+#: class-wo-update.php:115
+msgid "failed."
+msgstr "elvetve."
+
+#: class-wo-update.php:122
+#, php-format
+msgid "PHP Memory Limit is %s, increasing is not needed."
+msgstr "PHP Memória Korlát %s, növelés nem szükséges."
+
+#: class-wo-update.php:128
 msgid "Connecting to this URL:"
 msgstr "Kapcsolódás a következő cimhez:"
 
-#: class-wo-update.php:142
+#: class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr "Figyelmeztetés: A tárhelyed PHP safe_mode-ja be van kapcsolva."
+
+#: class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr "A PHP safe_mode problémákat okozhat ennél a frissitésnél, például hiba lehet a file-ok jogosultságánál."
+
+#: class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+
+#: class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr "Figyelmeztetés: A tárhelyeden a PHP setting allow_url_fopen ki van kapcsolva."
+
+#: class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr "PHP allow_url_fopen beállitások szükségesek az automatikus frissítéshez. Vedd fel a kapcsolatot a tárhelyszolgáltatóval."
+
+#: class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr "A geolite adatbázis csak egy file. A GeoLiteCity.dat.gz file-t manuálisan is letöltheted ezen a linken:http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+
+#: class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr "Csomagold ki a file-t és FTP-vel töltsd fel a GeoLiteCity.dat-ot a /plugins/visitor-maps/ mappába. Ha a file nincs telepitve, a blog működik, de a helymeghatározó információkat a felhasználó nem éri el."
+
+#: class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr "Figyelem: A tárhelyed nincs felfrissitve PHP4-ről PHP5-re."
+
+#: class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+
+#: class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr "A PHP5 gyorsabb, lehetőségei bővebbek és biztonságosabb. PHP4 használatánál működhet, de ez bizonytalan. Vedd fel a kapcsolatot a tárhelyszolgáltatóval."
+
+#: class-wo-update.php:199
 msgid "You have the latest available Maxmind GeoLiteCity database"
 msgstr "A legújabb elérhető Maxmind GeoLiteCity adatbázisod van"
 
-#: class-wo-update.php:143
+#: class-wo-update.php:200
 msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
 msgstr "Figyelem: A Maxmind általában havonta egyszer frissiti a GeoLiteCity-t, de néha 2-3 alkalommal is!"
 
-#: class-wo-update.php:144
+#: class-wo-update.php:201
 #, php-format
 msgid "Maxmind last updated it %1$s (%2$d days ago)"
-msgstr "Maxmind utoló frissitése %1$s (%2$d nappal ezelőtt) "
+msgstr "Maxmind utolsó frissitése %1$s (%2$d nappal ezelőtt)"
 
-#: class-wo-update.php:145
+#: class-wo-update.php:202
 #, php-format
 msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
 msgstr "ez a <a href=\"%s\" target=\"_new\">legújabb elérhető file</a>"
 
-#: class-wo-update.php:147
+#: class-wo-update.php:204
 #, php-format
 msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
 msgstr "Az utolsó GeoLiteCity adatbázis frissitésed dátuma  %s (%d napja)"
 
-#: class-wo-update.php:148
+#: class-wo-update.php:205
 msgid "No new updates are available today."
 msgstr "Ma nincs elérhető frissités."
 
-#: class-wo-update.php:161
+#: class-wo-update.php:218
 msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
 msgstr "Hiba: a letöltés nem lehetséges, mert a GeoLiteCity.dat.gz download file nem található"
 
-#: class-wo-update.php:164
+#: class-wo-update.php:221
 msgid "Download success, uncompressing file, please wait"
 msgstr "A letöltésnek vége, a file kibontása folyik, kérlek, várj"
 
-#: class-wo-update.php:170
+#: class-wo-update.php:227
 msgid "unzip error: opening GeoLiteCity.dat file"
 msgstr "unzip hba: nyitott GeoLiteCity.dat file"
 
-#: class-wo-update.php:172
+#: class-wo-update.php:229
 msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
-msgstr "unzip hiba: nem sikerültmegnyitni a GeoLiteCity.dat.gz file-t"
+msgstr "unzip hiba: nem sikerült megnyitni a GeoLiteCity.dat.gz file-t"
 
-#: class-wo-update.php:181
+#: class-wo-update.php:238
 msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
 msgstr "unzip hiba: Chmod 0644 GeoLiteCity.dat file failed"
 
-#: class-wo-update.php:186
+#: class-wo-update.php:243
 msgid "Error: the GeoLiteCity.dat file was not found"
 msgstr "Hiba: a GeoLiteCity.dat file nem található"
 
-#: class-wo-update.php:190
+#: class-wo-update.php:247
 msgid "Install/Update completed"
 msgstr "Telepités/Frissités kész"
 
-#: class-wo-update.php:214
+#: class-wo-update.php:271
 msgid "Testing a lookup with your IP address:"
-msgstr "A lookup tesztelése a Te IP cimeddel:"
+msgstr "Testing a lookup with your IP address:"
 
-#: class-wo-update.php:220
+#: class-wo-update.php:277
 msgid "test_lookup error: the GeoLiteCity.dat file was not found"
 msgstr "test_lookup hiba: a GeoLiteCity.dat file nem található"
 
-#: class-wo-update.php:223
+#: class-wo-update.php:280
 msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
 msgstr "test_lookup hiba: az include-whos-online-geoip.php file nem található"
 
-#: class-wo-update.php:234
+#: class-wo-update.php:291
 msgid "IP:"
 msgstr "IP:"
 
-#: class-wo-update.php:235
+#: class-wo-update.php:292
 msgid "City:"
 msgstr "Város:"
 
-#: class-wo-update.php:236
+#: class-wo-update.php:293
 msgid "State Name:"
 msgstr "Állam neve:"
 
-#: class-wo-update.php:237
+#: class-wo-update.php:294
 msgid "State Code:"
-msgstr "Állam kód:"
+msgstr "Állam kódja:"
 
-#: class-wo-update.php:238
+#: class-wo-update.php:295
 msgid "Country Name:"
 msgstr "Megye neve:"
 
-#: class-wo-update.php:239
+#: class-wo-update.php:296
 msgid "Country Code:"
 msgstr "Megye kódja:"
 
-#: class-wo-update.php:240
+#: class-wo-update.php:297
 msgid "Lat:"
 msgstr "Földrajzi szélesség:"
 
-#: class-wo-update.php:241
+#: class-wo-update.php:298
 msgid "Lon: "
-msgstr "Földrajizi hosszúság:"
+msgstr "Földrajzi hosszúság:"
 
-#: class-wo-update.php:245
+#: class-wo-update.php:302
 msgid "Note: location information was not available, this is normal if on a private network."
 msgstr "Figyelem: a helyre vonatkozó információ nem elérhető, ez normális, ha ez egy privát hálózat."
 
-#: class-wo-update.php:254
-#: visitor-maps.php:111
-#: visitor-maps.php:747
+#: class-wo-update.php:311
+#: visitor-maps-admin.php:148
+#: visitor-maps.php:125
 msgid "View Who's Online"
 msgstr "Nézzük meg az Online listát"
 
-#: class-wo-update.php:284
-#: class-wo-view.php:693
+#: class-wo-update.php:341
+#: class-wo-view.php:696
 msgid "error: could not connect to remote file"
 msgstr "hiba: nem lehet csatlakozni az irányitó (remote) file-hoz"
 
-#: class-wo-update.php:297
-#: class-wo-view.php:706
+#: class-wo-update.php:354
+#: class-wo-view.php:709
 msgid "error: fetching timestamp failed for URL, 404 not found?"
 msgstr "hiba: az URL elérési ideje lejárt, 404-es nem található?"
 
-#: class-wo-update.php:329
-#: class-wo-view.php:738
+#: class-wo-update.php:386
+#: class-wo-view.php:741
 msgid "error: fetching timestamp failed for URL 404 not found?"
 msgstr "hiba: az URL elérési ideje lejárt, 404-es nem található?"
 
-#: class-wo-update.php:342
-#: class-wo-view.php:751
+#: class-wo-update.php:399
+#: class-wo-view.php:754
 msgid "error: could not connect to remote URL"
 msgstr "hiba: nem lehet csatlakozni az irányitó (remote) URL-hez"
 
-#: class-wo-update.php:347
+#: class-wo-update.php:404
 msgid "Please allow plenty of time for the approximately 19meg file to download."
-msgstr "Engedélyezz elegendő időt egy kb. 19meg file letöltéséhez."
+msgstr "Engedélyezz elegendő időt egy kb. 19 megás file letöltéséhez."
 
-#: class-wo-update.php:348
+#: class-wo-update.php:405
 msgid "The time needed depends on your server download speed."
 msgstr "Az idő függ a szervered letöltési sebességétől."
 
-#: class-wo-update.php:349
+#: class-wo-update.php:406
 msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
-msgstr "Az időtúllépés azért fordulhat elő, mert a kapcsolat lassabb, mint 3 perc."
+msgstr "Az időtúllépés azért fordulhat elő, mert a kapcsolat lassú és túllépte a 3 percet."
 
-#: class-wo-update.php:357
+#: class-wo-update.php:414
 msgid "error: reading or opening file"
-msgstr "hiba: a file olvasásában vagy irásában"
+msgstr "hiba: a file olvasásában vagy megnyitásában"
 
-#: class-wo-update.php:358
-#: class-wo-update.php:376
+#: class-wo-update.php:415
+#: class-wo-update.php:433
 msgid "error: cannot write to file, check server permission settings"
 msgstr "hiba: nem lehet irni a fie-t, ellenőrizd a szerver beállitásokat"
 
-#: class-wo-update.php:359
+#: class-wo-update.php:416
 msgid "Download started, (counting megs)"
 msgstr "A letöltés elkezdődött (számolás)"
 
-#: class-wo-update.php:383
+#: class-wo-update.php:440
 msgid "error: CHMOD 0644 download file failed"
 msgstr "hiba: CHMOD 0644 file letöltés sikertelen"
 
@@ -629,8 +713,8 @@ msgid "Refresh Rate:"
 msgstr "Frissités gyakorisága:"
 
 #: class-wo-view.php:106
-#: visitor-maps.php:54
-#: visitor-maps.php:65
+#: visitor-maps.php:68
+#: visitor-maps.php:79
 msgid "Who's Been Online"
 msgstr "Kik voltak online legutóbb"
 
@@ -650,455 +734,517 @@ msgstr "Belépés"
 msgid "Last Click"
 msgstr "Utolsó kattintás"
 
-#: class-wo-view.php:441
+#: class-wo-view.php:444
 #, php-format
 msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
 msgstr "Online látogatók (Valószinűleg inaktiv %1$d perce. Eltávolitás %2$d perc után) "
 
-#: class-wo-view.php:448
+#: class-wo-view.php:451
 msgid "Duplicate IPs"
 msgstr "Duplikált IP-k"
 
-#: class-wo-view.php:455
+#: class-wo-view.php:458
 msgid "Members (includes you)"
 msgstr "tag (Veled együtt)"
 
-#: class-wo-view.php:459
+#: class-wo-view.php:462
 msgid "are active"
 msgstr "aktiv"
 
-#: class-wo-view.php:473
+#: class-wo-view.php:476
 msgid "Your IP Address:"
 msgstr "Az IP cimed:"
 
-#: class-wo-view.php:479
+#: class-wo-view.php:482
 msgid "Your Host:"
 msgstr "A host-od:"
 
-#: class-wo-view.php:484
-#: visitor-maps.php:768
-msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
-msgstr "GeoLiteCity adatok használatával készitette a MaxMind, mely a következő cimen érhető el: http://www.maxmind.com "
-
 #: class-wo-view.php:487
-#: class-wo-view.php:491
+#: visitor-maps-admin.php:169
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr "GeoLiteCity adatok használatával készitette a MaxMind, http://www.maxmind.com "
+
+#: class-wo-view.php:490
+#: class-wo-view.php:494
 #, php-format
 msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
-msgstr "A GeoLiteCity adatok utolsó frissitése %1$s (%2$d napja)"
+msgstr "A GeoLiteCity adatok utolsó frissitése: %1$s (%2$d napja)"
 
-#: class-wo-view.php:488
+#: class-wo-view.php:491
 msgid "an update is available"
 msgstr "egy frissités elérhető"
 
-#: class-wo-view.php:489
+#: class-wo-view.php:492
 msgid "click here to update"
 msgstr "kattints ide a frissitéshez"
 
 #: class-wo-worldmap.php:27
-#: visitor-maps.php:1333
+#: visitor-maps-worldmap.php:14
 msgid "error: geolocation data not enabled or installed"
 msgstr "hiba: geolokációs adatok nem elérhetőek vagy nincsenek telepitve"
 
-#: class-wo-worldmap.php:246
+#: class-wo-worldmap.php:252
 #, php-format
 msgid "%1$d visitors since %2$d %3$s ago"
-msgstr "%1$d visitors since %2$d %3$s ago"
+msgstr " %2$d %3$s óta %1$d látogató"
 
-#: class-wo-worldmap.php:249
+#: class-wo-worldmap.php:255
 #, php-format
 msgid "%1$d visitors since %2$d ago"
-msgstr "%1$d visitors since %2$d ago"
+msgstr "%2$d óta %1$d látogató"
 
-#: visitor-maps.php:61
-#: visitor-maps.php:107
-#: visitor-maps.php:611
-#: visitor-maps.php:626
+#: visitor-maps-admin.php:7
+#: visitor-maps-admin.php:22
+#: visitor-maps.php:75
+#: visitor-maps.php:121
 msgid "You do not have permissions for managing this option"
 msgstr "Nincs jogosultságod módositani ezt az opciót"
 
-#: visitor-maps.php:94
-#: visitor-maps.php:140
-#, php-format
-msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
-msgstr "Részletes térkép nézési lehetőség : <a href=\"%s\">Visitor Map Viewer</a>"
-
-#: visitor-maps.php:97
-#: visitor-maps.php:143
-#: visitor-maps.php:307
-#: visitor-maps.php:918
-#: visitor-maps.php:1918
-#: visitor-maps.php:1947
-#: visitor-maps.php:1973
-msgid "Powered by"
-msgstr "Powered by"
-
-#: visitor-maps.php:233
-msgid "Close"
-msgstr "Bezár"
-
-#: visitor-maps.php:235
-msgid "Powered by Visitor Maps"
-msgstr "Powered by Visitor Maps"
-
-#: visitor-maps.php:240
-#: visitor-maps.php:310
-msgid "Visitor Maps geolocation is disabled in settings."
-msgstr "A Visitor Maps geolokáció nem elérhető a beállitásokban."
-
-#: visitor-maps.php:305
-msgid "View more maps in the "
-msgstr "Bővebb térképek: "
-
-#: visitor-maps.php:305
-msgid "Visitor Map Viewer"
-msgstr "Visitor Map Viewer"
-
-#: visitor-maps.php:475
-msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
-msgstr "A Visitor Maps pluginhoz telepiteni kell a GeoLiteCity adatbázist."
-
-#: visitor-maps.php:475
-#: visitor-maps.php:770
-msgid "Install Now"
-msgstr "Telepités"
-
-#: visitor-maps.php:539
-msgid "Settings"
-msgstr "Beállitások"
-
-#: visitor-maps.php:679
+#: visitor-maps-admin.php:80
 msgid "Options saved."
 msgstr "Az opciók elmentése megtörtént."
 
-#: visitor-maps.php:682
+#: visitor-maps-admin.php:83
 msgid "Visitor Maps and Who's Online Options"
 msgstr "Visitor Maps és  Who's Online Opciók"
 
-#: visitor-maps.php:695
+#: visitor-maps-admin.php:96
 msgid "Changelog"
 msgstr "Changelog"
 
-#: visitor-maps.php:696
+#: visitor-maps-admin.php:97
 msgid "FAQ"
-msgstr "FAQ"
+msgstr "GYIK"
 
-#: visitor-maps.php:697
+#: visitor-maps-admin.php:98
 msgid "Rate This"
 msgstr "Rangsorold"
 
-#: visitor-maps.php:698
+#: visitor-maps-admin.php:99
 msgid "Support"
 msgstr "Támogatás"
 
-#: visitor-maps.php:699
-#: visitor-maps.php:707
+#: visitor-maps-admin.php:100
+#: visitor-maps-admin.php:108
 msgid "Donate"
 msgstr "Adakozás"
 
-#: visitor-maps.php:700
+#: visitor-maps-admin.php:101
 msgid "Free PHP Scripts"
 msgstr "Free PHP Scripts"
 
-#: visitor-maps.php:701
+#: visitor-maps-admin.php:102
 msgid "Contact"
 msgstr "Kapcsolat:"
 
-#: visitor-maps.php:719
+#: visitor-maps-admin.php:120
 msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!"
 msgstr "Ha hasznosnak találod ezt a plugint, akkor kérlek, adakozz egy kevéssel, hogy segitsd a fejlesztők további munkáját. Köszönjük a támogatásod!"
 
-#: visitor-maps.php:735
+#: visitor-maps-admin.php:136
 msgid "I have donated to help contribute for the development of this plugin."
 msgstr "Adakozok, hogy segitsem a plugin további fejlesztését."
 
-#: visitor-maps.php:738
+#: visitor-maps-admin.php:139
 msgid "Usage"
 msgstr "Használat"
 
-#: visitor-maps.php:740
+#: visitor-maps-admin.php:141
 msgid "Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page."
 msgstr "Ird be ezt a rövid kódot <b>[visitor-maps]</b> egy új oldalra (nem egy új bejegyzésbe). Az oldalon lesz látható a Látogató térképed."
 
-#: visitor-maps.php:740
-#: visitor-maps.php:743
-#: visitor-maps.php:798
-#: visitor-maps.php:849
-#: visitor-maps.php:862
-#: visitor-maps.php:869
-#: visitor-maps.php:876
-#: visitor-maps.php:889
-#: visitor-maps.php:932
-#: visitor-maps.php:939
-#: visitor-maps.php:946
-#: visitor-maps.php:953
+#: visitor-maps-admin.php:141
+#: visitor-maps-admin.php:144
+#: visitor-maps-admin.php:191
+#: visitor-maps-admin.php:211
+#: visitor-maps-admin.php:262
+#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:282
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:300
+#: visitor-maps-admin.php:320
+#: visitor-maps-admin.php:367
+#: visitor-maps-admin.php:374
+#: visitor-maps-admin.php:381
+#: visitor-maps-admin.php:388
 msgid "help"
 msgstr "segitség"
 
-#: visitor-maps.php:743
+#: visitor-maps-admin.php:144
 msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
-msgstr "Add hozzá a Who's Online sidebart. Kattints a Megjelenésre, Widgetekre, majd húzd át a Who's Online widgetet a jobb oldalhasábba."
+msgstr "Add hozzá a Who's Online sidebart. Kattints a Megjelenésre, Widgetekre, majd húzd át a Who's Online widgetet a jobb oldalra."
 
-#: visitor-maps.php:753
+#: visitor-maps-admin.php:154
 msgid "Options"
 msgstr "Opciók"
 
-#: visitor-maps.php:756
-#: visitor-maps.php:966
+#: visitor-maps-admin.php:157
+#: visitor-maps-admin.php:401
 msgid "Update Options"
-msgstr "Frissitett Opciók"
+msgstr "Opciók frissítése"
 
-#: visitor-maps.php:764
+#: visitor-maps-admin.php:165
 msgid "GeoLocation:"
 msgstr "Földrajzi elhelyezkedés:"
 
-#: visitor-maps.php:770
+#: visitor-maps-admin.php:171
 msgid "The Maxmind GeoLiteCity database is not yet installed."
 msgstr "A Maxmind GeoLiteCity adatbázis még nincs telepitve."
 
-#: visitor-maps.php:772
+#: visitor-maps-admin.php:171
+#: visitor-maps.php:515
+msgid "Install Now"
+msgstr "Telepítés"
+
+#: visitor-maps-admin.php:173
 msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
 msgstr "A Maxmind GeoLiteCity adatbázis telepitve van, de még nem érhető el (kattints lenn a beállitásokra)."
 
-#: visitor-maps.php:774
+#: visitor-maps-admin.php:175
 msgid "The Maxmind GeoLiteCity database is installed and enabled."
 msgstr "A Maxmind GeoLiteCity telepitése megtörtént és elérhető."
 
-#: visitor-maps.php:780
+#: visitor-maps-admin.php:181
 msgid "Enable geolocation."
 msgstr "Geolokáció engedélyezés."
 
-#: visitor-maps.php:781
+#: visitor-maps-admin.php:182
 msgid "Update Now"
-msgstr "Frissits most."
+msgstr "Frissités most."
 
-#: visitor-maps.php:785
+#: visitor-maps-admin.php:186
 msgid "Enable display of bots on geolocation maps."
 msgstr "Engedélyezve a robotok megjelenitése a térképen."
 
-#: visitor-maps.php:789
-msgid "Enable display of city, state next to country flag."
-msgstr "Engedélyezve a városok, államok zászlóinak megjelenitése."
+#: visitor-maps-admin.php:190
+msgid "Disable text on geolocation maps (missing map background fix)."
+msgstr "Szöveg megjelenésének tiltása a térképen (missing map background fix)."
 
-#: visitor-maps.php:793
-msgid "Enable visitor map on Who's Online dashboard."
-msgstr "Engedélyezve a térkép mutatása a Who's Online irányitópultján."
-
-#: visitor-maps.php:797
-msgid "Enable hover labels for location pins on visitor map page."
-msgstr "Engedélyezve a térkép pontokon a cimkék mutatása az egér rámutatása esetén."
-
-#: visitor-maps.php:798
-#: visitor-maps.php:849
-#: visitor-maps.php:862
-#: visitor-maps.php:869
-#: visitor-maps.php:876
-#: visitor-maps.php:889
-#: visitor-maps.php:932
-#: visitor-maps.php:939
-#: visitor-maps.php:946
-#: visitor-maps.php:953
+#: visitor-maps-admin.php:191
+#: visitor-maps-admin.php:211
+#: visitor-maps-admin.php:262
+#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:282
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:300
+#: visitor-maps-admin.php:320
+#: visitor-maps-admin.php:367
+#: visitor-maps-admin.php:374
+#: visitor-maps-admin.php:381
+#: visitor-maps-admin.php:388
 msgid "Click for Help!"
 msgstr "Kattints ide a segitségért!"
 
-#: visitor-maps.php:800
-msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
-msgstr "Néhány téma gátolhatja a Látogató Térképen a mutató pontok pontos kijelzését. A beállitások után ellenőrizd le a térkép oldaladon, hogy a mutató pontok pontos helyzetben vannak-e. Lehet, hogy a pontok, amelyek 10 pixel körüliek, túl kicsik lesznek. Akkor vond ezt a funkciót vissza."
+#: visitor-maps-admin.php:193
+msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
+msgstr "Héhány PHP szerver nem támogatja megfelelően szöveg kiiratását a Visitor Map képre. Csak akkor válaszd ezt a beállitást, ha a térkép mutatja a pontokat és nincs megfelelő kép a világrészekhez. Ha ezt a beállitást választottad, akkor utána ellenőrizd le a Térkép oldalon, hogy megfelelően működik-e a térkép."
 
-#: visitor-maps.php:805
+#: visitor-maps-admin.php:198
+msgid "Enable display of city, state next to country flag."
+msgstr "Engedélyezve a város, állam nevének megjelenitése a zászló után."
+
+#: visitor-maps-admin.php:202
+msgid "Enable visitor map on Who's Online dashboard."
+msgstr "Engedélyezve a térkép mutatása a Who's Online irányitópultján."
+
+#: visitor-maps-admin.php:206
+msgid "Enable visitor map link on Who's Online widget."
+msgstr "Engedélyezve a Visitor Map link a Who's Online widgetben."
+
+#: visitor-maps-admin.php:210
+msgid "Enable hover labels for location pins on visitor map page."
+msgstr "Engedélyezve a térkép pontokon a cimkék mutatása az egér rámutatása esetén."
+
+#: visitor-maps-admin.php:213
+msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
+msgstr "Néhány sablon gátolhatja a Látogató Térképen a mutató pontok pontos kijelzését. A beállitások után ellenőrizd le a térkép oldaladon, hogy a mutató pontok pontos helyzetben vannak-e. Lehet, hogy a pontok, amelyek 10 pixel körüliek, túl kicsik lesznek. Akkor vond ezt a funkciót vissza."
+
+#: visitor-maps-admin.php:218
 msgid "Default Visitor Map"
 msgstr "Szokásosan használt Látogató térkép"
 
-#: visitor-maps.php:851
+#: visitor-maps-admin.php:264
 msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
 msgstr "Szokvány térkép a Visitor Maps oldalon. Miután ezt beállitottad, ellenőrizd le a Térkép-oldalon, hogy jók-e a beállitások. Ha a térkép túl széles, válassz egy kisebbet."
 
-#: visitor-maps.php:858
+#: visitor-maps-admin.php:271
 msgid "Visitors:"
 msgstr "Látogatók:"
 
-#: visitor-maps.php:861
+#: visitor-maps-admin.php:274
 msgid "Active time (minutes)"
 msgstr "Aktiv idő (percekben)"
 
-#: visitor-maps.php:864
+#: visitor-maps-admin.php:277
 msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
-msgstr "Ennyi perc minősiti a plugin a látogatót aktivnak. A szokvány beállitás 5 perc."
+msgstr "Ennyi percig minősiti a plugin a látogatót aktivnak. A szokvány beállitás 5 perc."
 
-#: visitor-maps.php:868
+#: visitor-maps-admin.php:281
 msgid "Inactive time (minutes)"
 msgstr "Inaktivitás ideje (percekben)"
 
-#: visitor-maps.php:871
+#: visitor-maps-admin.php:284
 msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
-msgstr "Perc, mielőtt a plugin eltávolitja az inaktiv látogatót a kijelzőtőtl. A szokváby beállitás 15 perc."
+msgstr "Perc, mielőtt a plugin eltávolitja az inaktiv látogatót a kijelzőtőtl. A szokvány beállitás 15 perc."
 
-#: visitor-maps.php:875
+#: visitor-maps-admin.php:288
 msgid "Days to store visitor data"
 msgstr "Ennyi napig tárolja a látogatók adatait"
 
-#: visitor-maps.php:878
+#: visitor-maps-admin.php:291
 msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
 msgstr "Ennyi napig tárolja a látogatók adatait az adatbázis táblán. Ezekez az adatokat használja a plugin a térképhez. A szokvány időtartam 30 nap."
 
-#: visitor-maps.php:885
+#: visitor-maps-admin.php:296
+msgid "Do not show administrators on the maps."
+msgstr "Ne mutassa az adminisztrátorokat a térképen."
+
+#: visitor-maps-admin.php:299
+msgid "IP Adresses to ignore"
+msgstr "Figyelmen kivül hagyott IP cimek"
+
+#: visitor-maps-admin.php:302
+msgid "Optional list of IP addresses for visitors you do not want shown on maps."
+msgstr "Opcionális lista olyan látogatók IP cimének, akiket nem szeretnél mutatni a térképen."
+
+#: visitor-maps-admin.php:303
+msgid "Start each entry on a new line."
+msgstr "Minden belépést új sorban kezd."
+
+#: visitor-maps-admin.php:304
+msgid "Use <strong>*</strong> for wildcards."
+msgstr "Használj <strong>*</strong>-ot a wildcard-nál."
+
+#: visitor-maps-admin.php:305
+msgid "Examples:"
+msgstr "Példák:"
+
+#: visitor-maps-admin.php:316
 msgid "Lookups:"
 msgstr "Kikeresések:"
 
-#: visitor-maps.php:888
+#: visitor-maps-admin.php:319
 msgid "Who Is Lookup URL"
 msgstr "Ki van fenn Kikereső URL"
 
-#: visitor-maps.php:891
+#: visitor-maps-admin.php:322
 msgid "URL to open when an IP address is clicked on."
 msgstr "Az URL megnyitása az IP cimre kattintáskor."
 
-#: visitor-maps.php:896
+#: visitor-maps-admin.php:327
 msgid "Enable open Who Is Lookup URL on a pop-up."
 msgstr "Mutathatja a Ki van online megnézésére szolgáló URL-t pop-up ablakban."
 
-#: visitor-maps.php:900
+#: visitor-maps-admin.php:331
 msgid "Enable host lookups for IP addresses."
 msgstr "Mutathatja az IP cimek host adatait."
 
-#: visitor-maps.php:907
+#: visitor-maps-admin.php:338
 msgid "Stats:"
 msgstr "Statisztikák:"
 
-#: visitor-maps.php:910
+#: visitor-maps-admin.php:341
 msgid "Enable stats display in blog footer."
 msgstr "Mutathatja a statisztikát a blog footerben."
 
-#: visitor-maps.php:914
+#: visitor-maps-admin.php:345
 msgid "Enable stats display in admin footer."
 msgstr "Mutathatja a statisztikát az admin footerben."
 
-#: visitor-maps.php:918
+#: visitor-maps-admin.php:349
+msgid "Enable stats display on map page."
+msgstr "Mutathatja a statisztikát a térkép oldalon."
+
+#: visitor-maps-admin.php:353
 msgid "Enable plugin credit link:"
 msgstr "Mutathatja a plugin kredit linkjét:"
 
-#: visitor-maps.php:924
+#: visitor-maps-admin.php:353
+#: visitor-maps.php:111
+#: visitor-maps.php:157
+#: visitor-maps.php:347
+#: visitor-maps.php:1285
+#: visitor-maps.php:1316
+#: visitor-maps.php:1344
+msgid "Powered by"
+msgstr "Powered by"
+
+#: visitor-maps-admin.php:359
 msgid "Times:"
 msgstr "Idő:"
 
-#: visitor-maps.php:928
+#: visitor-maps-admin.php:363
 msgid "Table of date format characters."
 msgstr "A dátum karakterek táblája."
 
-#: visitor-maps.php:931
+#: visitor-maps-admin.php:366
 msgid "Time format (Max Users Today)"
 msgstr "Idő formátum (Mai legtöbb látogató)"
 
-#: visitor-maps.php:934
+#: visitor-maps-admin.php:369
 msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
 msgstr "Idő formátum \"Látogatók napi maximuma\" és \"Utolsó frissités ideje\" kijelzéséhez. Alapbeállitás óra:perc:másoderc napszak T (02:25:25 du PST)"
 
-#: visitor-maps.php:938
+#: visitor-maps-admin.php:373
 msgid "Time format (Last Click)"
 msgstr "Idő formátum (Utolsó Látogatás)"
 
-#: visitor-maps.php:941
+#: visitor-maps-admin.php:376
 msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
 msgstr "Idő forma \"Belépés\" és \"Utolsó látogatás\" kijelzésére. Alapbeállitás: óra:perc:másodperc napszak (02:25:25du)"
 
-#: visitor-maps.php:945
+#: visitor-maps-admin.php:380
 msgid "Date/Time format (All Time Records)"
 msgstr "Dátum/Idő formátum (All Time Records)"
 
-#: visitor-maps.php:948
+#: visitor-maps-admin.php:383
 msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 msgstr "Dátum/Idő forma a hónaphoz, évhez. Alapbeállitás: nap-hónap-év óra perc napszak T (12-14-2008 02:25 du PST)"
 
-#: visitor-maps.php:952
+#: visitor-maps-admin.php:387
 msgid "Date/Time format (GeoLite data)"
 msgstr "Dátum/Idő formátum (GeoLite Adatok)"
 
-#: visitor-maps.php:955
+#: visitor-maps-admin.php:390
 msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
-msgstr "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Dátum/Idő formátum: \"A GeoLite adatainak utolsó frissitése:\". Alapbeállitás: m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 
-#: visitor-maps.php:970
+#: visitor-maps-admin.php:405
 msgid "More WordPress plugins by Mike Challis:"
-msgstr "More WordPress plugins by Mike Challis:"
+msgstr "Mike Challis egyéb WordPress pluginjai:"
 
-#: visitor-maps.php:972
+#: visitor-maps-admin.php:407
 msgid "Fast and Secure Contact Form"
 msgstr "Fast and Secure Contact Form"
 
-#: visitor-maps.php:973
+#: visitor-maps-admin.php:408
 msgid "SI CAPTCHA Anti-Spam"
 msgstr "SI CAPTCHA Anti-Spam"
 
-#. #-#-#-#-#  plugin.pot (PACKAGE VERSION)  #-#-#-#-#
-#. Plugin Name of an extension
-#: visitor-maps.php:974
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.4.3)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: visitor-maps-admin.php:409
 msgid "Visitor Maps and Who's Online"
-msgstr "Látogató térkép és Online lista"
+msgstr "Visitor Maps and Who's Online"
 
-#: visitor-maps.php:1292
-#: visitor-maps.php:1940
-#: visitor-maps.php:1966
+#: visitor-maps.php:108
+#: visitor-maps.php:154
+#, php-format
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "Részletes térkép nézési lehetőség : <a href=\"%s\">Térkép Néző</a>"
+
+#: visitor-maps.php:247
+msgid "Close"
+msgstr "Zárva"
+
+#: visitor-maps.php:249
+msgid "Powered by Visitor Maps"
+msgstr "Powered by Visitor Maps"
+
+#: visitor-maps.php:254
+#: visitor-maps.php:350
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr "A Visitor Maps geolokáció nem elérhető a beállitásokban."
+
+#: visitor-maps.php:319
+msgid "View more maps in the "
+msgstr "Részletes térkép nézési lehetőség :"
+
+#: visitor-maps.php:319
+msgid "Visitor Map Viewer"
+msgstr "Térkép néző"
+
+#: visitor-maps.php:328
+#: visitor-maps.php:1012
+#: visitor-maps.php:1013
+msgid "Max visitors today"
+msgstr "Látogatók mai maximuma"
+
+#: visitor-maps.php:328
+#: visitor-maps.php:330
+#: visitor-maps.php:332
+#: visitor-maps.php:334
+#: visitor-maps.php:1012
+#: visitor-maps.php:1013
+#: visitor-maps.php:1016
+#: visitor-maps.php:1017
+#: visitor-maps.php:1020
+#: visitor-maps.php:1021
+#: visitor-maps.php:1024
+#: visitor-maps.php:1025
+msgid "at"
+msgstr ":"
+
+#: visitor-maps.php:330
+#: visitor-maps.php:1016
+#: visitor-maps.php:1017
+msgid "This month"
+msgstr "Ebben a hónapban"
+
+#: visitor-maps.php:332
+#: visitor-maps.php:1020
+#: visitor-maps.php:1021
+msgid "This year"
+msgstr "Ebben az évben"
+
+#: visitor-maps.php:334
+#: visitor-maps.php:1024
+#: visitor-maps.php:1025
+msgid "All time"
+msgstr "Folyamatosan"
+
+#: visitor-maps.php:337
+msgid "Records of the most visitors online at once:"
+msgstr "A legtöbb online látogató rekordja:"
+
+#: visitor-maps.php:515
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr "A Visitor Maps pluginhoz telepiteni kell a GeoLiteCity adatbázist."
+
+#: visitor-maps.php:581
+msgid "Settings"
+msgstr "Beállitások"
+
+#: visitor-maps.php:1000
+#: visitor-maps.php:1307
+#: visitor-maps.php:1335
 #, php-format
 msgid "%d visitors online now"
-msgstr "%d látogató van most online"
+msgstr "%d látogató van online"
 
-#: visitor-maps.php:1293
-#: visitor-maps.php:1941
-#: visitor-maps.php:1967
+#: visitor-maps.php:1001
+#: visitor-maps.php:1308
+#: visitor-maps.php:1336
 #, php-format
 msgid "%d guests"
 msgstr "%d vendég"
 
-#: visitor-maps.php:1294
-#: visitor-maps.php:1942
-#: visitor-maps.php:1968
+#: visitor-maps.php:1002
+#: visitor-maps.php:1309
+#: visitor-maps.php:1337
 #, php-format
 msgid "%d members"
 msgstr "%d felhasználó"
 
-#: visitor-maps.php:1304
-#: visitor-maps.php:1305
-msgid "Max visitors today"
-msgstr "Látogatók mai maximuma"
+#: visitor-maps.php:1314
+#: visitor-maps.php:1342
+#, php-format
+msgid "<a href=\"%s\">Map of Visitors</a>"
+msgstr "<a href=\"%s\">Látogató Térkép</a>"
 
-#: visitor-maps.php:1304
-#: visitor-maps.php:1305
-#: visitor-maps.php:1308
-#: visitor-maps.php:1309
-#: visitor-maps.php:1312
-#: visitor-maps.php:1313
-#: visitor-maps.php:1316
-#: visitor-maps.php:1317
-msgid "at"
-msgstr ":"
-
-#: visitor-maps.php:1308
-#: visitor-maps.php:1309
-msgid "This month"
-msgstr "Ebben a hónapban"
-
-#: visitor-maps.php:1312
-#: visitor-maps.php:1313
-msgid "This year"
-msgstr "Ebben az évben"
-
-#: visitor-maps.php:1316
-#: visitor-maps.php:1317
-msgid "All time"
-msgstr "Folyamatosan"
-
-#. Plugin URI of an extension
+#. Plugin URI of the plugin/theme
 msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
 msgstr "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
 
-#. Description of an extension
+#. Description of the plugin/theme
 msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Donate</a>"
 msgstr "Megjeleniti a Látogató térképet a látogatók elhelyezkedésével, városokkal, országokkal. Tartalmazza a Who's Online sidebart, ami jelzi, hogy látogató van épp online. Tartalmaz egy Who's Online irányitópultot, ahol láthatóak a látogatók adatai. Ezek az adatok a következőek: melyik oldalon van épp a látogató, mi az IP cime, adatokat tartalmaz a host-járól, az online időről, földrajzi adatokról, a térképen való elhelyezkedésről. Nem szükséges API kulcs hozzá. <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Beállitások</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Programfejlesztés támogatása</a>"
 
-#. Author of an extension
+#. Author of the plugin/theme
 msgid "Mike Challis"
 msgstr "Mike Challis"
 
-#. Author URI of an extension
+#. Author URI of the plugin/theme
 msgid "http://www.642weather.com/weather/scripts.php"
 msgstr "http://www.642weather.com/weather/scripts.php"
 
