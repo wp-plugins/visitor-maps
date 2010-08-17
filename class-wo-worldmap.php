@@ -201,12 +201,12 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
   $xx_secs_ago = (time() - $seconds_ago);
 
   $rows_arr = array();
-  if ($visitor_maps_opt['show_bots_on_worldmap']) {
-       $rows_arr = $wpdb->get_results("SELECT longitude, latitude FROM ".$wo_table_wo."
-                 WHERE time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
-  } else {
+  if ($visitor_maps_opt['hide_bots']) {
        $rows_arr = $wpdb->get_results("SELECT longitude, latitude FROM ".$wo_table_wo."
                  WHERE name = 'Guest' AND time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
+  } else {
+       $rows_arr = $wpdb->get_results("SELECT longitude, latitude FROM ".$wo_table_wo."
+                 WHERE time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
   }
 
   $count = 0;

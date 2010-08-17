@@ -287,7 +287,7 @@ $string .= "\n".'<!--[if lte IE 8 ]>
   $string .= "\n";
 
  $rows_arr = array();
-  if ($visitor_maps_opt['show_bots_on_worldmap']) {
+  if (!$visitor_maps_opt['hide_bots']) {
        // all visitors
        $rows_arr = $wpdb->get_results("
                  SELECT nickname, country_name, country_code, city_name, state_name, state_code, latitude, longitude

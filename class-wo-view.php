@@ -14,6 +14,7 @@ function view_whos_online() {
 
   $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
 
+
 // Automatic refresh times in seconds and display names
 //   Time and Display Text order must match between the arrays
 //   "None" is handled separately in the code
@@ -28,10 +29,15 @@ function view_whos_online() {
   $refresh_values[] = array('id' => '600', 'text' => '10:00');
 
   $show_type = array();
-  $show_type[] = array('id' => '',       'text' => esc_attr( __( 'None', 'visitor-maps' ) ));
+  $show_type[] = array('id' => 'none',   'text' => esc_attr( __( 'None', 'visitor-maps' ) ));
   $show_type[] = array('id' => 'all',    'text' => esc_attr( __( 'All', 'visitor-maps' ) ));
   $show_type[] = array('id' => 'bots',   'text' => esc_attr( __( 'Bots', 'visitor-maps' ) ));
   $show_type[] = array('id' => 'guests', 'text' => esc_attr( __( 'Guests', 'visitor-maps' ) ));
+
+  $bots_type = array();
+  $bots_type[] = array('id' => '0', 'text' => esc_attr( __( 'No', 'visitor-maps' ) ));
+  $bots_type[] = array('id' => '1', 'text' => esc_attr( __( 'Yes', 'visitor-maps' ) ));
+
 
   $this->set = array();
   $this->set['allow_refresh'] = 1;
@@ -95,12 +101,29 @@ if ($visitor_maps_opt['store_days'] > 0) {
                   OR   (time_last_click < '" . absint($xx_mins_ago) . "' and nickname IS NULL)");
 }
 
+// defaults
+$wo_prefs_arr_def = array (
+'bots' => '0',
+'refresh' => 'none',
+'show' => 'none',
+);
+
+ if ( ( !$wo_prefs_arr = get_option( 'visitor_maps_wop' ) ) || !is_array($wo_prefs_arr) ) {
+   // install the option defaults
+   update_option('visitor_maps_wop', $wo_prefs_arr_def);
+   $wo_prefs_arr = $wo_prefs_arr_def;
+ }
+
+ $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
+ $refresh = (isset($wo_prefs_arr['refresh'])) ? $wo_prefs_arr['refresh'] : 'none';
+ $show = (isset($wo_prefs_arr['show'])) ? $wo_prefs_arr['show'] : 'none';
+
 echo '<table border="0" width="99%">
  <tr><td>
   <form name="wo_view" action="'.admin_url( 'index.php?page=visitor-maps' ).'" method="get">';
-  if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_type, (isset($_GET['show']))? $_GET['show'] : '', 'onchange="this.form.submit();"') . ' ';                             
-  if ($this->set['allow_refresh']) echo esc_html( __( 'Refresh Rate:', 'visitor-maps' ) ) . ' ' . $this->draw_pull_down_menu('refresh', $refresh_values, (isset($_GET['refresh']))? $_GET['refresh'] : '', 'onchange="this.form.submit();"') . ' ';
-  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' <input type="checkbox" name="bots" value="1" onclick="this.form.submit()"' . (isset($_GET['bots']) ? ' checked="checked"': '') . ' /> ';
+  if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_type, $show, 'onchange="this.form.submit();"') . ' ';
+  if ($this->set['allow_refresh']) echo esc_html( __( 'Refresh Rate:', 'visitor-maps' ) ) . ' ' . $this->draw_pull_down_menu('refresh', $refresh_values, $refresh, 'onchange="this.form.submit();"') . ' ';
+  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' ' . $this->draw_pull_down_menu('bots', $bots_type, $bots, 'onchange="this.form.submit();"') . ' ';
   echo '<input type="hidden" name="page" value="visitor-maps" />
   </form>
   <a href="'.admin_url( 'index.php?page=whos-been-online').'">' . esc_html( __( 'Who\'s Been Online', 'visitor-maps' ) ) . '</a><br />
@@ -159,7 +182,7 @@ echo '<table border="0" width="99%">
                   <td>&nbsp;<?php echo esc_html( __( 'Entry', 'visitor-maps' ) ) ; ?></td>
                   <td>&nbsp;<?php echo esc_html( __( 'Last Click', 'visitor-maps' ) ) ; ?></td>
                   <?php
-                                    if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( !isset($_GET['show']) || $_GET['show'] == '' ) )  ) {
+                                    if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( $show == 'none' ) )  ) {
                     echo '<td>&nbsp;'. esc_html( __( 'Last URL', 'visitor-maps' ) ) .'</td> ';
                   }
                   ?>
@@ -245,7 +268,7 @@ echo '<table border="0" width="99%">
       $total_guests++;
     }
 
-  if (!($is_bot && !isset($_GET['bots']))) {
+  if ( !($is_bot && !$bots) ) {
 
     // alternate row colors
     $row_class = '';
@@ -345,7 +368,7 @@ echo '<table border="0" width="99%">
 
          if ( $visitor_maps_opt['enable_state_display'] ) {
                  $newguy = false;
-                if (isset($_GET['refresh']) && is_numeric($_GET['refresh']) && $whos_online['time_entry'] > (time() - absint($_GET['refresh']))) {
+                if (is_numeric($refresh) && $whos_online['time_entry'] > (time() - absint($refresh))) {
                    $newguy = true; // Holds the italicized "new lookup" indication for 1 refresh cycle
                  }
              if ($whos_online['city_name'] != '') {
@@ -378,7 +401,7 @@ echo '<table border="0" width="99%">
         <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo date($visitor_maps_opt['time_format_hms'], $whos_online['time_last_click']); ?></font></td>
 
               <?php
-              if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( !isset($_GET['show']) || $_GET['show'] == '' ) )  ) {
+              if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( $show == 'none' ) )  ) {
               ?>
         <!-- Last URL -->
         <td valign="top">&nbsp;
@@ -410,7 +433,7 @@ echo '<table border="0" width="99%">
               } // end if ($this->set['allow_referer_display']
 
               echo '</tr>' . "\n";
-               if( ($this->set['allow_last_url_display']) && ( ( isset($_GET['nlurl']) ) || ( ( $this->set['allow_profile_display'] ) && ( isset($_GET['show']) && $_GET['show'] != '' ) ))  ) {
+               if( ($this->set['allow_last_url_display']) && ( ( isset($_GET['nlurl']) ) || ( $this->set['allow_profile_display']  &&  $show != 'none'  ) ) ) {
                     echo '<tr '.$row_class.'>' . "\n";
                 $uri = parse_url(get_option('siteurl'));
                 $display_link = $whos_online['last_page_url'];
@@ -423,7 +446,7 @@ echo '<table border="0" width="99%">
                 }
 
               if ($this->set['allow_profile_display']) {
-                if ( (isset($_GET['show']) && $_GET['show'] == 'all') || (( isset($_GET['show']) && $_GET['show'] == 'bots') && $is_bot) || (( isset($_GET['show']) && $_GET['show'] == 'guests') && ( $is_guest || $is_admin || $is_user)) ) {
+                if ( $show == 'all' || ( $show == 'bots' && $is_bot) || ( $show == 'guests' && ( $is_guest || $is_admin || $is_user)) ) {
 
                     echo "<tr $row_class>\n";
               ?>

@@ -4,7 +4,7 @@ Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876
 Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
 Requires at least: 2.6
-Tested up to: 3.0
+Tested up to: 3.0.1
 Stable tag: trunk
 
 Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details.
@@ -182,6 +182,14 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.5 =
+- (17 Aug 2010) - Improvement: Who's Online dashboard pages now remember the display settings.
+- Improvement: Added count for search "bots" on the Who's Online Widget.
+- New setting: "Hide map viewing by non administrators".
+- New setting: "Do not include search bots in the visitors online count on widgets".
+- Added download count and star rating on admin options page. 
+- Added more help links on admin options page. 
 
 = 1.4.3 =
 - (26 Jul 2010) - Fixed MySQL database performance by adding index key.

@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.4.3
+Version: 1.5
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -105,7 +105,9 @@ function visitor_maps_whos_been_online(){
        'type'       => 'png',     // jpg or png (map output type)
              );
     echo $this->get_visitor_maps_worldmap($map_settings);
-    echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
+    if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
+      echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
+    }
   }
   if ($visitor_maps_opt['enable_credit_link']) {
     echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
@@ -151,8 +153,11 @@ function visitor_maps_admin_view(){
        'type'       => 'png',     // jpg or png (map output type)
              );
     echo $this->get_visitor_maps_worldmap($map_settings);
-    echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
-  }
+
+   if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
+     echo '<p>'.sprintf( __('View more maps in the <a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;').'</p>';
+   }
+ }
   if ($visitor_maps_opt['enable_credit_link']) {
     echo '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
   }
@@ -166,6 +171,9 @@ function visitor_maps_do_map_console() {
 
 
   if( isset($_GET['wo_map_console']) ) {
+     if ($visitor_maps_opt['hide_console'] && !current_user_can('manage_options') ) {
+       return;
+     }
     // this puts the visitor into the whos online database
     $visitor_maps_stats = $this->visitor_maps_activity_do();
   ?>
@@ -315,9 +323,9 @@ function visitor_maps_map_short_code() {
         // had to disable the dynamic map and replace with this because some WP themes were messing up the pin locations
         $string .= '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
      }
-
-     $string .= '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
-
+     if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
+       $string .= '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
+     }
    if ($visitor_maps_opt['enable_records_page']) {
      $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
      // fetch the day, month, year, all time records
@@ -377,20 +385,58 @@ function visitor_maps_admin_view_header() {
 
 // only load this header stuff on the whos online view page
 if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps' ) {
-    echo '<!-- begin visitor maps - whos online page header code -->'."\n";
-   if(  isset($_GET['refresh']) && is_numeric($_GET['refresh']) ){
-         $query = '&amp;refresh='. $_GET['refresh'];
-         if(  isset($_GET['show']) && $_GET['show'] != '') {
-            if ( $_GET['show'] == 'all' || $_GET['show'] == 'bots' || $_GET['show'] == 'guests' ){
-               $query .= '&amp;show='. $_GET['show'];
-            }
+
+   // defaults
+   $wo_prefs_arr_def = array (
+     'bots' => '0',
+     'refresh' => 'none',
+     'show' => 'none',
+   );
+
+   if ( ( !$wo_prefs_arr = get_option( 'visitor_maps_wop' ) ) || !is_array($wo_prefs_arr) ) {
+     // install the option defaults
+     update_option('visitor_maps_wop', $wo_prefs_arr_def);
+     $wo_prefs_arr = $wo_prefs_arr_def;
+   }
+
+   $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
+   if ( isset($_GET['bots']) && array('0','1') ) {
+     // bots
+      $wo_prefs_arr['bots'] = $_GET['bots'];
+      $bots = $_GET['bots'];
+   }
+   $refresh = (isset($wo_prefs_arr['refresh'])) ? $wo_prefs_arr['refresh'] : 'none';
+   if ( isset($_GET['refresh']) && in_array($_GET['refresh'], array('none','30','60','120','300','600')) ) {
+     // refresh
+      $wo_prefs_arr['refresh'] = $_GET['refresh'];
+      $refresh = $_GET['refresh'];
+   }
+   $show = (isset($wo_prefs_arr['show'])) ? $wo_prefs_arr['show'] : 'none';
+   if ( isset($_GET['show']) && in_array($_GET['show'], array('none','all','bots','guests')) ) {
+     // show
+     $wo_prefs_arr['show'] = $_GET['show'];
+     $show = $_GET['show'];
+   }
+
+   // save settings
+   update_option('visitor_maps_wop', $wo_prefs_arr);
+
+   echo '<!-- begin visitor maps - whos online page header code -->'."\n";
+   if ( isset($wo_prefs_arr['refresh']) && in_array($wo_prefs_arr['refresh'], array('30','60','120','300','600')) ) {
+         $query = '&amp;refresh='. $wo_prefs_arr['refresh'];
+         if ( isset($wo_prefs_arr['show']) && in_array($wo_prefs_arr['show'], array('all','bots','guests')) ) {
+               $query .= '&amp;show='. $wo_prefs_arr['show'];
          }
-         if(  isset($_GET['bots']) ) {
-              $query .= '&amp;bots=1';
+         if ( isset($wo_prefs_arr['bots']) && in_array($wo_prefs_arr['bots'], array('0','1')) ) {
+              $query .= '&amp;bots='. $wo_prefs_arr['bots'];
          }
-         echo '<meta http-equiv="refresh" content="' . $_GET['refresh'] . ';URL=' . admin_url( 'index.php?page=visitor-maps' ) . $query . '" />
+         echo '<meta http-equiv="refresh" content="' . $wo_prefs_arr['refresh'] . ';URL=' . admin_url( 'index.php?page=visitor-maps' ) . $query . '" />
           ';
   }
+
+
+  // save settings
+  //update_option('visitor_maps_wop', $wo_prefs_arr);
 ?>
 <script type="text/javascript">
 <!--
@@ -435,6 +481,14 @@ function wo_map_console(url) {
 }
 //-->
 </script>
+<style type="text/css">
+div.star-holder { position: relative; height:19px; width:100px; font-size:19px;}
+div.star {height: 100%; position:absolute; top:0px; left:0px; background-color: transparent; letter-spacing:1ex; border:none;}
+.star1 {width:20%;} .star2 {width:40%;} .star3 {width:60%;} .star4 {width:80%;} .star5 {width:100%;}
+.star.star-rating {background-color: #fc0;}
+.star img{display:block; position:absolute; right:0px; border:none; text-decoration:none;}
+div.star img {width:19px; height:19px; border-left:1px solid #fff; border-right:1px solid #fff;}
+</style>
 <!-- end visitor maps - settings page header code -->
 <?php
   } // end if(isset($_GET['page'])
@@ -620,7 +674,8 @@ function visitor_maps_get_options() {
    'enable_host_lookups' =>    1,
    'enable_location_plugin' => 1,
    'enable_state_display' =>   1,
-   'show_bots_on_worldmap' =>  1,
+   'hide_bots'  =>             0,
+   'hide_console' =>           0,
    'hide_text_on_worldmap' =>  0,
    'enable_visitor_map_hover' => 0,
    'enable_blog_footer' =>     0,
@@ -753,7 +808,7 @@ function visitor_maps_activity_do() {
 
 
     // see if WP user
-    // get_currentuserinfo(); ... already got this some lines above
+    // get_currentuserinfo(); ... already got this in some lines above
     if ($visitor_maps_opt['hide_administrators'] && $user_ID != '' && current_user_can('level_10') ){
       // hide admin activity
       $ip_address = '';
@@ -942,33 +997,40 @@ function set_whos_records() {
   // now() adjusted to php timezone, othersize mysql date time could be off
   $mysql_now = date( 'Y-m-d H:i:s' );
 
-  // select the 'visitors online now' count, except for our nickname friends not online now
-  $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-  WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  if ($visitor_maps_opt['hide_bots']) {
+       // select the 'visitors online now' count, except for bots and our nickname friends not online now
+       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE (name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')
+       OR (user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')");
+  } else {
+       // select the 'visitors online now' count, all users
+       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  }
 
   // set today record if day changes or count is higher than stored count
   $wpdb->query("UPDATE " . $wo_table_st . "
   SET
   count = '" . absint($visitors_count) . "',
   time = '".$mysql_now."'
-  WHERE (day('".$mysql_now."') != day(time) and type = 'day')
-     OR (count < '" . absint($visitors_count) . "' and type = 'day')");
+  WHERE (day('".$mysql_now."') != day(time) AND type = 'day')
+     OR (count < '" . absint($visitors_count) . "' AND type = 'day')");
 
   // set month record if month changes or count is higher than stored count
   $wpdb->query("UPDATE " . $wo_table_st . "
   SET
   count = '" . absint($visitors_count) . "',
   time = '".$mysql_now."'
-  WHERE (month('".$mysql_now."') != month(time) and type = 'month')
-     OR (count < '" . absint($visitors_count) . "' and type = 'month')");
+  WHERE (month('".$mysql_now."') != month(time) AND type = 'month')
+     OR (count < '" . absint($visitors_count) . "' AND type = 'month')");
 
   // set year record if year changes or count is higher than stored count
   $wpdb->query("UPDATE " . $wo_table_st . "
   SET
   count = '" . absint($visitors_count) . "',
   time = '".$mysql_now."'
-  WHERE (year('".$mysql_now."') != year(time) and type = 'year')
-     OR (count < '" . absint($visitors_count) . "' and type = 'year')");
+  WHERE (year('".$mysql_now."') != year(time) AND type = 'year')
+     OR (count < '" . absint($visitors_count) . "' AND type = 'year')");
 
   // set all time record if count is higher than stored count
   $wpdb->query("UPDATE " . $wo_table_st . "
@@ -976,7 +1038,7 @@ function set_whos_records() {
   count = '" . absint($visitors_count) . "',
   time = '".$mysql_now."'
   WHERE count < '" . absint($visitors_count) . "'
-  and type = 'all'");
+  AND type = 'all'");
 
   // return the 'visitors online now' count ( I recycle )
   return $visitors_count;
@@ -991,17 +1053,31 @@ function get_whos_records($visitors_count) {
   $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
   $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
 
-  $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-  WHERE user_id = '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  if ($visitor_maps_opt['hide_bots']) {
+    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  } else {
+    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+    $bots_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+     WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  }
 
   $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-  WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  WHERE user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
   $visitor_maps_stats['visitors'] = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
   $visitor_maps_stats['guests'] = sprintf( __('%d guests','visitor-maps'),$guests_count);
+  if (!$visitor_maps_opt['hide_bots']) {
+    $visitor_maps_stats['bots'] = sprintf( __('%d bots','visitor-maps'),$bots_count);
+  }
   $visitor_maps_stats['members'] = sprintf( __('%d members','visitor-maps'),$members_count);
   $string = $visitor_maps_stats['visitors'] .'<br />';
   $string .= $visitor_maps_stats['guests'].', ';
+  if (!$visitor_maps_opt['hide_bots']) {
+    $string .= $visitor_maps_stats['bots'].', ';
+  }
   $string .= $visitor_maps_stats['members'].'<br />';
 
   // fetch the day, month, year, all time records
@@ -1290,60 +1366,65 @@ function visitor_maps_register_widget() {
 	register_sidebar_widget( __('Who\'s Online', 'visitor-maps'), array(&$this,'visitor_maps_widget'));
 }
 function visitor_maps_widget($args) {
-    global $visitor_maps_stats, $visitor_maps_opt, $wpdb;
     extract($args);
-
-    $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
-
-    $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
-
-    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE user_id = '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
-
-    $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
-
-    $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
-    $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
-    $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
-
     echo $before_widget . $before_title . __('Who\'s Online','visitor-maps') .$after_title;
-    echo "<p>$stats_visitors<br />$stats_guests, $stats_members";
-    if ($visitor_maps_opt['enable_widget_link'])
-      echo '<br />'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
-    if ($visitor_maps_opt['enable_credit_link'])
-      echo '<br /><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
-    echo "</p>";
+    $this->visitor_maps_widget_content();
     echo $after_widget;
 } // end function visitor_maps_widget
 
 function visitor_maps_manual_sidebar() {
-    global $visitor_maps_opt, $wpdb;
+
+    echo '<h2>'. __('Who\'s Online','visitor-maps') .'</h2>';
+    $this->visitor_maps_widget_content();
+} // end visitor_maps_manual_sidebar
+
+
+function visitor_maps_widget_content() {
+    global $visitor_maps_stats, $visitor_maps_opt, $wpdb;
 
     $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
 
-    $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    if ($visitor_maps_opt['hide_bots']) {
+       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE (name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')
+       OR (user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')");
 
-    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE user_id = '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+    } else {
+       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+       $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+
+       $bots_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    }
 
     $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE user_id > '0' and time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    WHERE user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
     $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
     $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
     $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
-
-    echo '<h2>'. __('Who\'s Online','visitor-maps') .'</h2>';
-    echo "<p>$stats_visitors<br />$stats_guests, $stats_members";
-    if ($visitor_maps_opt['enable_widget_link'])
-      echo '<br />'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+    if (!$visitor_maps_opt['hide_bots']) {
+       $stats_bots  = sprintf( __('%d bots','visitor-maps'),$bots_count);
+       echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+    } else {
+       echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+    }
+    if ($visitor_maps_opt['enable_widget_link']){
+      if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
+        echo '<br />'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+    }
+    }
     if ($visitor_maps_opt['enable_credit_link'])
       echo '<br /><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
     echo "</p>";
-} // end visitor_maps_manual_sidebar
+
+} // end function visitor_maps_widget
 
 function visitor_maps_upgrader_backup() {
     global $path_visitor_maps;

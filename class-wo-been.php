@@ -14,15 +14,29 @@ function view_whos_been_online() {
 
   $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
 
+  // defaults
+  $wo_prefs_arr = array (
+   'bots' => '0',
+   'sort_by' => 'time',
+   'order' => 'desc',
+   'show' => 'none',
+  );
+
+  if ( ( !$wo_prefs_arr = get_option( 'visitor_maps_wobp' ) ) || !is_array($wo_prefs_arr) ) {
+    // install the option defaults
+    update_option('visitor_maps_wobp', $wo_prefs_arr);
+  }
+  $wo_prefs_arr = get_option('visitor_maps_wobp', $wo_prefs_arr);
 
   $show_arr = array();
-  $show_arr[] = array('id' => '',       'text' => esc_attr( __( 'None', 'visitor-maps' ) ));
+  $show_arr[] = array('id' => 'none',   'text' => esc_attr( __( 'None', 'visitor-maps' ) ));
   $show_arr[] = array('id' => 'all',    'text' => esc_attr( __( 'All', 'visitor-maps' ) ));
   $show_arr[] = array('id' => 'bots',   'text' => esc_attr( __( 'Bots', 'visitor-maps' ) ));
   $show_arr[] = array('id' => 'guests', 'text' => esc_attr( __( 'Guests', 'visitor-maps' ) ));
 
-  $show = '';
-  if ( isset($_GET['show']) && $this->validate_show($_GET['show'])) {
+  $show = (isset($wo_prefs_arr['show'])) ? $wo_prefs_arr['show'] : 'none';
+  if ( isset($_GET['show']) && in_array($_GET['show'], array('none','all','bots','guests')) ) {
+    $wo_prefs_arr['show'] = $_GET['show'];
     $show = $_GET['show'];
   }
 
@@ -42,8 +56,9 @@ function view_whos_been_online() {
   $sort_by_ar['location'] = 'country_name, city_name';
   $sort_by_ar['url'] = 'last_page_url';
 
-  $sort_by = 'time';
-  if ( isset($_GET['sort_by']) && $this->validate_sort_by($_GET['sort_by'])) {
+  $sort_by = (isset($wo_prefs_arr['sort_by'])) ? $wo_prefs_arr['sort_by'] : 'time';
+  if ( isset($_GET['sort_by']) && array('who','visits','time','ip','location','url') ) {
+    $wo_prefs_arr['sort_by'] = $_GET['sort_by'];
     $sort_by = $_GET['sort_by'];
   }
 
@@ -55,8 +70,10 @@ function view_whos_been_online() {
   $order_ar['desc'] = 'DESC';
   $order_ar['asc'] = 'ASC';
 
-  $order = 'desc';
-  if ( isset($_GET['order']) && $this->validate_order($_GET['order'])) {
+  $order = (isset($wo_prefs_arr['order'])) ? $wo_prefs_arr['order'] : 'desc';
+  if ( isset($_GET['order']) && array('desc','asc') ) {
+   // bots
+    $wo_prefs_arr['order'] = $_GET['order'];
     $order = $_GET['order'];
   }
 
@@ -69,10 +86,19 @@ function view_whos_been_online() {
      $sort_by_ar['location'] = 'country_name DESC, city_name DESC';
   }
 
-  $bots = '';
-  if ( isset($_GET['bots']) && $_GET['bots'] == 'show') {
-    $bots = 'show';
+  $bots_type = array();
+  $bots_type[] = array('id' => '0', 'text' => esc_attr( __( 'No', 'visitor-maps' ) ));
+  $bots_type[] = array('id' => '1', 'text' => esc_attr( __( 'Yes', 'visitor-maps' ) ));
+
+  $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
+  if ( isset($_GET['bots']) && array('0','1') ) {
+   // bots
+    $wo_prefs_arr['bots'] = $_GET['bots'];
+    $bots = $_GET['bots'];
   }
+
+  // save settings
+  update_option('visitor_maps_wobp', $wo_prefs_arr);
 
   $this->set = array();
   $this->set['allow_refresh'] = 1;
@@ -122,10 +148,8 @@ function view_whos_been_online() {
      $pageno = 1;
   }
   $limit = 'LIMIT ' .($pageno - 1) * $rows_per_page .',' .$rows_per_page;
-  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by;
-  if ($bots != '') {
-    $getstring .= '&amp;bots='.$bots;
-  }
+  $getstring = '&amp;show='.$show.'&amp;order='.$order.'&amp;sort_by='.$sort_by.'&amp;bots='.$bots;
+
 
 echo '<table border="0" width="99%">
  <tr><td>
@@ -133,7 +157,7 @@ echo '<table border="0" width="99%">
   if ($this->set['allow_profile_display']) echo esc_html( __( 'Profile Display:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('show', $show_arr, $show, 'onchange="this.form.submit();"') . ' ';
   echo esc_html( __( 'Sort:', 'visitor-maps' ) ). ' ' . $this->draw_pull_down_menu('sort_by', $sort_by_arr, $sort_by, 'onchange="this.form.submit();"').' ';
   echo  $this->draw_pull_down_menu('order', $order_arr, $order, 'onchange="this.form.submit();"') . ' ';
-  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' <input type="checkbox" name="bots" value="show" onclick="this.form.submit()"' . ($bots == 'show' ? ' checked="checked"': '') . ' /><br />';
+  echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' ' . $this->draw_pull_down_menu('bots', $bots_type, $bots, 'onchange="this.form.submit();"') . '<br />';
   echo '<input type="hidden" name="page" value="whos-been-online" />
   </form>
   <a href="'.admin_url( 'index.php?page=visitor-maps').'">' . esc_html( __( 'Who\'s Online', 'visitor-maps' ) ) . '</a><br />
@@ -209,7 +233,7 @@ echo '<table border="0" width="99%">
                   <?php if ($visitor_maps_opt['enable_location_plugin']) echo '<td>&nbsp;'. esc_html( __( 'Location', 'visitor-maps' ) )  .'</td> '; ?>
 
                   <?php
-                                    if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( !isset($_GET['show']) || $_GET['show'] == '' ) )  ) {
+                                    if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( $this->set['allow_profile_display'] && $show == 'none' )  ) {
                     echo '<td>&nbsp;'. esc_html( __( 'Last URL', 'visitor-maps' ) ) .'</td> ';
                   }
                   ?>
@@ -295,7 +319,7 @@ echo '<table border="0" width="99%">
       $total_guests++;
     }
 
-  if (!($is_bot && !isset($_GET['bots']))) {
+  if ( !($is_bot && !$bots) ) {
 
     // alternate row colors
     $row_class = '';
@@ -427,7 +451,7 @@ echo '<table border="0" width="99%">
 
 
               <?php
-              if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( ( $this->set['allow_profile_display'] ) && ( !isset($_GET['show']) || $_GET['show'] == '' ) )  ) {
+              if( ($this->set['allow_last_url_display']) && ( !isset($_GET['nlurl']) ) && ( $this->set['allow_profile_display'] && $show == 'none' )  ) {
               ?>
         <!-- Last URL -->
         <td valign="top">&nbsp;
@@ -459,7 +483,7 @@ echo '<table border="0" width="99%">
               } // end if ($this->set['allow_referer_display']
 
               echo '</tr>' . "\n";
-               if( ($this->set['allow_last_url_display']) && ( ( isset($_GET['nlurl']) ) || ( ( $this->set['allow_profile_display'] ) && ( isset($_GET['show']) && $_GET['show'] != '' ) ))  ) {
+               if( ($this->set['allow_last_url_display']) && ( ( isset($_GET['nlurl']) ) || ( $this->set['allow_profile_display'] && $show != 'none' ))  ) {
                     echo '<tr '.$row_class.'>' . "\n";
                 $uri = parse_url(get_option('siteurl'));
                 $display_link = $whos_online['last_page_url'];
@@ -472,7 +496,7 @@ echo '<table border="0" width="99%">
                 }
 
               if ($this->set['allow_profile_display']) {
-                if ( (isset($_GET['show']) && $_GET['show'] == 'all') || (( isset($_GET['show']) && $_GET['show'] == 'bots') && $is_bot) || (( isset($_GET['show']) && $_GET['show'] == 'guests') && ( $is_guest || $is_admin || $is_user)) ) {
+                if ( ($show == 'all') || (( $show == 'bots') && $is_bot) || (( $show == 'guests') && ( $is_guest || $is_admin || $is_user)) ) {
 
                     echo "<tr $row_class>\n";
               ?>
@@ -778,32 +802,6 @@ function wo_sanitize_output($output) {
     return htmlspecialchars($output);
 } // end function wo_sanitize_output
 
- function validate_sort_by($string) {
- // only allow if in array
-  $allowed = array('who','visits','time','ip','location','url');
- if ( in_array($string, $allowed) ) {
-    return true;
- }
- return false;
-} // end function validate_sort_by
-
- function validate_order($string) {
- // only allow if in array
-  $allowed = array('desc','asc');
- if ( in_array($string, $allowed) ) {
-    return true;
- }
- return false;
-} // end function validate_order
-
- function validate_show($string) {
- // only allow if in array
-  $allowed = array('all','bots','guests');
- if ( in_array($string, $allowed) ) {
-    return true;
- }
- return false;
-} // end function validate_show
 
 function error_exit($error) {
 
