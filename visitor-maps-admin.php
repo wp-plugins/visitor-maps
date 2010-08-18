@@ -30,6 +30,7 @@
    'store_days' =>          ( is_numeric(trim($_POST['visitor_maps_store_days'])) && trim($_POST['visitor_maps_store_days']) <= 10000 ) ? absint(trim($_POST['visitor_maps_store_days'])) : $visitor_maps_option_defaults['store_days'],
    'hide_administrators' =>      (isset( $_POST['visitor_maps_hide_administrators'] ) ) ? 1 : 0,
    'ips_to_ignore' =>               trim($_POST['visitor_maps_ips_to_ignore']),  // can be empty
+   'urls_to_ignore' =>              trim($_POST['visitor_maps_urls_to_ignore']),  // can be empty
    'time_format' =>               ( trim($_POST['visitor_maps_time_format']) != '' ) ? trim($_POST['visitor_maps_time_format']) : $visitor_maps_option_defaults['time_format'], // use default if empty
    'time_format_hms' =>           ( trim($_POST['visitor_maps_time_format_hms']) != '' ) ? trim($_POST['visitor_maps_time_format_hms']) : $visitor_maps_option_defaults['time_format_hms'],
    'date_time_format' =>          ( trim($_POST['visitor_maps_date_time_format']) != '' ) ? trim($_POST['visitor_maps_date_time_format']) : $visitor_maps_option_defaults['date_time_format'],
@@ -389,6 +390,21 @@ foreach ($map_units_array as $k => $v) {
 		<p style="margin: 2px 0"><span dir="ltr">192.168.*.*</span></p>
       </div>
       <textarea rows="4" cols="20" name="visitor_maps_ips_to_ignore" id="visitor_maps_ips_to_ignore"><?php echo $visitor_maps_opt['ips_to_ignore']; ?></textarea>
+      <br />
+
+      <label name="visitor_maps_urls_to_ignore" for="visitor_maps_urls_to_ignore"><?php echo __('URLs to ignore', 'visitor-maps'); ?>:</label>
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor_maps'); ?>" onclick="toggleVisibility('visitor_maps_urls_to_ignore_tip');"><?php echo __('help', 'visitor_maps'); ?></a> <br />
+      <div style="text-align:left; display:none" id="visitor_maps_urls_to_ignore_tip">
+        <?php _e('Optional list of URLs on your site you do not want in any Who\'s Online data.', 'visitor_maps') ?><br />
+        <?php _e('This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat.', 'visitor_maps'); ?><br />
+        <?php _e('Use partial URL or full URL. The filter will match any part of the URL.', 'visitor_maps'); ?><br />
+        <?php _e('Start each entry on a new line.', 'visitor_maps'); ?><br />
+		<?php _e('Examples:', 'visitor_maps'); ?>
+		<p style="margin: 2px 0"><span dir="ltr">wp-slimstat-js.php</span></p>
+		<p style="margin: 2px 0"><span dir="ltr">http://www.mysite.com/wp-content/plugins/wp-slimstat-js.php</span></p>
+        <p style="margin: 2px 0"><span dir="ltr">/wp-admin/</span></p>
+      </div>
+      <textarea rows="4" cols="40" name="visitor_maps_urls_to_ignore" id="visitor_maps_urls_to_ignore"><?php echo $visitor_maps_opt['urls_to_ignore']; ?></textarea>
 
       </td>
     </tr>

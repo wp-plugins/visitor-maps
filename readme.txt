@@ -183,6 +183,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+- New setting: "URLs to ignore". Optional list of URLs on your site you do not want in any Who's Online data.
+
 = 1.5 =
 - (17 Aug 2010) - Improvement: Who's Online dashboard pages now remember the display settings.
 - Improvement: Added count for search "bots" on the Who's Online Widget.

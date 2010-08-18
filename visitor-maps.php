@@ -665,6 +665,7 @@ function visitor_maps_get_options() {
    'store_days' =>  30,
    'hide_administrators' =>  0,
    'ips_to_ignore' =>          '',
+   'urls_to_ignore' =>         'wp-slimstat-js.php',
    'time_format' =>            'h:i a T',
    'time_format_hms' =>        'h:i:sa' ,
    'date_time_format' =>       'm-d-Y h:i a T',
@@ -721,6 +722,19 @@ function visitor_maps_activity_do() {
 
 	$ip_address    = $this->get_ip_address();
     $last_page_url = $this->get_request_uri();
+
+    // ignore these URLs set in options
+    $urls_to_ignore = array();
+    $urls_to_ignore = explode("\n",$visitor_maps_opt['urls_to_ignore']);
+	if(!empty($urls_to_ignore) && !empty($ip_address)) {
+		foreach($urls_to_ignore as $checked_url) {
+              if(stripos(trim($checked_url), $last_page_url) === false) {
+              // ignore this url
+              $ip_address = '';
+            }
+		}
+	}
+
     $http_referer  = $this->get_http_referer();
     $user_agent    = $this->get_http_user_agent();
     $user_agent_lower = strtolower($user_agent);
