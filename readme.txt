@@ -183,6 +183,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.5.1 =
+- (18 Aug 2010) - Critical fix for some servers had 0 visitors, sorry about that.
 - New setting: "URLs to ignore". Optional list of URLs on your site you do not want in any Who's Online data.
 
 = 1.5 =
