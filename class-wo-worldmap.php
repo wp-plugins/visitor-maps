@@ -186,7 +186,12 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
   switch($image_pin_type) {
         case "1": $pin_im = imagecreatefromgif("$image_pin_path");
         break;
-        case "2": $pin_im = imagecreatefromjpeg("$image_pin_path");
+        case "2":
+        $pin_im = imagecreatefromjpeg("$image_pin_path");
+        $image_pin_path_user = str_replace('.jpg','-user.jpg',$image_pin_path);
+        $pin_im_user = imagecreatefromjpeg("$image_pin_path_user");
+        $image_pin_path_bot = str_replace('.jpg','-bot.jpg',$image_pin_path);
+        $pin_im_bot =  imagecreatefromjpeg("$image_pin_path_bot");
         break;
         case "3": $pin_im = imagecreatefrompng("$image_pin_path");
         break;
@@ -202,10 +207,10 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
 
   $rows_arr = array();
   if ($visitor_maps_opt['hide_bots']) {
-       $rows_arr = $wpdb->get_results("SELECT longitude, latitude FROM ".$wo_table_wo."
+       $rows_arr = $wpdb->get_results("SELECT user_id, name, longitude, latitude FROM ".$wo_table_wo."
                  WHERE name = 'Guest' AND time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
   } else {
-       $rows_arr = $wpdb->get_results("SELECT longitude, latitude FROM ".$wo_table_wo."
+       $rows_arr = $wpdb->get_results("SELECT user_id, name, longitude, latitude FROM ".$wo_table_wo."
                  WHERE time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
   }
 
@@ -239,8 +244,17 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
       // Now mark the point on the map using a green 2 pixel rectangle
       //imagefilledrectangle($map_im,$x-1,$y-1,$x+1,$y+1,$green);
       if ($this->gvar['pins_display']) {
+           $this_pin_im = $pin_im;
+           if ($visitor_maps_opt['enable_users_map_hover'] && $row['user_id'] > 0 && $row['name'] != '') {
+             // different pin color for logged in user
+             $this_pin_im = $pin_im_user;
+           }
+           if ( !$visitor_maps_opt['hide_bots'] && $row['user_id'] == 0 && $row['name'] != 'Guest') {
+                // different pin color for search bot
+                $this_pin_im = $pin_im_bot;
+           }
         // put pin image on map image
-        imagecopy($map_im, $pin_im, $x, $y, 0, 0, $image_pin_width, $image_pin_height);
+        imagecopy($map_im, $this_pin_im, $x, $y, 0, 0, $image_pin_width, $image_pin_height);
       }
     }
    } // end foreach

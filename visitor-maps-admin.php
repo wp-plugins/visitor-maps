@@ -44,6 +44,7 @@
    'hide_console' =>             (isset( $_POST['visitor_maps_hide_console'] ) ) ? 1 : 0,
    'hide_text_on_worldmap' =>    (isset( $_POST['visitor_maps_hide_text_on_worldmap'] ) ) ? 1 : 0,
    'enable_visitor_map_hover' => (isset( $_POST['visitor_maps_enable_visitor_map_hover'] ) ) ? 1 : 0,
+   'enable_users_map_hover' => (isset( $_POST['visitor_maps_enable_users_map_hover'] ) ) ? 1 : 0,
    'enable_blog_footer' =>       (isset( $_POST['visitor_maps_enable_blog_footer'] ) ) ? 1 : 0,
    'enable_admin_footer' =>      (isset( $_POST['visitor_maps_enable_admin_footer'] ) ) ? 1 : 0,
    'enable_records_page' =>      (isset( $_POST['visitor_maps_enable_records_page'] ) ) ? 1 : 0, 
@@ -114,11 +115,13 @@
 
     $api = plugins_api('plugin_information', array('slug' => stripslashes( 'visitor-maps' ) ));
 
-    // cache isn't up to date, write this fresh information to it now to avoid the query for xx time.
-    $myexpire = 60 * 15; // Cache data for 15 minutes
-    set_transient('visitor_maps_info', $api, $myexpire);
+    if ( !is_wp_error($api) ) {
+       // cache isn't up to date, write this fresh information to it now to avoid the query for xx time.
+       $myexpire = 60 * 15; // Cache data for 15 minutes
+       set_transient('visitor_maps_info', $api, $myexpire);
+    }
   }
-
+  if ( !is_wp_error($api) ) {
 	$plugins_allowedtags = array('a' => array('href' => array(), 'title' => array(), 'target' => array()),
 								'abbr' => array('title' => array()), 'acronym' => array('title' => array()),
 								'code' => array(), 'pre' => array(), 'em' => array(), 'strong' => array(),
@@ -131,12 +134,13 @@
 	foreach ( array('version', 'author', 'requires', 'tested', 'homepage', 'downloaded', 'slug') as $key )
 		$api->$key = wp_kses($api->$key, $plugins_allowedtags);
 
-if ( ! empty($api->downloaded) ) {
-  _e('Downloaded:', 'visitor-maps'); printf(_n('%s time', '%s times', $api->downloaded), number_format_i18n($api->downloaded), 'visitor-maps'); echo '.';
-}
+      if ( ! empty($api->downloaded) ) {
+        echo sprintf(__('Downloaded %s times', 'visitor-maps'),number_format_i18n($api->downloaded));
+        echo '.';
+      }
 ?>
 		<?php if ( ! empty($api->rating) ) : ?>
-		<div class="star-holder" title="<?php printf(_n('Average rating based on %s rating)', '(Average rating based on %s ratings)', $api->num_ratings), number_format_i18n($api->num_ratings), 'visitor-maps'); ?>">
+		<div class="star-holder" title="<?php echo esc_attr(sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings))); ?>">
 			<div class="star star-rating" style="width: <?php echo esc_attr($api->rating) ?>px"></div>
 			<div class="star star5"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('5 stars', 'visitor-maps') ?>" /></div>
 			<div class="star star4"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('4 stars', 'visitor-maps') ?>" /></div>
@@ -144,9 +148,10 @@ if ( ! empty($api->downloaded) ) {
 			<div class="star star2"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('2 stars', 'visitor-maps') ?>" /></div>
 			<div class="star star1"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('1 star', 'visitor-maps') ?>" /></div>
 		</div>
-		<small><?php printf(_n('(Average rating based on %s rating)', '(Average rating based on %s ratings)', $api->num_ratings), number_format_i18n($api->num_ratings), 'visitor-maps'); ?> <a target="_blank" href="http://wordpress.org/extend/plugins/<?php echo $api->slug ?>/"> <?php _e('rate', 'visitor-maps') ?></a></small>
+		<small><?php echo sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings)); ?> <a target="_blank" href="http://wordpress.org/extend/plugins/<?php echo $api->slug ?>/"> <?php _e('rate', 'visitor-maps') ?></a></small>
 		<?php endif; ?>
 <?php
+  } // if ( !is_wp_error($api)
 if (!$visitor_maps_opt['donated']) {
 ?>
 <h3><?php echo __('Donate', 'visitor-maps'); ?></h3>
@@ -274,6 +279,14 @@ if (!$visitor_maps_opt['donated']) {
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_enable_visitor_map_hover_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_enable_visitor_map_hover_tip">
       <?php echo __('Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting.', 'visitor-maps'); ?>
+      </div>
+      <br />
+
+      <input name="visitor_maps_enable_users_map_hover" id="visitor_maps_enable_users_map_hover" type="checkbox" <?php if( $visitor_maps_opt['enable_users_map_hover'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_enable_visitor_map_hover"><?php echo __('Enable user names on hover labels for location pins on visitor map page.', 'visitor-maps'); ?></label>
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_enable_users_map_hover_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_enable_users_map_hover_tip">
+      <?php echo __('When enabled, registered users will have green location pins on the Visitor Maps page. Also the hover tag will include the user name.', 'visitor-maps'); ?>
       </div>
       <br />
 

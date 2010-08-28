@@ -290,13 +290,13 @@ $string .= "\n".'<!--[if lte IE 8 ]>
   if (!$visitor_maps_opt['hide_bots']) {
        // all visitors
        $rows_arr = $wpdb->get_results("
-                 SELECT nickname, country_name, country_code, city_name, state_name, state_code, latitude, longitude
+                 SELECT user_id, name, nickname, country_name, country_code, city_name, state_name, state_code, latitude, longitude
                  FROM ".$wo_table_wo."
                  WHERE time_last_click > '" . absint($xx_secs_ago) . "'",ARRAY_A );
   } else {
        // guests and members, no bots
        $rows_arr = $wpdb->get_results("
-                 SELECT nickname, country_name, country_code, city_name, state_name, state_code, latitude, longitude
+                 SELECT user_id, name, nickname, country_name, country_code, city_name, state_name, state_code, latitude, longitude
                  FROM ".$wo_table_wo."
                  WHERE (name = 'Guest' AND time_last_click > '" . absint($xx_secs_ago) . "')
                  OR (name != 'Guest' AND user_id > 0 AND time_last_click > '" . absint($xx_secs_ago) . "')",ARRAY_A );
@@ -305,6 +305,12 @@ $string .= "\n".'<!--[if lte IE 8 ]>
   // create pin on the map
   $count = 0;
 if ($rows_arr) { // check of there are any visitors
+
+    // see if the user is a spider (bot) or not
+    // based on a list of spiders in spiders.txt file
+    if (!$visitor_maps_opt['hide_bots'])
+       $spiders = file($path_visitor_maps.'spiders.txt');
+
   foreach($rows_arr as $row) {
     if ($row['longitude'] != '0.0000' && $row['latitude'] != '0.0000') {
       if ($ul_lat == 0) { // must be the world map
@@ -328,7 +334,45 @@ if ($rows_arr) { // check of there are any visitors
                   continue;
           }
       }
-	  $title = '';
+      $title_pre = '';
+      $this_image_pin = $image_pin;
+      if ($visitor_maps_opt['enable_users_map_hover'] && $row['user_id'] > 0 && $row['name'] != '') {
+         // find name for logged in user
+         // different pin color for logged in user
+         $title_pre = $this->wo_sanitize_output($row['name']).' '.__('from', 'visitor-maps').' ';
+         if($G['pin'] == 1){
+           $this_image_pin = str_replace('.jpg','-user.jpg',$image_pin);
+         }
+      }
+      if ( !$visitor_maps_opt['hide_bots'] && $row['user_id'] == 0 && $row['name'] != 'Guest') {
+         //  find name for bot
+         // different pin color for bot
+         if ( $this->wo_not_null($row['name'])  ) {
+           for ($i=0, $n=sizeof($spiders); $i<$n; $i++) {
+               if ($this->wo_not_null($spiders[$i]) && is_integer(strpos($row['name'], trim($spiders[$i]))) ) {
+                   // Tokenize UserAgent and try to find Bots name
+                   $tok = strtok($row['name']," ();/");
+                   while ($tok !== false) {
+                     if ( strlen(strtolower($tok)) > 3 )
+                       if ( !strstr(strtolower($tok), "mozilla") &&
+                           !strstr(strtolower($tok), "compatible") &&
+                           !strstr(strtolower($tok), "msie") &&
+                           !strstr(strtolower($tok), "windows")
+                           ) {
+                           $title_pre = $this->wo_sanitize_output($tok).' '.__('from', 'visitor-maps').' ';
+                           if($G['pin'] == 1){
+                               $this_image_pin = str_replace('.jpg','-bot.jpg',$image_pin);
+                           }
+                           break;
+                       }
+                       $tok = strtok(" ();/");
+                     }
+                     break;
+                 }
+            }
+         }
+      }
+      $title = '';
       if ( $visitor_maps_opt['enable_state_display'] ) {
               if ($row['city_name'] != '') {
                 if ($row['country_code'] == 'US') {
@@ -346,9 +390,9 @@ if ($rows_arr) { // check of there are any visitors
       } else {
              $title = $row['country_name'];
       }
-
+      $title = $title_pre . $title;
       $string .= '<div style="cursor:pointer;position:absolute; top:'.$y.'px; left:'.$x.'px;">
-      <img src="'.$image_pin.'" style="border:0; margin:0; padding:0;" width="'.$image_pin_width.'" height="'.$image_pin_height.'" alt="" title="'.$this->wo_sanitize_output($title).'" />
+      <img src="'.$this_image_pin.'" style="border:0; margin:0; padding:0;" width="'.$image_pin_width.'" height="'.$image_pin_height.'" alt="" title="'.$this->wo_sanitize_output($title).'" />
       </div>';
       $string .= "\n";
     }

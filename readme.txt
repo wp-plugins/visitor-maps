@@ -31,9 +31,10 @@ Features:
 
 Requirements/Restrictions:
 -------------------------
- * Works with Wordpress 2.6+, WPMU, and BuddyPress
- * PHP 4.3.9 or above with GD2 library support.
+ * Works with Wordpress 2.6+, WPMU, and BuddyPress. (Wordpress 3.0+ is highly recommended)
+ * PHP 4.3.9 or above with GD2 library support.(PHP5 is highly recommended)
  * 30 megs of server space(with geolocation enabled)
+ * PHP register_globals and safe_mode should be set to "Off"
 
 Credits:
 -------------------------
@@ -162,7 +163,9 @@ The following translations are included in the download zip file:
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
 * Hungarian (hu_HU) - Translated by [varnyu]
+* Indonesian (in_IN - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
+* Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 * Portuguese (pt_PT) - Translated by Jose
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
@@ -182,6 +185,13 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 
 == Changelog ==
+
+= 1.5.2 =
+- (28 Aug 2010) - Added new setting: "Enable user names on hover labels for location pins on visitor map page".
+- Added different pin color (blue)for search bots (enable in settings by unchecking: "Do not include search bots in the visitors online count on widgets".
+- Added different pin color (green)for registered users (disabled by default, enable in settings: "Enable user names on hover labels ...").
+- Added Indonesian (in_IN - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
+- Added Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 
 = 1.5.1 =
 - (18 Aug 2010) - Critical fix for some servers had 0 visitors, sorry about that.

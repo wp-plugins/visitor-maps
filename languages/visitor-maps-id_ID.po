@@ -1,0 +1,1394 @@
+# Visitor Maps and Who's Online
+# This file is put in the public domain.
+#
+# Plugin URI: http://www.642weather.com/weather/scripts-visitor-maps.php
+# Description: Visitor Maps for WordPress.
+# Version: 1.2
+# Author: Mike Challis
+# Author URI: http://www.642weather.com/weather/scripts.php
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Visitor Maps and Who's Online in Indonesia\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-18 22:08+0700\n"
+"PO-Revision-Date: 2010-08-19 08:23+0700\n"
+"Last-Translator: Masino Sinaga <admin@masinosinaga.com>\n"
+"Language-Team: Masino Sinaga <admin@masinosinaga.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Indonesian\n"
+"X-Poedit-Country: INDONESIA\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-KeywordsList: __;_e;_n\n"
+"Plural-Forms: nplurals=2; plural= n !=1\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../class-wo-been.php:32
+#: ../class-wo-view.php:24
+#: ../class-wo-view.php:32
+msgid "None"
+msgstr "Tidak ada"
+
+#: ../class-wo-been.php:33
+#: ../class-wo-view.php:33
+msgid "All"
+msgstr "Semua"
+
+#: ../class-wo-been.php:34
+#: ../class-wo-view.php:34
+#: ../class-wo-view.php:489
+msgid "Bots"
+msgstr "Bots"
+
+#: ../class-wo-been.php:35
+#: ../class-wo-view.php:35
+#: ../class-wo-view.php:485
+msgid "Guests"
+msgstr "Tamu"
+
+#: ../class-wo-been.php:44
+#: ../class-wo-been.php:229
+#: ../class-wo-view.php:179
+msgid "Who"
+msgstr "Siapa"
+
+#: ../class-wo-been.php:45
+#: ../class-wo-been.php:230
+msgid "Visits"
+msgstr "Kunjungan"
+
+#: ../class-wo-been.php:46
+#: ../class-wo-been.php:231
+msgid "Last Visit"
+msgstr "Kunjungan Terakhir"
+
+#: ../class-wo-been.php:47
+#: ../class-wo-been.php:232
+#: ../class-wo-view.php:180
+msgid "IP Address"
+msgstr "Alamat IP"
+
+#: ../class-wo-been.php:48
+#: ../class-wo-been.php:233
+#: ../class-wo-view.php:181
+msgid "Location"
+msgstr "Lokasi"
+
+#: ../class-wo-been.php:49
+#: ../class-wo-been.php:237
+#: ../class-wo-view.php:186
+msgid "Last URL"
+msgstr "URL Terakhir"
+
+#: ../class-wo-been.php:66
+msgid "Descending"
+msgstr "Menurun"
+
+#: ../class-wo-been.php:67
+msgid "Ascending"
+msgstr "Menaik"
+
+#: ../class-wo-been.php:90
+#: ../class-wo-been.php:477
+#: ../class-wo-view.php:38
+#: ../class-wo-view.php:427
+msgid "No"
+msgstr "Tidak"
+
+#: ../class-wo-been.php:91
+#: ../class-wo-been.php:479
+#: ../class-wo-view.php:39
+#: ../class-wo-view.php:429
+msgid "Yes"
+msgstr "Ya"
+
+#: ../class-wo-been.php:157
+#: ../class-wo-view.php:124
+msgid "Profile Display:"
+msgstr "Tampilan Profil:"
+
+#: ../class-wo-been.php:158
+msgid "Sort:"
+msgstr "Urutan:"
+
+#: ../class-wo-been.php:160
+#: ../class-wo-view.php:126
+msgid "Show Bots:"
+msgstr "Tampilkan Bots:"
+
+#: ../class-wo-been.php:163
+#: ../visitor-maps.php:67
+#: ../visitor-maps.php:1354
+#: ../visitor-maps.php:1366
+#: ../visitor-maps.php:1370
+#: ../visitor-maps.php:1377
+msgid "Who's Online"
+msgstr "Siapa sedang Aktif"
+
+#: ../class-wo-been.php:164
+#: ../class-wo-update.php:312
+#: ../class-wo-view.php:130
+#: ../visitor-maps.php:66
+msgid "Visitor Maps Options"
+msgstr "Pilihan Peta Pengunjung"
+
+#: ../class-wo-been.php:166
+#: ../class-wo-view.php:132
+#: ../visitor-maps-admin.php:204
+#, php-format
+msgid "<a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">Tampilan Peta Pengunjung</a>"
+
+#: ../class-wo-been.php:176
+#: ../class-wo-been.php:574
+#: ../class-wo-view.php:142
+#: ../class-wo-view.php:564
+msgid "Active Guest"
+msgstr "Tamu Aktif"
+
+#: ../class-wo-been.php:178
+#: ../class-wo-been.php:567
+#: ../class-wo-view.php:144
+#: ../class-wo-view.php:557
+msgid "Inactive Guest"
+msgstr "Tamu Tidak Aktif"
+
+#: ../class-wo-been.php:182
+#: ../class-wo-been.php:561
+#: ../class-wo-view.php:148
+#: ../class-wo-view.php:551
+msgid "Active Bot"
+msgstr "Bot Aktif"
+
+#: ../class-wo-been.php:184
+#: ../class-wo-been.php:558
+#: ../class-wo-view.php:150
+#: ../class-wo-view.php:548
+msgid "Inactive Bot"
+msgstr "Bot Tidak Aktif"
+
+#: ../class-wo-been.php:196
+#: ../class-wo-view.php:162
+#, php-format
+msgid "%1$d visitors since %2$s"
+msgstr "%1$d pengunjung sejak %2$s"
+
+#: ../class-wo-been.php:196
+#: ../class-wo-view.php:162
+msgid "installation"
+msgstr "installasi"
+
+#: ../class-wo-been.php:203
+#: ../class-wo-been.php:205
+#: ../class-wo-been.php:524
+#: ../class-wo-been.php:526
+msgid "FIRST"
+msgstr "AWAL"
+
+#: ../class-wo-been.php:203
+#: ../class-wo-been.php:207
+#: ../class-wo-been.php:524
+#: ../class-wo-been.php:528
+msgid "PREV"
+msgstr "MUNDUR"
+
+#: ../class-wo-been.php:209
+#: ../class-wo-been.php:530
+#, php-format
+msgid "Page %1$d of %2$d"
+msgstr "Halaman %1$d dari %2$d"
+
+#: ../class-wo-been.php:211
+#: ../class-wo-been.php:214
+#: ../class-wo-been.php:532
+#: ../class-wo-been.php:535
+msgid "NEXT"
+msgstr "MAJU"
+
+#: ../class-wo-been.php:211
+#: ../class-wo-been.php:215
+#: ../class-wo-been.php:532
+#: ../class-wo-been.php:536
+msgid "LAST"
+msgstr "AKHIR"
+
+#: ../class-wo-been.php:240
+#: ../class-wo-view.php:189
+msgid "Referer"
+msgstr "Perefer"
+
+#: ../class-wo-been.php:347
+#: ../class-wo-view.php:299
+msgid "Guest"
+msgstr "Tamu"
+
+#: ../class-wo-been.php:351
+#: ../class-wo-view.php:303
+#: ../class-wo-view.php:493
+msgid "You"
+msgstr "Anda"
+
+#: ../class-wo-been.php:369
+#: ../class-wo-view.php:321
+msgid "Error"
+msgstr "Galat"
+
+#: ../class-wo-been.php:391
+#: ../class-wo-view.php:336
+msgid "visits"
+msgstr "kunjungan"
+
+#: ../class-wo-been.php:396
+#: ../class-wo-view.php:341
+msgid "host lookups not enabled"
+msgstr "pencarian host tidak diaktifkan"
+
+#: ../class-wo-been.php:418
+#: ../class-wo-view.php:363
+msgid "unknown"
+msgstr "tidak dikenal"
+
+#: ../class-wo-been.php:493
+#: ../class-wo-view.php:443
+msgid "Last URL:"
+msgstr "URL Terakhir:"
+
+#: ../class-wo-been.php:585
+#: ../class-wo-view.php:575
+msgid "User Agent:"
+msgstr "Agen Pengguna:"
+
+#: ../class-wo-been.php:591
+#: ../class-wo-view.php:581
+msgid "Host:"
+msgstr "Host:"
+
+#: ../class-wo-been.php:597
+#: ../class-wo-view.php:587
+msgid "Referer:"
+msgstr "Referer:"
+
+#: ../class-wo-map-page.php:43
+#: ../class-wo-update.php:83
+#: ../visitor-maps-admin.php:453
+#: ../visitor-maps.php:79
+#: ../visitor-maps.php:113
+#: ../visitor-maps.php:127
+#: ../visitor-maps.php:162
+#: ../visitor-maps.php:186
+#: ../visitor-maps.php:324
+#: ../visitor-maps.php:355
+#: ../visitor-maps.php:1354
+#: ../visitor-maps.php:1361
+#: ../visitor-maps.php:1424
+msgid "Visitor Maps"
+msgstr "Peta Pengunjung"
+
+#: ../class-wo-map-page.php:45
+#, php-format
+msgid "Select a time period up to %d days ago"
+msgstr "Pilih periode waktu sampai dengan %d hari yang lalu"
+
+#: ../class-wo-map-page.php:46
+#: ../visitor-maps-admin.php:288
+msgid "Time:"
+msgstr "Waktu:"
+
+#: ../class-wo-map-page.php:48
+#: ../visitor-maps-admin.php:290
+msgid "Units:"
+msgstr "Unit:"
+
+#: ../class-wo-map-page.php:52
+#: ../class-wo-worldmap.php:139
+#: ../visitor-maps-admin.php:294
+msgid "minutes"
+msgstr "menit"
+
+#: ../class-wo-map-page.php:53
+#: ../class-wo-worldmap.php:143
+#: ../visitor-maps-admin.php:295
+msgid "hours"
+msgstr "jam"
+
+#: ../class-wo-map-page.php:54
+#: ../class-wo-worldmap.php:147
+#: ../visitor-maps-admin.php:296
+msgid "days"
+msgstr "hari"
+
+#: ../class-wo-map-page.php:71
+#: ../visitor-maps-admin.php:307
+msgid "Map:"
+msgstr "Peta:"
+
+#: ../class-wo-map-page.php:75
+#: ../visitor-maps-admin.php:313
+msgid "World (smallest)"
+msgstr "Dunia (paling kecil)"
+
+#: ../class-wo-map-page.php:76
+#: ../visitor-maps-admin.php:314
+msgid "World (small)"
+msgstr "Dunia (kecil)"
+
+#: ../class-wo-map-page.php:77
+#: ../visitor-maps-admin.php:315
+msgid "World (medium)"
+msgstr "Dunia (medium)"
+
+#: ../class-wo-map-page.php:78
+#: ../visitor-maps-admin.php:316
+msgid "World (large)"
+msgstr "Dunia (besar)"
+
+#: ../class-wo-map-page.php:79
+#: ../class-wo-map-page.php:80
+msgid "US"
+msgstr "Amerika Serikat"
+
+#: ../class-wo-map-page.php:79
+#: ../class-wo-map-page.php:81
+#: ../class-wo-map-page.php:83
+#: ../class-wo-map-page.php:85
+#: ../class-wo-map-page.php:87
+#: ../class-wo-map-page.php:89
+#: ../class-wo-map-page.php:91
+#: ../class-wo-map-page.php:93
+#: ../class-wo-map-page.php:95
+#: ../class-wo-map-page.php:97
+#: ../class-wo-map-page.php:99
+#: ../class-wo-map-page.php:101
+#: ../class-wo-map-page.php:103
+#: ../class-wo-map-page.php:105
+#: ../class-wo-map-page.php:107
+#: ../class-wo-map-page.php:109
+#: ../class-wo-map-page.php:111
+#: ../class-wo-map-page.php:113
+msgid "(black)"
+msgstr "(hitam)"
+
+#: ../class-wo-map-page.php:80
+#: ../class-wo-map-page.php:82
+#: ../class-wo-map-page.php:84
+#: ../class-wo-map-page.php:86
+#: ../class-wo-map-page.php:88
+#: ../class-wo-map-page.php:90
+#: ../class-wo-map-page.php:92
+#: ../class-wo-map-page.php:94
+#: ../class-wo-map-page.php:96
+#: ../class-wo-map-page.php:98
+#: ../class-wo-map-page.php:100
+#: ../class-wo-map-page.php:102
+#: ../class-wo-map-page.php:104
+#: ../class-wo-map-page.php:106
+#: ../class-wo-map-page.php:108
+#: ../class-wo-map-page.php:110
+#: ../class-wo-map-page.php:112
+#: ../class-wo-map-page.php:114
+msgid "(brown)"
+msgstr "(coklat)"
+
+#: ../class-wo-map-page.php:81
+#: ../class-wo-map-page.php:82
+msgid "Canada and US"
+msgstr "Kanada dan Amerika Serikat"
+
+#: ../class-wo-map-page.php:83
+#: ../class-wo-map-page.php:84
+msgid "Asia"
+msgstr "Asia"
+
+#: ../class-wo-map-page.php:85
+#: ../class-wo-map-page.php:86
+msgid "Australia and NZ"
+msgstr "Australia dan New Zealand"
+
+#: ../class-wo-map-page.php:87
+#: ../class-wo-map-page.php:88
+msgid "Europe Central"
+msgstr "Eropa Tengah"
+
+#: ../class-wo-map-page.php:89
+#: ../class-wo-map-page.php:90
+msgid "Europe"
+msgstr "Eropa"
+
+#: ../class-wo-map-page.php:91
+#: ../class-wo-map-page.php:92
+msgid "Scandinavia"
+msgstr "Skandinavia"
+
+#: ../class-wo-map-page.php:93
+#: ../class-wo-map-page.php:94
+msgid "Great Britain"
+msgstr "Inggris Raya"
+
+#: ../class-wo-map-page.php:95
+#: ../class-wo-map-page.php:96
+msgid "US Midwest"
+msgstr "Amerika Barat Tengah"
+
+#: ../class-wo-map-page.php:97
+#: ../class-wo-map-page.php:98
+msgid "US Upper Midwest"
+msgstr "Amerika Barat Daya"
+
+#: ../class-wo-map-page.php:99
+#: ../class-wo-map-page.php:100
+msgid "US Northeast"
+msgstr "Amerika Timur Laut"
+
+#: ../class-wo-map-page.php:101
+#: ../class-wo-map-page.php:102
+msgid "US Northwest"
+msgstr "Amerika Barat Laut"
+
+#: ../class-wo-map-page.php:103
+#: ../class-wo-map-page.php:104
+msgid "US Rocky Mountain"
+msgstr "Amerika Pegunungan Rocky"
+
+#: ../class-wo-map-page.php:105
+#: ../class-wo-map-page.php:106
+msgid "US South"
+msgstr "Amerika Selatan"
+
+#: ../class-wo-map-page.php:107
+#: ../class-wo-map-page.php:108
+msgid "US Southeast"
+msgstr "Amerika Tenggara"
+
+#: ../class-wo-map-page.php:109
+#: ../class-wo-map-page.php:110
+msgid "US Southwest"
+msgstr "Amerika Barat Daya"
+
+#: ../class-wo-map-page.php:111
+#: ../class-wo-map-page.php:112
+msgid "Spain/Portugal"
+msgstr "Spanyol/Portugal"
+
+#: ../class-wo-map-page.php:113
+#: ../class-wo-map-page.php:114
+#: ../class-wo-map-page.php:115
+msgid "Finland"
+msgstr "Finlandia"
+
+#: ../class-wo-map-page.php:115
+msgid "(yellow)"
+msgstr "(kuning)"
+
+#: ../class-wo-map-page.php:125
+msgid "Go"
+msgstr "Lanjutkan"
+
+#: ../class-wo-update.php:90
+msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
+msgstr "Sedang menyiapkan instalasi pertama sekali dari basis data Maxmind GeoLiteCity"
+
+#: ../class-wo-update.php:95
+msgid "Checking for updates for the Maxmind GeoLiteCity database"
+msgstr "Sedang memeriksa pemutakhiran untuk basis data Maxmind GeoLiteCity"
+
+#: ../class-wo-update.php:106
+msgid "PHP Memory Limit is unknown, increase is not available."
+msgstr "Batas Memory PHP tidak diketahui, pertambahan tidak tersedia."
+
+#: ../class-wo-update.php:108
+#, php-format
+msgid "PHP Memory Limit is %1$s, temporarily increasing to %2$s"
+msgstr "Batas Memory PHP adalah %1$s, sementara sedang dinaikkan ke %2$s"
+
+#: ../class-wo-update.php:113
+msgid "completed."
+msgstr "selesai."
+
+#: ../class-wo-update.php:115
+msgid "failed."
+msgstr "gagal."
+
+#: ../class-wo-update.php:122
+#, php-format
+msgid "PHP Memory Limit is %s, increasing is not needed."
+msgstr "Batas Memory PHP adalah %s, penambahan tidak dibutuhkan."
+
+#: ../class-wo-update.php:128
+msgid "Connecting to this URL:"
+msgstr "Sedang menghubungi ke URL ini:"
+
+#: ../class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr "Peringatan: Hosting web Anda memiliki PHP safe_mode dalam keadaan aktif."
+
+#: ../class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr "PHP safe_mode dapat menyebabkan masalah dengan pemutakhiran ini seperti galat hak akses berkas."
+
+#: ../class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP safe_mode lebih baik dimatikan, bergantung pada fitur ini dapat berfungsi, tapi sangat dikecilkan. Hubungi host web Anda untuk bantuan."
+
+#: ../class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr "Peringatan: Hosting web Anda memiliki setting allow_url_fopen PHP dalam keadaan dimatikan."
+
+#: ../class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr "Pengaturan PHP allow_url_fopen dibutuhkan untuk fitur pemutakhiran otomatis ini. Hubungi hosting web Anda untuk bantuan."
+
+#: ../class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr "Basis data geolite merupakan benar-benar sebuah berkas. Sebagai solusi, Anda dapat mengunduh secara manual berkas GeoLiteCity.dat.gz ini dari URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+
+#: ../class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr "Buka berkas zip, unggah melalui FTP berkas GeoLiteCity.dat ini ke folder /plugins/visitor-maps/. Ketika berkas belum diinstall, blog tetap berjalan, tapi lokasi informasi untuk seorang pengguna akan dilewati. "
+
+#: ../class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr "Peringatan: Host web Anda belum memperbaharui dari PHP4 ke PHP5."
+
+#: ../class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr "PHP4 secara resmi telah dihentikan sejak 8 Agustus 2008 dan tidak lagi dipertimbangkan sebagai yang aman."
+
+#: ../class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP5 lebih kencang, memiliki lebih banyak fitur, dan lebih aman. Penggunaan PHP4 mungkin masih tetap berfungsi, tapi sangat tidak disarankan. Hubungi hosting web Anda untuk bantuan."
+
+#: ../class-wo-update.php:199
+msgid "You have the latest available Maxmind GeoLiteCity database"
+msgstr "Anda memiliki basis data Maxmind GeoLiteCity yang versi terakhir"
+
+#: ../class-wo-update.php:200
+msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
+msgstr "Catatan: Maxmind biasanya memperbaharui basis data GeoLiteCity sebulan sekali pada tanggal 1, tapi kadang-kadang mereka memperbaharuinya pada hari kedua atau ketiga atau bahkan tanggal-tanggal terakhir!"
+
+#: ../class-wo-update.php:201
+#, php-format
+msgid "Maxmind last updated it %1$s (%2$d days ago)"
+msgstr "Maxmind terakhir diperbaharui %1$s (%2$d hari yang lalu)"
+
+#: ../class-wo-update.php:202
+#, php-format
+msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
+msgstr "ini adalah <a href=\"%s\" target=\"_new\">tersedia berkas terbaru</a>"
+
+#: ../class-wo-update.php:204
+#, php-format
+msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
+msgstr "Anda memperbaharui basis data GeoLiteCity pada %s (%d hari yang lalu)"
+
+#: ../class-wo-update.php:205
+msgid "No new updates are available today."
+msgstr "Tidak ada pembaharuan tersedia untuk hari ini."
+
+#: ../class-wo-update.php:218
+msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
+msgstr "Galat: Pengunduhan gagal, berkas GeoLiteCity.dat.gz yang diunduh tidak ditemukan"
+
+#: ../class-wo-update.php:221
+msgid "Download success, uncompressing file, please wait"
+msgstr "Pengunduhan berhasil, sedang membuka kompres berkas, mohon tunggu "
+
+#: ../class-wo-update.php:227
+msgid "unzip error: opening GeoLiteCity.dat file"
+msgstr "galat unzip: sedang membuka berkas GeoLiteCity.dat"
+
+#: ../class-wo-update.php:229
+msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
+msgstr "galat unzip: gzopen sedang membuka berkas GeoLiteCity.dat.gz"
+
+#: ../class-wo-update.php:238
+msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
+msgstr "galat unzip: Chmod 0644 untuk berkas GeoLiteCity.dat gagal"
+
+#: ../class-wo-update.php:243
+msgid "Error: the GeoLiteCity.dat file was not found"
+msgstr "Galat: berkas GeoLiteCity.dat tidak ditemukan"
+
+#: ../class-wo-update.php:247
+msgid "Install/Update completed"
+msgstr "Install/Pemutakhiran telah selesai "
+
+#: ../class-wo-update.php:271
+msgid "Testing a lookup with your IP address:"
+msgstr "Sedang mencoba pencarian dengan alamat IP Anda:"
+
+#: ../class-wo-update.php:277
+msgid "test_lookup error: the GeoLiteCity.dat file was not found"
+msgstr "galat test_lookup: berkas GeoLiteCity.dat tidak ditemukan"
+
+#: ../class-wo-update.php:280
+msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
+msgstr "galat test_lookup: berkas include-whos-online-geoip.php tidak ditemukan"
+
+#: ../class-wo-update.php:291
+msgid "IP:"
+msgstr "IP: "
+
+#: ../class-wo-update.php:292
+msgid "City:"
+msgstr "Kota:"
+
+#: ../class-wo-update.php:293
+msgid "State Name:"
+msgstr "Nama Propinsi:"
+
+#: ../class-wo-update.php:294
+msgid "State Code:"
+msgstr "Kode Propinsi:"
+
+#: ../class-wo-update.php:295
+msgid "Country Name:"
+msgstr "Nama Negara:"
+
+#: ../class-wo-update.php:296
+msgid "Country Code:"
+msgstr "Kode Negara:"
+
+#: ../class-wo-update.php:297
+msgid "Lat:"
+msgstr "Lat: "
+
+#: ../class-wo-update.php:298
+msgid "Lon: "
+msgstr "Lon: "
+
+#: ../class-wo-update.php:302
+msgid "Note: location information was not available, this is normal if on a private network."
+msgstr "Catatan: informasi lokasi tidak tersedia, hal ini normal jika pada sebuah jaringan pribadi."
+
+#: ../class-wo-update.php:311
+#: ../visitor-maps-admin.php:200
+#: ../visitor-maps.php:127
+msgid "View Who's Online"
+msgstr "Lihat Siapa yang Sedang Berkunjung"
+
+#: ../class-wo-update.php:341
+#: ../class-wo-view.php:719
+msgid "error: could not connect to remote file"
+msgstr "galat: tidak dapat menghubungi ke berkas jarak jauh"
+
+#: ../class-wo-update.php:354
+#: ../class-wo-view.php:732
+msgid "error: fetching timestamp failed for URL, 404 not found?"
+msgstr "galat: pengambilan data waktu gagal untuk URL, 404 tidak ditemukan?"
+
+#: ../class-wo-update.php:386
+#: ../class-wo-view.php:764
+msgid "error: fetching timestamp failed for URL 404 not found?"
+msgstr "galat: pengambilan data waktu gagal untuk URL 404 tidak ditemukan?"
+
+#: ../class-wo-update.php:399
+#: ../class-wo-view.php:777
+msgid "error: could not connect to remote URL"
+msgstr "galat: tidak dapat menghubungi ke URL jarak jauh"
+
+#: ../class-wo-update.php:404
+msgid "Please allow plenty of time for the approximately 19meg file to download."
+msgstr "Silahkan ijinkan banyak waktu untuk perkiraan pengunduhan berkas berukuran 19MB."
+
+#: ../class-wo-update.php:405
+msgid "The time needed depends on your server download speed."
+msgstr "Waktu yang dibutuhkan tergantung pada kecepatan unduh server Anda."
+
+#: ../class-wo-update.php:406
+msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
+msgstr "Waktu habis dapat terjadi jika koneksi benar-benar lambat yang menyebabkan hal ini memakan waktu lebih dari 3 menit."
+
+#: ../class-wo-update.php:414
+msgid "error: reading or opening file"
+msgstr "galat: saat membaca atau membuka berkas"
+
+#: ../class-wo-update.php:415
+#: ../class-wo-update.php:433
+msgid "error: cannot write to file, check server permission settings"
+msgstr "galat: tidak dapat menulisi berkas, periksa pengaturan hak akses server"
+
+#: ../class-wo-update.php:416
+msgid "Download started, (counting megs)"
+msgstr "Pengunduhan telah dimulai, (penghitungan MB)"
+
+#: ../class-wo-update.php:440
+msgid "error: CHMOD 0644 download file failed"
+msgstr "galat: CHMOD 0644 untuk berkas yang telah diunduh gagal"
+
+#: ../class-wo-view.php:125
+msgid "Refresh Rate:"
+msgstr "Durasi Penyegaran:"
+
+#: ../class-wo-view.php:129
+#: ../visitor-maps.php:68
+#: ../visitor-maps.php:79
+msgid "Who's Been Online"
+msgstr "Siapa yang sudah Berkunjung"
+
+#: ../class-wo-view.php:167
+msgid "Last refresh at"
+msgstr "Penyegaran terakhir pada"
+
+#: ../class-wo-view.php:178
+msgid "Online"
+msgstr "Sedang berkunjung"
+
+#: ../class-wo-view.php:182
+msgid "Entry"
+msgstr "Masuk"
+
+#: ../class-wo-view.php:183
+msgid "Last Click"
+msgstr "Klik Terakhir"
+
+#: ../class-wo-view.php:467
+#, php-format
+msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
+msgstr "Hanya Pengunjung (Dengan pertimbangan tidak aktif setelah %1$d menit. Dihapus setelah %2$d menit)"
+
+#: ../class-wo-view.php:474
+msgid "Duplicate IPs"
+msgstr "IP Duplikat"
+
+#: ../class-wo-view.php:481
+msgid "Members (includes you)"
+msgstr "Anggota (termasuk Anda)"
+
+#: ../class-wo-view.php:485
+msgid "are active"
+msgstr "sedang aktif"
+
+#: ../class-wo-view.php:499
+msgid "Your IP Address:"
+msgstr "Alamat IP Anda:"
+
+#: ../class-wo-view.php:505
+msgid "Your Host:"
+msgstr "Host Anda:"
+
+#: ../class-wo-view.php:510
+#: ../visitor-maps-admin.php:223
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr "Menggunakan data GeoLiteCity yang dibuat oleh MaxMind, tersedia dari http://www.maxmind.com"
+
+#: ../class-wo-view.php:513
+#: ../class-wo-view.php:517
+#, php-format
+msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
+msgstr "Data GeoLiteCity terakhir diperbaharui pada %1$s (%2$d hari yang lalu)"
+
+#: ../class-wo-view.php:514
+msgid "an update is available"
+msgstr "sebuah pemutakhiran tersedia"
+
+#: ../class-wo-view.php:515
+msgid "click here to update"
+msgstr "klik di sini untuk memutakhirkan"
+
+#: ../class-wo-worldmap.php:27
+#: ../visitor-maps-worldmap.php:14
+msgid "error: geolocation data not enabled or installed"
+msgstr "galat: data geolokasi tidak aktif atau belum diinstall"
+
+#: ../class-wo-worldmap.php:252
+#, php-format
+msgid "%1$d visitors since %2$d %3$s ago"
+msgstr "%1$d pengunjung sejak %2$d %3$s yang lalu"
+
+#: ../class-wo-worldmap.php:255
+#, php-format
+msgid "%1$d visitors since %2$d ago"
+msgstr "%1$d pengunjung sejak %2$d yang lalu"
+
+#: ../visitor-maps-admin.php:7
+#: ../visitor-maps-admin.php:22
+#: ../visitor-maps.php:75
+#: ../visitor-maps.php:123
+msgid "You do not have permissions for managing this option"
+msgstr "Anda tidak memiliki ijin untuk mengelola pilihan ini"
+
+#: ../visitor-maps-admin.php:81
+msgid "Options saved."
+msgstr "Pilihan telah disimpan."
+
+#: ../visitor-maps-admin.php:84
+msgid "Visitor Maps and Who's Online Options"
+msgstr "Pilihan Peta Pengunjung dan Siapa yang Online"
+
+#: ../visitor-maps-admin.php:97
+msgid "Changelog"
+msgstr "Catatan perubahan"
+
+#: ../visitor-maps-admin.php:98
+msgid "FAQ"
+msgstr "FAQ"
+
+#: ../visitor-maps-admin.php:99
+#: ../visitor-maps-admin.php:172
+msgid "Rate This"
+msgstr "Nilai Ini"
+
+#: ../visitor-maps-admin.php:100
+msgid "Support"
+msgstr "Bantuan"
+
+#: ../visitor-maps-admin.php:101
+#: ../visitor-maps-admin.php:151
+msgid "Donate"
+msgstr "Donasi"
+
+#: ../visitor-maps-admin.php:102
+msgid "Free PHP Scripts"
+msgstr "Skrip PHP Gratis"
+
+#: ../visitor-maps-admin.php:103
+msgid "Contact"
+msgstr "Kontak"
+
+#: ../visitor-maps-admin.php:134
+msgid "Downloaded:"
+msgstr "Telah diunduh:"
+
+#: ../visitor-maps-admin.php:134
+#, php-format
+msgid "%s time"
+msgstr "%s kali"
+
+#: ../visitor-maps-admin.php:138
+#, php-format
+msgid "Average rating based on %s rating)"
+msgstr "Rata-rata nilai berdasarkan pada %s penilaian)"
+
+#: ../visitor-maps-admin.php:140
+msgid "5 stars"
+msgstr "5 bintang"
+
+#: ../visitor-maps-admin.php:141
+msgid "4 stars"
+msgstr "4 bintang"
+
+#: ../visitor-maps-admin.php:142
+msgid "3 stars"
+msgstr "3 bintang"
+
+#: ../visitor-maps-admin.php:143
+msgid "2 stars"
+msgstr "2 bintang"
+
+#: ../visitor-maps-admin.php:144
+msgid "1 star"
+msgstr "1 bintang"
+
+#: ../visitor-maps-admin.php:146
+#, php-format
+msgid "(Average rating based on %s rating)"
+msgstr "(Rata-rata nilai berdasarkan pada %s penilaian)"
+
+#: ../visitor-maps-admin.php:146
+msgid "rate"
+msgstr "nilai"
+
+#: ../visitor-maps-admin.php:163
+msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!"
+msgstr "Jika plugin ini bermanfaat buat Anda, pertimbangkanlah untuk mengirim donasi untuk berkontribusi dalam pengembangan lebih lanjut. Terima kasih untuk dukungan Anda!"
+
+#: ../visitor-maps-admin.php:163
+msgid "More from Mike Challis"
+msgstr "Lainnya dari Mike Challis"
+
+#: ../visitor-maps-admin.php:170
+msgid "Mike Challis says: \"Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK."
+msgstr "Mike Challis mengatakan: \"Halo, saya telah menghabiskan ratusan jam untuk mengoding plugin ini hanya untuk Anda. Jika Anda puas dengan program saya dan ingin mendukungnya, mohon kirimkan sedikit donasi. Jika Anda tidak mampu, tidak apa-apa."
+
+#: ../visitor-maps-admin.php:171
+msgid "Most people donate $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin.\""
+msgstr "Kebanyakan orang menyumbang sebesar $5, $10, $20, atau lebih. Meskipun tidak ada jumlah yang terlalu kecil. Donasi dapat dibuat dengan akun PayPal Anda, atau dengan menggunakan kartu kredit. Silahkan nilai juga plugin saya ini.\""
+
+#: ../visitor-maps-admin.php:174
+msgid "Close this message"
+msgstr "Tutup pesan ini"
+
+#: ../visitor-maps-admin.php:188
+msgid "I have donated to help contribute for the development of this plugin."
+msgstr "Saya sudah menyumbang untuk membantu kontribusi pengembangan plugin ini."
+
+#: ../visitor-maps-admin.php:191
+msgid "Usage"
+msgstr "Penggunaan"
+
+#: ../visitor-maps-admin.php:193
+msgid "Add the shortcode [visitor-maps] in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "Tambahkan kode singkat <b>[visitor-maps]</b> dalam sebuah Halaman (bukan Artikel/Tulisan). Halaman ini akan menjadi halaman Peta Pengunjung Anda."
+
+#: ../visitor-maps-admin.php:193
+#: ../visitor-maps-admin.php:196
+#: ../visitor-maps-admin.php:241
+#: ../visitor-maps-admin.php:249
+#: ../visitor-maps-admin.php:257
+#: ../visitor-maps-admin.php:265
+#: ../visitor-maps-admin.php:273
+#: ../visitor-maps-admin.php:281
+#: ../visitor-maps-admin.php:331
+#: ../visitor-maps-admin.php:344
+#: ../visitor-maps-admin.php:351
+#: ../visitor-maps-admin.php:358
+#: ../visitor-maps-admin.php:366
+#: ../visitor-maps-admin.php:374
+#: ../visitor-maps-admin.php:381
+#: ../visitor-maps-admin.php:401
+#: ../visitor-maps-admin.php:409
+#: ../visitor-maps-admin.php:417
+#: ../visitor-maps-admin.php:430
+#: ../visitor-maps-admin.php:438
+#: ../visitor-maps-admin.php:446
+#: ../visitor-maps-admin.php:454
+#: ../visitor-maps-admin.php:471
+#: ../visitor-maps-admin.php:478
+#: ../visitor-maps-admin.php:485
+#: ../visitor-maps-admin.php:492
+msgid "help"
+msgstr "bantuan"
+
+#: ../visitor-maps-admin.php:196
+msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
+msgstr "Tambahkan Siapa yang Sedang Online di sidebar. Klik pada Tampilan, Widgets, lalu seret widget Siapa yang Online ke bar samping di kolom sebelah kanan."
+
+#: ../visitor-maps-admin.php:202
+msgid "View Who's Been Online"
+msgstr "Lihat Siapa yang Sedang Berkunjung"
+
+#: ../visitor-maps-admin.php:208
+msgid "Options"
+msgstr "Pilihan"
+
+#: ../visitor-maps-admin.php:211
+#: ../visitor-maps-admin.php:505
+msgid "Update Options"
+msgstr "Perbaharui Pengaturan"
+
+#: ../visitor-maps-admin.php:219
+msgid "GeoLocation:"
+msgstr "Lokasi Bumi:"
+
+#: ../visitor-maps-admin.php:225
+msgid "The Maxmind GeoLiteCity database is not yet installed."
+msgstr "Basis data Maxmind GeoLiteCity belum diinstall."
+
+#: ../visitor-maps-admin.php:225
+#: ../visitor-maps.php:569
+msgid "Install Now"
+msgstr "Install Sekarang"
+
+#: ../visitor-maps-admin.php:227
+msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
+msgstr "Basis data Maxmind GeoLiteCity sudah diinstall tapi tidak diaktifkan (periksa pengaturan di bawah)."
+
+#: ../visitor-maps-admin.php:229
+msgid "The Maxmind GeoLiteCity database is installed and enabled."
+msgstr "Basis data Maxmind GeoLiteCity telah diinstall dan diaktifkan."
+
+#: ../visitor-maps-admin.php:235
+msgid "Enable geolocation."
+msgstr "Aktifkan lokasi bumi."
+
+#: ../visitor-maps-admin.php:236
+msgid "Update Now"
+msgstr "Perbaharui Sekarang"
+
+#: ../visitor-maps-admin.php:240
+msgid "Disable text on geolocation maps (missing map background fix)."
+msgstr "Nonaktifkan tulisan pada peta lokasi bumi (perbaikan dari latar belakang peta yang hilang)."
+
+#: ../visitor-maps-admin.php:241
+#: ../visitor-maps-admin.php:249
+#: ../visitor-maps-admin.php:257
+#: ../visitor-maps-admin.php:265
+#: ../visitor-maps-admin.php:273
+#: ../visitor-maps-admin.php:281
+#: ../visitor-maps-admin.php:331
+#: ../visitor-maps-admin.php:344
+#: ../visitor-maps-admin.php:351
+#: ../visitor-maps-admin.php:358
+#: ../visitor-maps-admin.php:366
+#: ../visitor-maps-admin.php:374
+#: ../visitor-maps-admin.php:381
+#: ../visitor-maps-admin.php:401
+#: ../visitor-maps-admin.php:409
+#: ../visitor-maps-admin.php:417
+#: ../visitor-maps-admin.php:430
+#: ../visitor-maps-admin.php:438
+#: ../visitor-maps-admin.php:446
+#: ../visitor-maps-admin.php:454
+#: ../visitor-maps-admin.php:471
+#: ../visitor-maps-admin.php:478
+#: ../visitor-maps-admin.php:485
+#: ../visitor-maps-admin.php:492
+msgid "Click for Help!"
+msgstr "Klik untuk Bantuan!"
+
+#: ../visitor-maps-admin.php:243
+msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
+msgstr "Beberapa server PHP tidak memiliki dukungan penuh untuk pencetakan teks di atas gambar Peta Pengunjung. Hanya jika Peta Pengunjung menampilkan pin dan tidak ada gambar untuk dunia atau negara, pilih pengaturan ini. Setelah memilih pengaturan ini, periksa peta pengunjung Anda untuk melihat jika peta sekarang telah berfungsi."
+
+#: ../visitor-maps-admin.php:248
+msgid "Enable display of city, state next to country flag."
+msgstr "Aktifkan tampilan kota, propinsi di sebelah bendera negara."
+
+#: ../visitor-maps-admin.php:251
+#: ../visitor-maps-admin.php:259
+#: ../visitor-maps-admin.php:411
+#: ../visitor-maps-admin.php:419
+msgid "Changes display options on Who's Online dashboard pages."
+msgstr "Ganti pilihan tampilan pada halaman Siapa yang Sedang Online."
+
+#: ../visitor-maps-admin.php:256
+msgid "Enable visitor map on Who's Online dashboard."
+msgstr "Aktifkan peta pengunjung pada dasbor Siapa yang Sedang Online."
+
+#: ../visitor-maps-admin.php:264
+msgid "Enable visitor map link on Who's Online widget."
+msgstr "Aktifkan tautan peta pengunjung di widget Siapa sedang Online."
+
+#: ../visitor-maps-admin.php:267
+msgid "Changes display options on Who's Online widget."
+msgstr "Ganti pilihan tampilan pada widget Siapa sedang Online."
+
+#: ../visitor-maps-admin.php:272
+msgid "Enable hover labels for location pins on visitor map page."
+msgstr "Aktifkan label hover untuk lokasi pin pada halaman peta pengunjung."
+
+#: ../visitor-maps-admin.php:275
+msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
+msgstr "Beberapa tema bertabrakan dengan tampilan seharusnya dari lokasi pin pada halaman Peta Pengunjung. Setelah mengaktifkan pengaturan ini, periksa peta pengunjung Anda untuk memastikan bahwa pin telah ditempatkan dengan benar. Jika pin sekitar 10 pixels terlalu rendah pada peta, kembalikan ke pengaturan sebelumnya."
+
+#: ../visitor-maps-admin.php:280
+msgid "Hide map viewing by non administrators."
+msgstr "Sembunyikan tampilan peta dari yang bukan administrator."
+
+#: ../visitor-maps-admin.php:283
+msgid "This setting restricts viewing the Visitor Map Viewer page to administrators only."
+msgstr "Pengaturan ini membatasi halaman Tampilan Peta Pengunjung hanya ke administrator."
+
+#: ../visitor-maps-admin.php:287
+msgid "Default Visitor Map"
+msgstr "Standar Peta Pengunjung"
+
+#: ../visitor-maps-admin.php:333
+msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
+msgstr "Standar peta yang ditampilkan pada halaman Peta Pengunjung. Setelah pengaturan ini, periksa halaman peta pengunjung Anda untuk memastikan bahwa dia sudah sesuai dengan yang diharapkan. Jika peta terlalu lebar, pilih yang lebih kecil."
+
+#: ../visitor-maps-admin.php:340
+msgid "Visitors:"
+msgstr "Pengunjung:"
+
+#: ../visitor-maps-admin.php:343
+msgid "Active time (minutes)"
+msgstr "Waktu aktif (menit)"
+
+#: ../visitor-maps-admin.php:346
+msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
+msgstr "Menit yang seorang pengunjung dipertimbangkan \"aktif\". Standarnya adalah 5 menit."
+
+#: ../visitor-maps-admin.php:350
+msgid "Inactive time (minutes)"
+msgstr "Waktu yang tidak aktif (menit)"
+
+#: ../visitor-maps-admin.php:353
+msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
+msgstr "Menit sampai seorang pengunjung yang tidak aktif dihapus dari tampilan. Standarnya 15 menit."
+
+#: ../visitor-maps-admin.php:357
+msgid "Days to store visitor data"
+msgstr "Jumlah Hari untuk menyimpan data"
+
+#: ../visitor-maps-admin.php:360
+msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
+msgstr "Jumlah hari untuk menyimpan data pengunjung di tabel basis data. Data ini digunakan untuk peta lokasi bumi. Standarnya 30 hari."
+
+#: ../visitor-maps-admin.php:365
+msgid "Do not include administrators count or location on the maps."
+msgstr "Jangan sertakan jumlah atau lokasi administrator pada peta."
+
+#: ../visitor-maps-admin.php:368
+msgid "Changes display options on Who's Online maps."
+msgstr "Ganti pilihan tampilan pada peta Siapa yang Sedang Online."
+
+#: ../visitor-maps-admin.php:373
+msgid "Do not include search bots in the visitors online count on widgets."
+msgstr "Jangan sertakan bot pencarian di jumlah pengunjung aktif di widget."
+
+#: ../visitor-maps-admin.php:376
+msgid "Changes display options on Who's Online widgets."
+msgstr "Ganti pilihan tampilan pada widget Siapa sedang Online."
+
+#: ../visitor-maps-admin.php:380
+msgid "IP Adresses to ignore"
+msgstr "Alamat IP yang diabaikan"
+
+#: ../visitor-maps-admin.php:383
+msgid "Optional list of IP addresses for visitors you do not want shown on maps."
+msgstr "Optional list of IP addresses for visitors you do not want shown on maps."
+
+#: ../visitor-maps-admin.php:384
+msgid "Start each entry on a new line."
+msgstr "Awali setiap entrian pada sebuah baris baru."
+
+#: ../visitor-maps-admin.php:385
+msgid "Use <strong>*</strong> for wildcards."
+msgstr "Gunakan <strong>*</strong> untuk wildcards."
+
+#: ../visitor-maps-admin.php:386
+msgid "Examples:"
+msgstr "Contoh:"
+
+#: ../visitor-maps-admin.php:397
+msgid "Lookups:"
+msgstr "Lookups:"
+
+#: ../visitor-maps-admin.php:400
+msgid "Who Is Lookup URL"
+msgstr "URL untuk Who Is Lookup"
+
+#: ../visitor-maps-admin.php:403
+msgid "URL to open when an IP address is clicked on."
+msgstr "URL untuk membuka ketika sebuah alamat IP diklik."
+
+#: ../visitor-maps-admin.php:408
+msgid "Enable open Who Is Lookup URL on a pop-up."
+msgstr "Aktifkan pembukaan Who Is Lookup URL pada sebuah jendela baru."
+
+#: ../visitor-maps-admin.php:416
+msgid "Enable host lookups for IP addresses."
+msgstr "Aktifkan pencarian host untuk alamat IP."
+
+#: ../visitor-maps-admin.php:426
+msgid "Stats:"
+msgstr "Statistik:"
+
+#: ../visitor-maps-admin.php:429
+msgid "Enable stats display in blog footer."
+msgstr "Aktifkan tampilan statistik pada bagian bawah blog."
+
+#: ../visitor-maps-admin.php:432
+#: ../visitor-maps-admin.php:440
+#: ../visitor-maps-admin.php:448
+msgid "Shows how many visitors are online now and records of the most users online at one time."
+msgstr "Tampilkan berapa jumlah pengunjung yang sedang aktif dan rekam pengguna paling banyak aktif pada satu waktu."
+
+#: ../visitor-maps-admin.php:437
+msgid "Enable stats display in admin footer."
+msgstr "Aktifkan tampilan statistik pada bagian bawah halaman admin."
+
+#: ../visitor-maps-admin.php:445
+msgid "Enable stats display on map page."
+msgstr "Aktifkan tampilan statistik pada halaman peta."
+
+#: ../visitor-maps-admin.php:453
+msgid "Enable plugin credit link:"
+msgstr "Aktifkan tautan kredit plugin:"
+
+#: ../visitor-maps-admin.php:453
+#: ../visitor-maps.php:113
+#: ../visitor-maps.php:162
+#: ../visitor-maps.php:355
+#: ../visitor-maps.php:1361
+#: ../visitor-maps.php:1424
+msgid "Powered by"
+msgstr "Didukung oleh"
+
+#: ../visitor-maps-admin.php:456
+msgid "The credit link is not mandatory, yes you can disable it if you want."
+msgstr "Tautan kredit tidak bersifat wajib, ya Anda dapat menghilangkannya jika mau."
+
+#: ../visitor-maps-admin.php:463
+msgid "Times:"
+msgstr "Waktu:"
+
+#: ../visitor-maps-admin.php:467
+msgid "Table of date format characters."
+msgstr "Tabel dari karakter format tanggal."
+
+#: ../visitor-maps-admin.php:470
+msgid "Time format (Max Users Today)"
+msgstr "Format Waktu (Max Pengguna Hari Ini)"
+
+#: ../visitor-maps-admin.php:473
+msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
+msgstr "Format waktu untuk tampilan \"Maks Pengguna Hari Ini\" dan \"Waktu Penyegaran Terakhir\". Standar, h:i a T (02:25 pm PST)"
+
+#: ../visitor-maps-admin.php:477
+msgid "Time format (Last Click)"
+msgstr "Format Waktu (Klik Terakhir)"
+
+#: ../visitor-maps-admin.php:480
+msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
+msgstr "Format waktu untuk tampilan \"Masuk\" dan \"Klik Terakhir\". Standar, h:i:sa (02:25:25pm)"
+
+#: ../visitor-maps-admin.php:484
+msgid "Date/Time format (All Time Records)"
+msgstr "Format Tanggal/Waktu (Semua Record Waktu)"
+
+#: ../visitor-maps-admin.php:487
+msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: ../visitor-maps-admin.php:491
+msgid "Date/Time format (GeoLite data)"
+msgstr "Format Tanggal/Waktu (data GeoLite)"
+
+#: ../visitor-maps-admin.php:494
+msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: ../visitor-maps-admin.php:509
+msgid "More WordPress plugins by Mike Challis:"
+msgstr "Plugin WordPress lainnya yang dibuat oleh Mike Challis:"
+
+#: ../visitor-maps-admin.php:511
+msgid "Fast Secure Contact Form"
+msgstr "Fast Secure Contact Form"
+
+#: ../visitor-maps-admin.php:512
+msgid "SI CAPTCHA Anti-Spam"
+msgstr "SI CAPTCHA Anti-Spam"
+
+#: ../visitor-maps-admin.php:513
+msgid "Visitor Maps and Who's Online"
+msgstr "Visitor Maps and Who's Online"
+
+#: ../visitor-maps.php:109
+#: ../visitor-maps.php:158
+#, php-format
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "Tampilkan peta lebih lanjut pada <a href=\"%s\">Tampilan Peta Pengunjung</a>"
+
+#: ../visitor-maps.php:255
+msgid "Close"
+msgstr "Tutup"
+
+#: ../visitor-maps.php:257
+msgid "Powered by Visitor Maps"
+msgstr "Didukung oleh Visitor Maps"
+
+#: ../visitor-maps.php:262
+#: ../visitor-maps.php:358
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr "Lokasi bumi Peta Pengunjung dinonaktifkan dalam pengaturan."
+
+#: ../visitor-maps.php:327
+msgid "View more maps in the "
+msgstr "Lihat peta lebih lanjut dalam "
+
+#: ../visitor-maps.php:327
+msgid "Visitor Map Viewer"
+msgstr "Tampilan Peta Pengunjung"
+
+#: ../visitor-maps.php:336
+#: ../visitor-maps.php:1088
+#: ../visitor-maps.php:1089
+msgid "Max visitors today"
+msgstr "Maks pengunjung hari ini"
+
+#: ../visitor-maps.php:336
+#: ../visitor-maps.php:338
+#: ../visitor-maps.php:340
+#: ../visitor-maps.php:342
+#: ../visitor-maps.php:1088
+#: ../visitor-maps.php:1089
+#: ../visitor-maps.php:1092
+#: ../visitor-maps.php:1093
+#: ../visitor-maps.php:1096
+#: ../visitor-maps.php:1097
+#: ../visitor-maps.php:1100
+#: ../visitor-maps.php:1101
+msgid "at"
+msgstr "pada"
+
+#: ../visitor-maps.php:338
+#: ../visitor-maps.php:1092
+#: ../visitor-maps.php:1093
+msgid "This month"
+msgstr "Bulan ini"
+
+#: ../visitor-maps.php:340
+#: ../visitor-maps.php:1096
+#: ../visitor-maps.php:1097
+msgid "This year"
+msgstr "Tahun ini"
+
+#: ../visitor-maps.php:342
+#: ../visitor-maps.php:1100
+#: ../visitor-maps.php:1101
+msgid "All time"
+msgstr "Semua waktu"
+
+#: ../visitor-maps.php:345
+msgid "Records of the most visitors online at once:"
+msgstr "Rekaman dari pengunjung yang paling banyak berkunjung pada sekali waktu:"
+
+#: ../visitor-maps.php:569
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr "Plugin Visitor Maps membutuhkan basis data Maxmind GeoLiteCity terinstall."
+
+#: ../visitor-maps.php:635
+msgid "Settings"
+msgstr "Pengaturan"
+
+#: ../visitor-maps.php:1070
+#: ../visitor-maps.php:1409
+#, php-format
+msgid "%d visitors online now"
+msgstr "%d pengunjung sedang aktif sekarang"
+
+#: ../visitor-maps.php:1071
+#: ../visitor-maps.php:1410
+#, php-format
+msgid "%d guests"
+msgstr "%d tamu"
+
+#: ../visitor-maps.php:1073
+#: ../visitor-maps.php:1413
+#, php-format
+msgid "%d bots"
+msgstr "%d bot"
+
+#: ../visitor-maps.php:1075
+#: ../visitor-maps.php:1411
+#, php-format
+msgid "%d members"
+msgstr "%d anggota"
+
+#: ../visitor-maps.php:1420
+#, php-format
+msgid "<a href=\"%s\">Map of Visitors</a>"
+msgstr "<a href=\"%s\">Peta Pengunjung</a>"
+
+#~ msgid "Average rating based on %s ratings"
+#~ msgstr "Rata-rata nilai berdasarkan pada %s penilaian"
+#~ msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+#~ msgstr ""
+#~ "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+#~ msgid ""
+#~ "Displays Visitor Maps with location pins, city, and country. Includes a "
+#~ "Who's Online Sidebar to show how many users are online. Includes a Who's "
+#~ "Online admin dashboard to view visitor details. The visitor details "
+#~ "include: what page the visitor is on, IP address, host lookup, online "
+#~ "time, city, state, country, geolocation maps and more. No API key "
+#~ "needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php"
+#~ "\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
+#~ "xclick&hosted_button_id=8600876\">Donate</a>"
+#~ msgstr ""
+#~ "Displays Visitor Maps with location pins, city, and country. Includes a "
+#~ "Who's Online Sidebar to show how many users are online. Includes a Who's "
+#~ "Online admin dashboard to view visitor details. The visitor details "
+#~ "include: what page the visitor is on, IP address, host lookup, online "
+#~ "time, city, state, country, geolocation maps and more. No API key "
+#~ "needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php"
+#~ "\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-"
+#~ "xclick&hosted_button_id=8600876\">Donate</a>"
+#~ msgid "http://www.642weather.com/weather/scripts.php"
+#~ msgstr "http://www.642weather.com/weather/scripts.php"
+
