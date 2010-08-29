@@ -163,7 +163,7 @@ The following translations are included in the download zip file:
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
 * Hungarian (hu_HU) - Translated by [varnyu]
-* Indonesian (in_IN - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
+* Indonesian (id_ID) - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
 * Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 * Portuguese (pt_PT) - Translated by Jose
@@ -190,7 +190,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 - (28 Aug 2010) - Added new setting: "Enable user names on hover labels for location pins on visitor map page".
 - Added different pin color (blue)for search bots (enable in settings by unchecking: "Do not include search bots in the visitors online count on widgets".
 - Added different pin color (green)for registered users (disabled by default, enable in settings: "Enable user names on hover labels ...").
-- Added Indonesian (in_IN - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
+- Added Indonesian (iD_ID - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
 - Added Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 
 = 1.5.1 =
