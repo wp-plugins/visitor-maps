@@ -3,7 +3,7 @@ Contributors: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876
 Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
-Requires at least: 2.6
+Requires at least: 2.8
 Tested up to: 3.0.1
 Stable tag: trunk
 
@@ -31,7 +31,7 @@ Features:
 
 Requirements/Restrictions:
 -------------------------
- * Works with Wordpress 2.6+, WPMU, and BuddyPress. (Wordpress 3.0+ is highly recommended)
+ * Works with Wordpress 2.8+, WPMU, and BuddyPress. (Wordpress 3.0+ is highly recommended)
  * PHP 4.3.9 or above with GD2 library support.(PHP5 is highly recommended)
  * 30 megs of server space(with geolocation enabled)
  * PHP register_globals and safe_mode should be set to "Off"
