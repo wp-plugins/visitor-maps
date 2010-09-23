@@ -13,7 +13,9 @@ Displays Visitor Maps with location pins, city, and country. Includes a Who's On
 
 Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed. Easy and Quick 4 step install.
 
-[Plugin URI]: (http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php)
+= Help Keep This Plugin Free =
+
+If you find this plugin useful to you, please consider [__making a small donation__](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876) to help contribute to my time invested and to further development. Thanks for your kind support! - [__Mike Challis__](http://profiles.wordpress.org/users/MikeChallis/)
 
 Features:
 --------

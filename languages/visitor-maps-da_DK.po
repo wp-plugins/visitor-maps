@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Visitor Maps and Who's Online\n"
+"Project-Id-Version: Visitor Maps and Who's Online 1.5.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-11 15:00+0100\n"
+"POT-Creation-Date: 2010-09-04 08:44+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Team Blogos <wordpress@blogos.dk>\n"
 "Language-Team: Team Blogos <wordpress@blogos.dk>\n"
@@ -17,261 +17,264 @@ msgstr ""
 "X-Poedit-Basepath: d:\\wordpress\\plugins\\visitor-maps\n"
 "X-Poedit-SearchPath-0: d:\\wordpress\\plugins\\visitor-maps\n"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:19
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:23
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:31
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:32
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:24
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:32
 msgid "None"
 msgstr "Ingen"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:20
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:32
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:33
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:33
 msgid "All"
 msgstr "Alle"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:21
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:33
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:466
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:34
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:34
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:489
 msgid "Bots"
 msgstr "Bots"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:22
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:34
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:462
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:35
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:35
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:485
 msgid "Guests"
 msgstr "Gæster"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:30
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:205
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:156
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:44
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:229
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:179
 msgid "Who"
 msgstr "Hvem"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:31
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:206
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:45
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:230
 msgid "Visits"
 msgstr "Besøg"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:32
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:207
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:46
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:231
 msgid "Last Visit"
 msgstr "Seneste besøg"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:33
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:208
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:157
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:47
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:232
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:180
 msgid "IP Address"
 msgstr "IP-adresse"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:34
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:209
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:158
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:48
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:233
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:181
 msgid "Location"
 msgstr "Sted"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:35
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:213
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:163
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:49
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:237
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:186
 msgid "Last URL"
 msgstr "Seneste URL"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:51
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:66
 msgid "Descending"
 msgstr "Faldende"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:52
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:67
 msgid "Ascending"
 msgstr "Stigende"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:133
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:101
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:90
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:477
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:38
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:427
+msgid "No"
+msgstr "Nej"
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:91
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:479
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:39
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:429
+msgid "Yes"
+msgstr "Ja"
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:157
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:124
 msgid "Profile Display:"
 msgstr "Profilvisning:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:134
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:158
 msgid "Sort:"
 msgstr "Sortér:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:136
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:103
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:160
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:126
 msgid "Show Bots:"
 msgstr "Vis bots:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:139
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:52
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1261
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1273
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1294
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1322
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:163
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:67
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1370
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1382
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1386
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1393
 msgid "Who's Online"
-msgstr "Hvem er online:"
+msgstr "Hvem er online"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:140
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:279
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:107
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:51
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:164
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:312
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:130
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:66
 msgid "Visitor Maps Options"
 msgstr "Visitor Maps-indstillinger"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:142
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:109
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:150
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:166
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:132
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:210
 #, php-format
 msgid "<a href=\"%s\">Visitor Map Viewer</a>"
 msgstr "<a href=\"%s\">Visitor Map-fremviser</a>"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:152
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:550
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:119
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:541
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:176
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:574
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:142
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:564
 msgid "Active Guest"
 msgstr "Aktive gæster"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:154
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:543
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:121
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:534
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:178
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:567
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:144
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:557
 msgid "Inactive Guest"
 msgstr "Inaktive gæster"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:158
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:537
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:125
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:528
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:182
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:561
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:148
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:551
 msgid "Active Bot"
 msgstr "Aktiv bot"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:160
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:534
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:127
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:525
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:184
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:558
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:150
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:548
 msgid "Inactive Bot"
 msgstr "Inaktiv bot"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:172
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:139
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:196
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:162
 #, php-format
 msgid "%1$d visitors since %2$s"
 msgstr "%1$d besøgende siden %2$s"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:172
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:139
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:196
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:162
 msgid "installation"
 msgstr "installation"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:179
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:181
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:500
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:502
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:203
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:205
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:524
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:526
 msgid "FIRST"
 msgstr "FØRSTE"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:179
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:183
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:500
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:504
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:203
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:207
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:524
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:528
 msgid "PREV"
 msgstr "FORRIGE"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:185
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:506
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:209
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:530
 #, php-format
 msgid "Page %1$d of %2$d"
 msgstr "Side %1$d af %2$d"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:187
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:190
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:508
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:511
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:211
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:214
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:532
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:535
 msgid "NEXT"
 msgstr "NÆSTE"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:187
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:191
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:508
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:512
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:211
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:215
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:532
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:536
 msgid "LAST"
 msgstr "SIDSTE"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:216
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:166
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:240
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:189
 msgid "Referer"
 msgstr "Referrer"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:323
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:276
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:347
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:299
 msgid "Guest"
 msgstr "Gæst"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:327
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:280
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:470
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:351
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:303
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:493
 msgid "You"
 msgstr "Du"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:345
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:298
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:369
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:321
 msgid "Error"
 msgstr "Fejl"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:367
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:313
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:391
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:336
 msgid "visits"
 msgstr "besøg"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:372
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:318
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:396
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:341
 msgid "host lookups not enabled"
 msgstr "opslag på værter ikke aktiveret"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:394
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:340
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:418
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:363
 msgid "unknown"
 msgstr "ukendt"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:453
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:404
-msgid "No"
-msgstr "Nej"
-
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:455
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:406
-msgid "Yes"
-msgstr "Ja"
-
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:469
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:420
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:493
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:443
 msgid "Last URL:"
 msgstr "Seneste URL:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:561
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:552
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:585
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:575
 msgid "User Agent:"
 msgstr "Browser:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:567
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:558
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:591
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:581
 msgid "Host:"
 msgstr "Vært:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:573
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:564
+#: d:\wordpress\plugins\visitor-maps/class-wo-been.php:597
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:587
 msgid "Referer:"
 msgstr "Referrer:"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:43
 #: d:\wordpress\plugins\visitor-maps/class-wo-update.php:83
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:353
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:64
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:96
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:110
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:142
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:163
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:301
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:332
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1261
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1268
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1299
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1327
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:482
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:79
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:113
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:127
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:162
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:186
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:324
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:355
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1370
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1377
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1440
 msgid "Visitor Maps"
 msgstr "Kort over besøgende"
 
@@ -281,55 +284,55 @@ msgid "Select a time period up to %d days ago"
 msgstr "Vælg en tidsperiode op til for %d dage siden"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:46
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:219
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:302
 msgid "Time:"
 msgstr "Periode:"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:48
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:221
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:304
 msgid "Units:"
 msgstr "Enheder:"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:52
 #: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:139
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:225
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:308
 msgid "minutes"
 msgstr "minutter"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:53
 #: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:143
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:226
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:309
 msgid "hours"
 msgstr "timer"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:54
 #: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:147
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:227
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:310
 msgid "days"
 msgstr "dage"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:71
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:238
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:321
 msgid "Map:"
 msgstr "Kort:"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:75
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:244
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:327
 msgid "World (smallest)"
 msgstr "Verden (mindst)"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:76
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:245
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:328
 msgid "World (small)"
 msgstr "Verden (lille)"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:77
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:246
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:329
 msgid "World (medium)"
 msgstr "Verden (medium)"
 
 #: d:\wordpress\plugins\visitor-maps/class-wo-map-page.php:78
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:247
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:330
 msgid "World (large)"
 msgstr "Verden (stor)"
 
@@ -499,241 +502,281 @@ msgstr "udført."
 msgid "failed."
 msgstr "mislykkedes."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:119
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:122
 #, php-format
 msgid "PHP Memory Limit is %s, increasing is not needed."
 msgstr "<span title=\"PHP Memory Limit\">PHP's hukommelsesbegrænsning</span> er %s. En forhøjelse er unødvendig."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:125
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:128
 msgid "Connecting to this URL:"
 msgstr "Forsøger at etablere forbindelse til denne URL:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:166
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr "Advarsel: Din webudbyder har PHP's safe_mode slået til."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr "PHP's safe_mode kan skabe problemer for denne updater f.eks. i form af filrettighedsfejl."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr "Det er bedere at slå PHP's safe_mode fra. Det er muligt, det vil fungere med denne indstilling, men det frarådes kraftigt. Kontakt din webudbyder for support."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr "Advarsel: Din webudbyder har PHP's indstilling allow_url_fopen slået fra."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr "PHP's indstilling allow_url_fopen er nødvendig, for at automatiske opdateringer kan fungere. Kontakt din webudbyder for support."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr "GeoLite-databasen er i virkeligheden bare en fil. Du kan omgå problemet ved manuelt at downloade GeoLiteCity.dat.gz-filen fra denne URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr "Unzip filen og upload GeoLiteCity.dat via FTP til /plugins/visitor-maps/-mappen. Når filen ikke er installeret, virker bloggen alligevel, men informationer om brugernes sted springes over."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr "AdvarseL: Din webudbyder har ikke opdateret fra PHP4 til PHP5."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr "PHP4 blev officielt droppet 8. august 2008 og betragtes ikke længere som sikker."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP5 er hurtigere, har flere funktioner og er sikrere. Brug af PHP4 vil måske stadig virke, men frarådes kraftigt. Kontakt din webudbyder for support."
+
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:199
 msgid "You have the latest available Maxmind GeoLiteCity database"
 msgstr "Du har den seneste udgave af MaxMind GeoLiteCity-databasen"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:167
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:200
 msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
 msgstr "Bemærk: MaxMind opdaterer normalt GeoLiteCity den 1. i hver måned, men det hænder, at de opdaterer den 2. eller 3. eller endog endnu senere."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:168
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:201
 #, php-format
 msgid "Maxmind last updated it %1$s (%2$d days ago)"
 msgstr "MaxMind opdaterede senest databasen %1$s (%2$d dage siden)"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:169
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:202
 #, php-format
 msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
 msgstr "denne er den <a href=\"%s\" target=\"_new\">nyeste tilgængelige fil</a>"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:171
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:204
 #, php-format
 msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
 msgstr "Du opdaterede til den aktuelle GeoLiteCity-database den %s (%d dage siden)"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:172
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:205
 msgid "No new updates are available today."
 msgstr "Der er ingen nye opdateringer tilgængelige i dag."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:185
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:218
 msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
 msgstr "Fejl: Download mislykkedes. GeoLiteCity.dat.gz-downloadfilen blev ikke fundet"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:188
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:221
 msgid "Download success, uncompressing file, please wait"
 msgstr "Download lykkedes. Udpakker filen, vent venligst"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:194
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:227
 msgid "unzip error: opening GeoLiteCity.dat file"
 msgstr "Udpakningsfejl: under åbning af GeoLiteCity.dat-filen"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:196
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:229
 msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
 msgstr "Udpakningsfejl: under gzopen-åbning af GeoLiteCity.dat-filen"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:205
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:238
 msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
 msgstr "Udpakningsfejl: Chmod 0644 for GeoLiteCity.dat-filen mislykkedes"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:210
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:243
 msgid "Error: the GeoLiteCity.dat file was not found"
 msgstr "Fejl: GeoLiteCity.dat-filen blev ikke fundet"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:214
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:247
 msgid "Install/Update completed"
 msgstr "Installation/Opdatering fuldført"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:238
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:271
 msgid "Testing a lookup with your IP address:"
 msgstr "Tester opslag på din IP-adresse:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:244
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:277
 msgid "test_lookup error: the GeoLiteCity.dat file was not found"
 msgstr "test_lookup-fejl: GeoLiteCity.dat-filen blev ikke fundet"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:247
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:280
 msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
 msgstr "test_lookup-fejl: include-whos-online-geoip.php-filen blev ikke fundet"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:258
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:291
 msgid "IP:"
 msgstr "c"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:259
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:292
 msgid "City:"
 msgstr "By:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:260
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:293
 msgid "State Name:"
 msgstr "Navn på delstat"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:261
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:294
 msgid "State Code:"
 msgstr "Forkortelse for delstat"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:262
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:295
 msgid "Country Name:"
 msgstr "Landenavn"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:263
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:296
 msgid "Country Code:"
 msgstr "Landekode"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:264
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:297
 msgid "Lat:"
 msgstr "Bredde:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:265
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:298
 msgid "Lon: "
 msgstr "Længdegrad: "
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:269
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:302
 msgid "Note: location information was not available, this is normal if on a private network."
 msgstr "Bemærk: Information om sted var ikke tilgængelig. Det er normalt, hvis du er på et privat netværk."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:278
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:148
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:110
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:311
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:206
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:127
 msgid "View Who's Online"
 msgstr "Se, hvem der er online"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:308
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:696
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:341
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:719
 msgid "error: could not connect to remote file"
 msgstr "fejl: kunne ikke få forbindelse til <span title=\"remote file\">fjernfil</span>"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:321
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:709
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:354
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:732
 msgid "error: fetching timestamp failed for URL, 404 not found?"
 msgstr "fejl: hentning af tidsstempel mislykkedes for URL; måske fejl 404 &ndash; ikke fundet?"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:353
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:741
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:386
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:764
 msgid "error: fetching timestamp failed for URL 404 not found?"
 msgstr "fejl: hentning af tidsstempel mislykkedes for URL; måske fejl 404 &ndash; ikke fundet?"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:366
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:754
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:399
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:777
 msgid "error: could not connect to remote URL"
 msgstr "fejl: kunne ikke få forbindelse til fjern-URL"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:371
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:404
 msgid "Please allow plenty of time for the approximately 19meg file to download."
 msgstr "Giv venligst masser af tid til, at filen på ca. 19MB kan nå at downloade."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:372
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:405
 msgid "The time needed depends on your server download speed."
 msgstr "Hvor lang tid der behøves, afhænger af downloadhastigheden på din server."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:373
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:406
 msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
 msgstr "En timeout kan forekomme, hvis forbindelsen er rigtig langsom, så download tager mere end 3 minutter."
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:381
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:414
 msgid "error: reading or opening file"
 msgstr "fejl: under læsning eller åbning af fil"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:382
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:400
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:415
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:433
 msgid "error: cannot write to file, check server permission settings"
 msgstr "fejl: kan ikke skrive til fil; tjek indstilling af serverrettigheder"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:383
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:416
 msgid "Download started, (counting megs)"
 msgstr "Download påbegyndt (tæller megabytes)"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:407
+#: d:\wordpress\plugins\visitor-maps/class-wo-update.php:440
 msgid "error: CHMOD 0644 download file failed"
 msgstr "fejl: Chmod 0644 for download-filen mislykkedes"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:102
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:125
 msgid "Refresh Rate:"
 msgstr "Genindlæsningsinterval:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:106
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:53
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:64
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:129
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:68
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:79
 msgid "Who's Been Online"
 msgstr "Hvem har været online"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:144
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:167
 msgid "Last refresh at"
 msgstr "Senest genindlæst"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:155
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:178
 msgid "Online"
 msgstr "Online"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:159
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:182
 msgid "Entry"
 msgstr "Tidspunkt"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:160
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:183
 msgid "Last Click"
 msgstr "Seneste klik"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:444
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:467
 #, php-format
 msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
 msgstr "besøgende online (Betragtes som inaktive efter %1$d minutter. Fjernes efter %2$d minutter)"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:451
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:474
 msgid "Duplicate IPs"
 msgstr "IP-dubletter"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:458
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:481
 msgid "Members (includes you)"
 msgstr "medlemmer (dig selv inkl.)"
 
 # singularis/pluralis-problem
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:462
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:485
 msgid "are active"
 msgstr "er aktive"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:476
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:499
 msgid "Your IP Address:"
 msgstr "Din IP-adresse:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:482
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:505
 msgid "Your Host:"
 msgstr "Din vært:"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:487
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:169
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:510
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:229
 msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
 msgstr "Bruger GeoLiteCity-data fra MaxMind. De kan fås på http://www.maxmind.com"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:490
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:494
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:513
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:517
 #, php-format
 msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
 msgstr "GeoLiteCity-dataene blev senest opdateret den %1$s (%2$d dage siden)"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:491
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:514
 msgid "an update is available"
 msgstr "en opdatering er tilgængelig"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:492
+#: d:\wordpress\plugins\visitor-maps/class-wo-view.php:515
 msgid "click here to update"
 msgstr "klik her for at opdatere"
 
@@ -742,449 +785,602 @@ msgstr "klik her for at opdatere"
 msgid "error: geolocation data not enabled or installed"
 msgstr "fejl: geolokaliseringsdata er ikke aktiveret eller installeret"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:252
+#: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:266
 #, php-format
 msgid "%1$d visitors since %2$d %3$s ago"
 msgstr "%1$d besøgende de seneste %2$d %3$s"
 
-#: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:255
+#: d:\wordpress\plugins\visitor-maps/class-wo-worldmap.php:269
 #, php-format
 msgid "%1$d visitors since %2$d ago"
 msgstr "%1$d besøgende de seneste %2$d"
 
 #: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:7
 #: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:22
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:60
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:106
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:75
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:123
 msgid "You do not have permissions for managing this option"
 msgstr "Du har ikke rettigheder til at håndtere denne indstilling"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:80
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:83
 msgid "Options saved."
 msgstr "Indstillinger gemt."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:83
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:86
 msgid "Visitor Maps and Who's Online Options"
 msgstr "Visitor Maps and Who's Online Options"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:96
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:99
 msgid "Changelog"
 msgstr "Log over ændringer"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:97
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:100
 msgid "FAQ"
 msgstr "FAQ"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:98
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:101
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:178
 msgid "Rate This"
 msgstr "Bedøm"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:99
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:102
 msgid "Support"
 msgstr "Support"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:100
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:108
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:103
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:157
 msgid "Donate"
 msgstr "Donér"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:101
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:104
 msgid "Free PHP Scripts"
 msgstr "Gratis PHP-skripts"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:102
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:105
 msgid "Contact"
 msgstr "Kontakt"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:120
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:138
+#, php-format
+msgid "Downloaded %s times"
+msgstr "Downloadet %s gange"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:143
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:151
+#, php-format
+msgid "(Average rating based on %s ratings)"
+msgstr "(Gennemsnitsbedømmelse baseret på %s bedømmelser)"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:145
+msgid "5 stars"
+msgstr "5 stjerner"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:146
+msgid "4 stars"
+msgstr "4 stjerner"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:147
+msgid "3 stars"
+msgstr "3 stjerner"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:148
+msgid "2 stars"
+msgstr "2 stjerner"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:149
+msgid "1 star"
+msgstr "1 stjerne"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:151
+msgid "rate"
+msgstr "bedøm"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:169
 msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!"
 msgstr "Hvis du synes, at du kan bruge dette plugin, så overvej venligst at donere et lille beløb som støtte til den fortsatte udvikling. Tak for din venlige støtte!"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:136
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:169
+msgid "More from Mike Challis"
+msgstr "Mere fra Mike Challis"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:176
+msgid "Mike Challis says: \"Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK."
+msgstr "Mike Challis siger: \"Hej, jeg har brugt hundredvis af timer på at kode dette plugin til netop dig. Hvis du er tilfreds med mine programmer og min support, så overvej at støtte med et mindre beløb. Hvis du ikke har mulighed for det, er det OK."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:177
+msgid "Most people donate $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin.\""
+msgstr "De fleste donerer 5, 10, 20 eller flere dollars, men intet beløb er for lille. Du kan donere via din PayPal-konto, eller du kan gøre det sikkert med et af de større kreditkort. Bedøm også mit plugin.\""
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:180
+msgid "Close this message"
+msgstr "Luk denne besked"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:194
 msgid "I have donated to help contribute for the development of this plugin."
 msgstr "Jeg har doneret som hjælp til den fortsatte udvikling af dette plugin."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:139
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:197
 msgid "Usage"
 msgstr "Brug"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:141
-msgid "Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page."
-msgstr "Brug kortkoden <b>[visitor-maps]</b> på en side (ikke et indlæg). Den side vil blive din Kort over besøgende-side."
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:199
+msgid "Add the shortcode [visitor-maps] in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "Tilføj <span title=\"shortcode\">kortkoden</span> <b>[visitor-maps]</b> på en side (ikke et indlæg). Den side vil blive din Kort over besøgende-side."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:141
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:144
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:191
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:211
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:262
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:275
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:282
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:289
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:300
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:320
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:367
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:374
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:381
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:199
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:202
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:247
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:255
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:263
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:271
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:279
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:287
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:295
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:345
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:358
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:365
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:372
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:380
 #: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:388
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:395
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:409
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:430
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:438
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:446
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:459
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:467
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:475
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:483
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:500
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:507
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:514
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:521
 msgid "help"
 msgstr "hjælp"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:144
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:202
 msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
 msgstr "Tilføj Hvem er online-widget. Klik på Udseende > Widgets og træk så Who's Online-widgetten til widgetområdet til højre."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:154
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:208
+msgid "View Who's Been Online"
+msgstr "Se, hvem der har været online"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:214
 msgid "Options"
 msgstr "Indstillinger"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:157
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:401
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:217
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:534
 msgid "Update Options"
 msgstr "Opdatér indstillinger"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:165
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:225
 msgid "GeoLocation:"
 msgstr "GeoLokalisering:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:171
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:231
 msgid "The Maxmind GeoLiteCity database is not yet installed."
 msgstr "MaxMinds GeoLiteCity-database er endnu ikke installeret."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:171
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:500
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:231
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:569
 msgid "Install Now"
 msgstr "Installér nu"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:173
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:233
 msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
 msgstr "MaxMinds GeoLiteCity-database er installeret, men ikke aktiveret (tjek indstillingerne nedenfor)."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:175
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:235
 msgid "The Maxmind GeoLiteCity database is installed and enabled."
 msgstr "MaxMinds GeoLiteCity-database er installeret og aktiveret."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:181
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:241
 msgid "Enable geolocation."
 msgstr "Aktivér geolokalisering."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:182
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:242
 msgid "Update Now"
 msgstr "Opdatér nu"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:186
-msgid "Enable display of bots on geolocation maps."
-msgstr "Aktivér visning af bots på geolokaliseringskortet."
-
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:190
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:246
 msgid "Disable text on geolocation maps (missing map background fix)."
 msgstr "Deaktivér tekst på geolokaliseringskortet (løser problem med manglende kortbaggrund)."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:191
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:211
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:262
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:275
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:282
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:289
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:300
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:320
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:367
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:374
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:381
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:247
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:255
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:263
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:271
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:279
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:287
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:295
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:345
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:358
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:365
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:372
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:380
 #: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:388
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:395
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:409
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:430
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:438
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:446
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:459
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:467
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:475
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:483
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:500
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:507
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:514
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:521
 msgid "Click for Help!"
 msgstr "Klik for hjælp!"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:193
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:249
 msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
 msgstr "Nogle PHP-servere understøtter ikke fuldt ud, at der kan skrives tekst på Visitor Map-billedet. <i>Hvis</i> Visitor Map kun viser tegnestifter og intet billede med verden eller lande, så vælg denne indstilling. Når du har valgt den, så tjek siden med dit Kort over besøgende for at se, om kortet fungerer nu."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:198
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:254
 msgid "Enable display of city, state next to country flag."
 msgstr "Aktivér visning af byer og delstat ved siden af landeflaget."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:202
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:257
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:265
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:440
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:448
+msgid "Changes display options on Who's Online dashboard pages."
+msgstr "Ændrer visningsindstillinger for Hvem er onlines kontrolpanel."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:262
 msgid "Enable visitor map on Who's Online dashboard."
 msgstr "Aktivér kort over besøgende på Hvem er onlines kontrolpanel."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:206
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:270
 msgid "Enable visitor map link on Who's Online widget."
 msgstr "Aktivér link til kort over besøgende på Hvem er online-widgetten."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:210
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:273
+msgid "Changes display options on Who's Online widget."
+msgstr "Ændrer visningsindstillinger for Hvem er online-widgetten."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:278
 msgid "Enable hover labels for location pins on visitor map page."
 msgstr "Aktivér hover-etiketter for lokaliseringsstifter på siden med kort over besøgende."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:213
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:281
 msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
 msgstr "Nogle temaer forstyrrer den korrekte visning af tegnestifter på siden med Kort over besøgende. Når du har aktiveret denne indstilling, så tjek din side med Kort over besøgende, så du sikrer dig, at tegnestifterne er placeret korrekt. Hvis tegnestifterne er placeret ca. 10 pixels for lavt på kortet, så lav denne indstilling om."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:218
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:286
+msgid "Enable user names on hover labels for location pins on visitor map page."
+msgstr "Aktivér brugernavne i hover-etiketter for lokaliseringsstifterne på siden med kort over besøgende."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:289
+msgid "When enabled, registered users will have green location pins on the Visitor Maps page. Also the hover tag will include the user name."
+msgstr "Når aktiveret, vil registrerede brugere får en grøn lokaliseringsstift på Visitor Maps-siden. Den besked, der vises, når musen holdes over, vil også vise brugerens navn."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:294
+msgid "Hide map viewing by non administrators."
+msgstr "Skjul kortet for ikke-administratorer."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:297
+msgid "This setting restricts viewing the Visitor Map Viewer page to administrators only."
+msgstr "Denne indstilling begrænser muligheden for at se Visitor Maps&#39; visningsside til administratorer."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:301
 msgid "Default Visitor Map"
 msgstr "Standardkort over besøgende"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:264
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:347
 msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
 msgstr "Kortet, der som standard skal vises på siden med Kort over besøgende. Når du har foretaget dine indstillinger, så tjek siden med dit kort over besøgende, så du sikrer dig, at det passer, som det skal. Hvis kortet er for bredt, så vælg det en tak mindre."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:271
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:354
 msgid "Visitors:"
 msgstr "Besøgende:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:274
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:357
 msgid "Active time (minutes)"
 msgstr "Tid aktiv (i minutter)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:277
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:360
 msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
 msgstr "Antal minutter, som en besøgende betragtes som \"aktiv\". Standard er fem minutter."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:281
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:364
 msgid "Inactive time (minutes)"
 msgstr "Tid inaktiv (minutter)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:284
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:367
 msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
 msgstr "Antal minutter, inden en inaktiv besøgende fjernes fra visningen. Standard er 15 minutter."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:288
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:371
 msgid "Days to store visitor data"
 msgstr "Dage, besøgendes data skal gemmes"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:291
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:374
 msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
 msgstr "Dage, besøgendes data skal gemmes i databasetabellen. Disse data bruges af geolokaliseringskortet. Standard er 30 dage."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:296
-msgid "Do not show administrators on the maps."
-msgstr "Vis ikke administratorer på kortet."
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:379
+msgid "Do not include administrators count or location on the maps."
+msgstr "Inkludér ikke antal administratorer eller deres lokalisering på kortet."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:299
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:382
+msgid "Changes display options on Who's Online maps."
+msgstr "Ændrer visningsindstillinger for Hver er online-kort."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:387
+msgid "Do not include search bots in the visitors online count on widgets."
+msgstr "Inkludér ikke søgerobotter i antal besøgende online i widgets."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:390
+msgid "Changes display options on Who's Online widgets."
+msgstr "Ændrer visningsindstillinger for Hvem er online-widgets."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:394
 msgid "IP Adresses to ignore"
 msgstr "IP-adresser, der skal ignoreres"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:302
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:397
 msgid "Optional list of IP addresses for visitors you do not want shown on maps."
 msgstr "Valgfri liste med IP-adresser på besøgende, som du ikke ønsker vist på kortet."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:303
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:398
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:414
 msgid "Start each entry on a new line."
 msgstr "Start hver adresse på en ny linje."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:304
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:399
 msgid "Use <strong>*</strong> for wildcards."
 msgstr "Brug <strong>*</strong> som joker."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:305
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:400
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:415
 msgid "Examples:"
 msgstr "Eksempler:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:316
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:408
+msgid "URLs to ignore"
+msgstr "URL&#39;er, der skal ignoreres"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:411
+msgid "Optional list of URLs on your site you do not want in any Who's Online data."
+msgstr "Valgfri liste med URL&#39;er på din site, som du ikke ønsker vist på i Hvem er online's data i det hele taget."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:412
+msgid "This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat."
+msgstr "Denne funktion kan bruges til at blokere URL&#39;er så som /wp-admin/, eller for at skabe kompatibilitet med andre plugins såsom WP SlimStats"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:413
+msgid "Use partial URL or full URL. The filter will match any part of the URL."
+msgstr "Brug partiel URL eller fuld URL. Filteret vil matche alle dele af URL&#39;en."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:426
 msgid "Lookups:"
 msgstr "Opslag:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:319
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:429
 msgid "Who Is Lookup URL"
 msgstr "Opslags-URL for Who Is"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:322
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:432
 msgid "URL to open when an IP address is clicked on."
 msgstr "URL, der skal åbnes, når der klikkes på en IP-adresse."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:327
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:437
 msgid "Enable open Who Is Lookup URL on a pop-up."
 msgstr "Aktivér åbning af opslags-URL for Who Is som popup."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:331
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:445
 msgid "Enable host lookups for IP addresses."
 msgstr "Aktivér værtsopslag for IP-adresser."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:338
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:455
 msgid "Stats:"
 msgstr "Statistik:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:341
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:458
 msgid "Enable stats display in blog footer."
 msgstr "Aktivér visning af statistik i blogfooter."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:345
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:461
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:469
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:477
+msgid "Shows how many visitors are online now and records of the most users online at one time."
+msgstr "Vis, hvor mange besøgende der er online nu og rekorderne for flest brugere online på én gang."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:466
 msgid "Enable stats display in admin footer."
 msgstr "Aktivér visning af statistik i admin-footer."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:349
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:474
 msgid "Enable stats display on map page."
 msgstr "Aktivér visning af statistik på kort-siden."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:353
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:482
 msgid "Enable plugin credit link:"
 msgstr "Aktivér pluginnets credit-link:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:353
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:96
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:142
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:332
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1268
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1299
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1327
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:482
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:113
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:162
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:355
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1377
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1440
 msgid "Powered by"
 msgstr "Kører på"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:359
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:485
+msgid "The credit link is not mandatory, yes you can disable it if you want."
+msgstr "Krediteringslinket er ikke et krav, så du kan deaktivere det, hvis du ønsker det."
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:492
 msgid "Times:"
 msgstr "Tidsformater:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:363
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:496
 msgid "Table of date format characters."
 msgstr "Tabel med datoformatteringstegn."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:366
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:499
 msgid "Time format (Max Users Today)"
-msgstr "Tidsformat (max antal besøgende i dag)"
+msgstr "Tidsformat (maks. antal besøgende i dag)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:369
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:502
 msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
-msgstr "Tidsformat for visning af \"Max antal brugere i dag\" og \"Senest genindlæsningstidspunkt\". Standard er h:i a T (02:25 pm PST)"
+msgstr "Tidsformat for visning af \"Maks. antal brugere i dag\" og \"Senest genindlæsningstidspunkt\". Standard er h:i a T (02:25 pm PST)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:373
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:506
 msgid "Time format (Last Click)"
 msgstr "Tidsformat (seneste klik)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:376
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:509
 msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
 msgstr "Tidsformat for visning af \"Tidspunkt\" og \"Seneste klik\". Standard er h:i:sa (02:25pm)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:380
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:513
 msgid "Date/Time format (All Time Records)"
 msgstr "Dato/tidsformat (Alle tidsposter)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:383
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:516
 msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 msgstr "Dato/tidsformat for måned, år og alle tidsposter. Standard er m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:387
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:520
 msgid "Date/Time format (GeoLite data)"
 msgstr "Dato/tidsformat (GeoLite data)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:390
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:523
 msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 msgstr "Dato/tidsformat for \"GeoLite-data blev senest opdateret den ...\" Standard er m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:405
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:538
 msgid "More WordPress plugins by Mike Challis:"
 msgstr "Flere WordPress-plugins af Mike Challis:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:407
-msgid "Fast and Secure Contact Form"
-msgstr "Fast and Secure Contact Form"
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:540
+msgid "Fast Secure Contact Form"
+msgstr "Fast Secure Contact Form"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:408
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:541
 msgid "SI CAPTCHA Anti-Spam"
 msgstr "SI CAPTCHA Anti-Spam"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:409
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-admin.php:542
 msgid "Visitor Maps and Who's Online"
 msgstr "Visitor Maps and Who's Online"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:93
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:139
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-worldmap.php:342
+#: d:\wordpress\plugins\visitor-maps/visitor-maps-worldmap.php:362
+msgid "from"
+msgstr "fra"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:109
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:158
 #, php-format
 msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
 msgstr "Se flere kort i <a href=\"%s\">Visitor Map-fremviseren</a>"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:232
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:255
 msgid "Close"
 msgstr "Luk"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:234
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:257
 msgid "Powered by Visitor Maps"
 msgstr "Kører på Visitor Maps"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:239
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:335
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:262
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:358
 msgid "Visitor Maps geolocation is disabled in settings."
 msgstr "Visitor Maps-geolokalisering er deaktiveret i opsætningen."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:304
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:327
 msgid "View more maps in the "
 msgstr "Se flere kort i "
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:304
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:327
 msgid "Visitor Map Viewer"
 msgstr "Visitor Map-fremviseren"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:313
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:995
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:996
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:336
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1104
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1105
 msgid "Max visitors today"
-msgstr "Max antal besøgende i dag"
+msgstr "Maks. antal besøgende i dag"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:313
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:315
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:317
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:319
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:995
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:996
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:999
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1000
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1003
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1004
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1007
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1008
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:336
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:338
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:340
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:342
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1104
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1105
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1108
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1109
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1112
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1113
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1116
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1117
 msgid "at"
 msgstr "kl."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:315
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:999
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1000
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:338
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1108
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1109
 msgid "This month"
 msgstr "Denne måned"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:317
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1003
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1004
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:340
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1112
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1113
 msgid "This year"
 msgstr "Dette år"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:319
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1007
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1008
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:342
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1116
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1117
 msgid "All time"
-msgstr "Altid"
+msgstr "Siden begyndelsen"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:322
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:345
 msgid "Records of the most visitors online at once:"
 msgstr "Rekort for flest antal besøgende online på én gang:"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:500
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:569
 msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
 msgstr "Visitor Maps-pluginnet kræver, at MaxMind GeoLiteCity-databasen er installeret."
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:564
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:635
 msgid "Settings"
 msgstr "Opsætning"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:983
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1290
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1318
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1086
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1425
 #, php-format
 msgid "%d visitors online now"
 msgstr "%d besøgende online lige nu"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:984
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1291
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1319
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1087
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1426
 #, php-format
 msgid "%d guests"
 msgstr "%d gæster"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:985
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1292
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1320
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1089
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1429
+#, php-format
+msgid "%d bots"
+msgstr "%d robotter"
+
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1091
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1427
 #, php-format
 msgid "%d members"
 msgstr "%d medlemmer"
 
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1297
-#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1325
+#: d:\wordpress\plugins\visitor-maps/visitor-maps.php:1436
 #, php-format
 msgid "<a href=\"%s\">Map of Visitors</a>"
 msgstr "<a href=\"%s\">Kort over besøgende</a>"
