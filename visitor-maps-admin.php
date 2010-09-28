@@ -158,7 +158,7 @@ if (!$visitor_maps_opt['donated']) {
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 
-<table style="background-color:#FFE991; border:none; margin: -5px 0;" width="500">
+<table style="background-color:#FFE991; border:none; margin: -5px 0;" width="600">
         <tr>
         <td>
 <input type="hidden" name="cmd" value="_s-xclick" />
@@ -166,7 +166,9 @@ if (!$visitor_maps_opt['donated']) {
 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" style="border:none;" name="submit" alt="Paypal Donate" />
 <img alt="" style="border:none;" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </td>
-<td><?php _e('If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!', 'visitor-maps'); ?> - <a style="cursor:pointer;" title="<?php _e('More from Mike Challis', 'visitor-maps'); ?>" onclick="toggleVisibility('mike_challis_tip');"><?php _e('More from Mike Challis', 'visitor-maps'); ?></a></td>
+<td><?php
+_e('Please donate to keep this plugin FREE', 'visitor-maps'); echo '<br />';
+_e('If you find this plugin useful to you, please consider making a small donation to help contribute to my time invested and to further development. Thanks for your kind support!', 'visitor-maps'); ?> - <a style="cursor:pointer;" title="<?php _e('More from Mike Challis', 'visitor-maps'); ?>" onclick="toggleVisibility('mike_challis_tip');"><?php _e('More from Mike Challis', 'visitor-maps'); ?></a></td>
 </tr></table>
 </form>
 <br />
@@ -174,7 +176,7 @@ if (!$visitor_maps_opt['donated']) {
 <div style="text-align:left; display:none" id="mike_challis_tip">
 <img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/visitor-maps.jpg" width="250" height="185" alt="Mike Challis" /><br />
 <?php _e('Mike Challis says: "Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK.', 'visitor-maps'); ?>
-<?php echo ' '; _e('Most people donate $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin."', 'visitor-maps'); ?>
+<?php echo ' '; _e('Most people donate $3, $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin."', 'visitor-maps'); ?>
  <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php _e('Rate This', 'visitor-maps'); ?></a>.
 <br />
 <a style="cursor:pointer;" title="Close" onclick="toggleVisibility('mike_challis_tip');"><?php _e('Close this message', 'visitor-maps'); ?></a>
