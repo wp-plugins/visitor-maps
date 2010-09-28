@@ -188,6 +188,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.5.3 =
+- (28 Sep 2010) - Updated a few languages.
+
 = 1.5.2 =
 - (28 Aug 2010) - Added new setting: "Enable user names on hover labels for location pins on visitor map page".
 - Added different pin color (blue)for search bots (enable in settings by unchecking: "Do not include search bots in the visitors online count on widgets".
