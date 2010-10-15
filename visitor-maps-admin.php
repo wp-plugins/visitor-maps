@@ -106,7 +106,7 @@
 </p>
 
 <?php
-
+if (function_exists('get_transient')) {
   require_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
   // Before, try to access the data, check the cache.
@@ -149,9 +149,10 @@
 			<div class="star star1"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('1 star', 'visitor-maps') ?>" /></div>
 		</div>
 		<small><?php echo sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings)); ?> <a target="_blank" href="http://wordpress.org/extend/plugins/<?php echo $api->slug ?>/"> <?php _e('rate', 'visitor-maps') ?></a></small>
-		<?php endif; ?>
-<?php
+		<?php endif;
   } // if ( !is_wp_error($api)
+ }// end if (function_exists('get_transient'
+ 
 if (!$visitor_maps_opt['donated']) {
 ?>
 <h3><?php echo __('Donate', 'visitor-maps'); ?></h3>

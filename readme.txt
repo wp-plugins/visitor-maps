@@ -188,6 +188,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.5.4 =
+- (15 Oct 2010) - Added Japan map.
+
 = 1.5.3 =
 - (28 Sep 2010) - Updated a few languages.
 
