@@ -188,6 +188,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+- Fix SVN problem
+
 = 1.5.4 =
 - (15 Oct 2010) - Added Japan map.
 
