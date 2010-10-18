@@ -1,0 +1,1342 @@
+# Translation of the WordPress plugin Visitor Maps and Who's Online 1.4.3 by Mike Challis.
+# Copyright (C) 2010 Mike Challis
+# This file is distributed under the same license as the Visitor Maps and Who's Online package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Visitor Maps and Who's Online 1.4.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
+"POT-Creation-Date: 2010-07-26 19:26+0000\n"
+"PO-Revision-Date: 2010-10-18 21:53+0900\n"
+"Last-Translator: BNG NET <webmaster@bng.net>\n"
+"Language-Team: BNG NET <webmaster@bng.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Japanese\n"
+"X-Poedit-Country: JAPAN\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Bookmarks: -1,203,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#: Added on 2010/10/18
+msgid "Changes display options on Who's Online widgets."
+msgstr "オンライン情報ウィジェットの表示オプションを変更します。"
+
+#: Added on 2010/10/18
+msgid "The credit link is not mandatory, yes you can disable it if you want."
+msgstr "クレジットリンクは強制ではありません。不要なら無効にできます。"
+
+#: Added on 2010/10/18
+msgid "Shows how many visitors are online now and records of the most users online at one time."
+msgstr "その時点でオンライン中の来訪者数と最大ユーザ数を同時に表示します。"
+
+#: Added on 2010/10/18
+msgid "Use partial URL or full URL. The filter will match any part of the URL."
+msgstr "URLは一部または全部いずれの記入も可能です。フィルタはURLの任意の部分とマッチングします。"
+
+#: Added on 2010/10/18
+msgid "This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat."
+msgstr "この機能を使うと、/wp-admin/ などのURLをブロックしたり、や WP SlimStat のような他のプラグインとの互換性を保つことができます。"
+
+#: Added on 2010/10/18
+msgid "Optional list of URLs on your site you do not want in any Who's Online data."
+msgstr "オンライン情報としていずれのデータにも記録したくない自分のサイトのURLリスト。"
+
+#: Added on 2010/10/18
+msgid "URLs to ignore"
+msgstr "無視するURL"
+
+#: Added on 2010/10/18
+msgid "Use * for wildcards."
+msgstr "ワイルドカード（*）が利用できます。"
+
+#: Added on 2010/10/18
+msgid "Do not include search bots in the visitors online count on widgets."
+msgstr "ウィジェットの来訪者オンラインカウントにサーチボットを含めない。"
+
+#: Added on 2010/10/18
+msgid "Changes display options on Who's Online maps."
+msgstr "オンライン情報マップでの表示オプションを変更します。"
+
+#: Added on 2010/10/18
+msgid "Do not include administrators count or location on the maps."
+msgstr "管理者のカウントや位置をマップに含めない。"
+
+#: Added on 2010/10/18
+msgid "This setting restricts viewing the Visitor Map Viewer page to administrators only."
+msgstr "この設定は、来訪者マップビューワーの利用を管理者に限定します。"
+
+#: Added on 2010/10/18
+msgid "Hide map viewing by non administrators."
+msgstr "管理者以外にはマップを隠す。"
+
+#: Added on 2010/10/18
+msgid "When enabled, registered users will have green location pins on the Visitor Maps page. Also the hover tag will include the user name."
+msgstr "有効にすると、来訪者マップ用ページで登録ユーザは緑の位置ピンになります。"
+
+#: Added on 2010/10/18
+msgid "Enable user names on hover labels for location pins on visitor map page."
+msgstr "来訪者マップ用ページの位置ピンのホバーラベルにユーザ名を表示する。"
+
+#: Added on 2010/10/18
+msgid "Changes display options on Who's Online widget."
+msgstr "オンライン情報ウィジェットのでの表示オプションを変更します。"
+
+#: Added on 2010/10/18
+msgid "Changes display options on Who's Online dashboard pages."
+msgstr "オンライン情報のダッシュボードページでの表示オプションを変更します。"
+
+#: Added on 2010/10/18
+msgid "Add the shortcode [visitor-maps] in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "ページ（記事は不可）に [visitor-maps] というショートコードを入れてください。そのページが来訪者マップ用ページになります。"
+
+#: Added on 2010/10/18
+msgid "rate"
+msgstr "評価"
+
+#: Added on 2010/10/18
+msgid "(Average rating based on %s ratings)"
+msgstr "(%s票に基づく平均評価)"
+
+#: Added on 2010/10/18
+msgid "Downloaded %s times"
+msgstr "ダウンロード数 %s 回"
+
+#: Added on 2010/10/18
+msgid "Japan"
+msgstr "日本"
+
+#: Added on 2010/09/02
+msgid "View Who's Been Online"
+msgstr "オンライン履歴"
+
+#: class-wo-been.php:19
+#: class-wo-view.php:23
+#: class-wo-view.php:31
+msgid "None"
+msgstr "なし"
+
+#: class-wo-been.php:20
+#: class-wo-view.php:32
+msgid "All"
+msgstr "すべて"
+
+#: class-wo-been.php:21
+#: class-wo-view.php:33
+#: class-wo-view.php:466
+msgid "Bots"
+msgstr "ボット"
+
+#: class-wo-been.php:22
+#: class-wo-view.php:34
+#: class-wo-view.php:462
+msgid "Guests"
+msgstr "ゲスト"
+
+#: class-wo-been.php:30
+#: class-wo-been.php:205
+#: class-wo-view.php:156
+msgid "Who"
+msgstr "誰"
+
+#: class-wo-been.php:31
+#: class-wo-been.php:206
+msgid "Visits"
+msgstr "来訪回数"
+
+#: class-wo-been.php:32
+#: class-wo-been.php:207
+msgid "Last Visit"
+msgstr "直前の来訪"
+
+#: class-wo-been.php:33
+#: class-wo-been.php:208
+#: class-wo-view.php:157
+msgid "IP Address"
+msgstr "IP アドレス"
+
+#: class-wo-been.php:34
+#: class-wo-been.php:209
+#: class-wo-view.php:158
+msgid "Location"
+msgstr "場所"
+
+#: class-wo-been.php:35
+#: class-wo-been.php:213
+#: class-wo-view.php:163
+msgid "Last URL"
+msgstr "直前のURL"
+
+#: class-wo-been.php:51
+msgid "Descending"
+msgstr "降順"
+
+#: class-wo-been.php:52
+msgid "Ascending"
+msgstr "昇順"
+
+#: class-wo-been.php:133
+#: class-wo-view.php:101
+msgid "Profile Display:"
+msgstr "プロフィール表示:"
+
+#: class-wo-been.php:134
+msgid "Sort:"
+msgstr "ソート:"
+
+#: class-wo-been.php:136
+#: class-wo-view.php:103
+msgid "Show Bots:"
+msgstr "ボットを表示:"
+
+#: class-wo-been.php:139
+#: visitor-maps.php:67
+#: visitor-maps.php:1278
+#: visitor-maps.php:1290
+#: visitor-maps.php:1311
+#: visitor-maps.php:1339
+msgid "Who's Online"
+msgstr "オンライン情報"
+
+#: class-wo-been.php:140
+#: class-wo-update.php:312
+#: class-wo-view.php:107
+#: visitor-maps.php:66
+msgid "Visitor Maps Options"
+msgstr "来訪者マップのオプション"
+
+#: class-wo-been.php:142
+#: class-wo-view.php:109
+#: visitor-maps-admin.php:150
+#, php-format
+msgid "<a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">来訪者マップビューワー</a>"
+
+#: class-wo-been.php:152
+#: class-wo-been.php:550
+#: class-wo-view.php:119
+#: class-wo-view.php:541
+msgid "Active Guest"
+msgstr "アクティブゲスト"
+
+#: class-wo-been.php:154
+#: class-wo-been.php:543
+#: class-wo-view.php:121
+#: class-wo-view.php:534
+msgid "Inactive Guest"
+msgstr "インアクティブゲスト"
+
+#: class-wo-been.php:158
+#: class-wo-been.php:537
+#: class-wo-view.php:125
+#: class-wo-view.php:528
+msgid "Active Bot"
+msgstr "アクティブボット"
+
+#: class-wo-been.php:160
+#: class-wo-been.php:534
+#: class-wo-view.php:127
+#: class-wo-view.php:525
+msgid "Inactive Bot"
+msgstr "インアクティブボット"
+
+#: class-wo-been.php:172
+#: class-wo-view.php:139
+#, php-format
+msgid "%1$d visitors since %2$s"
+msgstr "%1$d人の来訪者 (%2$s以来)"
+
+#: class-wo-been.php:172
+#: class-wo-view.php:139
+msgid "installation"
+msgstr "インストール"
+
+#: class-wo-been.php:179
+#: class-wo-been.php:181
+#: class-wo-been.php:500
+#: class-wo-been.php:502
+msgid "FIRST"
+msgstr "最初"
+
+#: class-wo-been.php:179
+#: class-wo-been.php:183
+#: class-wo-been.php:500
+#: class-wo-been.php:504
+msgid "PREV"
+msgstr "前"
+
+#: class-wo-been.php:185
+#: class-wo-been.php:506
+#, php-format
+msgid "Page %1$d of %2$d"
+msgstr "ページ %1$d / %2$d"
+
+#: class-wo-been.php:187
+#: class-wo-been.php:190
+#: class-wo-been.php:508
+#: class-wo-been.php:511
+msgid "NEXT"
+msgstr "次"
+
+#: class-wo-been.php:187
+#: class-wo-been.php:191
+#: class-wo-been.php:508
+#: class-wo-been.php:512
+msgid "LAST"
+msgstr "最後"
+
+#: class-wo-been.php:216
+#: class-wo-view.php:166
+msgid "Referer"
+msgstr "リファラ"
+
+#: class-wo-been.php:323
+#: class-wo-view.php:276
+msgid "Guest"
+msgstr "ゲスト"
+
+#: class-wo-been.php:327
+#: class-wo-view.php:280
+#: class-wo-view.php:470
+msgid "You"
+msgstr "あなた"
+
+#: class-wo-been.php:345
+#: class-wo-view.php:298
+msgid "Error"
+msgstr "エラー"
+
+#: class-wo-been.php:367
+#: class-wo-view.php:313
+msgid "visits"
+msgstr "回"
+
+#: class-wo-been.php:372
+#: class-wo-view.php:318
+msgid "host lookups not enabled"
+msgstr "ホスト名ルックアップが有効になっていません"
+
+#: class-wo-been.php:394
+#: class-wo-view.php:340
+msgid "unknown"
+msgstr "不明"
+
+#: class-wo-been.php:453
+#: class-wo-view.php:404
+msgid "No"
+msgstr "いいえ"
+
+#: class-wo-been.php:455
+#: class-wo-view.php:406
+msgid "Yes"
+msgstr "はい"
+
+#: class-wo-been.php:469
+#: class-wo-view.php:420
+msgid "Last URL:"
+msgstr "最終URL:"
+
+#: class-wo-been.php:561
+#: class-wo-view.php:552
+msgid "User Agent:"
+msgstr "ユーザエージェント:"
+
+#: class-wo-been.php:567
+#: class-wo-view.php:558
+msgid "Host:"
+msgstr "ホスト名:"
+
+#: class-wo-been.php:573
+#: class-wo-view.php:564
+msgid "Referer:"
+msgstr "リファラ:"
+
+#: class-wo-map-page.php:43
+#: class-wo-update.php:83
+#: visitor-maps-admin.php:353
+#: visitor-maps.php:79
+#: visitor-maps.php:111
+#: visitor-maps.php:125
+#: visitor-maps.php:157
+#: visitor-maps.php:178
+#: visitor-maps.php:316
+#: visitor-maps.php:347
+#: visitor-maps.php:1278
+#: visitor-maps.php:1285
+#: visitor-maps.php:1316
+#: visitor-maps.php:1344
+msgid "Visitor Maps"
+msgstr "来訪者マップ"
+
+#: class-wo-map-page.php:45
+#, php-format
+msgid "Select a time period up to %d days ago"
+msgstr "最長%d 日前までの期間を選択"
+
+#: class-wo-map-page.php:46
+#: visitor-maps-admin.php:219
+msgid "Time:"
+msgstr "時間:"
+
+#: class-wo-map-page.php:48
+#: visitor-maps-admin.php:221
+msgid "Units:"
+msgstr "単位:"
+
+#: class-wo-map-page.php:52
+#: class-wo-worldmap.php:139
+#: visitor-maps-admin.php:225
+msgid "minutes"
+msgstr "分"
+
+#: class-wo-map-page.php:53
+#: class-wo-worldmap.php:143
+#: visitor-maps-admin.php:226
+msgid "hours"
+msgstr "時間"
+
+#: class-wo-map-page.php:54
+#: class-wo-worldmap.php:147
+#: visitor-maps-admin.php:227
+msgid "days"
+msgstr "日"
+
+#: class-wo-map-page.php:71
+#: visitor-maps-admin.php:238
+msgid "Map:"
+msgstr "地図:"
+
+#: class-wo-map-page.php:75
+#: visitor-maps-admin.php:244
+msgid "World (smallest)"
+msgstr "世界（極小）"
+
+#: class-wo-map-page.php:76
+#: visitor-maps-admin.php:245
+msgid "World (small)"
+msgstr "世界（小）"
+
+#: class-wo-map-page.php:77
+#: visitor-maps-admin.php:246
+msgid "World (medium)"
+msgstr "世界（中）"
+
+#: class-wo-map-page.php:78
+#: visitor-maps-admin.php:247
+msgid "World (large)"
+msgstr "世界（大）"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:80
+msgid "US"
+msgstr "アメリカ"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:113
+msgid "(black)"
+msgstr "（黒）"
+
+#: class-wo-map-page.php:80
+#: class-wo-map-page.php:82
+#: class-wo-map-page.php:84
+#: class-wo-map-page.php:86
+#: class-wo-map-page.php:88
+#: class-wo-map-page.php:90
+#: class-wo-map-page.php:92
+#: class-wo-map-page.php:94
+#: class-wo-map-page.php:96
+#: class-wo-map-page.php:98
+#: class-wo-map-page.php:100
+#: class-wo-map-page.php:102
+#: class-wo-map-page.php:104
+#: class-wo-map-page.php:106
+#: class-wo-map-page.php:108
+#: class-wo-map-page.php:110
+#: class-wo-map-page.php:112
+#: class-wo-map-page.php:114
+msgid "(brown)"
+msgstr "（茶）I"
+
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:82
+msgid "Canada and US"
+msgstr "カナダとアメリカ"
+
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:84
+msgid "Asia"
+msgstr "アジア"
+
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:86
+msgid "Australia and NZ"
+msgstr "オーストラリアとニュージーランド"
+
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:88
+msgid "Europe Central"
+msgstr "中央ヨーロッパ"
+
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:90
+msgid "Europe"
+msgstr "ヨーロッパ"
+
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:92
+msgid "Scandinavia"
+msgstr "スカンジナビア"
+
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:94
+msgid "Great Britain"
+msgstr "イギリス"
+
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:96
+msgid "US Midwest"
+msgstr "アメリカ中西部"
+
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:98
+msgid "US Upper Midwest"
+msgstr "アメリカ北中西部"
+
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:100
+msgid "US Northeast"
+msgstr "アメリカ北東部"
+
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:102
+msgid "US Northwest"
+msgstr "アメリカ北西部"
+
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:104
+msgid "US Rocky Mountain"
+msgstr "アメリカロッキー山脈"
+
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:106
+msgid "US South"
+msgstr "アメリカ南部"
+
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:108
+msgid "US Southeast"
+msgstr "アメリカ南東部"
+
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:110
+msgid "US Southwest"
+msgstr "アメリカ南西部"
+
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:112
+msgid "Spain/Portugal"
+msgstr "スペイン/ポルトガル"
+
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:115
+msgid "Finland"
+msgstr "フィンランド"
+
+#: class-wo-map-page.php:115
+msgid "(yellow)"
+msgstr "（黄色）"
+
+#: class-wo-map-page.php:125
+msgid "Go"
+msgstr "実行"
+
+#: class-wo-update.php:90
+msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
+msgstr "Maxmind の GeoLiteCity データベースの初回インストールを準備中"
+
+#: class-wo-update.php:95
+msgid "Checking for updates for the Maxmind GeoLiteCity database"
+msgstr "Maxmind の GeoLiteCity データベースの更新を確認中"
+
+#: class-wo-update.php:106
+msgid "PHP Memory Limit is unknown, increase is not available."
+msgstr "PHPのメモリ制限が不明なため増やすことができません。"
+
+#: class-wo-update.php:108
+#, php-format
+msgid "PHP Memory Limit is %1$s, temporarily increasing to %2$s"
+msgstr "PHPメモリ制限が%1$sのため、一時的に%2$sへ増やしました"
+
+#: class-wo-update.php:113
+msgid "completed."
+msgstr "完了。"
+
+#: class-wo-update.php:115
+msgid "failed."
+msgstr "失敗。"
+
+#: class-wo-update.php:122
+#, php-format
+msgid "PHP Memory Limit is %s, increasing is not needed."
+msgstr "PHPメモリ制限が%sのため、増やす必要があります。"
+
+#: class-wo-update.php:128
+msgid "Connecting to this URL:"
+msgstr "次のURLに接続:"
+
+#: class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr "警告: ご利用サーバでPHPのセーフモードがオンになっています。"
+
+#: class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr "PHPセーフモードがオンの場合、ファイルのパーミッションエラーなどアップデートに問題の生じる可能性があります。"
+
+#: class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr "PHPセーフモードはオフにすることをお勧めします。オンのままでも動作はしますが、極力オフにしてください。ご利用サーバの管理者にお問い合わせください。"
+
+#: class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr "警告: ご利用サーバでPHPのallow_url_fopenがオフになっています。"
+
+#: class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr "自動アップデート機能を利用するには、PHPのallow_url_fopenをオンにする必要があります。ご利用サーバの管理者にお問い合わせください。"
+
+#: class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr "geoliteデータベースは単なるファイルです。次のURLからGeoLiteCity.dat.gzを手動で入手することができます: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+
+#: class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr "ファイルを解凍してできたGeoLiteCity.datを「/plugins/visitor-maps/」フォルダにアップロードしてください。ファイルをインストールしなくてもブログ機能は正常に動作しますが、地理情報がスキップされます。"
+
+#: class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr "警告: ご利用サーバでPHP4からPHP5にアップグレードされていません。"
+
+#: class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr "PHP4は、2008年8月8日をもって正式に利用の停止が推奨されており、もはや安全とはいえません。"
+
+#: class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP5は処理がより早く、機能面はさらに充実しており、安全性も高まっています。PHP4でも利用は可能ですが、極力避けてください。ご利用サーバの管理者にお問い合わせ下さい。"
+
+#: class-wo-update.php:199
+msgid "You have the latest available Maxmind GeoLiteCity database"
+msgstr "Maxmind の GeoLiteCity データベースの最新版を利用しています"
+
+#: class-wo-update.php:200
+msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
+msgstr "注意: Maxmindでは、通常、GeoLiteCityを毎月１日にアップデートしていますが、２日または３日、あるいはそれ以降になることがあります。"
+
+#: class-wo-update.php:201
+#, php-format
+msgid "Maxmind last updated it %1$s (%2$d days ago)"
+msgstr "Maxmind が更新したのは %1$s (%2$d 日前）で、"
+
+#: class-wo-update.php:202
+#, php-format
+msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
+msgstr "これが<a href=\"%s\" target=\"_new\">利用可能な最新版</a>です"
+
+#: class-wo-update.php:204
+#, php-format
+msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
+msgstr "あなたが現在のGeoLiteCityデータベースに更新したのは%s (%d 日前）です"
+
+#: class-wo-update.php:205
+msgid "No new updates are available today."
+msgstr "目下のところ、さらなる最新版はありません。"
+
+#: class-wo-update.php:218
+msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
+msgstr "エラー: ダウンロードに失敗しました。GeoLiteCity.dat.gzファイルが見あたりません"
+
+#: class-wo-update.php:221
+msgid "Download success, uncompressing file, please wait"
+msgstr "ダウンロードしました。現在ファイルを解凍中です。しばらくお待ちください"
+
+#: class-wo-update.php:227
+msgid "unzip error: opening GeoLiteCity.dat file"
+msgstr "解凍エラー: GeoLiteCity.dat ファイルのオープン中"
+
+#: class-wo-update.php:229
+msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
+msgstr "解凍エラー: GeoLiteCity.dat.gz ファイルのオープン中"
+
+#: class-wo-update.php:238
+msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
+msgstr "解凍エラー: GeoLiteCity.dat ファイルのパーミッション変更（0644）失敗"
+
+#: class-wo-update.php:243
+msgid "Error: the GeoLiteCity.dat file was not found"
+msgstr "エラー: GeoLiteCity.dat ファイルが見あたりません"
+
+#: class-wo-update.php:247
+msgid "Install/Update completed"
+msgstr "インストール/アップデート完了"
+
+#: class-wo-update.php:271
+msgid "Testing a lookup with your IP address:"
+msgstr "あなたのIPアドレスでルックアップをテスト中:"
+
+#: class-wo-update.php:277
+msgid "test_lookup error: the GeoLiteCity.dat file was not found"
+msgstr "ルックアップテストのエラー: GeoLitecity.dat ファイルが見あたりません"
+
+#: class-wo-update.php:280
+msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
+msgstr "ルックアップテストのエラー: include-whos-online-geoip.php ファイルが見あたりません"
+
+#: class-wo-update.php:291
+msgid "IP:"
+msgstr "IP:"
+
+#: class-wo-update.php:292
+msgid "City:"
+msgstr "都市:"
+
+#: class-wo-update.php:293
+msgid "State Name:"
+msgstr "州の名前:"
+
+#: class-wo-update.php:294
+msgid "State Code:"
+msgstr "州のコード:"
+
+#: class-wo-update.php:295
+msgid "Country Name:"
+msgstr "国名:"
+
+#: class-wo-update.php:296
+msgid "Country Code:"
+msgstr "国のコード:"
+
+#: class-wo-update.php:297
+msgid "Lat:"
+msgstr "緯度:"
+
+#: class-wo-update.php:298
+msgid "Lon: "
+msgstr "経度:"
+
+#: class-wo-update.php:302
+msgid "Note: location information was not available, this is normal if on a private network."
+msgstr "注意: 地理情報は利用できませんでした。プライベートネットワーク上であれば正常な動作です。"
+
+#: class-wo-update.php:311
+#: visitor-maps-admin.php:148
+#: visitor-maps.php:125
+msgid "View Who's Online"
+msgstr "オンライン情報の閲覧"
+
+#: class-wo-update.php:341
+#: class-wo-view.php:696
+msgid "error: could not connect to remote file"
+msgstr "エラー: リモートファイルに接続できません"
+
+#: class-wo-update.php:354
+#: class-wo-view.php:709
+msgid "error: fetching timestamp failed for URL, 404 not found?"
+msgstr "エラー: URLのタイムスタンプ取得に失敗しました。404 エラーの可能性があります。"
+
+#: class-wo-update.php:386
+#: class-wo-view.php:741
+msgid "error: fetching timestamp failed for URL 404 not found?"
+msgstr "エラー: URLのタイムスタンプ取得に失敗しました。404 エラーの可能性があります。"
+
+#: class-wo-update.php:399
+#: class-wo-view.php:754
+msgid "error: could not connect to remote URL"
+msgstr "エラー: リモートURLに接続できません"
+
+#: class-wo-update.php:404
+msgid "Please allow plenty of time for the approximately 19meg file to download."
+msgstr "約19MBのファイルをダウンロードし終わるまでお待ちください。"
+
+#: class-wo-update.php:405
+msgid "The time needed depends on your server download speed."
+msgstr "ダウンロード時間は、ご利用サーバの回線速度によります。"
+
+#: class-wo-update.php:406
+msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
+msgstr "回線が遅く、ダウンロードに3分超かかるような場合は、タイムアウトすることがあります。"
+
+#: class-wo-update.php:414
+msgid "error: reading or opening file"
+msgstr "エラー: ファイルの読み込みまたはオープン中"
+
+#: class-wo-update.php:415
+#: class-wo-update.php:433
+msgid "error: cannot write to file, check server permission settings"
+msgstr "エラー: ファイルに書き込めません。パーミッションを確認してください。"
+
+#: class-wo-update.php:416
+msgid "Download started, (counting megs)"
+msgstr "ダウンロードを開始しました (ファイルサイズのカウント)"
+
+#: class-wo-update.php:440
+msgid "error: CHMOD 0644 download file failed"
+msgstr "エラー: ダウンロードしたファイルのパーミッションを 0644 に変更できません"
+
+#: class-wo-view.php:102
+msgid "Refresh Rate:"
+msgstr "更新間隔:"
+
+#: class-wo-view.php:106
+#: visitor-maps.php:68
+#: visitor-maps.php:79
+msgid "Who's Been Online"
+msgstr "オンライン履歴"
+
+#: class-wo-view.php:144
+msgid "Last refresh at"
+msgstr "直前の更新は"
+
+#: class-wo-view.php:155
+msgid "Online"
+msgstr "オンライン"
+
+#: class-wo-view.php:159
+msgid "Entry"
+msgstr "エントリー"
+
+#: class-wo-view.php:160
+msgid "Last Click"
+msgstr "直前のクリック"
+
+#: class-wo-view.php:444
+#, php-format
+msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
+msgstr "人がオンライン中 (%1$d分毎に活動状態をチェック。インアクティブと判断した場合は、%2$d分後に削除)"
+
+#: class-wo-view.php:451
+msgid "Duplicate IPs"
+msgstr "重複 IP アドレス"
+
+#: class-wo-view.php:458
+msgid "Members (includes you)"
+msgstr "人のメンバー (あなたを含む)"
+
+#: class-wo-view.php:462
+msgid "are active"
+msgstr "がアクティブ"
+
+#: class-wo-view.php:476
+msgid "Your IP Address:"
+msgstr "あなたの IP アドレス:"
+
+#: class-wo-view.php:482
+msgid "Your Host:"
+msgstr "あなたのホスト:"
+
+#: class-wo-view.php:487
+#: visitor-maps-admin.php:169
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr "MaxMind制GeoLiteCityデータ使用中。データの取得は http://www.maxmind.com から"
+
+#: class-wo-view.php:490
+#: class-wo-view.php:494
+#, php-format
+msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
+msgstr "GeoLiteCityデータの最終更新日時は、%1$s (%2$d日前)です"
+
+#: class-wo-view.php:491
+msgid "an update is available"
+msgstr "更新できます"
+
+#: class-wo-view.php:492
+msgid "click here to update"
+msgstr "ここをクリックして更新してください"
+
+#: class-wo-worldmap.php:27
+#: visitor-maps-worldmap.php:14
+msgid "error: geolocation data not enabled or installed"
+msgstr "エラー: 地理データが無効またはインストールされていません"
+
+#: class-wo-worldmap.php:252
+#, php-format
+msgid "%1$d visitors since %2$d %3$s ago"
+msgstr "%1$d visitors since %2$d %3$s ago"
+
+#: class-wo-worldmap.php:255
+#, php-format
+msgid "%1$d visitors since %2$d ago"
+msgstr "%2$d 日前から %1$d 人の来訪者"
+
+#: visitor-maps-admin.php:7
+#: visitor-maps-admin.php:22
+#: visitor-maps.php:75
+#: visitor-maps.php:121
+msgid "You do not have permissions for managing this option"
+msgstr "このオプションを操作する権限がありません"
+
+#: visitor-maps-admin.php:80
+msgid "Options saved."
+msgstr "オプションを保存しました。"
+
+#: visitor-maps-admin.php:83
+msgid "Visitor Maps and Who's Online Options"
+msgstr "来訪者マップとオンライン情報のオプション"
+
+#: visitor-maps-admin.php:96
+msgid "Changelog"
+msgstr "更新履歴"
+
+#: visitor-maps-admin.php:97
+msgid "FAQ"
+msgstr "よくある質問と答え"
+
+#: visitor-maps-admin.php:98
+msgid "Rate This"
+msgstr "評価"
+
+#: visitor-maps-admin.php:99
+msgid "Support"
+msgstr "サポート"
+
+#: visitor-maps-admin.php:100
+#: visitor-maps-admin.php:108
+msgid "Donate"
+msgstr "寄付"
+
+#: visitor-maps-admin.php:101
+msgid "Free PHP Scripts"
+msgstr "無料PHPプログラム"
+
+#: visitor-maps-admin.php:102
+msgid "Contact"
+msgstr "連絡："
+
+#: visitor-maps-admin.php:120
+msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!"
+msgstr "このプラグインが便利だと思われましたら、今後の開発に向けてちょっとした寄付をお願いします。ご支援に感謝いたします。"
+
+#: visitor-maps-admin.php:136
+msgid "I have donated to help contribute for the development of this plugin."
+msgstr "このプラグインの今後の開発に向けて寄付しました。"
+
+#: visitor-maps-admin.php:139
+msgid "Usage"
+msgstr "使い方"
+
+#: visitor-maps-admin.php:141
+msgid "Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "ページまたは記事に <b>[visitor-maps]</b> というショートコードを入れてください。そのページが来訪者マップ用ページになります。"
+
+#: visitor-maps-admin.php:141
+#: visitor-maps-admin.php:144
+#: visitor-maps-admin.php:191
+#: visitor-maps-admin.php:211
+#: visitor-maps-admin.php:262
+#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:282
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:300
+#: visitor-maps-admin.php:320
+#: visitor-maps-admin.php:367
+#: visitor-maps-admin.php:374
+#: visitor-maps-admin.php:381
+#: visitor-maps-admin.php:388
+msgid "help"
+msgstr "ヘルプ"
+
+#: visitor-maps-admin.php:144
+msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
+msgstr "「Who's Online」ウィジェットを追加してください。「外観」-「ウィジェット」で「Who's Online」ウィジェットを右側のサイドバー用カラムへドラッグします。"
+
+#: visitor-maps-admin.php:154
+msgid "Options"
+msgstr "オプション"
+
+#: visitor-maps-admin.php:157
+#: visitor-maps-admin.php:401
+msgid "Update Options"
+msgstr "オプションの更新"
+
+#: visitor-maps-admin.php:165
+msgid "GeoLocation:"
+msgstr "地理:"
+
+#: visitor-maps-admin.php:171
+msgid "The Maxmind GeoLiteCity database is not yet installed."
+msgstr "Maxmind の GeoLiteCity データベースがインストールされていません。"
+
+#: visitor-maps-admin.php:171
+#: visitor-maps.php:515
+msgid "Install Now"
+msgstr "今すぐインストール"
+
+#: visitor-maps-admin.php:173
+msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
+msgstr "Maxmind の GeoLiteCity データベースはインストールされていますが、有効になっていません（以下の設定を確認）。"
+
+#: visitor-maps-admin.php:175
+msgid "The Maxmind GeoLiteCity database is installed and enabled."
+msgstr "Maxmind の GeoLiteCity がインストールされ、有効になっています。"
+
+#: visitor-maps-admin.php:181
+msgid "Enable geolocation."
+msgstr "地理を有効にする。"
+
+#: visitor-maps-admin.php:182
+msgid "Update Now"
+msgstr "今すぐ更新"
+
+#: visitor-maps-admin.php:186
+msgid "Enable display of bots on geolocation maps."
+msgstr "地理マップにボットを表示する。"
+
+#: visitor-maps-admin.php:190
+msgid "Disable text on geolocation maps (missing map background fix)."
+msgstr "地理マップ でテキストを無効にする（地図の背景消失時の修正）。"
+
+#: visitor-maps-admin.php:191
+#: visitor-maps-admin.php:211
+#: visitor-maps-admin.php:262
+#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:282
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:300
+#: visitor-maps-admin.php:320
+#: visitor-maps-admin.php:367
+#: visitor-maps-admin.php:374
+#: visitor-maps-admin.php:381
+#: visitor-maps-admin.php:388
+msgid "Click for Help!"
+msgstr "クリックでヘルプ！"
+
+#: visitor-maps-admin.php:193
+msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
+msgstr "一部のPHPサーバでは、来訪者マップにテキストを完全表示できないものがあります。来訪者マップにピンだけが表示され、世界または国画像が消失している場合に限り、ここをチェックしてください。この設定を有効にしたら、来訪者マップが機能しているかどうかを確認してください。"
+
+#: visitor-maps-admin.php:198
+msgid "Enable display of city, state next to country flag."
+msgstr "国旗の隣に都市や州名を表示する。"
+
+#: visitor-maps-admin.php:202
+msgid "Enable visitor map on Who's Online dashboard."
+msgstr "ダッシュボードで「オンライン情報」の来訪者マップを表示する。"
+
+#: visitor-maps-admin.php:206
+msgid "Enable visitor map link on Who's Online widget."
+msgstr "「Who's Online」ウィジェットで来訪者マップにリンクする。"
+
+#: visitor-maps-admin.php:210
+msgid "Enable hover labels for location pins on visitor map page."
+msgstr "来訪者マップの地理ピンでホバーラベルを有効にする。"
+
+#: visitor-maps-admin.php:213
+msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
+msgstr "一部テーマでは、来訪者マップページの地理ピン表示と衝突するものがあります。この設定を有効化したら来訪者マップ用ページを表示して、ピンが正しく表示されているかどうかを確認してください。ピンの表示がマップ上10ピクセルほど下に表示される場合は、この設定を解除してください。"
+
+#: visitor-maps-admin.php:218
+msgid "Default Visitor Map"
+msgstr "デフォルトの来訪者マップ"
+
+#: visitor-maps-admin.php:264
+msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
+msgstr "来訪者マップ用ページで表示するデフォルトの地図。設定が終わったら来訪者マップ用ページを表示して、正しく機能しているかどうかを確認してください。地図の幅が広すぎるときは、ひとつ下の小さな地図を選択してください。"
+
+#: visitor-maps-admin.php:271
+msgid "Visitors:"
+msgstr "来訪者:"
+
+#: visitor-maps-admin.php:274
+msgid "Active time (minutes)"
+msgstr "活動時間（分）"
+
+#: visitor-maps-admin.php:277
+msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
+msgstr "来訪者が「活動」していると思われる分数。デフォルトは5分。"
+
+#: visitor-maps-admin.php:281
+msgid "Inactive time (minutes)"
+msgstr "停滞時間（分）"
+
+#: visitor-maps-admin.php:284
+msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
+msgstr "活動していない来訪者を表示しなくなるまでの分数。デフォルトは15分。"
+
+#: visitor-maps-admin.php:288
+msgid "Days to store visitor data"
+msgstr "来訪者データの保存日数"
+
+#: visitor-maps-admin.php:291
+msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
+msgstr "データベーステーブルに来訪者データを保存しておく日数。このデータは地理マップに使用されます。デフォルトは30日。"
+
+#: visitor-maps-admin.php:296
+msgid "Do not show administrators on the maps."
+msgstr "管理者をマップに表示しない。"
+
+#: visitor-maps-admin.php:299
+msgid "IP Adresses to ignore"
+msgstr "無視するIPアドレス"
+
+#: visitor-maps-admin.php:302
+msgid "Optional list of IP addresses for visitors you do not want shown on maps."
+msgstr "マップに表示したくない来訪者のIPアドレスリスト。"
+
+#: visitor-maps-admin.php:303
+msgid "Start each entry on a new line."
+msgstr "エントリーは１行にひとつずつ記入してください。"
+
+#: visitor-maps-admin.php:304
+msgid "Use <strong>*</strong> for wildcards."
+msgstr "ワイルドカード<strong>*</strong>が使えます。"
+
+#: visitor-maps-admin.php:305
+msgid "Examples:"
+msgstr "例:"
+
+#: visitor-maps-admin.php:316
+msgid "Lookups:"
+msgstr "ルックアップ:"
+
+#: visitor-maps-admin.php:319
+msgid "Who Is Lookup URL"
+msgstr "Who Is Lookup URL"
+
+#: visitor-maps-admin.php:322
+msgid "URL to open when an IP address is clicked on."
+msgstr "IPアドレスをクリックした時に開くURL"
+
+#: visitor-maps-admin.php:327
+msgid "Enable open Who Is Lookup URL on a pop-up."
+msgstr "Who Is Lookup URLをポップアップで開く。"
+
+#: visitor-maps-admin.php:331
+msgid "Enable host lookups for IP addresses."
+msgstr "IPアドレスのホストルックアップを有効にする。"
+
+#: visitor-maps-admin.php:338
+msgid "Stats:"
+msgstr "統計:"
+
+#: visitor-maps-admin.php:341
+msgid "Enable stats display in blog footer."
+msgstr "ブログのフッターに統計を表示する。"
+
+#: visitor-maps-admin.php:345
+msgid "Enable stats display in admin footer."
+msgstr "管理画面のフッターに統計を表示する。"
+
+#: visitor-maps-admin.php:349
+msgid "Enable stats display on map page."
+msgstr "マップ用ページに統計を表示する。"
+
+#: visitor-maps-admin.php:353
+msgid "Enable plugin credit link:"
+msgstr "プラグインのクレジットリンクを有効にする:"
+
+#: visitor-maps-admin.php:353
+#: visitor-maps.php:111
+#: visitor-maps.php:157
+#: visitor-maps.php:347
+#: visitor-maps.php:1285
+#: visitor-maps.php:1316
+#: visitor-maps.php:1344
+msgid "Powered by"
+msgstr "提供:"
+
+#: visitor-maps-admin.php:359
+msgid "Times:"
+msgstr "時間:"
+
+#: visitor-maps-admin.php:363
+msgid "Table of date format characters."
+msgstr "日付フォーマットの一覧"
+
+#: visitor-maps-admin.php:366
+msgid "Time format (Max Users Today)"
+msgstr "時刻の書式（本日の最大来訪者数）"
+
+#: visitor-maps-admin.php:369
+msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
+msgstr "「本日の最大来訪者数」と「直前の更新時刻」で使用する時刻フォーマット。デフォルトは、 h:i a T (02:25 pm PST)"
+
+#: visitor-maps-admin.php:373
+msgid "Time format (Last Click)"
+msgstr "時刻の書式（直前のクリック）"
+
+#: visitor-maps-admin.php:376
+msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
+msgstr "「エントリー」と「直前のクリック」で使用する時刻フォーマット。デフォルトは、 h:i:sa (02:25:25pm)"
+
+#: visitor-maps-admin.php:380
+msgid "Date/Time format (All Time Records)"
+msgstr "日付/時刻書式（オールタイムレコード）"
+
+#: visitor-maps-admin.php:383
+msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "月、年、オールタイムレコードで使用する日付/時刻のフォーマット。デフォルトは m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: visitor-maps-admin.php:387
+msgid "Date/Time format (GeoLite data)"
+msgstr "日付/時刻の書式（GeoLiteデータ）"
+
+#: visitor-maps-admin.php:390
+msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "「GeoLite データの直前の更新は...」で使用する日付/時刻のフォーマット。デフォルトは、 m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: visitor-maps-admin.php:405
+msgid "More WordPress plugins by Mike Challis:"
+msgstr "作者（Mike Challis）によるその他WordPressプラグイン:"
+
+#: visitor-maps-admin.php:407
+msgid "Fast and Secure Contact Form"
+msgstr "Fast and Secure Contact Form"
+
+#: visitor-maps-admin.php:408
+msgid "SI CAPTCHA Anti-Spam"
+msgstr "SI CAPTCHA Anti-Spam"
+
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.4.3)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: visitor-maps-admin.php:409
+msgid "Visitor Maps and Who's Online"
+msgstr "Visitor Maps and Who's Online"
+
+#: visitor-maps.php:108
+#: visitor-maps.php:154
+#, php-format
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">来訪者マップビューワー</a>でさらに地図を見る"
+
+#: visitor-maps.php:247
+msgid "Close"
+msgstr "閉じる"
+
+#: visitor-maps.php:249
+msgid "Powered by Visitor Maps"
+msgstr "Powered by Visitor Maps"
+
+#: visitor-maps.php:254
+#: visitor-maps.php:350
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr "来訪者マップの地理表示機能が設定で無効になっています。"
+
+#: visitor-maps.php:319
+msgid "View more maps in the "
+msgstr "ほかの地図の閲覧は"
+
+#: visitor-maps.php:319
+msgid "Visitor Map Viewer"
+msgstr "来訪者マップビューワー"
+
+#: visitor-maps.php:328
+#: visitor-maps.php:1012
+#: visitor-maps.php:1013
+msgid "Max visitors today"
+msgstr "本日の最大来訪者数"
+
+#: visitor-maps.php:328
+#: visitor-maps.php:330
+#: visitor-maps.php:332
+#: visitor-maps.php:334
+#: visitor-maps.php:1012
+#: visitor-maps.php:1013
+#: visitor-maps.php:1016
+#: visitor-maps.php:1017
+#: visitor-maps.php:1020
+#: visitor-maps.php:1021
+#: visitor-maps.php:1024
+#: visitor-maps.php:1025
+msgid "at"
+msgstr ": "
+
+#: visitor-maps.php:330
+#: visitor-maps.php:1016
+#: visitor-maps.php:1017
+msgid "This month"
+msgstr "今月"
+
+#: visitor-maps.php:332
+#: visitor-maps.php:1020
+#: visitor-maps.php:1021
+msgid "This year"
+msgstr "今年"
+
+#: visitor-maps.php:334
+#: visitor-maps.php:1024
+#: visitor-maps.php:1025
+msgid "All time"
+msgstr "通算"
+
+#: visitor-maps.php:337
+msgid "Records of the most visitors online at once:"
+msgstr "同時にオンラインした最大人数:"
+
+#: visitor-maps.php:515
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr "来訪者マップを利用するには、Maxmind製GeoliteCityデータベースのインストールが必要です。"
+
+#: visitor-maps.php:581
+msgid "Settings"
+msgstr "設定"
+
+#: visitor-maps.php:1000
+#: visitor-maps.php:1307
+#: visitor-maps.php:1335
+#, php-format
+msgid "%d visitors online now"
+msgstr "ただいま%d人がオンライン中"
+
+#: visitor-maps.php:1001
+#: visitor-maps.php:1308
+#: visitor-maps.php:1336
+#, php-format
+msgid "%d guests"
+msgstr "ゲスト%d人"
+
+#: visitor-maps.php:1002
+#: visitor-maps.php:1309
+#: visitor-maps.php:1337
+#, php-format
+msgid "%d members"
+msgstr "メンバー%d人"
+
+#: visitor-maps.php:1314
+#: visitor-maps.php:1342
+#, php-format
+msgid "<a href=\"%s\">Map of Visitors</a>"
+msgstr "<a href=\"%s\">来訪者マップ</a>"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+msgstr "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+
+#. Description of the plugin/theme
+msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Donate</a>"
+msgstr "来訪者マップを位置ピン、都市、国別に表示します。オンライン中のユーザ数を表示する「Who's Online」サイドバー付き。来訪者情報の管理ダッシュボードでは、来訪者の詳細が閲覧できます。来訪者の詳細情報には: 来訪者のいるページ、IPアドレス、ホスト名ルックアップ、オンライン時間、都市名、州名、国名、地理マップ等々。APIキーは不要です。<a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">設定</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">寄付</a>"
+
+#. Author of the plugin/theme
+msgid "Mike Challis"
+msgstr "作者（Mike Challis）"
+
+#. Author URI of the plugin/theme
+msgid "http://www.642weather.com/weather/scripts.php"
+msgstr "http://www.642weather.com/weather/scripts.php"
+

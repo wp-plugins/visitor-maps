@@ -167,6 +167,7 @@ The following translations are included in the download zip file:
 * Hungarian (hu_HU) - Translated by [varnyu]
 * Indonesian (id_ID) - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
+* Japanese (ja) - Translated by [Chestnut]
 * Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 * Portuguese (pt_PT) - Translated by Jose
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
@@ -188,10 +189,11 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
-- Fix SVN problem causing old version to install each time
+- Currently there is a SVN problem causing old version to install each time, this is a wordpress.org website problem. sorry for any inconvenience.
 
 = 1.5.4 =
 - (15 Oct 2010) - Added Japan map.
+- Added Japanese (ja) - Translated by [Chestnut]
 
 = 1.5.3 =
 - (28 Sep 2010) - Updated a few languages.
