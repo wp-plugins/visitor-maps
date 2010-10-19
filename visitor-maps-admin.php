@@ -152,7 +152,7 @@ if (function_exists('get_transient')) {
 		<?php endif;
   } // if ( !is_wp_error($api)
  }// end if (function_exists('get_transient'
- 
+
 if (!$visitor_maps_opt['donated']) {
 ?>
 <h3><?php echo __('Donate', 'visitor-maps'); ?></h3>
@@ -395,12 +395,12 @@ foreach ($map_units_array as $k => $v) {
       <br />
 
       <label name="visitor_maps_ips_to_ignore" for="visitor_maps_ips_to_ignore"><?php echo __('IP Adresses to ignore', 'visitor-maps'); ?>:</label>
-      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor_maps'); ?>" onclick="toggleVisibility('visitor_maps_ips_to_ignore_tip');"><?php echo __('help', 'visitor_maps'); ?></a> <br />
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_ips_to_ignore_tip');"><?php echo __('help', 'visitor-maps'); ?></a> <br />
       <div style="text-align:left; display:none" id="visitor_maps_ips_to_ignore_tip">
-        <?php _e('Optional list of IP addresses for visitors you do not want shown on maps.', 'visitor_maps') ?><br />
-        <?php _e('Start each entry on a new line.', 'visitor_maps'); ?><br />
-        <?php _e('Use <strong>*</strong> for wildcards.', 'visitor_maps'); ?><br />
-		<?php _e('Examples:', 'visitor_maps'); ?>
+        <?php _e('Optional list of IP addresses for visitors you do not want shown on maps.', 'visitor-maps') ?><br />
+        <?php _e('Start each entry on a new line.', 'visitor-maps'); ?><br />
+        <?php _e('Use <strong>*</strong> for wildcards.', 'visitor-maps'); ?><br />
+		<?php _e('Examples:', 'visitor-maps'); ?>
 		<p style="margin: 2px 0"><span dir="ltr">192.168.1.100</span></p>
 		<p style="margin: 2px 0"><span dir="ltr">192.168.1.*</span></p>
 		<p style="margin: 2px 0"><span dir="ltr">192.168.*.*</span></p>
@@ -409,13 +409,13 @@ foreach ($map_units_array as $k => $v) {
       <br />
 
       <label name="visitor_maps_urls_to_ignore" for="visitor_maps_urls_to_ignore"><?php echo __('URLs to ignore', 'visitor-maps'); ?>:</label>
-      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor_maps'); ?>" onclick="toggleVisibility('visitor_maps_urls_to_ignore_tip');"><?php echo __('help', 'visitor_maps'); ?></a> <br />
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_urls_to_ignore_tip');"><?php echo __('help', 'visitor-maps'); ?></a> <br />
       <div style="text-align:left; display:none" id="visitor_maps_urls_to_ignore_tip">
-        <?php _e('Optional list of URLs on your site you do not want in any Who\'s Online data.', 'visitor_maps') ?><br />
-        <?php _e('This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat.', 'visitor_maps'); ?><br />
-        <?php _e('Use partial URL or full URL. The filter will match any part of the URL.', 'visitor_maps'); ?><br />
-        <?php _e('Start each entry on a new line.', 'visitor_maps'); ?><br />
-		<?php _e('Examples:', 'visitor_maps'); ?>
+        <?php _e('Optional list of URLs on your site you do not want in any Who\'s Online data.', 'visitor-maps') ?><br />
+        <?php _e('This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat.', 'visitor-maps'); ?><br />
+        <?php _e('Use partial URL or full URL. The filter will match any part of the URL.', 'visitor-maps'); ?><br />
+        <?php _e('Start each entry on a new line.', 'visitor-maps'); ?><br />
+		<?php _e('Examples:', 'visitor-maps'); ?>
 		<p style="margin: 2px 0"><span dir="ltr">wp-slimstat-js.php</span></p>
 		<p style="margin: 2px 0"><span dir="ltr">http://www.mysite.com/wp-content/plugins/wp-slimstat-js.php</span></p>
         <p style="margin: 2px 0"><span dir="ltr">/wp-admin/</span></p>
