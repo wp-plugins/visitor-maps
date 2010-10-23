@@ -42,6 +42,7 @@
    'enable_state_display' =>     (isset( $_POST['visitor_maps_enable_state_display'] ) ) ? 1 : 0,
    'hide_bots' =>                (isset( $_POST['visitor_maps_hide_bots'] ) ) ? 1 : 0,
    'hide_console' =>             (isset( $_POST['visitor_maps_hide_console'] ) ) ? 1 : 0,
+   'combine_members' =>          (isset( $_POST['visitor_maps_combine_members'] ) ) ? 1 : 0,
    'hide_text_on_worldmap' =>    (isset( $_POST['visitor_maps_hide_text_on_worldmap'] ) ) ? 1 : 0,
    'enable_visitor_map_hover' => (isset( $_POST['visitor_maps_enable_visitor_map_hover'] ) ) ? 1 : 0,
    'enable_users_map_hover' => (isset( $_POST['visitor_maps_enable_users_map_hover'] ) ) ? 1 : 0,
@@ -391,6 +392,15 @@ foreach ($map_units_array as $k => $v) {
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_hide_bots_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_hide_bots_tip">
       <?php echo __('Changes display options on Who\'s Online widgets.', 'visitor-maps'); ?>
+      </div>
+      <br />
+
+      <input name="visitor_maps_combine_members" id="visitor_maps_combine_members" type="checkbox" <?php if( $visitor_maps_opt['combine_members'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_combine_members"><?php echo __('Combine guests and members on widgets so they are only shown as visitors.', 'visitor-maps'); ?></label>
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_combine_members_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_combine_members_tip">
+      <?php echo __('Changes display options on Who\'s Online widgets.', 'visitor-maps'); ?>
+      <?php echo ' '; echo __('Use this setting when your site has registration turned off and all your visitors are guests and not members.', 'visitor-maps'); ?>
       </div>
       <br />
 

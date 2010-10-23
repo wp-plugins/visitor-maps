@@ -189,7 +189,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
-- Currently there is a SVN problem causing old version to install each time, this is a wordpress.org website problem. sorry for any inconvenience.
+_ Added new setting: "Combine guests and members on widgets so they are only shown as visitors." Use this setting when your site has registration turned off and all your visitors are guests and not members. 
+- Added Netherlands map.
+- Added Brazil map.
 
 = 1.5.4 =
 - (15 Oct 2010) - Added Japan map.

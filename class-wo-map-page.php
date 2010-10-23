@@ -115,6 +115,10 @@ $map_select_array = array(
 '41' => __('Finland', 'visitor-maps').' '. __('(yellow)', 'visitor-maps'),
 '42' => __('Japan', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '43' => __('Japan', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'44' => __('Netherlands', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'45' => __('Netherlands', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'46' => __('Brazil', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+'47' => __('Brazil', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 );
 $selected = '';
 foreach ($map_select_array as $k => $v) {
@@ -732,7 +736,7 @@ echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
 if (  $map_selected == 42 || $map_selected == 43) {
 echo '<!-- Japan -->' . "\n";
 $map_settings = array(
-// html map settings for Finland Map
+// html map settings for Japan Map
 // set these settings as needed
 'time'       => $map_time, // digits of time
 'units'      => $map_units,// minutes, hours, or days (with or without the "s")
@@ -746,7 +750,57 @@ $map_settings = array(
 'ul_lat'     => '47.09',   // default 0 for worldmap
 'ul_lon'     => '123.15',  // default 0 for worldmap
 'lr_lat'     => '29.81',   // default 360 for worldmap
-'lr_lon'     => '146.05',    // default 180 for worldmap
+'lr_lon'     => '146.05',  // default 180 for worldmap
+'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
+'type'       => 'png',     // jpg or png (map output type)
+);
+echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
+}
+
+if (  $map_selected == 44 || $map_selected == 45) {
+echo '<!-- Netherlands -->' . "\n";
+$map_settings = array(
+// html map settings for Netherlands Map
+// set these settings as needed
+'time'       => $map_time, // digits of time
+'units'      => $map_units,// minutes, hours, or days (with or without the "s")
+'map'        => $map_selected,  // 1,2,3 (you can add more map images in settings)
+'pin'        => '2',       // 1,2,3 (you can add more pin images in settings)
+'pins'       => 'off',     // off (off is required for html map)
+'text'       => 'on',      // on or off
+'textcolor'  => 'FBFB00',  // any hex color code
+'textshadow' => '3F3F3F',  // any hex color code
+'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
+'ul_lat'     => '53.57',   // default 0 for worldmap
+'ul_lon'     => '3.07',    // default 0 for worldmap
+'lr_lat'     => '50.68',   // default 360 for worldmap
+'lr_lon'     => '7.78',    // default 180 for worldmap
+'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
+'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
+'type'       => 'png',     // jpg or png (map output type)
+);
+echo $visitor_maps->get_visitor_maps_worldmap($map_settings);
+}
+
+if (  $map_selected == 46 || $map_selected == 47) {
+echo '<!-- Brazil -->' . "\n";
+$map_settings = array(
+// html map settings for Brazil Map
+// set these settings as needed
+'time'       => $map_time, // digits of time
+'units'      => $map_units,// minutes, hours, or days (with or without the "s")
+'map'        => $map_selected,  // 1,2,3 (you can add more map images in settings)
+'pin'        => '2',       // 1,2,3 (you can add more pin images in settings)
+'pins'       => 'off',     // off (off is required for html map)
+'text'       => 'on',      // on or off
+'textcolor'  => 'FBFB00',  // any hex color code
+'textshadow' => '3F3F3F',  // any hex color code
+'textalign'  => 'cb',      // ll, ul, lr, ur, c, ct, cb (codes for: lower left, upper left, upper right, center, center top, center bottom)
+'ul_lat'     => '9.44',    // default 0 for worldmap
+'ul_lon'     => '-77.47',  // default 0 for worldmap
+'lr_lat'     => '-33.30',  // default 360 for worldmap
+'lr_lon'     => '-29.74',  // default 180 for worldmap
 'offset_x'   => '0',       // + or - offset for x axis  - moves pins left, + moves pins right
 'offset_y'   => '0',       // + or - offset for y axis  - moves pins up,   + moves pins down
 'type'       => 'png',     // jpg or png (map output type)

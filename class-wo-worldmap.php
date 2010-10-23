@@ -75,6 +75,10 @@ $this->set['image_worldmap_40'] = 'wo-finland-brown-map.png';   // Finland (brow
 $this->set['image_worldmap_41'] = 'wo-finland-yellow-map.png';  // Finland (yellow)
 $this->set['image_worldmap_42'] = 'wo-jp-black-map.png';   // Japan (black)
 $this->set['image_worldmap_43'] = 'wo-jp-brown-map.png';   // Japan (brown)
+$this->set['image_worldmap_44'] = 'wo-nl-black-map.png';   // Netherlands (black)
+$this->set['image_worldmap_45'] = 'wo-nl-brown-map.png';   // Netherlands (brown)
+$this->set['image_worldmap_46'] = 'wo-br-black-map.png';   // Brazil (black)
+$this->set['image_worldmap_47'] = 'wo-br-brown-map.png';   // Brazil (brown)
 // you can add more, just increment the numbers
 
 $this->set['image_pin']   = 'wo-pin.jpg'; // do not delete this one, it is the default

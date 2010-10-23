@@ -677,6 +677,7 @@ function visitor_maps_get_options() {
    'enable_state_display' =>   1,
    'hide_bots'  =>             0,
    'hide_console' =>           0,
+   'combine_members'  =>       0,
    'hide_text_on_worldmap' =>  0,
    'enable_visitor_map_hover' => 0,
    'enable_users_map_hover'   => 0,
@@ -1425,11 +1426,20 @@ function visitor_maps_widget_content() {
     $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
     $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
     $stats_members  = sprintf( __('%d members','visitor-maps'),$members_count);
+
     if (!$visitor_maps_opt['hide_bots']) {
        $stats_bots  = sprintf( __('%d bots','visitor-maps'),$bots_count);
-       echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+       if (!$visitor_maps_opt['combine_members']) {
+            echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+       } else {
+            $stats_guests   = sprintf( __('%d guests','visitor-maps'),($guests_count + $members_count));
+            echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots</span>";
+       }
     } else {
-       echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+       if (!$visitor_maps_opt['combine_members'])
+           echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+       else
+           echo "<p>$stats_visitors";
     }
     if ($visitor_maps_opt['enable_widget_link']){
       if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
