@@ -471,7 +471,7 @@ function wo_map_console(url) {
   } // end if(isset($_GET['page'])
 
 // only load this header stuff on the whos online settings page
-if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps/visitor-maps.php' ) {
+if(isset($_GET['page']) && preg_match('/visitor-maps.php$/',$_GET['page']) ) { 
 ?>
 <!-- begin visitor maps - settings page header code -->
 <script type="text/javascript">
