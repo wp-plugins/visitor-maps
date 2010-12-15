@@ -159,6 +159,7 @@ The following translations are included in the download zip file:
 
 * Belorussian (be_BY) - Translated by [Marcis G](http://pc.de)
 * Brazilian Portuguese (pt_BR) - Translated by Miguel Netto
+* Bulgarian (bg_BG) - Translated by [Nicolas Nicolov](http://bnproject.com/)
 * Chinese (zh_CN) - Translated by [Awu](http://www.awuit.cn/)
 * Danish (da_DK) - Translated by [GeorgWP](http://wordpress.blogos.dk/wpdadkdownloads/)
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
@@ -189,9 +190,11 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
-_ Added new setting: "Combine guests and members on widgets so they are only shown as visitors." Use this setting when your site has registration turned off and all your visitors are guests and not members. 
+= 1.5.5 =
+- (15 Dec 2010) - Added new setting: "Combine guests and members on widgets so they are only shown as visitors." Use this setting when your site has registration turned off and all your visitors are guests and not members. 
 - Added Netherlands map.
 - Added Brazil map.
+- Added Bulgarian (bg_BG) - Translated by [Nicolas Nicolov](http://bnproject.com/)
 
 = 1.5.4 =
 - (15 Oct 2010) - Added Japan map.
