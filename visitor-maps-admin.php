@@ -159,7 +159,7 @@ if (function_exists('get_transient')) {
  }// end if (function_exists('get_transient'
   echo '</td><td>';
   if (!$visitor_maps_opt['donated']) { ?>
-        <a href="http://secure.hostgator.com/cgi-bin/affiliates/clickthru.cgi?id=mchallis" target="_blank"><img title="Web Site Hosting" alt="Web Site Hosting" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
+        <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=vmwp" target="_blank"><img title="Web Site Hosting" alt="Web Site Hosting" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
 <?php
   }
  ?>
