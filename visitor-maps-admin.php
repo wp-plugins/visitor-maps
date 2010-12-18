@@ -179,12 +179,10 @@ _e('If you find this plugin useful to you, please consider making a small donati
 
   <div style="width:385px;height:200px; float:left;background-color:white;padding: 10px 10px 10px 20px; border: 1px solid #ddd;">
 		<div>
-			<h3>ThemeFuse Original WP Themes</h3>
-            Try <a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=148937" target="_blank">ThemeFuse</a>,
-            they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services.
-            Check out some of their themes!
+			<h3><?php _e('ThemeFuse Original WP Themes', 'visitor-maps'); ?></h3>
+            <?php echo sprintf(__('Try <a href="%s" target="_blank">ThemeFuse</a>, they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services. Check out some of their themes!', 'visitor-maps'), 'https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=148937'); ?>
 		</div>
-        <a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=148937" target="_blank"><img title="ThemeFuse" alt="ThemeFuse" src="http://themefuse.com/wp-content/themes/themefuse/images/campaigns/themefuse.jpg" width="375" height="85" /></a>
+        <a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=148937" target="_blank"><img title="<?php echo esc_attr(__('ThemeFuse', 'visitor-maps')); ?>" alt="<?php echo esc_attr(__('ThemeFuse', 'visitor-maps')); ?>" src="http://themefuse.com/wp-content/themes/themefuse/images/campaigns/themefuse.jpg" width="375" height="85" /></a>
   </div>
   </td>
  </tr>
@@ -577,9 +575,9 @@ foreach ($map_units_array as $k => $v) {
 <?php
   if (!$visitor_maps_opt['donated']) { ?>
    </td><td width="350">
-   "I recommend <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp" target="_blank">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer the most features." - Mike Challis
+   <?php echo sprintf(__('"I recommend <a href="%s" target="_blank">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer the most features." - Mike Challis', 'visitor-maps'), 'http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp'); ?>
    </td><td width="100">
-     <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp" target="_blank"><img title="Web Site Hosting" alt="Web Site Hosting" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
+    <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp" target="_blank"><img title="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" alt="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
 <?php
   }
  ?>
