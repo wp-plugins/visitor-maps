@@ -190,6 +190,10 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+= 1.5.5.1 =
+- (17 Dec 2010) - Updated Japanese (ja) - Translated by [Chestnut]
+- Some changes to admin page. 
+
 = 1.5.5 =
 - (15 Dec 2010) - Added new setting: "Combine guests and members on widgets so they are only shown as visitors." Use this setting when your site has registration turned off and all your visitors are guests and not members. 
 - Added Netherlands map.

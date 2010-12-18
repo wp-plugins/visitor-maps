@@ -184,7 +184,7 @@ _e('If you find this plugin useful to you, please consider making a small donati
             they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services.
             Check out some of their themes!
 		</div>
-        <a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=148937" target="_blank"><img title="ThemeFuse" alt="ThemeFuse" src="<?php echo WP_PLUGIN_URL; ?>/si-contact-form/themefuse.png" width="375" height="85" /></a>
+        <a href="https://www.e-junkie.com/ecom/gb.php?cl=136641&c=ib&aff=148937" target="_blank"><img title="ThemeFuse" alt="ThemeFuse" src="http://themefuse.com/wp-content/themes/themefuse/images/campaigns/themefuse.jpg" width="375" height="85" /></a>
   </div>
   </td>
  </tr>
