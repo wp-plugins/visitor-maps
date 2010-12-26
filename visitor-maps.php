@@ -1380,7 +1380,7 @@ function visitor_maps_dashboard_widget() {
 
 }
 function visitor_maps_register_widget() {
-	register_sidebar_widget( __('Who\'s Online', 'visitor-maps'), array(&$this,'visitor_maps_widget'));
+	wp_register_sidebar_widget( 'visitor-maps', __('Who\'s Online', 'visitor-maps'), array(&$this,'visitor_maps_widget'));
 }
 function visitor_maps_widget($args) {
     extract($args);

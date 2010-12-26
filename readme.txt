@@ -190,6 +190,8 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+- Fixed deprecated register_sidebar_widget function. After updating you need to add the "Who's Online" widget again.
+
 = 1.5.5.1 =
 - (17 Dec 2010) - Updated Japanese (ja) - Translated by [Chestnut]
 - Some changes to admin page. 
