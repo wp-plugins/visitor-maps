@@ -126,8 +126,10 @@ echo '<table border="0" width="99%">
   echo esc_html( __( 'Show Bots:', 'visitor-maps' ) ) . ' ' . $this->draw_pull_down_menu('bots', $bots_type, $bots, 'onchange="this.form.submit();"') . ' ';
   echo '<input type="hidden" name="page" value="visitor-maps" />
   </form>
-  <a href="'.admin_url( 'index.php?page=whos-been-online').'">' . esc_html( __( 'Who\'s Been Online', 'visitor-maps' ) ) . '</a><br />
-  <a href="'.admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php').'">' . esc_html( __( 'Visitor Maps Options', 'visitor-maps' ) ) . "</a>\n";
+  <a href="'.admin_url( 'index.php?page=whos-been-online').'">' . esc_html( __( 'Who\'s Been Online', 'visitor-maps' ) ) . "</a>\n";
+ if ( function_exists('current_user_can') && current_user_can('manage_options') )
+  echo '<br /> <a href="'.admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php').'">' . __( 'Visitor Maps Options', 'visitor-maps' ) . "</a>\n";
+
   if ( $visitor_maps_opt['enable_location_plugin'] ) {
     echo '<br />'.sprintf( __('<a href="%s">Visitor Map Viewer</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;')."\n";
 

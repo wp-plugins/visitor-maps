@@ -190,7 +190,9 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
-- Fixed deprecated register_sidebar_widget function. After updating you need to add the "Who's Online" widget again.
+= 1.5.6 =
+- (29 Dec 2010) - Added new setting: "Users who can view the dashboard pages:" By default, only Administrators can view the dashboard pages. Change this setting to also allow Editors, Authors, or Contributors to view the dashboard pages. When set to Authors, you are also allowing Administrator and Editors. 
+- Fixed deprecated register_sidebar_widget function. After updating you need to add the "Who's Online" widget again. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right.
 
 = 1.5.5.1 =
 - (17 Dec 2010) - Updated Japanese (ja) - Translated by [Chestnut]

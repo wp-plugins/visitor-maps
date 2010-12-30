@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876">Donate</a>
-Version: 1.5.5.1
+Version: 1.5.6
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -63,15 +63,35 @@ function visitor_maps_upgrade_1() {
 } // end function visitor_maps_upgrade_1
 
 function visitor_maps_add_tabs() {
+    global $visitor_maps_opt;
+
     add_submenu_page('plugins.php', __('Visitor Maps Options', 'visitor-maps'), __('Visitor Maps Options', 'visitor-maps'), 'manage_options', __FILE__,array(&$this,'visitor_maps_options_page'));
-    add_submenu_page('index.php', __('Who\'s Online', 'visitor-maps'), __('Who\'s Online', 'visitor-maps'), 'manage_options', 'visitor-maps',array(&$this,'visitor_maps_admin_view'));
-    add_submenu_page('index.php', __('Who\'s Been Online', 'visitor-maps'), __('Who\'s Been Online', 'visitor-maps'), 'manage_options', 'whos-been-online',array(&$this,'visitor_maps_whos_been_online'));
+    add_submenu_page('index.php', __('Who\'s Online', 'visitor-maps'), __('Who\'s Online', 'visitor-maps'), $visitor_maps_opt['dashboard_permissions'], 'visitor-maps',array(&$this,'visitor_maps_admin_view'));
+    add_submenu_page('index.php', __('Who\'s Been Online', 'visitor-maps'), __('Who\'s Been Online', 'visitor-maps'), $visitor_maps_opt['dashboard_permissions'], 'whos-been-online',array(&$this,'visitor_maps_whos_been_online'));
 }
+
+function visitor_maps_perm_dropdown($select_name, $checked_value='') {
+        // choices: Display text => role
+        $choices = array (
+                 __('Administrators', 'visitor-maps') => 'manage_options',
+                 __('Editors', 'visitor-maps') => 'moderate_comments',
+                 __('Authors', 'visitor-maps') => 'edit_publish_posts',
+                 __('Contributors', 'visitor-maps') => 'edit_posts',
+                 );
+        // print the <select> and loop through <options>
+        echo '<select name="' . $select_name . '" id="' . $select_name . '">' . "\n";
+        foreach ($choices as $text => $capability) :
+                if ($capability == $checked_value) $checked = ' selected="selected" ';
+                echo "\t". '<option value="' . $capability . '"' . $checked . ">$text</option> \n";
+                $checked = '';
+        endforeach;
+        echo "\t</select>\n";
+ } // end function visitor_maps_perm_dropdown
 
 function visitor_maps_whos_been_online(){
      global $visitor_maps_opt;
 
-     if ( function_exists('current_user_can') && !current_user_can('manage_options') )
+     if ( function_exists('current_user_can') && !current_user_can($visitor_maps_opt['dashboard_permissions']) )
          die(__('You do not have permissions for managing this option', 'visitor-maps'));
 
     // show admin Who's Been Online page
@@ -119,7 +139,7 @@ function visitor_maps_whos_been_online(){
 function visitor_maps_admin_view(){
      global $visitor_maps_opt;
 
-     if ( function_exists('current_user_can') && !current_user_can('manage_options') )
+     if ( function_exists('current_user_can') && !current_user_can($visitor_maps_opt['dashboard_permissions']) )
          die(__('You do not have permissions for managing this option', 'visitor-maps'));
 
     // show admin View Who's Online page
@@ -664,6 +684,7 @@ function visitor_maps_get_options() {
    'track_time' =>  15,
    'store_days' =>  30,
    'hide_administrators' =>  0,
+   'dashboard_permissions' => 'manage_options',
    'ips_to_ignore' =>          '',
    'urls_to_ignore' =>         'wp-slimstat-js.php',
    'time_format' =>            'h:i a T',

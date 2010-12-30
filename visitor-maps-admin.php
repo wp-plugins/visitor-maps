@@ -29,6 +29,7 @@
    'track_time' =>           absint(trim($_POST['visitor_maps_track_time'])),
    'store_days' =>          ( is_numeric(trim($_POST['visitor_maps_store_days'])) && trim($_POST['visitor_maps_store_days']) <= 10000 ) ? absint(trim($_POST['visitor_maps_store_days'])) : $visitor_maps_option_defaults['store_days'],
    'hide_administrators' =>      (isset( $_POST['visitor_maps_hide_administrators'] ) ) ? 1 : 0,
+   'dashboard_permissions' =>      (trim($_POST['visitor_maps_dashboard_permissions']) != '' ) ? trim($_POST['visitor_maps_dashboard_permissions']) : $visitor_maps_option_defaults['visitor_maps_dashboard_permissions'], // use default if empty
    'ips_to_ignore' =>               trim($_POST['visitor_maps_ips_to_ignore']),  // can be empty
    'urls_to_ignore' =>              trim($_POST['visitor_maps_urls_to_ignore']),  // can be empty
    'time_format' =>               ( trim($_POST['visitor_maps_time_format']) != '' ) ? trim($_POST['visitor_maps_time_format']) : $visitor_maps_option_defaults['time_format'], // use default if empty
@@ -365,6 +366,15 @@ foreach ($map_units_array as $k => $v) {
       <div style="text-align:left; display:none" id="visitor_maps_default_map_tip">
       <?php echo __('Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one.', 'visitor-maps'); ?>
       </div>
+
+      <br />
+      <?php _e('Users who can view the dashboard pages:', 'visitor-maps') ?></label>
+    <?php $this->visitor_maps_perm_dropdown('visitor_maps_dashboard_permissions', $visitor_maps_opt['dashboard_permissions']);  ?>
+    <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_dashboard_permissions_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_dashboard_permissions_tip">
+      <?php echo __('By default, only Administrators can view the dashboard pages. Change this setting to also allow Editors, Authors, or Contributors to view the dashboard pages. When set to Authors, you are also allowing Administrator and Editors.', 'visitor-maps'); ?>
+      </div>
+
 
       </td>
     </tr>
