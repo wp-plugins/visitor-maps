@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Visitor Maps and Who's Online 1.4.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
 "POT-Creation-Date: 2010-07-26 19:26+0000\n"
-"PO-Revision-Date: 2010-12-17 11:43+0900\n"
+"PO-Revision-Date: 2010-12-30 15:33+0900\n"
 "Last-Translator: BNG NET <webmaster@bng.net>\n"
 "Language-Team: BNG NET <webmaster@bng.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,30 @@ msgstr ""
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Bookmarks: -1,203,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#: Added on 2010/12/30
+msgid "Contributors"
+msgstr "寄稿者"
+
+#: Added on 2010/12/30
+msgid "Authors"
+msgstr "投稿者"
+
+#: Added on 2010/12/30
+msgid "Editors"
+msgstr "編集者"
+
+#: Added on 2010/12/30
+msgid "Administrators"
+msgstr "管理者"
+
+#: Added on 2010/12/30
+msgid "By default, only Administrators can view the dashboard pages. Change this setting to also allow Editors, Authors, or Contributors to view the dashboard pages. When set to Authors, you are also allowing Administrator and Editors."
+msgstr "デフォルトでは、管理者のみダッシュボードのページが閲覧できます。この設定を変更すれば、編集者、投稿者、寄稿者でもダッシュボードのページが閲覧できます。投稿者に設定した場合は、管理者および編集者にも閲覧権を与えたことになります。"
+
+#: Added on 2010/12/30
+msgid "Users who can view the dashboard pages:"
+msgstr "ダッシュボードのページに対する閲覧権を与えるユーザ"
 
 #: Added on 2010/12/17
 msgid "Use this setting when your site has registration turned off and all your visitors are guests and not members."
