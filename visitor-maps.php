@@ -566,7 +566,7 @@ function visitor_maps_activity() {
 function visitor_maps_admin_footer_stats() {
     global $visitor_maps_opt, $visitor_maps_stats;
 
-  if ($visitor_maps_opt['enable_admin_footer']) {
+  if ($visitor_maps_opt['enable_admin_footer'] && ( function_exists('current_user_can') && current_user_can($visitor_maps_opt['dashboard_permissions']) ) ) {
     echo
       '<div class="footer" style="text-align:center"><p>
       '.$visitor_maps_stats.'</p>
@@ -1389,6 +1389,8 @@ function wo_sanitize_output($output) {
 } // end function wo_sanitize_output
 
 function visitor_maps_add_dashboard_widget() {
+  global $visitor_maps_opt;
+  if ( function_exists('current_user_can') && current_user_can($visitor_maps_opt['dashboard_permissions']) )
 	wp_add_dashboard_widget('visitor_maps_dashboard_widget', __('Visitor Maps', 'visitor-maps') .' - '.__('Who\'s Online', 'visitor-maps') , array(&$this,'visitor_maps_dashboard_widget'));
 }
 function visitor_maps_dashboard_widget() {

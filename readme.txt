@@ -190,6 +190,7 @@ If you use PoEdit to translate, it is easy to translate for a new version. You c
 
 == Changelog ==
 
+- Dashboard widget is now also controlled by the setting "Users who can view the dashboard pages:".
 - Updated German (de_DE) - Translated by [JZDM](http://jzdm.de)
 - Updated Japanese (ja) - Translated by [Chestnut]
 
