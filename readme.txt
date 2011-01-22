@@ -34,7 +34,7 @@ Features:
 Requirements/Restrictions:
 -------------------------
  * Works with Wordpress 2.8+, WPMU, and BuddyPress. (Wordpress 3.0+ is highly recommended)
- * PHP 4.3.9 or above with GD2 library support.(PHP5 is highly recommended)
+ * PHP5
  * 30 megs of server space(with geolocation enabled)
  * PHP register_globals and safe_mode should be set to "Off"
 
@@ -176,16 +176,16 @@ The following translations are included in the download zip file:
 * Turkish (tr_TR) - Translated by Cenkgursu
 * More are needed... Please help translate.
 
-= Can I provide a translation? =
+= Can I provide a new translation? =
 
-Of course! It will be very gratefully received. Use PoEdit, it makes translation easy. Please read [Translating WordPress](http://codex.wordpress.org/Translating_WordPress "Translating WordPress") first for background information on translating. Then obtain the latest [.pot file](http://svn.wp-plugins.org/visitor-maps/trunk/languages/visitor-maps.pot ".pot file") and translate it.
-* There are some strings with a space in front or end -- please make sure you remember the space!
-* When you have a translation ready, please send the .po and .mo files to wp-translation at 642weather dot com.
-* If you have any questions, feel free to email me also. Thanks!
+Yes, It will be very gratefully received. 
+Please read [How to translate Visitor Maps for WordPress](http://www.fastsecurecontactform.com/translate-visitor-maps) 
 
-= Is it possible to merge the translation files I sent to you with the ones of the newest version? =
+= Can I update a translation? =
 
-If you use PoEdit to translate, it is easy to translate for a new version. You can open your current .po file, then select from the PoEdit menu: "Catalog" > "Update from POT file". Now all you have to change are the new language strings.
+Yes, It will be very gratefully received. 
+Please read [How to update a translation of Visitor Maps for WordPress](http://www.fastsecurecontactform.com/update-translation-visitor-maps) 
+
 
 
 == Changelog ==
