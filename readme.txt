@@ -50,7 +50,7 @@ Credits:
 
 == Installation ==
 
-1. Upload the `visitor-maps` folder to the `/wp-content/plugins/` directory, or install automatically through the `Plugins`, `Add New` menu in WordPress.
+1. Install automatically through the `Plugins`, `Add New` menu in WordPress, or upload the `visitor-maps` folder to the `/wp-content/plugins/` directory.
 
 2. Activate the plugin through the `Plugins` menu in WordPress. Look for the Settings link to configure the Options.
 
