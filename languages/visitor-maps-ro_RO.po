@@ -1,0 +1,1464 @@
+# Copyright (C) 2010 Visitor Maps and Who's Online
+# This file is distributed under the same license as the Visitor Maps and Who's Online package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Visitor Maps and Who's Online 1.5.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
+"POT-Creation-Date: 2010-12-30 00:12:54+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2011-01-26 16:01+0200\n"
+"Last-Translator: \n"
+"Language-Team: Anunturi Jibo <contact@jibo.ro>\n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: ROMANIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: class-wo-worldmap.php:27
+#: visitor-maps-worldmap.php:14
+msgid "error: geolocation data not enabled or installed"
+msgstr "eroare: localizarea geografica nu este activata sau instalata"
+
+#: class-wo-worldmap.php:145
+#: class-wo-map-page.php:52
+#: visitor-maps-admin.php:328
+msgid "minutes"
+msgstr "minute"
+
+#: class-wo-worldmap.php:149
+#: class-wo-map-page.php:53
+#: visitor-maps-admin.php:329
+msgid "hours"
+msgstr "ore"
+
+#: class-wo-worldmap.php:153
+#: class-wo-map-page.php:54
+#: visitor-maps-admin.php:330
+msgid "days"
+msgstr "zile"
+
+#: class-wo-worldmap.php:272
+msgid "%1$d visitors since %2$d %3$s ago"
+msgstr "%1$d vizitatori din %2$d %3$s in urma"
+
+#: class-wo-worldmap.php:275
+msgid "%1$d visitors since %2$d ago"
+msgstr "%1$d vizitatori din %2$d in urma"
+
+#: class-wo-view.php:24
+#: class-wo-view.php:32
+#: class-wo-been.php:32
+msgid "None"
+msgstr "Nimic"
+
+#: class-wo-view.php:33
+#: class-wo-been.php:33
+msgid "All"
+msgstr "Toate"
+
+#: class-wo-view.php:34
+#: class-wo-view.php:491
+#: class-wo-been.php:34
+msgid "Bots"
+msgstr "Roboti"
+
+#: class-wo-view.php:35
+#: class-wo-view.php:487
+#: class-wo-been.php:35
+msgid "Guests"
+msgstr "Vizitatori"
+
+#: class-wo-view.php:38
+#: class-wo-view.php:429
+#: class-wo-been.php:90
+#: class-wo-been.php:478
+msgid "No"
+msgstr "Nu"
+
+#: class-wo-view.php:39
+#: class-wo-view.php:431
+#: class-wo-been.php:91
+#: class-wo-been.php:480
+msgid "Yes"
+msgstr "Da"
+
+#: class-wo-view.php:124
+#: class-wo-been.php:157
+msgid "Profile Display:"
+msgstr "Profil afisaj:"
+
+#: class-wo-view.php:125
+msgid "Refresh Rate:"
+msgstr "Rata de improspatare:"
+
+#: class-wo-view.php:126
+#: class-wo-been.php:160
+msgid "Show Bots:"
+msgstr "Afiseaza roboti:"
+
+#: class-wo-view.php:129
+#: visitor-maps.php:70
+#: visitor-maps.php:99
+msgid "Who's Been Online"
+msgstr "Cine a fost online"
+
+#: class-wo-view.php:131
+#: visitor-maps.php:68
+#: class-wo-update.php:312
+#: class-wo-been.php:165
+msgid "Visitor Maps Options"
+msgstr "Optiuni Harta Vizitatori"
+
+#: class-wo-view.php:134
+#: visitor-maps-admin.php:230
+#: class-wo-been.php:167
+msgid "<a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">Vizualizare Harta Vizitatori</a>"
+
+#: class-wo-view.php:144
+#: class-wo-view.php:566
+#: class-wo-been.php:177
+#: class-wo-been.php:575
+msgid "Active Guest"
+msgstr "Vizitator activ"
+
+#: class-wo-view.php:146
+#: class-wo-view.php:559
+#: class-wo-been.php:179
+#: class-wo-been.php:568
+msgid "Inactive Guest"
+msgstr "Vizitator inactiv"
+
+#: class-wo-view.php:150
+#: class-wo-view.php:553
+#: class-wo-been.php:183
+#: class-wo-been.php:562
+msgid "Active Bot"
+msgstr "Robot activ"
+
+#: class-wo-view.php:152
+#: class-wo-view.php:550
+#: class-wo-been.php:185
+#: class-wo-been.php:559
+msgid "Inactive Bot"
+msgstr "Robot inactiv"
+
+#: class-wo-view.php:164
+#: class-wo-been.php:197
+msgid "%1$d visitors since %2$s"
+msgstr "%1$d vizitatori din %2$s"
+
+#: class-wo-view.php:164
+#: class-wo-been.php:197
+msgid "installation"
+msgstr "instalare"
+
+#: class-wo-view.php:169
+msgid "Last refresh at"
+msgstr "Ultima improspatare la"
+
+#: class-wo-view.php:180
+msgid "Online"
+msgstr "Online"
+
+#: class-wo-view.php:181
+#: class-wo-been.php:44
+#: class-wo-been.php:230
+msgid "Who"
+msgstr "Cine"
+
+#: class-wo-view.php:182
+#: class-wo-been.php:47
+#: class-wo-been.php:233
+msgid "IP Address"
+msgstr "Adresa IP"
+
+#: class-wo-view.php:183
+#: class-wo-been.php:48
+#: class-wo-been.php:234
+msgid "Location"
+msgstr "Locatie"
+
+#: class-wo-view.php:184
+msgid "Entry"
+msgstr "Intrare"
+
+#: class-wo-view.php:185
+msgid "Last Click"
+msgstr "Ultimul clic"
+
+#: class-wo-view.php:188
+#: class-wo-been.php:49
+#: class-wo-been.php:238
+msgid "Last URL"
+msgstr "Ultimul URL"
+
+#: class-wo-view.php:191
+#: class-wo-been.php:241
+msgid "Referer"
+msgstr "Referinta"
+
+#: class-wo-view.php:301
+#: class-wo-been.php:348
+msgid "Guest"
+msgstr "Vizitator"
+
+#: class-wo-view.php:305
+#: class-wo-view.php:495
+#: class-wo-been.php:352
+msgid "You"
+msgstr "Tu"
+
+#: class-wo-view.php:323
+#: class-wo-been.php:370
+msgid "Error"
+msgstr "Eroare"
+
+#: class-wo-view.php:338
+#: class-wo-been.php:392
+msgid "visits"
+msgstr "vizite"
+
+#: class-wo-view.php:343
+#: class-wo-been.php:397
+msgid "host lookups not enabled"
+msgstr "rezolvarea adreselor nu este activata"
+
+#: class-wo-view.php:365
+#: class-wo-been.php:419
+msgid "unknown"
+msgstr "necunoscut"
+
+#: class-wo-view.php:445
+#: class-wo-been.php:494
+msgid "Last URL:"
+msgstr "Ultimul URL:"
+
+#: class-wo-view.php:469
+msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
+msgstr "Vizitatori online (Considerati inactivi dupa  %1$d minute. Inlaturati dupa %2$d minute )"
+
+#: class-wo-view.php:476
+msgid "Duplicate IPs"
+msgstr "IP-uri duplicate"
+
+#: class-wo-view.php:483
+msgid "Members (includes you)"
+msgstr "Membri (inclusiv tu)"
+
+#: class-wo-view.php:487
+msgid "are active"
+msgstr "sunt activi"
+
+#: class-wo-view.php:501
+msgid "Your IP Address:"
+msgstr "Adresa ta de IP:"
+
+#: class-wo-view.php:507
+msgid "Your Host:"
+msgstr "Adresa ta:"
+
+#: class-wo-view.php:512
+#: visitor-maps-admin.php:249
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr "Foloseste GeoLiteCity creat de MaxMind, disponibil la http://www.maxmind.com"
+
+#: class-wo-view.php:515
+#: class-wo-view.php:519
+msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
+msgstr "GeoLiteCity a fost actualizat ultima data %1$s (%2$d zile in urma )"
+
+#: class-wo-view.php:516
+msgid "an update is available"
+msgstr "este disponibila o actualizare"
+
+#: class-wo-view.php:517
+msgid "click here to update"
+msgstr "apasa aici pentru a actualizare"
+
+#: class-wo-view.php:577
+#: class-wo-been.php:586
+msgid "User Agent:"
+msgstr "User Agent:"
+
+#: class-wo-view.php:583
+#: class-wo-been.php:592
+msgid "Host:"
+msgstr "Gazda:"
+
+#: class-wo-view.php:589
+#: class-wo-been.php:598
+msgid "Referer:"
+msgstr "Referinta:"
+
+#: class-wo-view.php:721
+#: class-wo-update.php:341
+msgid "error: could not connect to remote file"
+msgstr "eroare: nu m-am putut conecta la fisierul aflat la distanta"
+
+#: class-wo-view.php:734
+#: class-wo-update.php:354
+msgid "error: fetching timestamp failed for URL, 404 not found?"
+msgstr "eroare: receptionarea timestamp a esuat pentru URL, 404 negasit?"
+
+#: class-wo-view.php:766
+#: class-wo-update.php:386
+msgid "error: fetching timestamp failed for URL 404 not found?"
+msgstr "eroare: receptionarea timestamp a esuat pentru URL 404 negasit?"
+
+#: class-wo-view.php:779
+#: class-wo-update.php:399
+msgid "error: could not connect to remote URL"
+msgstr "eroare: nu m-am putut conecta la URL-ul aflat la distanta"
+
+#: visitor-maps-worldmap.php:348
+#: visitor-maps-worldmap.php:368
+msgid "from"
+msgstr "de la"
+
+#: class-wo-map-page.php:43
+#: visitor-maps.php:99
+#: visitor-maps.php:133
+#: visitor-maps.php:147
+#: visitor-maps.php:182
+#: visitor-maps.php:206
+#: visitor-maps.php:344
+#: visitor-maps.php:375
+#: visitor-maps.php:1392
+#: visitor-maps.php:1399
+#: visitor-maps.php:1471
+#: visitor-maps-admin.php:520
+#: class-wo-update.php:83
+msgid "Visitor Maps"
+msgstr "Harti vizitatori"
+
+#: class-wo-map-page.php:45
+msgid "Select a time period up to %d days ago"
+msgstr "Selecteaza o perioada de timp, pana la %d zile in urma"
+
+#: class-wo-map-page.php:46
+#: visitor-maps-admin.php:322
+msgid "Time:"
+msgstr "Ora:"
+
+#: class-wo-map-page.php:48
+#: visitor-maps-admin.php:324
+msgid "Units:"
+msgstr "Unitati:"
+
+#: class-wo-map-page.php:71
+#: visitor-maps-admin.php:341
+msgid "Map:"
+msgstr "Harta:"
+
+#: class-wo-map-page.php:75
+#: visitor-maps-admin.php:347
+msgid "World (smallest)"
+msgstr "Glob (cel mai mic)"
+
+#: class-wo-map-page.php:76
+#: visitor-maps-admin.php:348
+msgid "World (small)"
+msgstr "Glob (mic)"
+
+#: class-wo-map-page.php:77
+#: visitor-maps-admin.php:349
+msgid "World (medium)"
+msgstr "Glob (mediu)"
+
+#: class-wo-map-page.php:78
+#: visitor-maps-admin.php:350
+msgid "World (large)"
+msgstr "Glob (mare)"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:80
+msgid "US"
+msgstr "Statele Unite"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:116
+#: class-wo-map-page.php:118
+#: class-wo-map-page.php:120
+msgid "(black)"
+msgstr "(negru)"
+
+#: class-wo-map-page.php:80
+#: class-wo-map-page.php:82
+#: class-wo-map-page.php:84
+#: class-wo-map-page.php:86
+#: class-wo-map-page.php:88
+#: class-wo-map-page.php:90
+#: class-wo-map-page.php:92
+#: class-wo-map-page.php:94
+#: class-wo-map-page.php:96
+#: class-wo-map-page.php:98
+#: class-wo-map-page.php:100
+#: class-wo-map-page.php:102
+#: class-wo-map-page.php:104
+#: class-wo-map-page.php:106
+#: class-wo-map-page.php:108
+#: class-wo-map-page.php:110
+#: class-wo-map-page.php:112
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:117
+#: class-wo-map-page.php:119
+#: class-wo-map-page.php:121
+msgid "(brown)"
+msgstr "(maro)"
+
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:82
+msgid "Canada and US"
+msgstr "Canada si Statele Unite"
+
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:84
+msgid "Asia"
+msgstr "Asia"
+
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:86
+msgid "Australia and NZ"
+msgstr "Australia si Noua Zeelanda"
+
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:88
+msgid "Europe Central"
+msgstr "Europa Centrala"
+
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:90
+msgid "Europe"
+msgstr "Europa"
+
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:92
+msgid "Scandinavia"
+msgstr "Scandinavia"
+
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:94
+msgid "Great Britain"
+msgstr "Marea Britanie"
+
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:96
+msgid "US Midwest"
+msgstr "Statele Unite Vest"
+
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:98
+msgid "US Upper Midwest"
+msgstr "Statele Unite Nord"
+
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:100
+msgid "US Northeast"
+msgstr "Statele Unite Nord Est"
+
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:102
+msgid "US Northwest"
+msgstr "Statele Unite Nord Vest"
+
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:104
+msgid "US Rocky Mountain"
+msgstr "Statele Unite Muntii Stancosi"
+
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:106
+msgid "US South"
+msgstr "Statele Unite Sud"
+
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:108
+msgid "US Southeast"
+msgstr "Statele Unite Sud Est"
+
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:110
+msgid "US Southwest"
+msgstr "Statele unite Sud vest"
+
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:112
+msgid "Spain/Portugal"
+msgstr "Spania/Portugalia"
+
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:115
+msgid "Finland"
+msgstr "Finlanda"
+
+#: class-wo-map-page.php:115
+msgid "(yellow)"
+msgstr "(galben)"
+
+#: class-wo-map-page.php:116
+#: class-wo-map-page.php:117
+msgid "Japan"
+msgstr "Japonia"
+
+#: class-wo-map-page.php:118
+#: class-wo-map-page.php:119
+msgid "Netherlands"
+msgstr "Olanda"
+
+#: class-wo-map-page.php:120
+#: class-wo-map-page.php:121
+msgid "Brazil"
+msgstr "Brazilia"
+
+#: class-wo-map-page.php:131
+msgid "Go"
+msgstr "Du-te"
+
+#: visitor-maps.php:69
+#: visitor-maps.php:1392
+#: visitor-maps.php:1404
+#: visitor-maps.php:1408
+#: visitor-maps.php:1415
+#: class-wo-been.php:163
+msgid "Who's Online"
+msgstr "Cine este online"
+
+#: visitor-maps.php:76
+msgid "Administrators"
+msgstr "Administratori"
+
+#: visitor-maps.php:77
+msgid "Editors"
+msgstr "Editori"
+
+#: visitor-maps.php:78
+msgid "Authors"
+msgstr "Autori"
+
+#: visitor-maps.php:79
+msgid "Contributors"
+msgstr "Contribuitori"
+
+#: visitor-maps.php:95
+#: visitor-maps.php:143
+#: visitor-maps-admin.php:7
+#: visitor-maps-admin.php:22
+msgid "You do not have permissions for managing this option"
+msgstr "Nu ai permisiunea sa modifici aceasta optiune"
+
+#: visitor-maps.php:129
+#: visitor-maps.php:178
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+
+#: visitor-maps.php:133
+#: visitor-maps.php:182
+#: visitor-maps.php:375
+#: visitor-maps.php:1399
+#: visitor-maps.php:1471
+#: visitor-maps-admin.php:520
+msgid "Powered by"
+msgstr "Powered by"
+
+#: visitor-maps.php:147
+#: visitor-maps-admin.php:226
+#: class-wo-update.php:311
+msgid "View Who's Online"
+msgstr "Vezi cine este online"
+
+#: visitor-maps.php:275
+msgid "Close"
+msgstr "Inchide"
+
+#: visitor-maps.php:277
+msgid "Powered by Visitor Maps"
+msgstr "Powered by Visitor Maps"
+
+#: visitor-maps.php:282
+#: visitor-maps.php:378
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr "Localizarea geografica este dezactivata din setari"
+
+#: visitor-maps.php:347
+msgid "View more maps in the "
+msgstr "Vezi mai multe harti in"
+
+#: visitor-maps.php:347
+msgid "Visitor Map Viewer"
+msgstr "Vizualizare harta vizitatori"
+
+#: visitor-maps.php:356
+#: visitor-maps.php:1126
+#: visitor-maps.php:1127
+msgid "Max visitors today"
+msgstr "Numar maxim de vizitatori astazi"
+
+#: visitor-maps.php:356
+#: visitor-maps.php:358
+#: visitor-maps.php:360
+#: visitor-maps.php:362
+#: visitor-maps.php:1126
+#: visitor-maps.php:1127
+#: visitor-maps.php:1130
+#: visitor-maps.php:1131
+#: visitor-maps.php:1134
+#: visitor-maps.php:1135
+#: visitor-maps.php:1138
+#: visitor-maps.php:1139
+msgid "at"
+msgstr "la"
+
+#: visitor-maps.php:358
+#: visitor-maps.php:1130
+#: visitor-maps.php:1131
+msgid "This month"
+msgstr "Aceasta luna"
+
+#: visitor-maps.php:360
+#: visitor-maps.php:1134
+#: visitor-maps.php:1135
+msgid "This year"
+msgstr "Acest an"
+
+#: visitor-maps.php:362
+#: visitor-maps.php:1138
+#: visitor-maps.php:1139
+msgid "All time"
+msgstr "Din toate timpurile"
+
+#: visitor-maps.php:365
+msgid "Records of the most visitors online at once:"
+msgstr "Cei mai multi vizitatori online in acelasi timp:"
+
+#: visitor-maps.php:589
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr "Visitor Maps are nevoie de baza de date Maxmind GeoLiteCity instalata."
+
+#: visitor-maps.php:589
+#: visitor-maps-admin.php:251
+msgid "Install Now"
+msgstr "Instaleaza acum"
+
+#: visitor-maps.php:655
+msgid "Settings"
+msgstr "Setari"
+
+#: visitor-maps.php:1108
+#: visitor-maps.php:1447
+msgid "%d visitors online now"
+msgstr "%d vizitatori online acum"
+
+#: visitor-maps.php:1109
+#: visitor-maps.php:1448
+#: visitor-maps.php:1456
+msgid "%d guests"
+msgstr "%d vizitatori"
+
+#: visitor-maps.php:1111
+#: visitor-maps.php:1452
+msgid "%d bots"
+msgstr "%d roboti"
+
+#: visitor-maps.php:1113
+#: visitor-maps.php:1449
+msgid "%d members"
+msgstr "%d membri"
+
+#: visitor-maps.php:1467
+msgid "<a href=\"%s\">Map of Visitors</a>"
+msgstr "<a href=\"%s\">Harta vizitatorilor</a>"
+
+#: visitor-maps-admin.php:85
+msgid "Options saved."
+msgstr "Optiuni salvate"
+
+#: visitor-maps-admin.php:88
+msgid "Visitor Maps and Who's Online Options"
+msgstr "Optiuni Harta vizitatori si Cine este Online"
+
+#: visitor-maps-admin.php:101
+msgid "Changelog"
+msgstr "Modificari"
+
+#: visitor-maps-admin.php:102
+msgid "FAQ"
+msgstr "Intrebari frecvente"
+
+#: visitor-maps-admin.php:103
+#: visitor-maps-admin.php:198
+msgid "Rate This"
+msgstr "Evalueaza"
+
+#: visitor-maps-admin.php:104
+msgid "Support"
+msgstr "Suport"
+
+#: visitor-maps-admin.php:105
+#: visitor-maps-admin.php:167
+msgid "Donate"
+msgstr "Doneaza"
+
+#: visitor-maps-admin.php:106
+msgid "Free PHP Scripts"
+msgstr "Scripturi PHP gratuite"
+
+#: visitor-maps-admin.php:107
+msgid "Contact"
+msgstr "Contact"
+
+#: visitor-maps-admin.php:140
+msgid "Downloaded %s times"
+msgstr "Descarcat de %s ori"
+
+#: visitor-maps-admin.php:145
+#: visitor-maps-admin.php:153
+msgid "(Average rating based on %s ratings)"
+msgstr "(Evaluarea medie bazata pe %s evaluari)"
+
+#: visitor-maps-admin.php:147
+msgid "5 stars"
+msgstr "5 stele"
+
+#: visitor-maps-admin.php:148
+msgid "4 stars"
+msgstr "4 stele"
+
+#: visitor-maps-admin.php:149
+msgid "3 stars"
+msgstr "3 stele"
+
+#: visitor-maps-admin.php:150
+msgid "2 stars"
+msgstr "2 stele"
+
+#: visitor-maps-admin.php:151
+msgid "1 star"
+msgstr "1 stea"
+
+#: visitor-maps-admin.php:153
+msgid "rate"
+msgstr "evalueaza"
+
+#: visitor-maps-admin.php:169
+msgid "Please donate to keep this plugin FREE"
+msgstr "te rog sa donezi pentru a mentine acest plugin gratuit"
+
+#: visitor-maps-admin.php:170
+msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to my time invested and to further development. Thanks for your kind support!"
+msgstr "Dacă acest plugin v-a fost util, vă rog să vă gândiți să faceți o mică donație pentru a contribui la alte dezvoltari. Vă mulțumesc pentru susținere!"
+
+#: visitor-maps-admin.php:170
+msgid "More from Mike Challis"
+msgstr "Mai multe de la Mike Challis"
+
+#: visitor-maps-admin.php:183
+msgid "ThemeFuse Original WP Themes"
+msgstr "ThemeFuse Original WP Themes"
+
+#: visitor-maps-admin.php:184
+msgid "Try <a href=\"%s\" target=\"_blank\">ThemeFuse</a>, they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services. Check out some of their themes!"
+msgstr "Încearcă <a href=\"%s\" target=\"_blank\">ThemeFuse</a>, dezvoltatorul crează o serie de teme minunate pentru Wordpress ce pot fi instalate cu un singur click şi oferă asistenţă tehnică excelentă. Încearcă temele lor!"
+
+#: visitor-maps-admin.php:186
+msgid "ThemeFuse"
+msgstr "ThemeFuse"
+
+#: visitor-maps-admin.php:196
+msgid "Mike Challis says: \"Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK."
+msgstr "Mike Challis: \"Bună, Am muncit sute de ore pentru a programa acest modul special pentru tine. Dacă eşti mulţumit de programele mele şi de asistenţa tehnică oferită, te rog sa te gandeşti la o mică donaţie. Dacă nu îţi permiti, te înţeleg."
+
+#: visitor-maps-admin.php:197
+msgid "Most people donate $3, $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin.\""
+msgstr "Majoritatea persoanelor donează  $3, $5, $10, $20, sau mai mult. Totuşi, nicio sumă nu este prea mică. Donaţiile pot fi făcute prin PayPal sau securizat, folosind orice carte de credit. Te rog să evaluezi de asemenea acest modul.\""
+
+#: visitor-maps-admin.php:200
+msgid "Close this message"
+msgstr "Inchide acest mesaj"
+
+#: visitor-maps-admin.php:214
+msgid "I have donated to help contribute for the development of this plugin."
+msgstr "Am făcut o donație ca să contribui la dezvoltarea acestui plugin."
+
+#: visitor-maps-admin.php:217
+msgid "Usage"
+msgstr "Folosire"
+
+#: visitor-maps-admin.php:219
+msgid "Add the shortcode [visitor-maps] in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "Adauga scurtatura [vizitor-maps] intr-o pagina (nu intr-un articol). Aceasta pagina va deveni pagina Hartii Vizitatorilor."
+
+#: visitor-maps-admin.php:219
+#: visitor-maps-admin.php:222
+#: visitor-maps-admin.php:267
+#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:283
+#: visitor-maps-admin.php:291
+#: visitor-maps-admin.php:299
+#: visitor-maps-admin.php:307
+#: visitor-maps-admin.php:315
+#: visitor-maps-admin.php:365
+#: visitor-maps-admin.php:373
+#: visitor-maps-admin.php:387
+#: visitor-maps-admin.php:394
+#: visitor-maps-admin.php:401
+#: visitor-maps-admin.php:409
+#: visitor-maps-admin.php:417
+#: visitor-maps-admin.php:425
+#: visitor-maps-admin.php:433
+#: visitor-maps-admin.php:447
+#: visitor-maps-admin.php:468
+#: visitor-maps-admin.php:476
+#: visitor-maps-admin.php:484
+#: visitor-maps-admin.php:497
+#: visitor-maps-admin.php:505
+#: visitor-maps-admin.php:513
+#: visitor-maps-admin.php:521
+#: visitor-maps-admin.php:538
+#: visitor-maps-admin.php:545
+#: visitor-maps-admin.php:552
+#: visitor-maps-admin.php:559
+msgid "help"
+msgstr "ajutor"
+
+#: visitor-maps-admin.php:222
+msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
+msgstr "Adauga bara laterala Cine este online. Apasa pe Aparenta, Widget-uri, apoi trage widget-ul Cine este Online peste bara laterala din dreapta."
+
+#: visitor-maps-admin.php:228
+msgid "View Who's Been Online"
+msgstr "Vezi cine a fost Online"
+
+#: visitor-maps-admin.php:234
+msgid "Options"
+msgstr "Optiuni"
+
+#: visitor-maps-admin.php:237
+#: visitor-maps-admin.php:572
+msgid "Update Options"
+msgstr "Actualizeaza optiuni"
+
+#: visitor-maps-admin.php:245
+msgid "GeoLocation:"
+msgstr "Locatie geografica:"
+
+#: visitor-maps-admin.php:251
+msgid "The Maxmind GeoLiteCity database is not yet installed."
+msgstr "Baza de date Maxmind GeoLiteCity nu este instalata."
+
+#: visitor-maps-admin.php:253
+msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
+msgstr "Baza de date Maxmind GeoLiteCity este instalata dar nu este activata (verifica setarea de mai jos)."
+
+#: visitor-maps-admin.php:255
+msgid "The Maxmind GeoLiteCity database is installed and enabled."
+msgstr "Baza de date Maxmind GeoLiteCity este instalata si activata."
+
+#: visitor-maps-admin.php:261
+msgid "Enable geolocation."
+msgstr "Activeaza localizarea geografica"
+
+#: visitor-maps-admin.php:262
+msgid "Update Now"
+msgstr "Actualizeaza acum"
+
+#: visitor-maps-admin.php:266
+msgid "Disable text on geolocation maps (missing map background fix)."
+msgstr "Dezactiveaza textul pe hartile geolocatie (rezolva lipsa fundalului hartii)"
+
+#: visitor-maps-admin.php:267
+#: visitor-maps-admin.php:275
+#: visitor-maps-admin.php:283
+#: visitor-maps-admin.php:291
+#: visitor-maps-admin.php:299
+#: visitor-maps-admin.php:307
+#: visitor-maps-admin.php:315
+#: visitor-maps-admin.php:365
+#: visitor-maps-admin.php:373
+#: visitor-maps-admin.php:387
+#: visitor-maps-admin.php:394
+#: visitor-maps-admin.php:401
+#: visitor-maps-admin.php:409
+#: visitor-maps-admin.php:417
+#: visitor-maps-admin.php:425
+#: visitor-maps-admin.php:433
+#: visitor-maps-admin.php:447
+#: visitor-maps-admin.php:468
+#: visitor-maps-admin.php:476
+#: visitor-maps-admin.php:484
+#: visitor-maps-admin.php:497
+#: visitor-maps-admin.php:505
+#: visitor-maps-admin.php:513
+#: visitor-maps-admin.php:521
+#: visitor-maps-admin.php:538
+#: visitor-maps-admin.php:545
+#: visitor-maps-admin.php:552
+#: visitor-maps-admin.php:559
+msgid "Click for Help!"
+msgstr "Apasa pentru ajutor"
+
+#: visitor-maps-admin.php:269
+msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
+msgstr "Unele servere PHP nu au suport pentru a tipari text pe imaginea Hartii vizitatorilor. Selecteaza aceasta setare doar daca harta nu afiseaza imagini de pe glob. Dupa selectarea acestei optiuni, verifica harta vizitatorilor pentru a vedea daca functioneaza."
+
+#: visitor-maps-admin.php:274
+msgid "Enable display of city, state next to country flag."
+msgstr "Activeaza afisarea orasului, statului langa steagul tarii."
+
+#: visitor-maps-admin.php:277
+#: visitor-maps-admin.php:285
+#: visitor-maps-admin.php:478
+#: visitor-maps-admin.php:486
+msgid "Changes display options on Who's Online dashboard pages."
+msgstr "Modifica optiunile de afisare ale paginilor Cine este Online."
+
+#: visitor-maps-admin.php:282
+msgid "Enable visitor map on Who's Online dashboard."
+msgstr "Activeaza afisarea hartii viztitatorilor pe pagina Cine este Online."
+
+#: visitor-maps-admin.php:290
+msgid "Enable visitor map link on Who's Online widget."
+msgstr "Activeaza link-ul hartii vizitatorilor pe widget-ul Cine este online."
+
+#: visitor-maps-admin.php:293
+msgid "Changes display options on Who's Online widget."
+msgstr "Modifica optiunile de afisare ale widget-ului Cine este Online."
+
+#: visitor-maps-admin.php:298
+msgid "Enable hover labels for location pins on visitor map page."
+msgstr "Activează etichetele hover pentru semnele de localizare pe harta vizitatorilor."
+
+#: visitor-maps-admin.php:301
+msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
+msgstr "Unele teme interfera cu afisarea corecta a semnelor de localizare pe harta vizitatorilor. Dupa activarea aceastei setari, verificati harta vizitatorilor pentru a va asigura ca semnele de localizare sunt plasate corect. In cazul in care semnele sunt aproximativ 10 pixeli prea jos pe harta, anuleaza aceasta setare."
+
+#: visitor-maps-admin.php:306
+msgid "Enable user names on hover labels for location pins on visitor map page."
+msgstr "Permite username pe etichete deasupra semnelor pentru localizare de pe harta."
+
+#: visitor-maps-admin.php:309
+msgid "When enabled, registered users will have green location pins on the Visitor Maps page. Also the hover tag will include the user name."
+msgstr "Cand este activat, utilizatorii inregistrati vor avea semne verzi  in locatia de pe pagina hartii vizitatorilor. De asemenea, eticheta de deasupra va include numele de utilizator."
+
+#: visitor-maps-admin.php:314
+msgid "Hide map viewing by non administrators."
+msgstr "Ascunde vizualizarea hartii pentru cei care nu au drept de administrator."
+
+#: visitor-maps-admin.php:317
+msgid "This setting restricts viewing the Visitor Map Viewer page to administrators only."
+msgstr "Această setare restrânge vizualizarea vizitatorilor pe pagina hartii vizitatorilor numai pentru administratori."
+
+#: visitor-maps-admin.php:321
+msgid "Default Visitor Map"
+msgstr "Harta vizitatori implicita"
+
+#: visitor-maps-admin.php:367
+msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
+msgstr "Harta prestabilita pentru a fi afisata pe pagina vizitatorilor. După setarea aceasta, verificaţi  pagina hartilor vizitatorilor pentru a va asigura ca se potriveste. Daca harta este prea mare, selectati urmatoarea mai mica."
+
+#: visitor-maps-admin.php:371
+msgid "Users who can view the dashboard pages:"
+msgstr "Utilizatorii care pot vedea paginile panoului de control:"
+
+#: visitor-maps-admin.php:375
+msgid "By default, only Administrators can view the dashboard pages. Change this setting to also allow Editors, Authors, or Contributors to view the dashboard pages. When set to Authors, you are also allowing Administrator and Editors."
+msgstr "In mod implicit, numai Administratorii pot vizualiza paginile tabloului de bord. Schimbati aceasta setare pentru a permite, de asemenea, editorilor, autorilor, sau contribuabililor pentru a vizualiza paginile tabloului de bord. Când este setat pe autori, este permis de asemenea, Administratorilor si Editorilor."
+
+#: visitor-maps-admin.php:383
+msgid "Visitors:"
+msgstr "Vizitatori:"
+
+#: visitor-maps-admin.php:386
+msgid "Active time (minutes)"
+msgstr "Timp activitate (minute)"
+
+#: visitor-maps-admin.php:389
+msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
+msgstr "Minute in care vizitatorul este considerat activ. Implicit 5 minute."
+
+#: visitor-maps-admin.php:393
+msgid "Inactive time (minutes)"
+msgstr "Timp inactiv (minute)"
+
+#: visitor-maps-admin.php:396
+msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
+msgstr "Minutele pana cand un vizitator inactiv nu va fi afisat. Implicit sunt 15 minute."
+
+#: visitor-maps-admin.php:400
+msgid "Days to store visitor data"
+msgstr "Cate zile se pastreaza datele referitoare la vizitatori"
+
+#: visitor-maps-admin.php:403
+msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
+msgstr "cate zile se pastreaza datele vizitatorilor in baza de date. Aceste informatii sunt folosite pentru hartile de localizare geografica. Implicit sunt 30 de zile."
+
+#: visitor-maps-admin.php:408
+msgid "Do not include administrators count or location on the maps."
+msgstr "Nu include administartorii si locatia lor pe harta."
+
+#: visitor-maps-admin.php:411
+msgid "Changes display options on Who's Online maps."
+msgstr "Modifica optiunile de setare ale hartilor Cine este Online."
+
+#: visitor-maps-admin.php:416
+msgid "Do not include search bots in the visitors online count on widgets."
+msgstr "Nu include robotii de cautare in lista vizitatorilor online din widget-uri."
+
+#: visitor-maps-admin.php:419
+#: visitor-maps-admin.php:427
+msgid "Changes display options on Who's Online widgets."
+msgstr "Modifica optiunile de afisare pe widget-ul Cine este Online."
+
+#: visitor-maps-admin.php:424
+msgid "Combine guests and members on widgets so they are only shown as visitors."
+msgstr "Combina vizitatorii si membrii in widget in asa fel incat sa fie toti afisati ca vizitatori."
+
+#: visitor-maps-admin.php:428
+msgid "Use this setting when your site has registration turned off and all your visitors are guests and not members."
+msgstr "Foloseste aceasta setare atunci cand site-ul tau are inregistrarea oprita si toti utilizatorii sunt vizitatori, nu membri."
+
+#: visitor-maps-admin.php:432
+msgid "IP Adresses to ignore"
+msgstr "Adresele IP ce urmeaza a fi ignorate"
+
+#: visitor-maps-admin.php:435
+msgid "Optional list of IP addresses for visitors you do not want shown on maps."
+msgstr "Lista optionala de adrese IP a vizitatorilor pe care nu doriti sa-i afisati pe harti."
+
+#: visitor-maps-admin.php:436
+#: visitor-maps-admin.php:452
+msgid "Start each entry on a new line."
+msgstr "Incepe fiecare intrare pe o linie noua."
+
+#: visitor-maps-admin.php:437
+msgid "Use <strong>*</strong> for wildcards."
+msgstr "Foloseste <strong>*</strong>pentru a potrivi orice caractere."
+
+#: visitor-maps-admin.php:438
+#: visitor-maps-admin.php:453
+msgid "Examples:"
+msgstr "Example:"
+
+#: visitor-maps-admin.php:446
+msgid "URLs to ignore"
+msgstr "URL-uri ignorate"
+
+#: visitor-maps-admin.php:449
+msgid "Optional list of URLs on your site you do not want in any Who's Online data."
+msgstr "Lista optionala de adrese URL de pe site-ul tau pe care nu le doresti in informatiile despre Cine este Online"
+
+#: visitor-maps-admin.php:450
+msgid "This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat."
+msgstr "Aceasta facilitate poate fi folosita pentru a bloca orice URL cum ar fi /wp-admin/, sau pentru compatibilitate cu alte plugin-uri ca WP SlimStat."
+
+#: visitor-maps-admin.php:451
+msgid "Use partial URL or full URL. The filter will match any part of the URL."
+msgstr "Foloseste URL partial sau complet. Filtrul va gasi oricare parte din URL."
+
+#: visitor-maps-admin.php:464
+msgid "Lookups:"
+msgstr "Vizualizari:"
+
+#: visitor-maps-admin.php:467
+msgid "Who Is Lookup URL"
+msgstr "Cine este la URL-ul vizualizat"
+
+#: visitor-maps-admin.php:470
+msgid "URL to open when an IP address is clicked on."
+msgstr "Ce URL sa se deschida atunci cand se da clic pe o adresa IP"
+
+#: visitor-maps-admin.php:475
+msgid "Enable open Who Is Lookup URL on a pop-up."
+msgstr "Activeaza deschiderea ferestreid e verificare intr-o fereastra noua."
+
+#: visitor-maps-admin.php:483
+msgid "Enable host lookups for IP addresses."
+msgstr "Activeaza urmarirea adreselor IP."
+
+#: visitor-maps-admin.php:493
+msgid "Stats:"
+msgstr "Statistici:"
+
+#: visitor-maps-admin.php:496
+msgid "Enable stats display in blog footer."
+msgstr "Activeaza afisarea statisticilor in subsolul blogului."
+
+#: visitor-maps-admin.php:499
+#: visitor-maps-admin.php:507
+#: visitor-maps-admin.php:515
+msgid "Shows how many visitors are online now and records of the most users online at one time."
+msgstr "Afiseaza cati vizitatori sunt online in prezent si date referitoare la numarul maxim de vizitatori la o anumita data."
+
+#: visitor-maps-admin.php:504
+msgid "Enable stats display in admin footer."
+msgstr "Activeaza afisarea statisticilor in pagina de administrare"
+
+#: visitor-maps-admin.php:512
+msgid "Enable stats display on map page."
+msgstr "Activeaza afisarea statisticilor pe pagina hartilor"
+
+#: visitor-maps-admin.php:520
+msgid "Enable plugin credit link:"
+msgstr "Activeaza link-ul catre creditul plugin-ului"
+
+#: visitor-maps-admin.php:523
+msgid "The credit link is not mandatory, yes you can disable it if you want."
+msgstr "Link-ul catre credit nu este obligatoriu, da il poti dezactiva daca doresti."
+
+#: visitor-maps-admin.php:530
+msgid "Times:"
+msgstr "Ori:"
+
+#: visitor-maps-admin.php:534
+msgid "Table of date format characters."
+msgstr "Tabela cu caracterele formatului de data."
+
+#: visitor-maps-admin.php:537
+msgid "Time format (Max Users Today)"
+msgstr "Format timp (Nr. Maxim utilizatori astazi)"
+
+#: visitor-maps-admin.php:540
+msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
+msgstr "Format timp pentru afisarea \"Nr. maxim vizitatori astazi\" si \"Ultima improspatare\". Implicit, h:i a T (02:25 pm PST)"
+
+#: visitor-maps-admin.php:544
+msgid "Time format (Last Click)"
+msgstr "Format timp (ultimul clic)"
+
+#: visitor-maps-admin.php:547
+msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
+msgstr "Format timp pentru afisarea \"Intrare\" si \"Ultimul Clic\". Implicit, h:i:sa (02:25:25pm)"
+
+#: visitor-maps-admin.php:551
+msgid "Date/Time format (All Time Records)"
+msgstr "Format data/ora (de la inceput)"
+
+#: visitor-maps-admin.php:554
+msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Format data/ora pentru luna, an, si inregistrari de la inceput. Implicit, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: visitor-maps-admin.php:558
+msgid "Date/Time format (GeoLite data)"
+msgstr "Format data/ora (data GeoLite)"
+
+#: visitor-maps-admin.php:561
+msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Format data/ora pentru \"Datele GeoLite au fost actualizate ultima oara in...\". Implicit, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+
+#: visitor-maps-admin.php:579
+msgid "More WordPress plugins by Mike Challis:"
+msgstr "Mai multe plugin-uri de la Mike Challis:"
+
+#: visitor-maps-admin.php:581
+msgid "Fast Secure Contact Form"
+msgstr "Fast Secure Contact Form"
+
+#: visitor-maps-admin.php:582
+msgid "SI CAPTCHA Anti-Spam"
+msgstr "SI CAPTCHA Anti-Spam"
+
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.5.6)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: visitor-maps-admin.php:583
+msgid "Visitor Maps and Who's Online"
+msgstr "Visitor Maps and Who's Online"
+
+#: visitor-maps-admin.php:588
+msgid "\"I recommend <a href=\"%s\" target=\"_blank\">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer the most features.\" - Mike Challis"
+msgstr "\"Recomand <a href=\"%s\" target=\"_blank\">HostGator Web Hosting</a>. Toate site-urile mele sunt gazduite acolo. Preturile sunt bune si ofera cele mai multe facilitati.\" - Mike Challis"
+
+#: visitor-maps-admin.php:590
+msgid "Web Site Hosting"
+msgstr "Web Site Hosting"
+
+#: class-wo-update.php:90
+msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
+msgstr "Se pregateste prima instalare a bazei de date Maxmind GeoLiteCity"
+
+#: class-wo-update.php:95
+msgid "Checking for updates for the Maxmind GeoLiteCity database"
+msgstr "Se verifica actualizarile pentru baza de date Maxmind GeoLiteCity"
+
+#: class-wo-update.php:106
+msgid "PHP Memory Limit is unknown, increase is not available."
+msgstr "Limita de memorie PHP este necunoscuta, marirea ei nu este posibila."
+
+#: class-wo-update.php:108
+msgid "PHP Memory Limit is %1$s, temporarily increasing to %2$s"
+msgstr "Limita de memorie PHP este %1$s, se mareste temporar la %2$s"
+
+#: class-wo-update.php:113
+msgid "completed."
+msgstr "completata."
+
+#: class-wo-update.php:115
+msgid "failed."
+msgstr "a esuat."
+
+#: class-wo-update.php:122
+msgid "PHP Memory Limit is %s, increasing is not needed."
+msgstr "Limita de memorie PHP este %s, nu este nevoie sa fie marita."
+
+#: class-wo-update.php:128
+msgid "Connecting to this URL:"
+msgstr "Conectarea la acest URL:"
+
+#: class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr "Avertisment: Serverul are activata functia PHP safe_mode."
+
+#: class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr "PHP safe_mode poate cauza probleme la actualizare."
+
+#: class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP safe_mode este preferabil sa fie dezactivat. Este posibil sa functioneze si asa insa nu este recomandat. Contacteaza administratorul serverului pentru ajutor."
+
+#: class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr "Avertisment: Serverul are setarea PHP allow_url_fopen dezactivata."
+
+#: class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr "Setarea PHP allow_url_fopen este necesara pentru actualizarea automata. Contacteaza administratorul serverului pentru ajutor."
+
+#: class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr "Baza de date GeoLite este un simplu fisier. Poti deasemenea sa descarci fisierul GeoLiteCity.dat.gz de la aceasta adresa: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+
+#: class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr "Dezarhiveaza fisierul si incarca-l prin FTP in directorul /plugins/visitor-maps/. Atunci cand fisierul nu este instalat, blogul inca functioneaza insa informatiile despre localizarea vizitatorului nu sunt disponibile."
+
+#: class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr "Avertisment: Furnizorul de gazduire web nu a actualizat PHP4 la PHP5."
+
+#: class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr "PHP4 a fost scos din uz in August 2008 si nu mai este considerat sigur."
+
+#: class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP5 este mai rapid, are mai multe facilitati si este mai sigur. Folosind PHP4 este posibil sa functioneze dar nu este recomandat. Contacteaza administratorul serverului pentru suport."
+
+#: class-wo-update.php:199
+msgid "You have the latest available Maxmind GeoLiteCity database"
+msgstr "Aveti ultima baza de date disponibila Maxmind GeoLiteCity"
+
+#: class-wo-update.php:200
+msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
+msgstr "Nota: Maxmind, de obicei actualizeaza GeoLiteCity o dată pe lună, in prima zi a lunii dar uneori acestea actualizare apare pe 2 sau 3 sau chiar mai tarziu."
+
+#: class-wo-update.php:201
+msgid "Maxmind last updated it %1$s (%2$d days ago)"
+msgstr "Maxmind l-a actualizat ultima data in %1$s (%2$d zile in urma)"
+
+#: class-wo-update.php:202
+msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
+msgstr "acesta este <a href=\"%s\" target=\"_new\">cel mai nou fisier disponibil</a>"
+
+#: class-wo-update.php:204
+msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
+msgstr "Ai actualizat baza de date GeoLiteCity pe %s (%d zile in urma)"
+
+#: class-wo-update.php:205
+msgid "No new updates are available today."
+msgstr "Astazi, nu exista inca actualizari."
+
+#: class-wo-update.php:218
+msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
+msgstr "Eroare: Descarcarea a esuat, fisierul GeoLiteCity.dat.gz nu a fost gasit"
+
+#: class-wo-update.php:221
+msgid "Download success, uncompressing file, please wait"
+msgstr "Descarcare reusita, se decomprima fisierul, te rog sa astepti"
+
+#: class-wo-update.php:227
+msgid "unzip error: opening GeoLiteCity.dat file"
+msgstr "eroare la dezarhivare: la deschiderea fisierului GeoLiteCity.dat"
+
+#: class-wo-update.php:229
+msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
+msgstr "eroare la dezarhivare: gzopen la deschiderea fisierului GeoLiteCity.dat.gz"
+
+#: class-wo-update.php:238
+msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
+msgstr "eroare la dezarhivare: CHMOD 0644 GeoLiteCity.dat a esuat"
+
+#: class-wo-update.php:243
+msgid "Error: the GeoLiteCity.dat file was not found"
+msgstr "eroare test_lookup: fisierul GeoLiteCity.dat nu a fost gasit"
+
+#: class-wo-update.php:247
+msgid "Install/Update completed"
+msgstr "Instalarea/Actualizarea s-a incheiat"
+
+#: class-wo-update.php:271
+msgid "Testing a lookup with your IP address:"
+msgstr "Testez conexiunea cu adresa ta de IP:"
+
+#: class-wo-update.php:277
+msgid "test_lookup error: the GeoLiteCity.dat file was not found"
+msgstr "eroare test_lookup: fisierul GeoCity.dat nu a fost gasit"
+
+#: class-wo-update.php:280
+msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
+msgstr "eroare test_lookup: fisierul include-whos-online-geoip.php nu a fost gasit"
+
+#: class-wo-update.php:291
+msgid "IP:"
+msgstr "IP:"
+
+#: class-wo-update.php:292
+msgid "City:"
+msgstr "Oras:"
+
+#: class-wo-update.php:293
+msgid "State Name:"
+msgstr "Nume Judet:"
+
+#: class-wo-update.php:294
+msgid "State Code:"
+msgstr "Cod judet:"
+
+#: class-wo-update.php:295
+msgid "Country Name:"
+msgstr "Nume Tara:"
+
+#: class-wo-update.php:296
+msgid "Country Code:"
+msgstr "Cod tara:"
+
+#: class-wo-update.php:297
+msgid "Lat:"
+msgstr "Latitudine:"
+
+#: class-wo-update.php:298
+msgid "Lon: "
+msgstr "Longitudine:"
+
+#: class-wo-update.php:302
+msgid "Note: location information was not available, this is normal if on a private network."
+msgstr "Nota: informatia despre locatie nu este disponibila, este un lucru normal daca esti intr-o retea privata."
+
+#: class-wo-update.php:404
+msgid "Please allow plenty of time for the approximately 19meg file to download."
+msgstr "Te rog sa ai rabdare pana se descarca aproximativ 19MB de date."
+
+#: class-wo-update.php:405
+msgid "The time needed depends on your server download speed."
+msgstr "Timpul necesar descarcarii depinde de viteza de descarcare a serverului."
+
+#: class-wo-update.php:406
+msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
+msgstr "Poate apare o intarziere în cazul în care conexiunea este lenta, din aceasta cauza este posibil sa dureze mai mult de 3 minute."
+
+#: class-wo-update.php:414
+msgid "error: reading or opening file"
+msgstr "eroare: la citirea sau deschiderea fisierului"
+
+#: class-wo-update.php:415
+#: class-wo-update.php:433
+msgid "error: cannot write to file, check server permission settings"
+msgstr "eroare: nu pot scrie in fisier, verifica setarile de permisiune ale serverului"
+
+#: class-wo-update.php:416
+msgid "Download started, (counting megs)"
+msgstr "Descarcarea a inceput, (datele sunt pe drum)"
+
+#: class-wo-update.php:440
+msgid "error: CHMOD 0644 download file failed"
+msgstr "eroare: CHMOD 0644 a esuat"
+
+#: class-wo-been.php:45
+#: class-wo-been.php:231
+msgid "Visits"
+msgstr "Vizite"
+
+#: class-wo-been.php:46
+#: class-wo-been.php:232
+msgid "Last Visit"
+msgstr "Ultima vizita"
+
+#: class-wo-been.php:66
+msgid "Descending"
+msgstr "Descrescator"
+
+#: class-wo-been.php:67
+msgid "Ascending"
+msgstr "Crescator"
+
+#: class-wo-been.php:158
+msgid "Sort:"
+msgstr "Sorteaza:"
+
+#: class-wo-been.php:204
+#: class-wo-been.php:206
+#: class-wo-been.php:525
+#: class-wo-been.php:527
+msgid "FIRST"
+msgstr "PRIMA"
+
+#: class-wo-been.php:204
+#: class-wo-been.php:208
+#: class-wo-been.php:525
+#: class-wo-been.php:529
+msgid "PREV"
+msgstr "PRECEDENTA"
+
+#: class-wo-been.php:210
+#: class-wo-been.php:531
+msgid "Page %1$d of %2$d"
+msgstr "Pagina %1$d din %2$d"
+
+#: class-wo-been.php:212
+#: class-wo-been.php:215
+#: class-wo-been.php:533
+#: class-wo-been.php:536
+msgid "NEXT"
+msgstr "URMATOAREA"
+
+#: class-wo-been.php:212
+#: class-wo-been.php:216
+#: class-wo-been.php:533
+#: class-wo-been.php:537
+msgid "LAST"
+msgstr "ULTIMA"
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+msgstr "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+
+#. Description of the plugin/theme
+msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Donate</a>"
+msgstr "Afişează vizitatorii pe harti cu locatia exacta, oraşul şi ţara. Include o bara laterala cu Cine e online pentru a arăta cât de mulţi utilizatori sunt online. Include un tablou de bord Cine e online pentru a vizualiza detaliile despre vizitatori. Detaliile despre vizitatori includ: pagina pe care se afla vizitatorul, adresa IP, timp online, oraş, stat, ţară, hărţi geolocalizare şi mai mult. Nu este nevoie de nicio cheie API. <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\"> Setări </ a> | <a href = \"https: / / www.paypal.com/cgi-bin/ webscr?cmd=_s-xclick&hosted_button_id=8600876\"> Doneaza</ a>"
+
+#. Author of the plugin/theme
+msgid "Mike Challis"
+msgstr "Mike Challis"
+
+#. Author URI of the plugin/theme
+msgid "http://www.642weather.com/weather/scripts.php"
+msgstr "http://www.642weather.com/weather/scripts.php"
+

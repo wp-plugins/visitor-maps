@@ -171,6 +171,7 @@ The following translations are included in the download zip file:
 * Japanese (ja) - Translated by [Chestnut]
 * Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 * Portuguese (pt_PT) - Translated by Jose
+* Romanian (ro_RO) - Translated by [Anunturi Jibo](http://www.jibo.ro)
 * Russian (ru_RU) - Translated by [Zhmenia](http://zhmenia.wordpress.com)
 * Spanish (es_ES) - Translated by [Natalia Pujol](http://www.natygames.com)
 * Turkish (tr_TR) - Translated by Cenkgursu
@@ -190,7 +191,9 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
-- Dashboard widget is now also controlled by the setting "Users who can view the dashboard pages:".
+= 1.5.6.1 =
+- (04 Feb 2010) - Dashboard widget is now also controlled by the setting "Users who can view the dashboard pages:".
+- Added Romanian (ro_RO) - Translated by [Anunturi Jibo](http://www.jibo.ro)
 - Updated German (de_DE) - Translated by [JZDM](http://jzdm.de)
 - Updated Japanese (ja) - Translated by [Chestnut]
 
