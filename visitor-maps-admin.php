@@ -102,7 +102,7 @@
 <a href="http://wordpress.org/extend/plugins/visitor-maps/faq/" target="_blank"><?php echo __('FAQ', 'visitor-maps'); ?></a> |
 <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php echo __('Rate This', 'visitor-maps'); ?></a> |
 <a href="http://wordpress.org/tags/visitor-maps?forum_id=10" target="_blank"><?php echo __('Support', 'visitor-maps'); ?></a> |
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876" target="_blank"><?php echo __('Donate', 'visitor-maps'); ?></a> |
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG" target="_blank"><?php echo __('Donate', 'visitor-maps'); ?></a> |
 <a href="http://www.642weather.com/weather/scripts.php" target="_blank"><?php echo __('Free PHP Scripts', 'visitor-maps'); ?></a> |
 <a href="http://www.642weather.com/weather/wxblog/support/" target="_blank"><?php echo __('Contact', 'visitor-maps'); ?> Mike Challis</a>
 </p>
@@ -172,7 +172,7 @@ _e('If you find this plugin useful to you, please consider making a small donati
    </div>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick" />
-<input type="hidden" name="hosted_button_id" value="8600876" />
+<input type="hidden" name="hosted_button_id" value="V3BPEZ9WGYEYG" />
 <input type="image" src="https://www.paypal.com/en_US/i/btn/x-click-but04.gif" style="border:none;" name="submit" alt="Paypal Donate" />
 <img alt="" style="border:none;" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
 </form>
