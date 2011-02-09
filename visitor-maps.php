@@ -49,6 +49,7 @@ if (!class_exists('VisitorMaps')) {
 
  class VisitorMaps {
      var $visitor_maps_error;
+     var $visitor_maps_add_script;
 
  // upgrade path from version 1.4.2 or older
 function visitor_maps_upgrade_1() {
@@ -310,8 +311,9 @@ if( isset($_GET['do_wo_map']) ) {
 
 // this function prints a whos online map on a blog page
 function visitor_maps_map_short_code() {
-   global $visitor_maps_opt, $wpdb;
+   global $visitor_maps_opt, $wpdb, $visitor_maps_add_script;
 
+   $visitor_maps_add_script = true;
    $string = '';
 
    if ($visitor_maps_opt['enable_location_plugin']) {
@@ -382,19 +384,23 @@ function visitor_maps_map_short_code() {
 
 } // end function visitor_maps_map_short_code
 
-// header code for the admin view whos online page
-function visitor_maps_public_header() {
-  global $visitor_maps_opt;
+// header code for the public visitor-maps page
+function visitor_maps_add_script() {
+  global $visitor_maps_opt, $visitor_maps_add_script;
+  // only load this javascript on the blog pages where the visitor-map shortcode is
+
+  if (!$visitor_maps_add_script)
+      return;
 ?>
-<!-- begin visitor maps header code -->
+<!-- begin visitor maps  -->
 <script type="text/javascript">
-<!--
+//<![CDATA[
 function wo_map_console(url) {
   window.open(url,"wo_map_console","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
 }
-//-->
+//]]>
 </script>
-<!-- end visitor maps header code -->
+<!-- end visitor maps -->
 <?php
 } // end function visitor_maps_public_header
 
@@ -459,14 +465,14 @@ if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps' ) {
   //update_option('visitor_maps_wop', $wo_prefs_arr);
 ?>
 <script type="text/javascript">
-<!--
+//<![CDATA[
 function who_is(url) {
   window.open(url,"who_is_lookup","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
 }
 function wo_map_console(url) {
   window.open(url,"wo_map_console","height=650,width=800,toolbar=no,statusbar=no,scrollbars=yes").focus();
 }
-//-->
+//]]>
 </script>
 <style type="text/css">
 .table-top {
@@ -1578,8 +1584,10 @@ if (isset($visitor_maps)) {
   // call print stats in admin footer
   add_action('admin_footer', array(&$visitor_maps,'visitor_maps_admin_footer_stats'),1);
 
-  // add map link javascript header hooks
-  add_action('wp_head', array(&$visitor_maps,'visitor_maps_public_header'),2);
+  // add map link javascript
+  // add javascript (conditionally to footer)
+  // http://scribu.net/wordpress/optimal-script-loading.html
+  add_action('wp_footer', array(&$visitor_maps,'visitor_maps_add_script'));
 
   // use shortcode in a page for the visitor maps feature
   add_shortcode('visitor-maps', array(&$visitor_maps,'visitor_maps_map_short_code'),1);
