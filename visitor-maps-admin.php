@@ -53,6 +53,7 @@
    'enable_widget_link' =>       (isset( $_POST['visitor_maps_enable_widget_link'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
    'enable_dash_map' =>          (isset( $_POST['visitor_maps_enable_dash_map'] ) ) ? 1 : 0,
+   'pins_limit' =>           absint(trim($_POST['visitor_maps_pins_limit'])),
    'default_map' =>          absint(trim($_POST['visitor_maps_default_map'])),
    'default_map_time' =>     absint(trim($_POST['visitor_maps_default_map_time'])),
    'default_map_units' =>           trim($_POST['visitor_maps_default_map_units']),
@@ -315,6 +316,13 @@ _e('If you find this plugin useful to you, please consider making a small donati
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_hide_console_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_hide_console_tip">
       <?php echo __('This setting restricts viewing the Visitor Map Viewer page to administrators only.', 'visitor-maps'); ?>
+      </div>
+      <br />
+
+      <label for="visitor_maps_pins_limit"><?php echo __('Limit for map pins', 'visitor-maps'); ?>:</label><input name="visitor_maps_pins_limit" id="visitor_maps_active_time" type="text" value="<?php echo absint($visitor_maps_opt['pins_limit']);  ?>" size="3" />
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_pins_limit_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_pins_limit_tip">
+      <?php echo __('This limit protects server resources by limiting pins when displaying maps. Default is 2000. The human eye will not be able to see more than 2000 pins anyway.', 'visitor-maps'); ?>
       </div>
       <br />
 

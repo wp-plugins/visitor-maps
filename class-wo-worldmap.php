@@ -213,11 +213,18 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
 
   $rows_arr = array();
   if ($visitor_maps_opt['hide_bots']) {
-       $rows_arr = $wpdb->get_results("SELECT user_id, name, longitude, latitude FROM ".$wo_table_wo."
-                 WHERE name = 'Guest' AND time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
+
+       $rows_arr = $wpdb->get_results("SELECT SQL_CALC_FOUND_ROWS user_id, name, longitude, latitude FROM ".$wo_table_wo."
+                 WHERE name = 'Guest' AND time_last_click > '" . $xx_secs_ago . "' LIMIT ".$visitor_maps_opt['pins_limit'] ."",ARRAY_A );
+
+       $rows_count = $wpdb->get_var("SELECT FOUND_ROWS()");
+
   } else {
-       $rows_arr = $wpdb->get_results("SELECT user_id, name, longitude, latitude FROM ".$wo_table_wo."
-                 WHERE time_last_click > '" . $xx_secs_ago . "'",ARRAY_A );
+
+       $rows_arr = $wpdb->get_results("SELECT SQL_CALC_FOUND_ROWS user_id, name, longitude, latitude FROM ".$wo_table_wo."
+                 WHERE time_last_click > '" . $xx_secs_ago . "' LIMIT ".$visitor_maps_opt['pins_limit'] ."",ARRAY_A );
+
+       $rows_count = $wpdb->get_var("SELECT FOUND_ROWS()");
   }
 
   $count = 0;
@@ -269,10 +276,10 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
   if ( $this->gvar['text_display'] && !$visitor_maps_opt['hide_text_on_worldmap']) {
      if ($units_filtered != '') {
              // 5 visitors since 15 (minutes|hours|days) ago
-            $text = sprintf( __('%1$d visitors since %2$d %3$s ago', 'visitor-maps'),$count,$time,$units_lang) ;
+            $text = sprintf( __('%1$d visitors since %2$d %3$s ago', 'visitor-maps'),$rows_count,$time,$units_lang) ;
      } else {
             // 5 visitors since 15 minutes ago
-            $text = sprintf( __('%1$d visitors since %2$d ago', 'visitor-maps'),$count,floor($visitor_maps_opt['track_time'])) ;
+            $text = sprintf( __('%1$d visitors since %2$d ago', 'visitor-maps'),$rows_count,floor($visitor_maps_opt['track_time'])) ;
      }
      $this->textoverlay($text, $map_im, $image_worldmap_width, $image_worldmap_height);
   }

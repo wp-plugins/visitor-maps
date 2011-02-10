@@ -714,6 +714,7 @@ function visitor_maps_get_options() {
    'enable_widget_link' =>     1,
    'enable_credit_link' =>     1,
    'enable_dash_map' =>        1,
+   'pins_limit' =>          2000,
    'default_map' =>            1,
    'default_map_time' =>       30,
    'default_map_units' =>      'days',

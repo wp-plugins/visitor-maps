@@ -192,6 +192,7 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 == Changelog ==
 
 - Improvement: javascript is loaded in footer.
+- New setting: "Limit for map pins". This limit protects server resources by limiting pins when displaying maps. Default is 2000.
 
 = 1.5.6.1 =
 - (04 Feb 2010) - Dashboard widget is now also controlled by the setting "Users who can view the dashboard pages:".
