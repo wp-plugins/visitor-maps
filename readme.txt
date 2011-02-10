@@ -191,7 +191,7 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
-- Improvement: javascript is only loaded on pages when it is conditionally needed.
+- Improvement: javascript is loaded in footer.
 
 = 1.5.6.1 =
 - (04 Feb 2010) - Dashboard widget is now also controlled by the setting "Users who can view the dashboard pages:".

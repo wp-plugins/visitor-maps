@@ -389,8 +389,8 @@ function visitor_maps_add_script() {
   global $visitor_maps_opt, $visitor_maps_add_script;
   // only load this javascript on the blog pages where the visitor-map shortcode is
 
-  if (!$visitor_maps_add_script)
-      return;
+  //if (!$visitor_maps_add_script)   // forgot about sidebar widget
+  //    return;
 ?>
 <!-- begin visitor maps  -->
 <script type="text/javascript">
