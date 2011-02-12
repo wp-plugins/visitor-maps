@@ -221,6 +221,7 @@ $C['image_pin_3'] = 'wo-pin-green5x5.jpg';
     '&amp;lr_lon='.$lr_lon.
     '&amp;offset_x='.$offset_x.
     '&amp;offset_y='.$offset_y.
+    '&amp;wp-minify-off=1'.
     '&amp;type='.$type;
 
     $image_worldmap_link = get_bloginfo('url') .
@@ -240,6 +241,7 @@ $C['image_pin_3'] = 'wo-pin-green5x5.jpg';
     '&lr_lon='.$lr_lon.
     '&offset_x='.$offset_x.
     '&offset_y='.$offset_y.
+    '&wp-minify-off=1'. 
     '&type='.$type;
 
 $image_worldmap_array = '$map_settings = array(

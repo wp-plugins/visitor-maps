@@ -343,7 +343,7 @@ function visitor_maps_map_short_code() {
 
      } else {
         // had to disable the dynamic map and replace with this because some WP themes were messing up the pin locations
-        $string .= '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png" />';
+        $string .= '<img alt="'.__('Visitor Maps', 'visitor-maps').'" src="'.get_bloginfo('url').'?do_wo_map=1&amp;time='.$visitor_maps_opt['default_map_time'].'&amp;units='.$visitor_maps_opt['default_map_units'].'&amp;map='.$visitor_maps_opt['default_map'].'&amp;pin=1&amp;pins=on&amp;text=on&amp;textcolor=000000&amp;textshadow=FFFFFF&amp;textalign=cb&amp;ul_lat=0&amp;ul_lon=0&amp;lr_lat=360&amp;lr_lon=180&amp;offset_x=0&amp;offset_y=0&amp;type=png&amp;wp-minify-off=1" />';
      }
      if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
        $string .= '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
