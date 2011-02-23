@@ -4,7 +4,7 @@ Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG
 Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
 Requires at least: 2.8
-Tested up to: 3.0.5
+Tested up to: 3.1
 Stable tag: trunk
 
 Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details.
@@ -191,7 +191,8 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
-- Improvement: javascript is loaded in footer.
+= 1.5.6.2 =
+- (23 Feb 2010) - Improvement: javascript is loaded in footer.
 - New setting: "Limit for map pins". This limit protects server resources by limiting pins when displaying maps. Default is 2000.
 - Made compatible with WP Minify.
 
