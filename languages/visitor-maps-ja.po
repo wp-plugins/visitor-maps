@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Visitor Maps and Who's Online 1.4.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
 "POT-Creation-Date: 2010-07-26 19:26+0000\n"
-"PO-Revision-Date: 2010-12-30 15:33+0900\n"
+"PO-Revision-Date: 2011-02-25 01:24+0900\n"
 "Last-Translator: BNG NET <webmaster@bng.net>\n"
 "Language-Team: BNG NET <webmaster@bng.net>\n"
 "MIME-Version: 1.0\n"
@@ -18,6 +18,14 @@ msgstr ""
 "X-Poedit-Country: JAPAN\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-Bookmarks: -1,203,-1,-1,-1,-1,-1,-1,-1,-1\n"
+
+#: Added on 2011/02/25
+msgid "This limit protects server resources by limiting pins when displaying maps. Default is 2000. The human eye will not be able to see more than 2000 pins anyway."
+msgstr "地図表示時のピンの数を限定することで、サーバリソースを節約します。デフォルトは2000です。いずれにせよ、2000ピンより多く設定しても、人間の肉眼では確認できないでしょう。"
+
+#: Added on 2011/02/25
+msgid "Limit for map pins"
+msgstr "マップに表示するピンの数"
 
 #: Added on 2010/12/30
 msgid "Contributors"
