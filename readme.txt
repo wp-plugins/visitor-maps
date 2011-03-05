@@ -191,6 +191,9 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
+= 1.5.6.3 =
+- (05 Mar 2010) - Improved default map setting. Any map can be selected as default map.
+
 = 1.5.6.2 =
 - (23 Feb 2010) - Improvement: javascript is loaded in footer.
 - New setting: "Limit for map pins". This limit protects server resources by limiting pins when displaying maps. Default is 2000.
