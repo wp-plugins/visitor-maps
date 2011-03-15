@@ -356,7 +356,7 @@ foreach ($map_units_array as $k => $v) {
 '2'  => __('World (small)', 'visitor-maps'),
 '3'  => __('World (medium)', 'visitor-maps'),
 '4'  => __('World (large)', 'visitor-maps'),
-'5'  => __('US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
+/*'5'  => __('US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '6'  => __('US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '7'  => __('Canada and US', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '8'  => __('Canada and US', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
@@ -398,7 +398,7 @@ foreach ($map_units_array as $k => $v) {
 '44' => __('Netherlands', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
 '45' => __('Netherlands', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
 '46' => __('Brazil', 'visitor-maps').' '. __('(black)', 'visitor-maps'),
-'47' => __('Brazil', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),
+'47' => __('Brazil', 'visitor-maps').' '. __('(brown)', 'visitor-maps'),*/
            );
 
       $selected = '';

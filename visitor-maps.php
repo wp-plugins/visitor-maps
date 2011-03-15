@@ -318,7 +318,7 @@ function visitor_maps_map_short_code() {
 
    if ($visitor_maps_opt['enable_location_plugin']) {
      // show the map on View Who's Online page
-     if ($visitor_maps_opt['enable_visitor_map_hover'] || $visitor_maps_opt['hide_text_on_worldmap']) {
+     if ( $visitor_maps_opt['enable_visitor_map_hover'] || $visitor_maps_opt['hide_text_on_worldmap'] ) {
         $map_settings = array(
           // html map settings
           // set these settings as needed
