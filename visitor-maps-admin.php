@@ -636,9 +636,9 @@ foreach ($map_units_array as $k => $v) {
 <?php
   if (!$visitor_maps_opt['donated']) { ?>
    </td><td width="350">
-   <?php echo sprintf(__('"I recommend <a href="%s" target="_blank">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer the most features." - Mike Challis', 'visitor-maps'), 'http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp'); ?>
+   <?php echo sprintf(__('"I recommend <a href="%s" target="_blank">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer the most features." - Mike Challis', 'visitor-maps'), 'http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp&amp;page=http://www.hostgator.com/apps/wordpress-hosting.shtml'); ?>
    </td><td width="100">
-    <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp" target="_blank"><img title="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" alt="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
+    <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp&amp;page=http://www.hostgator.com/apps/wordpress-hosting.shtml" target="_blank"><img title="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" alt="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
 <?php
   }
  ?>
