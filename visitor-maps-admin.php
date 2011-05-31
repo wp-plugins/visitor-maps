@@ -515,7 +515,7 @@ foreach ($map_units_array as $k => $v) {
          <th scope="row" style="width: 75px;"><?php echo __('Lookups:', 'visitor-maps'); ?></th>
       <td>
 
-      <label for="visitor_maps_whois_url"><?php echo __('Who Is Lookup URL', 'visitor-maps'); ?>:</label><input name="visitor_maps_whois_url" id="visitor_maps_geoip_date_format" type="text" value="<?php echo $visitor_maps_opt['whois_url'];  ?>" size="55" />
+      <label for="visitor_maps_whois_url"><?php echo __('Who Is Lookup URL', 'visitor-maps'); ?>:</label><input name="visitor_maps_whois_url" id="visitor_maps_geoip_date_format" type="text" value="<?php echo esc_attr($visitor_maps_opt['whois_url']);  ?>" size="55" />
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_whois_url_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_whois_url_tip">
       <?php echo __('URL to open when an IP address is clicked on.', 'visitor-maps'); ?>
@@ -585,28 +585,28 @@ foreach ($map_units_array as $k => $v) {
       <a href="http://php.net/date" target="_blank"><?php echo __('Table of date format characters.', 'visitor-maps'); ?></a>
       <br />
 
-      <label for="visitor_maps_time_format"><?php echo __('Time format (Max Users Today)', 'visitor-maps'); ?>:</label><input name="visitor_maps_time_format" id="visitor_maps_time_format" type="text" value="<?php echo $visitor_maps_opt['time_format'];  ?>" size="10" />
+      <label for="visitor_maps_time_format"><?php echo __('Time format (Max Users Today)', 'visitor-maps'); ?>:</label><input name="visitor_maps_time_format" id="visitor_maps_time_format" type="text" value="<?php echo esc_attr($visitor_maps_opt['time_format']);  ?>" size="10" />
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_time_format_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_time_format_tip">
       <?php echo __('Time format for "Max users today" and "Last refresh time" display. Default, h:i a T (02:25 pm PST)', 'visitor-maps'); ?>
       </div>
       <br />
 
-      <label for="visitor_maps_time_format_hms"><?php echo __('Time format (Last Click)', 'visitor-maps'); ?>:</label><input name="visitor_maps_time_format_hms" id="visitor_maps_time_format_hms" type="text" value="<?php echo $visitor_maps_opt['time_format_hms'];  ?>" size="10" />
+      <label for="visitor_maps_time_format_hms"><?php echo __('Time format (Last Click)', 'visitor-maps'); ?>:</label><input name="visitor_maps_time_format_hms" id="visitor_maps_time_format_hms" type="text" value="<?php echo esc_attr($visitor_maps_opt['time_format_hms']);  ?>" size="10" />
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_time_format_hms_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_time_format_hms_tip">
       <?php echo __('Time format for "Entry" and "Last Click" display. Default, h:i:sa (02:25:25pm)', 'visitor-maps'); ?>
       </div>
       <br />
 
-      <label for="visitor_maps_date_time_format"><?php echo __('Date/Time format (All Time Records)', 'visitor-maps'); ?>:</label><input name="visitor_maps_date_time_format" id="visitor_maps_date_time_format" type="text" value="<?php echo $visitor_maps_opt['date_time_format'];  ?>" size="15" />
+      <label for="visitor_maps_date_time_format"><?php echo __('Date/Time format (All Time Records)', 'visitor-maps'); ?>:</label><input name="visitor_maps_date_time_format" id="visitor_maps_date_time_format" type="text" value="<?php echo esc_attr($visitor_maps_opt['date_time_format']);  ?>" size="15" />
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_date_time_format_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_date_time_format_tip">
       <?php echo __('Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)', 'visitor-maps'); ?>
       </div>
       <br />
 
-      <label for="visitor_maps_geoip_date_format"><?php echo __('Date/Time format (GeoLite data)', 'visitor-maps'); ?>:</label><input name="visitor_maps_geoip_date_format" id="visitor_maps_geoip_date_format" type="text" value="<?php echo $visitor_maps_opt['geoip_date_format'];  ?>" size="15" />
+      <label for="visitor_maps_geoip_date_format"><?php echo __('Date/Time format (GeoLite data)', 'visitor-maps'); ?>:</label><input name="visitor_maps_geoip_date_format" id="visitor_maps_geoip_date_format" type="text" value="<?php echo esc_attr($visitor_maps_opt['geoip_date_format']);  ?>" size="15" />
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_geoip_date_format_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_geoip_date_format_tip">
       <?php echo __('Date/Time format for "The GeoLite data was last updated on...". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)', 'visitor-maps'); ?>
