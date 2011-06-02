@@ -83,7 +83,7 @@
 
 ?>
 <?php if ( !empty($_POST ) ) : ?>
-<div id="message" class="updated fade"><p><strong><?php _e('Options saved.', 'visitor-maps') ?></strong></p></div>
+<div id="message" class="updated"><p><strong><?php _e('Options saved.', 'visitor-maps') ?></strong></p></div>
 <?php endif; ?>
 <div class="wrap">
 <h2><?php _e('Visitor Maps and Who\'s Online Options', 'visitor-maps') ?></h2>

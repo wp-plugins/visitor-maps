@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.6.3
+Version: 1.5.6.4
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -592,7 +592,7 @@ function visitor_maps_public_footer_stats() {
 
 function visitor_maps_activation_notice(){
   // print message reminding to install  Maxmind GeoLiteCity database
-  echo '<div class="error fade"><p><strong>'.__('Visitor Maps plugin needs the Maxmind GeoLiteCity database installed.', 'visitor-maps').' <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Install Now', 'visitor-maps'). '</a></strong></p></div>';
+  echo '<div id="message" class="error"><p><strong>'.__('Visitor Maps plugin needs the Maxmind GeoLiteCity database installed.', 'visitor-maps').' <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Install Now', 'visitor-maps'). '</a></strong></p></div>';
 }
 
 function visitor_maps_install() {
@@ -1460,25 +1460,25 @@ function visitor_maps_widget_content() {
     if (!$visitor_maps_opt['hide_bots']) {
        $stats_bots  = sprintf( __('%d bots','visitor-maps'),$bots_count);
        if (!$visitor_maps_opt['combine_members']) {
-            echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+            echo "<div>$stats_visitors<div></div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
        } else {
             $stats_guests   = sprintf( __('%d guests','visitor-maps'),($guests_count + $members_count));
-            echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots</span>";
+            echo "<div>$stats_visitors<div></div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots</span>";
        }
     } else {
        if (!$visitor_maps_opt['combine_members'])
-           echo "<p>$stats_visitors<br /><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+           echo "<div>$stats_visitors<div></div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
        else
-           echo "<p>$stats_visitors";
+           echo "<div>$stats_visitors";
     }
     if ($visitor_maps_opt['enable_widget_link']){
       if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
-        echo '<br />'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+        echo '<div></div>'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
     }
     }
     if ($visitor_maps_opt['enable_credit_link'])
-      echo '<br /><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
-    echo "</p>";
+      echo '<div></div><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
+    echo "</div>";
 
 } // end function visitor_maps_widget
 

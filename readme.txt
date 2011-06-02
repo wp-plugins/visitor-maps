@@ -191,7 +191,8 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
-- Security enhancements for possible low level XSS exploit in admin settings: thanks to [Julio Potier](http://secu.boiteaweb.fr/).
+= 1.5.6.3 =
+- (02 Jun 2010) - Security enhancements for possible low level XSS exploit in admin settings: thanks to [Julio Potier](http://secu.boiteaweb.fr/).
 
 = 1.5.6.3 =
 - (05 Mar 2010) - Improved default map setting. Any map can be selected as default map.
