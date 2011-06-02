@@ -1460,24 +1460,24 @@ function visitor_maps_widget_content() {
     if (!$visitor_maps_opt['hide_bots']) {
        $stats_bots  = sprintf( __('%d bots','visitor-maps'),$bots_count);
        if (!$visitor_maps_opt['combine_members']) {
-            echo "<div>$stats_visitors<div></div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+            echo "<div>$stats_visitors</div><div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
        } else {
             $stats_guests   = sprintf( __('%d guests','visitor-maps'),($guests_count + $members_count));
-            echo "<div>$stats_visitors<div></div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots</span>";
+            echo "<div>$stats_visitors</div><div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_bots</span>";
        }
     } else {
        if (!$visitor_maps_opt['combine_members'])
-           echo "<div>$stats_visitors<div></div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
+           echo "<div>$stats_visitors</div><div><span style=\"white-space:nowrap\">$stats_guests,</span> <span style=\"white-space:nowrap\">$stats_members</span>";
        else
            echo "<div>$stats_visitors";
     }
     if ($visitor_maps_opt['enable_widget_link']){
       if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
-        echo '<div></div>'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+        echo '</div><div>'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
     }
     }
     if ($visitor_maps_opt['enable_credit_link'])
-      echo '<div></div><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
+      echo '</div><div><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';
     echo "</div>";
 
 } // end function visitor_maps_widget
