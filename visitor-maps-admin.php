@@ -59,9 +59,13 @@
    'default_map_units' =>           trim($_POST['visitor_maps_default_map_units']),
   );
 
-    // deal with quotes
+    // unencode < > & " ' (less than, greater than, ampersand, double quote, single quote).
     foreach($optionarray_update as $key => $val) {
-           $optionarray_update[$key] = str_replace('&quot;','"',trim($val));
+           $optionarray_update[$key] = str_replace('&lt;','<',$val);
+           $optionarray_update[$key] = str_replace('&gt;','>',$val);
+           $optionarray_update[$key] = str_replace('&#39;',"'",$val);
+           $optionarray_update[$key] = str_replace('&quot;','"',$val);
+           $optionarray_update[$key] = str_replace('&amp;','&',$val);
     }
 
     // save updated options to the database
@@ -145,11 +149,11 @@ if (function_exists('get_transient')) {
 		<?php if ( ! empty($api->rating) ) : ?>
 		<div class="star-holder" title="<?php echo esc_attr(sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings))); ?>">
 			<div class="star star-rating" style="width: <?php echo esc_attr($api->rating) ?>px"></div>
-			<div class="star star5"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('5 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star4"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('4 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star3"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('3 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star2"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('2 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star1"><img src="<?php echo admin_url('images/star.gif'); ?>" alt="<?php _e('1 star', 'visitor-maps') ?>" /></div>
+			<div class="star star5"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('5 stars', 'visitor-maps') ?>" /></div>
+			<div class="star star4"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('4 stars', 'visitor-maps') ?>" /></div>
+			<div class="star star3"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('3 stars', 'visitor-maps') ?>" /></div>
+			<div class="star star2"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('2 stars', 'visitor-maps') ?>" /></div>
+			<div class="star star1"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('1 star', 'visitor-maps') ?>" /></div>
 		</div>
 		<small><?php echo sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings)); ?> <a target="_blank" href="http://wordpress.org/extend/plugins/<?php echo $api->slug ?>/"> <?php _e('rate', 'visitor-maps') ?></a></small>
         <br /> <br />

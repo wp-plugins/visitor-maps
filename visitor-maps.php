@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.6.4
+Version: 1.5.6.5
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -667,10 +667,7 @@ function visitor_maps_plugin_action_links( $links, $file ) {
 function visitor_maps_init() {
 
  // set timezone according to wp admin - settings - general - timezone  (PHP5 only)
- // If you've updated to WordPress v2.8 and the new Timezone support isn't available to you,
- // check the version of PHP your blog is working with.
- // If it's still using PHP4, then ask the hosting company how to get PHP5 enabled.
- if ( function_exists('wp_timezone_supported') && wp_timezone_supported() && $timezone_string = get_option( 'timezone_string' )) {
+ if (  function_exists( 'date_default_timezone_set' ) && function_exists( 'timezone_identifiers_list' ) && function_exists( 'timezone_open' ) && function_exists( 'timezone_offset_get' ) && $timezone_string = get_option( 'timezone_string' ) ) {
       // Set timezone in PHP5 manner
       @date_default_timezone_set( $timezone_string );
  }
@@ -1192,9 +1189,10 @@ function get_request_uri() {
 
 function get_ip_address() {
    // determine the visitors ip address
-   if (getenv('REMOTE_ADDR')) {
+/*   if (getenv('REMOTE_ADDR')) {
         $ip = getenv('REMOTE_ADDR');
-   } else if (isset($_SERVER['REMOTE_ADDR'])) {
+   } else*/
+   if (isset($_SERVER['REMOTE_ADDR'])) {
         $ip = $_SERVER['REMOTE_ADDR'];
    } else {
         $ip = 'unknown';
@@ -1357,15 +1355,22 @@ function wo_sanitize_string($string) {
 }
 
 function wo_stripslashes($string) {
-        if (get_magic_quotes_gpc()) {
+        //if (get_magic_quotes_gpc()) {
+        // wordpress always has magic_quotes On regardless of PHP settings!!
                 return stripslashes($string);
-        } else {
-                return $string;
-        }
+       // } else {
+       //         return $string;
+       //}
 }
 
+// functions for protecting output against XSS. encode  < > & " ' (less than, greater than, ampersand, double quote, single quote).
 function wo_output_string($string) {
-    return str_replace('"', '&quot;', $string);
+    $string = str_replace('&', '&amp;', $string);
+    $string = str_replace('"', '&quot;', $string);
+    $string = str_replace("'", '&#39;', $string);
+    $string = str_replace('<', '&lt;', $string);
+    $string = str_replace('>', '&gt;', $string);
+    return $string;
 }
 
 function wo_db_sanitize_input($input) {
@@ -1378,10 +1383,11 @@ function wo_db_sanitize_input($input) {
     }
     else {
       // Check if already escaped
-      if (get_magic_quotes_gpc()) {
+      //if (get_magic_quotes_gpc()) {
+      // wordpress always has magic_quotes On regardless of PHP settings!!
         // Remove not needed escapes
         $input = stripslashes($input);
-      }
+     // }
       // Use proper escape
       $input = mysql_real_escape_string(trim($input));
     }

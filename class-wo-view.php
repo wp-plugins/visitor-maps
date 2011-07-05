@@ -782,9 +782,10 @@ function http_last_mod($url,$format=0) {
 
 function get_ip_address() {
    // determine the visitors ip address
-   if (getenv('REMOTE_ADDR')) {
+/*   if (getenv('REMOTE_ADDR')) {
         $ip = getenv('REMOTE_ADDR');
-   } else if (isset($_SERVER['REMOTE_ADDR'])) {
+   } else*/
+   if (isset($_SERVER['REMOTE_ADDR'])) {
         $ip = $_SERVER['REMOTE_ADDR'];
    } else {
         $ip = 'unknown';
@@ -900,15 +901,22 @@ function wo_sanitize_string($string) {
 }
 
 function wo_stripslashes($string) {
-        if (get_magic_quotes_gpc()) {
+        //if (get_magic_quotes_gpc()) {
+        // wordpress always has magic_quotes On regardless of PHP settings!!
                 return stripslashes($string);
-        } else {
-                return $string;
-        }
+       // } else {
+       //         return $string;
+       //}
 }
 
+// functions for protecting output against XSS. encode  < > & " ' (less than, greater than, ampersand, double quote, single quote).
 function wo_output_string($string) {
-    return str_replace('"', '&quot;', $string);
+    $string = str_replace('&', '&amp;', $string);
+    $string = str_replace('"', '&quot;', $string);
+    $string = str_replace("'", '&#39;', $string);
+    $string = str_replace('<', '&lt;', $string);
+    $string = str_replace('>', '&gt;', $string);
+    return $string;
 }
 
 function wo_db_sanitize_input($input) {
@@ -921,10 +929,11 @@ function wo_db_sanitize_input($input) {
     }
     else {
       // Check if already escaped
-      if (get_magic_quotes_gpc()) {
+      //if (get_magic_quotes_gpc()) {
+      // wordpress always has magic_quotes On regardless of PHP settings!!
         // Remove not needed escapes
         $input = stripslashes($input);
-      }
+     // }
       // Use proper escape
       $input = mysql_real_escape_string(trim($input));
     }

@@ -191,7 +191,10 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
-= 1.5.6.3 =
+= 1.5.6.5 =
+- (05 Jul 2011) - Tested / fixed to be compatible with WP 3.2
+
+= 1.5.6.4 =
 - (02 Jun 2010) - Security enhancements for possible low level XSS exploit in admin settings: thanks to [Julio Potier](http://secu.boiteaweb.fr/).
 
 = 1.5.6.3 =
