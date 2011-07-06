@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Visitor Maps and Who's Online 1.4.3\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
 "POT-Creation-Date: 2010-07-26 19:26+0000\n"
-"PO-Revision-Date: 2011-02-25 01:24+0900\n"
+"PO-Revision-Date: 2011-07-06 23:42+0900\n"
 "Last-Translator: BNG NET <webmaster@bng.net>\n"
 "Language-Team: BNG NET <webmaster@bng.net>\n"
 "MIME-Version: 1.0\n"
@@ -1132,7 +1132,7 @@ msgid "Do not show administrators on the maps."
 msgstr "管理者をマップに表示しない。"
 
 #: visitor-maps-admin.php:299
-msgid "IP Adresses to ignore"
+msgid "IP Addresses to ignore"
 msgstr "無視するIPアドレス"
 
 #: visitor-maps-admin.php:302
