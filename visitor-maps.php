@@ -709,7 +709,7 @@ function visitor_maps_get_options() {
    'enable_admin_footer' =>    1,
    'enable_records_page' =>    1,
    'enable_widget_link' =>     1,
-   'enable_credit_link' =>     1,
+   'enable_credit_link' =>     0,
    'enable_dash_map' =>        1,
    'pins_limit' =>          2000,
    'default_map' =>            1,
@@ -1479,7 +1479,7 @@ function visitor_maps_widget_content() {
     }
     if ($visitor_maps_opt['enable_widget_link']){
       if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
-        echo '</div><div>'. sprintf( __('<a href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
+        echo '</div><div>'. sprintf( __('<a id="visitor-maps-link" href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
     }
     }
     if ($visitor_maps_opt['enable_credit_link'])
