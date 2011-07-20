@@ -139,7 +139,10 @@ If the file is missing, the blog should function fine. When the file is not inst
 
 = Why are all the location pins about 10 pixels too low on the visitor map? =
 Some themes interfere with the proper display of the location pins on the Visitor Maps page. 
-Uncheck the setting "Enable hover labels for location pins on visitor map page."  
+Uncheck the setting "Enable hover labels for location pins on visitor map page." 
+
+= Why are the location pins different colors on the visitor map? =
+Visitors have Red/yellow location pins. Search bots will have blue location pins. Registered users who are logged in will have green location pins.
 
 = Can you add charts and graphs of visitor activity like Google Analytics? =
 
