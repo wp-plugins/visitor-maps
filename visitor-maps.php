@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.6.5
+Version: 1.5.7
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -694,7 +694,7 @@ function visitor_maps_get_options() {
    'time_format_hms' =>        'h:i:sa' ,
    'date_time_format' =>       'm-d-Y h:i a T',
    'geoip_date_format' =>      'm-d-Y h:i a T',
-   'whois_url' =>              'http://www.geo-location.com/cgi-bin/index.cgi?s=',
+   'whois_url' =>              'http://www.ip-adress.com/ip_tracer/',
    'whois_url_popup' =>        1,
    'enable_host_lookups' =>    1,
    'enable_location_plugin' => 1,
@@ -730,6 +730,10 @@ function visitor_maps_get_options() {
   foreach($visitor_maps_opt as $key => $val) {
            $visitor_maps_opt[$key] = $this->wo_stripslashes($val);
   }
+
+   // geo-location no longer works and must be replaced now. 09-03-11
+   if( $visitor_maps_opt['whois_url'] == 'http://www.geo-location.com/cgi-bin/index.cgi?s=' )
+       $visitor_maps_opt['whois_url'] = 'http://www.ip-adress.com/ip_tracer/';
 
 } // end function visitor_maps_get_options
 
