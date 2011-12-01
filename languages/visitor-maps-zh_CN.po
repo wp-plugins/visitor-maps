@@ -13,8 +13,8 @@ msgstr ""
 "Project-Id-Version: 1.2.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/whos-online-pro\n"
 "POT-Creation-Date: 2009-10-01 17:15+0000\n"
-"PO-Revision-Date: 2009-10-21 17:51+0800\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2011-12-01 10:21+0800\n"
+"Last-Translator: Angela Zou <angela380in@hotmail.com>\n"
 "Language-Team:  <awuitcn@gmail.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -108,7 +108,7 @@ msgstr "显示机器人:"
 #: visitor-maps.php:1916
 #: visitor-maps.php:1942
 msgid "Who's Online"
-msgstr "Who's Online"
+msgstr "谁在上线"
 
 #: class-wo-been.php:128
 #: class-wo-update.php:255
@@ -195,7 +195,7 @@ msgstr "最后一页"
 #: class-wo-been.php:204
 #: class-wo-view.php:166
 msgid "Referer"
-msgstr "Referer"
+msgstr "推荐链接"
 
 #: class-wo-been.php:309
 #: class-wo-view.php:274
@@ -231,12 +231,12 @@ msgstr "未知"
 #: class-wo-been.php:439
 #: class-wo-view.php:402
 msgid "No"
-msgstr "No"
+msgstr "否"
 
 #: class-wo-been.php:441
 #: class-wo-view.php:404
 msgid "Yes"
-msgstr "Yes"
+msgstr "是"
 
 #: class-wo-been.php:455
 #: class-wo-view.php:418
@@ -256,7 +256,7 @@ msgstr "主机:"
 #: class-wo-been.php:558
 #: class-wo-view.php:561
 msgid "Referer:"
-msgstr "Referer:"
+msgstr "推荐链接:"
 
 #: class-wo-map-page.php:43
 #: class-wo-update.php:82
@@ -278,7 +278,7 @@ msgstr "Visitor Maps"
 #: class-wo-map-page.php:45
 #, php-format
 msgid "Select a time period up to %d days ago"
-msgstr "Select a time period up to %d days ago"
+msgstr "选择一个 ％d 天以前的时间段"
 
 #: class-wo-map-page.php:46
 #: visitor-maps.php:775
@@ -316,22 +316,22 @@ msgstr "地图:"
 #: class-wo-map-page.php:75
 #: visitor-maps.php:800
 msgid "World (smallest)"
-msgstr "World (smallest)"
+msgstr "世界地图(最小)"
 
 #: class-wo-map-page.php:76
 #: visitor-maps.php:801
 msgid "World (small)"
-msgstr "World (small)"
+msgstr "世界地图(小)"
 
 #: class-wo-map-page.php:77
 #: visitor-maps.php:802
 msgid "World (medium)"
-msgstr "World (medium)"
+msgstr "世界地图(中)"
 
 #: class-wo-map-page.php:78
 #: visitor-maps.php:803
 msgid "World (large)"
-msgstr "World (large)"
+msgstr "世界地图(大)"
 
 #: class-wo-map-page.php:79
 #: class-wo-map-page.php:80
@@ -460,7 +460,7 @@ msgstr "Spain/Portugal"
 
 #: class-wo-map-page.php:122
 msgid "Go"
-msgstr "Go"
+msgstr "提交"
 
 #: class-wo-update.php:89
 msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
@@ -640,7 +640,7 @@ msgstr "刷新频率"
 #: visitor-maps.php:36
 #: visitor-maps.php:47
 msgid "Who's Been Online"
-msgstr "Who's Been Online"
+msgstr "在线记录"
 
 #: class-wo-view.php:144
 msgid "Last refresh at"
@@ -731,7 +731,7 @@ msgstr "您没有此选项的操作权限"
 #: visitor-maps.php:1919
 #: visitor-maps.php:1945
 msgid "Powered by"
-msgstr "Powered by"
+msgstr "技术支持"
 
 #: visitor-maps.php:96
 #, php-format
@@ -744,7 +744,7 @@ msgstr "关闭"
 
 #: visitor-maps.php:191
 msgid "Powered by Visitor Maps"
-msgstr "Powered by Visitor Maps"
+msgstr "由Visitor Maps提供"
 
 #: visitor-maps.php:196
 #: visitor-maps.php:264
@@ -887,11 +887,11 @@ msgstr "启用显示城市,及所在国家的国旗."
 
 #: visitor-maps.php:762
 msgid "Enable visitor map on Who's Online dashboard."
-msgstr "启用visitor map在Who's Online面板."
+msgstr "在Who's Online面板启用Visitor Maps."
 
 #: visitor-maps.php:766
 msgid "Enable hover labels for location pins on visitor map page."
-msgstr "在visitor map页面启用悬停标签."
+msgstr "在Visitor Maps页面启用悬停标签."
 
 #: visitor-maps.php:767
 #: visitor-maps.php:818
@@ -916,7 +916,7 @@ msgstr "默认的Visitor Map"
 
 #: visitor-maps.php:820
 msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
-msgstr "在 Visitor Maps页面默认显示的地图.设置之后,检查您的visitor maps页面,以确保它正常显示.如果地图太宽,选择较小的一个."
+msgstr "在 Visitor Maps页面默认显示的地图.设置之后,检查您的Visitor maps页面,以确保它正常显示.如果地图太宽,选择较小的一个."
 
 #: visitor-maps.php:827
 msgid "Visitors:"

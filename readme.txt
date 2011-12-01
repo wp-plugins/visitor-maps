@@ -194,6 +194,8 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
+- Updated Chinese (zh_CN) - Translated by [Angela](http://www.centilin.com/)
+
 = 1.5.7 =
 - (03 Sep 2011) - Replaced default "Who Is Lookup URL" setting with a different provider.
 
