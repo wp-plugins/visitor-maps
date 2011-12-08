@@ -194,6 +194,9 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
+= 1.5.8 =
+- (07 Dec 2011) - I fixed the code so if you disable the geolocation setting then none of the maps will show, but the stats will.
+- I added a new setting "Enable visitor map on Visitor Map shortcode page" you can uncheck if you want to have maps in the dashboard but not in the public side.
 - Updated Chinese (zh_CN) - Translated by [Angela](http://www.centilin.com/)
 
 = 1.5.7 =

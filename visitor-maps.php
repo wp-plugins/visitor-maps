@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.7
+Version: 1.5.8
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -316,7 +316,7 @@ function visitor_maps_map_short_code() {
    $visitor_maps_add_script = true;
    $string = '';
 
-   if ($visitor_maps_opt['enable_location_plugin']) {
+   if ($visitor_maps_opt['enable_location_plugin'] && $visitor_maps_opt['enable_page_map']) {
      // show the map on View Who's Online page
      if ( $visitor_maps_opt['enable_visitor_map_hover'] || $visitor_maps_opt['hide_text_on_worldmap'] ) {
         $map_settings = array(
@@ -348,6 +348,7 @@ function visitor_maps_map_short_code() {
      if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
        $string .= '<p>'.__('View more maps in the ', 'visitor-maps').'<a href="'.get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;">'.__('Visitor Map Viewer', 'visitor-maps').'</a></p>';
      }
+   }
    if ($visitor_maps_opt['enable_records_page']) {
      $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
      // fetch the day, month, year, all time records
@@ -376,9 +377,9 @@ function visitor_maps_map_short_code() {
      if ($visitor_maps_opt['enable_credit_link']) {
           $string .= '<p><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps').'</a></small></p>';
      }
-  } else {
-    $string .= '<p>'.__('Visitor Maps geolocation is disabled in settings.', 'visitor-maps').'</p>';
-  }
+  //else {
+  //  $string .= '<p>'.__('Visitor Maps geolocation is disabled in settings.', 'visitor-maps').'</p>';
+ // }
 
   return $string;
 
@@ -711,6 +712,7 @@ function visitor_maps_get_options() {
    'enable_widget_link' =>     1,
    'enable_credit_link' =>     0,
    'enable_dash_map' =>        1,
+   'enable_page_map' =>        1,
    'pins_limit' =>          2000,
    'default_map' =>            1,
    'default_map_time' =>       30,
@@ -1481,10 +1483,10 @@ function visitor_maps_widget_content() {
        else
            echo "<div>$stats_visitors";
     }
-    if ($visitor_maps_opt['enable_widget_link']){
+    if ($visitor_maps_opt['enable_widget_link'] && $visitor_maps_opt['enable_location_plugin'] ){
       if (!$visitor_maps_opt['hide_console'] || ($visitor_maps_opt['hide_console'] && current_user_can('manage_options')) ) {
         echo '</div><div>'. sprintf( __('<a id="visitor-maps-link" href="%s">Map of Visitors</a>', 'visitor-maps'),get_bloginfo('url').'?wo_map_console=1" onclick="wo_map_console(this.href); return false;');
-    }
+      }
     }
     if ($visitor_maps_opt['enable_credit_link'])
       echo '</div><div><small>'.__('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/">'.__('Visitor Maps', 'visitor-maps').'</a></small>';

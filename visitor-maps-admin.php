@@ -53,6 +53,7 @@
    'enable_widget_link' =>       (isset( $_POST['visitor_maps_enable_widget_link'] ) ) ? 1 : 0,
    'enable_credit_link' =>       (isset( $_POST['visitor_maps_enable_credit_link'] ) ) ? 1 : 0,
    'enable_dash_map' =>          (isset( $_POST['visitor_maps_enable_dash_map'] ) ) ? 1 : 0,
+   'enable_page_map' =>          (isset( $_POST['visitor_maps_enable_page_map'] ) ) ? 1 : 0,
    'pins_limit' =>           absint(trim($_POST['visitor_maps_pins_limit'])),
    'default_map' =>          absint(trim($_POST['visitor_maps_default_map'])),
    'default_map_time' =>     absint(trim($_POST['visitor_maps_default_map_time'])),
@@ -288,6 +289,14 @@ _e('If you find this plugin useful to you, please consider making a small donati
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_enable_dash_map_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_enable_dash_map_tip">
       <?php echo __('Changes display options on Who\'s Online dashboard pages.', 'visitor-maps'); ?>
+      </div>
+      <br />
+
+      <input name="visitor_maps_enable_page_map" id="visitor_maps_enable_page_map" type="checkbox" <?php if( $visitor_maps_opt['enable_page_map'] ) echo 'checked="checked"'; ?> />
+      <label for="visitor_maps_enable_page_map"><?php echo __('Enable visitor map on Visitor Map shortcode page.', 'visitor-maps'); ?></label>
+      <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_enable_page_map_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
+      <div style="text-align:left; display:none" id="visitor_maps_enable_page_map_tip">
+      <?php echo __('Changes map display options on the page where you inserted the visitor map shortcode.', 'visitor-maps'); ?>
       </div>
       <br />
 
@@ -640,7 +649,7 @@ foreach ($map_units_array as $k => $v) {
 <?php
   if (!$visitor_maps_opt['donated']) { ?>
    </td><td width="350">
-   <?php echo sprintf(__('"I recommend <a href="%s" target="_blank">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer the most features." - Mike Challis', 'visitor-maps'), 'http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp&amp;page=http://www.hostgator.com/apps/wordpress-hosting.shtml'); ?>
+   <?php echo sprintf(__('"I recommend <a href="%s" target="_blank">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer great features for WordPress users. If you click this link and start an account at HostGator, I get a small commission." - Mike Challis', 'visitor-maps'), 'http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp&amp;page=http://www.hostgator.com/apps/wordpress-hosting.shtml'); ?>
    </td><td width="100">
     <a href="http://secure.hostgator.com/~affiliat/cgi-bin/affiliates/clickthru.cgi?id=mchallis-vmwp&amp;page=http://www.hostgator.com/apps/wordpress-hosting.shtml" target="_blank"><img title="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" alt="<?php echo esc_attr(__('Web Site Hosting', 'visitor-maps')); ?>" src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/hostgator-blog.gif" width="100" height="100" /></a>
 <?php
