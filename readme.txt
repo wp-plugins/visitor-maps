@@ -198,7 +198,8 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 = 1.5.8.1 =
 - (18 Jan 2012) -
 - Added Hebrew (he_IL) - Translated by [Udi Burg](http://blog.udiburg.com/)
-- Updated Italian language (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/ "Gianni Diurno")
+- Updated Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/ "Gianni Diurno")
+- Updated Turkish (tr_TR) - Translated by Sergio
 
 = 1.5.8 =
 - (07 Dec 2011) - I fixed the code so if you disable the geolocation setting then none of the maps will show, but the stats will.

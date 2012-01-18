@@ -1,108 +1,720 @@
-# Visitor Maps and Who's Online
-# This file is put in the public domain.
-#
-# Plugin URI: http://www.642weather.com/weather/scripts-visitor-maps.php
-# Description: Visitor Maps for WordPress.
-# Version: 1.0.2
-# Author: Mike Challis
-# Author URI: http://www.642weather.com/weather/scripts.php
-#
-#
+# Copyright (C) 2010 Visitor Maps and Who's Online
+# This file is distributed under the same license as the Visitor Maps and Who's Online package.
 msgid ""
 msgstr ""
-"Project-Id-Version: 1.0.2\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tag/whos-online-pro\n"
-"POT-Creation-Date: 2009-10-01 17:15+0000\n"
-"PO-Revision-Date: 2010-01-14 09:38-0800\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Project-Id-Version: Visitor Maps and Who's Online 1.5.8\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
+"POT-Creation-Date: 2011-12-08 01:46:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Turkish\n"
-"X-Poedit-Country: TURKEY\n"
-"X-Poedit-SourceCharset: iso-8859-1\n"
+"PO-Revision-Date: 2012-01-18 10:05-0800\n"
+"Last-Translator: \n"
+"Language-Team: inanmax <inanmax>\n"
 
-#: class-wo-map-page.php:43
-#: class-wo-update.php:81
-#: visitor-maps.php:46
-#: visitor-maps.php:77
-#: visitor-maps.php:99
-#: visitor-maps.php:234
-#: visitor-maps.php:735
-#: visitor-maps.php:1711
-#: visitor-maps.php:1718
-#: visitor-maps.php:1747
-msgid "Visitor Maps"
-msgstr "Ziyaretçi kökeni"
+#: class-wo-worldmap.php:27
+#: visitor-maps-worldmap.php:14
+msgid "error: geolocation data not enabled or installed"
+msgstr "hata:geolocation verileri etkin değil veya kurulu değil"
 
-#: class-wo-map-page.php:45
-#, php-format
-msgid "Select a time period up to %d days ago"
-msgstr "Bir zaman dilimi seçin %d gün önce"
-
-#: class-wo-map-page.php:46
-msgid "Time:"
-msgstr "Zaman:"
-
-#: class-wo-map-page.php:48
-msgid "Units:"
-msgstr "Birimler:"
-
+#: class-wo-worldmap.php:145
 #: class-wo-map-page.php:52
-#: class-wo-worldmap.php:133
+#: visitor-maps-admin.php:349
 msgid "minutes"
 msgstr "dakika"
 
+#: class-wo-worldmap.php:149
 #: class-wo-map-page.php:53
-#: class-wo-worldmap.php:137
+#: visitor-maps-admin.php:350
 msgid "hours"
 msgstr "saat"
 
+#: class-wo-worldmap.php:153
 #: class-wo-map-page.php:54
-#: class-wo-worldmap.php:141
+#: visitor-maps-admin.php:351
 msgid "days"
-msgstr "Gün"
+msgstr "gün"
+
+#: class-wo-worldmap.php:279
+msgid "%1$d visitors since %2$d %3$s ago"
+msgstr "%2$d %3$s dan bu yana %1$d ziyaretçi geldi."
+
+#: class-wo-worldmap.php:282
+msgid "%1$d visitors since %2$d ago"
+msgstr "%2$d dan bu yana %1$d ziyaretçi geldi."
+
+#: visitor-maps.php:69
+#: class-wo-been.php:165
+#: class-wo-update.php:312
+#: class-wo-view.php:131
+msgid "Visitor Maps Options"
+msgstr "Ziyaretçi Haritası Ayarları"
+
+#: visitor-maps.php:70
+#: visitor-maps.php:1413
+#: visitor-maps.php:1425
+#: visitor-maps.php:1429
+#: visitor-maps.php:1436
+#: class-wo-been.php:163
+msgid "Who's Online"
+msgstr "Kimler Çevrimiçi"
+
+#: visitor-maps.php:71
+#: visitor-maps.php:100
+#: class-wo-view.php:129
+msgid "Who's Been Online"
+msgstr "Kimler Çevrimiçi İdi"
+
+#: visitor-maps.php:77
+msgid "Administrators"
+msgstr "Yönetici"
+
+#: visitor-maps.php:78
+msgid "Editors"
+msgstr "Editör"
+
+#: visitor-maps.php:79
+msgid "Authors"
+msgstr "Yazar"
+
+#: visitor-maps.php:80
+msgid "Contributors"
+msgstr "İçerik Sağlayıcı"
+
+#: visitor-maps.php:96
+#: visitor-maps.php:144
+#: visitor-maps-admin.php:7
+#: visitor-maps-admin.php:22
+msgid "You do not have permissions for managing this option"
+msgstr "Bu ayarı değistirme izniniz yok!"
+
+#: visitor-maps.php:100
+#: visitor-maps.php:134
+#: visitor-maps.php:148
+#: visitor-maps.php:183
+#: visitor-maps.php:207
+#: visitor-maps.php:346
+#: visitor-maps.php:378
+#: visitor-maps.php:1413
+#: visitor-maps.php:1420
+#: visitor-maps.php:1492
+#: class-wo-update.php:83
+#: class-wo-map-page.php:43
+#: visitor-maps-admin.php:584
+msgid "Visitor Maps"
+msgstr "Ziyaretçi Haritası"
+
+#: visitor-maps.php:130
+#: visitor-maps.php:179
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "Diğer haritaları görüntülemek için linki tıklayınız<a href=\"%s\">Haritada Göster</a>"
+
+#: visitor-maps.php:134
+#: visitor-maps.php:183
+#: visitor-maps.php:378
+#: visitor-maps.php:1420
+#: visitor-maps.php:1492
+#: visitor-maps-admin.php:584
+msgid "Powered by"
+msgstr "Yapımcısı"
+
+#: visitor-maps.php:148
+#: class-wo-update.php:311
+#: visitor-maps-admin.php:232
+msgid "View Who's Online"
+msgstr "Şuan Kimler Çevrimiçi"
+
+#: visitor-maps.php:276
+msgid "Close"
+msgstr "Kapat"
+
+#: visitor-maps.php:278
+msgid "Powered by Visitor Maps"
+msgstr "Yapımcısı: Visitor Maps"
+
+#: visitor-maps.php:283
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr "Ayarlarda Ziyaretçi Haritası geolocation devre dışı bırakılmıştır."
+
+#: visitor-maps.php:349
+msgid "View more maps in the "
+msgstr "Diğer haritaları görüntüle"
+
+#: visitor-maps.php:349
+msgid "Visitor Map Viewer"
+msgstr "Ziyaretçi Haritası Görüntüleyicisi"
+
+#: visitor-maps.php:359
+#: visitor-maps.php:1136
+#: visitor-maps.php:1137
+msgid "Max visitors today"
+msgstr "Bugünkü Maksimum Ziyaretçi Sayısı"
+
+#: visitor-maps.php:359
+#: visitor-maps.php:361
+#: visitor-maps.php:363
+#: visitor-maps.php:365
+#: visitor-maps.php:1136
+#: visitor-maps.php:1137
+#: visitor-maps.php:1140
+#: visitor-maps.php:1141
+#: visitor-maps.php:1144
+#: visitor-maps.php:1145
+#: visitor-maps.php:1148
+#: visitor-maps.php:1149
+msgid "at"
+msgstr "de"
+
+#: visitor-maps.php:361
+#: visitor-maps.php:1140
+#: visitor-maps.php:1141
+msgid "This month"
+msgstr "Bu ay"
+
+#: visitor-maps.php:363
+#: visitor-maps.php:1144
+#: visitor-maps.php:1145
+msgid "This year"
+msgstr "Bu yıl"
+
+#: visitor-maps.php:365
+#: visitor-maps.php:1148
+#: visitor-maps.php:1149
+msgid "All time"
+msgstr "Tüm zamanlar"
+
+#: visitor-maps.php:368
+msgid "Records of the most visitors online at once:"
+msgstr "Bir kerede en fazla çevrimiçi olan ziyaretçi kayıtları:"
+
+#: visitor-maps.php:596
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr "Ziyaretçi Haritası eklentisi için Maxmind GeoLiteCity veritabanı yüklemeniz gerekmektedir."
+
+#: visitor-maps.php:596
+#: visitor-maps-admin.php:257
+msgid "Install Now"
+msgstr "Şimdi Kur"
+
+#: visitor-maps.php:662
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: visitor-maps.php:1118
+#: visitor-maps.php:1468
+msgid "%d visitors online now"
+msgstr "Şuanda % d ziyaretçi çevrimiçi "
+
+#: visitor-maps.php:1119
+#: visitor-maps.php:1469
+#: visitor-maps.php:1477
+msgid "%d guests"
+msgstr "%d ziyaretçi"
+
+#: visitor-maps.php:1121
+#: visitor-maps.php:1473
+msgid "%d bots"
+msgstr "%d robot"
+
+#: visitor-maps.php:1123
+#: visitor-maps.php:1470
+msgid "%d members"
+msgstr "%d üye"
+
+#: visitor-maps.php:1488
+msgid "<a id=\"visitor-maps-link\" href=\"%s\">Map of Visitors</a>"
+msgstr "<a id=\"visitor-maps-link\" href=\"%s\">Ziyaretçi Haritası</ a>"
+
+#: class-wo-been.php:32
+#: class-wo-view.php:24
+#: class-wo-view.php:32
+msgid "None"
+msgstr "Hiçbiri"
+
+#: class-wo-been.php:33
+#: class-wo-view.php:33
+msgid "All"
+msgstr "Hepsi"
+
+#: class-wo-been.php:34
+#: class-wo-view.php:34
+#: class-wo-view.php:491
+msgid "Bots"
+msgstr "Robot"
+
+#: class-wo-been.php:35
+#: class-wo-view.php:35
+#: class-wo-view.php:487
+msgid "Guests"
+msgstr "Misafir"
+
+#: class-wo-been.php:44
+#: class-wo-been.php:230
+#: class-wo-view.php:181
+msgid "Who"
+msgstr "Kim"
+
+#: class-wo-been.php:45
+#: class-wo-been.php:231
+msgid "Visits"
+msgstr "Ziyaret"
+
+#: class-wo-been.php:46
+#: class-wo-been.php:232
+msgid "Last Visit"
+msgstr "Son Ziyaret"
+
+#: class-wo-been.php:47
+#: class-wo-been.php:233
+#: class-wo-view.php:182
+msgid "IP Address"
+msgstr "IP Adresi"
+
+#: class-wo-been.php:48
+#: class-wo-been.php:234
+#: class-wo-view.php:183
+msgid "Location"
+msgstr "Yer"
+
+#: class-wo-been.php:49
+#: class-wo-been.php:238
+#: class-wo-view.php:188
+msgid "Last URL"
+msgstr "Son URL"
+
+#: class-wo-been.php:66
+msgid "Descending"
+msgstr "Küçükten Büyüğe Sırala"
+
+#: class-wo-been.php:67
+msgid "Ascending"
+msgstr "Büyükten Küçüğe Sırala"
+
+#: class-wo-been.php:90
+#: class-wo-been.php:478
+#: class-wo-view.php:38
+#: class-wo-view.php:429
+msgid "No"
+msgstr "Hayır"
+
+#: class-wo-been.php:91
+#: class-wo-been.php:480
+#: class-wo-view.php:39
+#: class-wo-view.php:431
+msgid "Yes"
+msgstr "Evet"
+
+#: class-wo-been.php:157
+#: class-wo-view.php:124
+msgid "Profile Display:"
+msgstr "Profil Görüntüle:"
+
+#: class-wo-been.php:158
+msgid "Sort:"
+msgstr "Sırala:"
+
+#: class-wo-been.php:160
+#: class-wo-view.php:126
+msgid "Show Bots:"
+msgstr "Robotları Görüntüle:"
+
+#: class-wo-been.php:167
+#: class-wo-view.php:134
+#: visitor-maps-admin.php:236
+msgid "<a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">Ziyaretçi Haritası Görüntüleyicisi</a>    "
+
+#: class-wo-been.php:177
+#: class-wo-been.php:575
+#: class-wo-view.php:144
+#: class-wo-view.php:566
+msgid "Active Guest"
+msgstr "Aktif Misafir"
+
+#: class-wo-been.php:179
+#: class-wo-been.php:568
+#: class-wo-view.php:146
+#: class-wo-view.php:559
+msgid "Inactive Guest"
+msgstr "İnaktif Misafir"
+
+#: class-wo-been.php:183
+#: class-wo-been.php:562
+#: class-wo-view.php:150
+#: class-wo-view.php:553
+msgid "Active Bot"
+msgstr "Aktif Robot"
+
+#: class-wo-been.php:185
+#: class-wo-been.php:559
+#: class-wo-view.php:152
+#: class-wo-view.php:550
+msgid "Inactive Bot"
+msgstr "İnaktif Robot"
+
+#: class-wo-been.php:197
+#: class-wo-view.php:164
+msgid "%1$d visitors since %2$s"
+msgstr "%2$sden bu yana ziyaretçi sayısı %1$d"
+
+#: class-wo-been.php:197
+#: class-wo-view.php:164
+msgid "installation"
+msgstr "kurulum"
+
+#: class-wo-been.php:204
+#: class-wo-been.php:206
+#: class-wo-been.php:525
+#: class-wo-been.php:527
+msgid "FIRST"
+msgstr "İLK"
+
+#: class-wo-been.php:204
+#: class-wo-been.php:208
+#: class-wo-been.php:525
+#: class-wo-been.php:529
+msgid "PREV"
+msgstr "ÖNCEKİ"
+
+#: class-wo-been.php:210
+#: class-wo-been.php:531
+msgid "Page %1$d of %2$d"
+msgstr "Toplam %2$d sayfanın %1$d.si"
+
+#: class-wo-been.php:212
+#: class-wo-been.php:215
+#: class-wo-been.php:533
+#: class-wo-been.php:536
+msgid "NEXT"
+msgstr "SONRAKİ"
+
+#: class-wo-been.php:212
+#: class-wo-been.php:216
+#: class-wo-been.php:533
+#: class-wo-been.php:537
+msgid "LAST"
+msgstr "SON"
+
+#: class-wo-been.php:241
+#: class-wo-view.php:191
+msgid "Referer"
+msgstr "Gönderen"
+
+#: class-wo-been.php:348
+#: class-wo-view.php:301
+msgid "Guest"
+msgstr "Misafir"
+
+#: class-wo-been.php:352
+#: class-wo-view.php:305
+#: class-wo-view.php:495
+msgid "You"
+msgstr "Sen"
+
+#: class-wo-been.php:370
+#: class-wo-view.php:323
+msgid "Error"
+msgstr "Hata"
+
+#: class-wo-been.php:392
+#: class-wo-view.php:338
+msgid "visits"
+msgstr "ziyaret"
+
+#: class-wo-been.php:397
+#: class-wo-view.php:343
+msgid "host lookups not enabled"
+msgstr "sunucu arama  etkin değil"
+
+#: class-wo-been.php:419
+#: class-wo-view.php:365
+msgid "unknown"
+msgstr "bilinmiyor"
+
+#: class-wo-been.php:494
+#: class-wo-view.php:445
+msgid "Last URL:"
+msgstr "Son URL:"
+
+#: class-wo-been.php:586
+#: class-wo-view.php:577
+msgid "User Agent:"
+msgstr "Kullanıcı Aracısı: "
+
+#: class-wo-been.php:592
+#: class-wo-view.php:583
+msgid "Host:"
+msgstr "Sunucu:"
+
+#: class-wo-been.php:598
+#: class-wo-view.php:589
+msgid "Referer:"
+msgstr "Gönderen Adres:"
+
+#: class-wo-update.php:90
+msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
+msgstr "İlk kez MaxMind GeoLite City veritabanı kurulumu hazırlanıyor"
+
+#: class-wo-update.php:95
+msgid "Checking for updates for the Maxmind GeoLiteCity database"
+msgstr "MaxMind GeoLiteCity veritabanı güncellemeleri kontrol ediliyor"
+
+#: class-wo-update.php:106
+msgid "PHP Memory Limit is unknown, increase is not available."
+msgstr "PHP Bellek Sınırı bilinmiyor, artırma yapılamaz."
+
+#: class-wo-update.php:108
+msgid "PHP Memory Limit is %1$s, temporarily increasing to %2$s"
+msgstr "PHP Bellek Sınırı:%1$s, geçici olarak %2$s a yükseltildi"
+
+#: class-wo-update.php:113
+msgid "completed."
+msgstr "tamamlandı."
+
+#: class-wo-update.php:115
+msgid "failed."
+msgstr "başarısız oldu."
+
+#: class-wo-update.php:122
+msgid "PHP Memory Limit is %s, increasing is not needed."
+msgstr "PHP Bellek Sınırı:%s, artışa gerek yok."
+
+#: class-wo-update.php:128
+msgid "Connecting to this URL:"
+msgstr "Bu URL'ye bağlanıyor:"
+
+#: class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr "Uyarı: Web sunucunuz PHP safe_mode'u etkinlestirmiş."
+
+#: class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr "PHP safe_mode bu güncelleyiciyle dosya izin hataları gibi sorunlara neden olabilir."
+
+#: class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP safe_mode 'u devre dışı bırakmak daha iyi olacaktır, bu özelliğe itibar ediyor olabilirsiniz, ama çok önerilmez. Destek için hosting şirketinize başvurun."
+
+#: class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr "Uyarı: Web hosting şirketiniz PHP ayarı allow_url_fopen 'ı devre dışı bırakmış."
+
+#: class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr "PHP allow_url_fopen ayarı bu otomatik güncelleme özelliği için gereklidir. Destek için hosting şirketinize başvurun."
+
+#: class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr "Geolite veritabanı aslında sadece bir dosya. Geçici bir çözüm olarak, kendiniz GeoLiteCity.dat.gz dosyasını şu URL'den indirebilirsiniz: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+
+#: class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr "GeoLiteCity.dat dosyasını açın ve /plugins/visitor-maps/ klasörüne FTP aracılığıyla yükleyin.Dosya kurulmuş olmasa da, blog herhalukarda çalışır, fakat kullanıcı konum bilgileri atlanır."
+
+#: class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr "Uyarı: Web hosting şirketiniz PHP4 'ten PHP5 'e yükseltmemiş."
+
+#: class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr "PHP4 resmen 8 Ağustos 2008 tarihinde kullanımdan kaldırıldı ve artık güvenli olarak kabul edilmemektedir."
+
+#: class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr "PHP5 daha hızlı, daha fazla özelliklere sahip, ve daha güvenlidir. PHP4 hala işleyebilir, ancak önerilmez. Destek için hosting şirketinize başvurun."
+
+#: class-wo-update.php:199
+msgid "You have the latest available Maxmind GeoLiteCity database"
+msgstr "En son MaxMind GeoLiteCity veritabanına sahipsiniz"
+
+#: class-wo-update.php:200
+msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
+msgstr "Not: MaxMind genellikle GeoLiteCity güncelleştirmelerini aylık olarak ayın 1 inde yapmaktatır, ama bazen güncelleştirmeler ayın 2 si veya 3 ünde hatta daha sonraki bir tarihte de olabilir."
+
+#: class-wo-update.php:201
+msgid "Maxmind last updated it %1$s (%2$d days ago)"
+msgstr "En son MaxMind güncellemesi %1$s (%2$d gün önce)"
+
+#: class-wo-update.php:202
+msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
+msgstr "bu <a href=\"%s\" target=\"_new\">Mevcut olan en yeni dosya</a>"
+
+#: class-wo-update.php:204
+msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
+msgstr "GeoLiteCity veritabanı güncellemesini %s de yaptınız(%d gün önce)"
+
+#: class-wo-update.php:205
+msgid "No new updates are available today."
+msgstr "Yeni güncelleme yok."
+
+#: class-wo-update.php:218
+msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
+msgstr "Hata: İndirme başarısız, GeoLiteCity.dat.gz dosyası bulunamadı"
+
+#: class-wo-update.php:221
+msgid "Download success, uncompressing file, please wait"
+msgstr "İndirme başarılı, dosya açılıyor, lütfen bekleyin"
+
+#: class-wo-update.php:227
+msgid "unzip error: opening GeoLiteCity.dat file"
+msgstr "unzip(dosya açma) hatası: GeoLiteCity.dat dosyası açılamıyor"
+
+#: class-wo-update.php:229
+msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
+msgstr "unzip(dosya açma) hatası: gzopen GeoLiteCity.dat.gz dosyasını açıyor"
+
+#: class-wo-update.php:238
+msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
+msgstr "unzip(dosya açma) hatası:Chmod(dosyaya yazma izni) 0644 ,GeoLiteCity.dat dosyası açılamıyor"
+
+#: class-wo-update.php:243
+msgid "Error: the GeoLiteCity.dat file was not found"
+msgstr "Hata: GeoLiteCity.dat dosyası bulunamadı"
+
+#: class-wo-update.php:247
+msgid "Install/Update completed"
+msgstr "Kurulum/Güncelleme tamamlandı"
+
+#: class-wo-update.php:271
+msgid "Testing a lookup with your IP address:"
+msgstr "Sizin IP adresinizle arama testi ediliyor:"
+
+#: class-wo-update.php:277
+msgid "test_lookup error: the GeoLiteCity.dat file was not found"
+msgstr "test_lookup(arama denemesi) hatası: GeoLiteCity.dat dosyası bulunamadı "
+
+#: class-wo-update.php:280
+msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
+msgstr "test_lookup(arama denemesi) hatası: include-whos-online-geoip.php dosyası bulunamadı "
+
+#: class-wo-update.php:291
+msgid "IP:"
+msgstr "IP:"
+
+#: class-wo-update.php:292
+msgid "City:"
+msgstr "Şehir:"
+
+#: class-wo-update.php:293
+msgid "State Name:"
+msgstr "Eyalet Adı:"
+
+#: class-wo-update.php:294
+msgid "State Code:"
+msgstr "Eyalet Kodu:"
+
+#: class-wo-update.php:295
+msgid "Country Name:"
+msgstr "Ülke Adı:"
+
+#: class-wo-update.php:296
+msgid "Country Code:"
+msgstr "Ülke Kodu:"
+
+#: class-wo-update.php:297
+msgid "Lat:"
+msgstr "Enlem:"
+
+#: class-wo-update.php:298
+msgid "Lon: "
+msgstr "Boylam:"
+
+#: class-wo-update.php:302
+msgid "Note: location information was not available, this is normal if on a private network."
+msgstr "Not: konum bilgileri bulunamadı,eğer özel ağa bağlıysanız konum bilgilerininin bulunamaması normaldir."
+
+#: class-wo-update.php:341
+#: class-wo-view.php:721
+msgid "error: could not connect to remote file"
+msgstr "hata: :karşı dosya bağlantısı kurulamadı "
+
+#: class-wo-update.php:354
+#: class-wo-view.php:734
+msgid "error: fetching timestamp failed for URL, 404 not found?"
+msgstr "hata: URL 404 bulunamadı için tarih damgası alınamadı!"
+
+#: class-wo-update.php:386
+#: class-wo-view.php:766
+msgid "error: fetching timestamp failed for URL 404 not found?"
+msgstr "hata: URL 404 bulunamadı için tarih damgası alınamadı!"
+
+#: class-wo-update.php:399
+#: class-wo-view.php:779
+msgid "error: could not connect to remote URL"
+msgstr "hata:karşı URL bağlantısı kurulamadı "
+
+#: class-wo-update.php:404
+msgid "Please allow plenty of time for the approximately 19meg file to download."
+msgstr "Yaklaşık 19 mb olan bu dosyayı indirmek biraz zaman alacaktır."
+
+#: class-wo-update.php:405
+msgid "The time needed depends on your server download speed."
+msgstr "Dosya indirme süresi sunucunuzun indirme hızına bağlıdır. "
+
+#: class-wo-update.php:406
+msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
+msgstr "Eğer bağlantınız indirme işleminin 3 dakikadan fazla sürmesine sebebiyet verecek kadar yavaşsa zaman aşımı(timeout) hatası oluşabilir."
+
+#: class-wo-update.php:414
+msgid "error: reading or opening file"
+msgstr "hata:dosya açma veya okuma"
+
+#: class-wo-update.php:415
+#: class-wo-update.php:433
+msgid "error: cannot write to file, check server permission settings"
+msgstr "hata: dosyaya yazamıyor, sunucu(server) izin ayarlarınızı kontrol edin"
+
+#: class-wo-update.php:416
+msgid "Download started, (counting megs)"
+msgstr "Yükleme, (megs sayma) başladı "
+
+#: class-wo-update.php:440
+msgid "error: CHMOD 0644 download file failed"
+msgstr "hata: CHMOD 0644 dosya indirme başarısız oldu"
+
+#: class-wo-map-page.php:45
+msgid "Select a time period up to %d days ago"
+msgstr "%d gün öncesine kadar gidecek bir zaman dilimi seçin"
+
+#: class-wo-map-page.php:46
+#: visitor-maps-admin.php:343
+msgid "Time:"
+msgstr "Süre:"
+
+#: class-wo-map-page.php:48
+#: visitor-maps-admin.php:345
+msgid "Units:"
+msgstr "Birim:"
 
 #: class-wo-map-page.php:71
+#: visitor-maps-admin.php:362
 msgid "Map:"
 msgstr "Harita:"
 
 #: class-wo-map-page.php:75
-msgid "World (small)"
-msgstr "Küçük dünya"
+#: visitor-maps-admin.php:368
+msgid "World (smallest)"
+msgstr "Dünya (en küçük boy)"
 
 #: class-wo-map-page.php:76
-msgid "World (medium)"
-msgstr "Orta dünya"
+#: visitor-maps-admin.php:369
+msgid "World (small)"
+msgstr "Dünya (küçük boy)"
 
 #: class-wo-map-page.php:77
+#: visitor-maps-admin.php:370
+msgid "World (medium)"
+msgstr "Dünya (orta boy)"
+
+#: class-wo-map-page.php:78
+#: visitor-maps-admin.php:371
 msgid "World (large)"
-msgstr "Büyük dünya"
+msgstr "Dünya (büyük boy)"
 
-#: class-wo-map-page.php:78
 #: class-wo-map-page.php:79
-msgid "US"
-msgstr "US"
-
-#: class-wo-map-page.php:78
 #: class-wo-map-page.php:80
-#: class-wo-map-page.php:82
-#: class-wo-map-page.php:84
-#: class-wo-map-page.php:86
-#: class-wo-map-page.php:88
-#: class-wo-map-page.php:90
-#: class-wo-map-page.php:92
-#: class-wo-map-page.php:94
-#: class-wo-map-page.php:96
-#: class-wo-map-page.php:98
-#: class-wo-map-page.php:100
-#: class-wo-map-page.php:102
-#: class-wo-map-page.php:104
-#: class-wo-map-page.php:106
-#: class-wo-map-page.php:108
-msgid "(black)"
-msgstr "(Siyah)"
+msgid "US"
+msgstr "Amerika"
 
 #: class-wo-map-page.php:79
 #: class-wo-map-page.php:81
@@ -120,829 +732,749 @@ msgstr "(Siyah)"
 #: class-wo-map-page.php:105
 #: class-wo-map-page.php:107
 #: class-wo-map-page.php:109
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:116
+#: class-wo-map-page.php:118
+#: class-wo-map-page.php:120
+msgid "(black)"
+msgstr "(siyah)"
+
+#: class-wo-map-page.php:80
+#: class-wo-map-page.php:82
+#: class-wo-map-page.php:84
+#: class-wo-map-page.php:86
+#: class-wo-map-page.php:88
+#: class-wo-map-page.php:90
+#: class-wo-map-page.php:92
+#: class-wo-map-page.php:94
+#: class-wo-map-page.php:96
+#: class-wo-map-page.php:98
+#: class-wo-map-page.php:100
+#: class-wo-map-page.php:102
+#: class-wo-map-page.php:104
+#: class-wo-map-page.php:106
+#: class-wo-map-page.php:108
+#: class-wo-map-page.php:110
+#: class-wo-map-page.php:112
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:117
+#: class-wo-map-page.php:119
+#: class-wo-map-page.php:121
 msgid "(brown)"
 msgstr "(kahverengi)"
 
-#: class-wo-map-page.php:80
 #: class-wo-map-page.php:81
-msgid "Canada and US"
-msgstr "Canada and US"
-
 #: class-wo-map-page.php:82
+msgid "Canada and US"
+msgstr "Kanada ve Amerika "
+
 #: class-wo-map-page.php:83
-msgid "Asia"
-msgstr "Asia"
-
 #: class-wo-map-page.php:84
+msgid "Asia"
+msgstr "Asya"
+
 #: class-wo-map-page.php:85
-msgid "Australia and NZ"
-msgstr "Australia and NZ"
-
 #: class-wo-map-page.php:86
+msgid "Australia and NZ"
+msgstr "Avusturalya ve Yeni Zelanda"
+
 #: class-wo-map-page.php:87
-msgid "Europe Central"
-msgstr "Europe Central"
-
 #: class-wo-map-page.php:88
+msgid "Europe Central"
+msgstr "Orta Avrupa"
+
 #: class-wo-map-page.php:89
-msgid "Europe"
-msgstr "Europe"
-
 #: class-wo-map-page.php:90
+msgid "Europe"
+msgstr "Avrupa"
+
 #: class-wo-map-page.php:91
-msgid "Finland"
-msgstr "Finland"
-
 #: class-wo-map-page.php:92
+msgid "Scandinavia"
+msgstr "İskandinavya"
+
 #: class-wo-map-page.php:93
-msgid "Great Britain"
-msgstr "Great Britain"
-
 #: class-wo-map-page.php:94
+msgid "Great Britain"
+msgstr "İ	ngiltere"
+
 #: class-wo-map-page.php:95
-msgid "US Midwest"
-msgstr "US Midwest"
-
 #: class-wo-map-page.php:96
+msgid "US Midwest"
+msgstr "Ortabatı Amerika"
+
 #: class-wo-map-page.php:97
-msgid "US Upper Midwest"
-msgstr "US Upper Midwest"
-
 #: class-wo-map-page.php:98
+msgid "US Upper Midwest"
+msgstr "Yukarı Ortabatı Amerika"
+
 #: class-wo-map-page.php:99
-msgid "US Northeast"
-msgstr "US Northeast"
-
 #: class-wo-map-page.php:100
+msgid "US Northeast"
+msgstr "Kuzeydoğu Amerika"
+
 #: class-wo-map-page.php:101
-msgid "US Northwest"
-msgstr "US Northwest"
-
 #: class-wo-map-page.php:102
+msgid "US Northwest"
+msgstr "Kuzeybatı Amerika"
+
 #: class-wo-map-page.php:103
-msgid "US Rocky Mountain"
-msgstr "US Rocky Mountain"
-
 #: class-wo-map-page.php:104
+msgid "US Rocky Mountain"
+msgstr "Orta Amerika"
+
 #: class-wo-map-page.php:105
-msgid "US South"
-msgstr "US South"
-
 #: class-wo-map-page.php:106
+msgid "US South"
+msgstr "Güney Amerika"
+
 #: class-wo-map-page.php:107
-msgid "US Southeast"
-msgstr "US Southeast"
-
 #: class-wo-map-page.php:108
-#: class-wo-map-page.php:109
-msgid "US Southwest"
-msgstr "US Southwest"
+msgid "US Southeast"
+msgstr "Güneydoğu Amerika"
 
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:110
+msgid "US Southwest"
+msgstr "Güneybatı Amerika"
+
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:112
+msgid "Spain/Portugal"
+msgstr "İspanya/Portekiz"
+
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:115
+msgid "Finland"
+msgstr "Finlandiya"
+
+#: class-wo-map-page.php:115
+msgid "(yellow)"
+msgstr "(sarı)"
+
+#: class-wo-map-page.php:116
+#: class-wo-map-page.php:117
+msgid "Japan"
+msgstr "Japonya"
+
+#: class-wo-map-page.php:118
 #: class-wo-map-page.php:119
+msgid "Netherlands"
+msgstr "Hollanda"
+
+#: class-wo-map-page.php:120
+#: class-wo-map-page.php:121
+msgid "Brazil"
+msgstr "Brezilya"
+
+#: class-wo-map-page.php:131
 msgid "Go"
 msgstr "Git"
 
-#: class-wo-update.php:88
-msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
-msgstr "İlk kez MaxMind GeoLite City veritabanı yükleme hazırlanması"
-
-#: class-wo-update.php:93
-msgid "Checking for updates for the Maxmind GeoLiteCity database"
-msgstr "MaxMind GeoLiteCity veritabanı için güncellemeleri kontrol etme"
-
-#: class-wo-update.php:100
-msgid "Connecting to this URL:"
-msgstr "Bu URL Bağlanma: "
-
-#: class-wo-update.php:141
-msgid "You have the latest available Maxmind GeoLiteCity database"
-msgstr "En son MaxMind GeoLiteCity veritabanına sahipsiniz"
-
-#: class-wo-update.php:142
-msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
-msgstr "Not: MaxMind genellikle güncelleştirmeleri GeoLiteCity 1 aylık olaraktır, ama bazen güncelleştirmeler 2. veya 3. aylık  tarihlerdede olabilir."
-
-#: class-wo-update.php:143
-#, php-format
-msgid "Maxmind last updated it %1$s (%2$d days ago)"
-msgstr "MaxMind son güncelleme bu %1$s (%2$d gün önce)"
-
-#: class-wo-update.php:144
-#, php-format
-msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
-msgstr "bu <a href=\"%s\" target=\"_new\">yeni dosya mevcuttur</a>"
-
-#: class-wo-update.php:146
-#, php-format
-msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
-msgstr "%s geçerli GeoLiteCity veritabanı güncellemesi (%d gün önce) dir"
-
-#: class-wo-update.php:147
-msgid "No new updates are available today."
-msgstr "Yeni güncellemeler mevcuttur."
-
-#: class-wo-update.php:160
-msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
-msgstr "Hata: Yükleme başarısız, indirme GeoLiteCity.dat.gz dosya bulunamadı "
-
-#: class-wo-update.php:163
-msgid "Download success, uncompressing file, please wait"
-msgstr "Download başarılı, dosya sıkıştırılşıyor, lütfen bekleyin"
-
-#: class-wo-update.php:169
-msgid "unzip error: opening GeoLiteCity.dat file"
-msgstr "unzip açılış hatası: dosya GeoLiteCity.dat açılamıyor"
-
-#: class-wo-update.php:171
-msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
-msgstr "unzip açılış hatası: dosya GeoLiteCity.dat.gz açılamıyor"
-
-#: class-wo-update.php:180
-msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
-msgstr "unzip açılış hatası: dosya yazma izni 644 GeoLiteCity.dat açılamıyor"
-
-#: class-wo-update.php:185
-msgid "Error: the GeoLiteCity.dat file was not found"
-msgstr "hata: dosya GeoLiteCity.dat bulunamadı"
-
-#: class-wo-update.php:189
-msgid "Install/Update completed"
-msgstr "Yükleme/Güncelleme tamamlandı"
-
-#: class-wo-update.php:213
-msgid "Testing a lookup with your IP address:"
-msgstr "IP adresin Test için aranıyor: "
-
-#: class-wo-update.php:219
-msgid "test_lookup error: the GeoLiteCity.dat file was not found"
-msgstr "test_lookup hatası: GeoLiteCity.dat dosya bulunamadı "
-
-#: class-wo-update.php:222
-msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
-msgstr "test_lookup hatası: dahil-whos-online-geoip.php dosya bulunamadı "
-
-#: class-wo-update.php:233
-msgid "IP:"
-msgstr "IP:"
-
-#: class-wo-update.php:234
-msgid "City:"
-msgstr "Şehir:"
-
-#: class-wo-update.php:235
-msgid "State Name:"
-msgstr "İl adı"
-
-#: class-wo-update.php:236
-msgid "State Code:"
-msgstr "İl kodu"
-
-#: class-wo-update.php:237
-msgid "Country Name:"
-msgstr "Ülke adı"
-
-#: class-wo-update.php:238
-msgid "Country Code:"
-msgstr "Ülke kodu"
-
-#: class-wo-update.php:239
-msgid "Lat:"
-msgstr "Lat:"
-
-#: class-wo-update.php:240
-msgid "Lon: "
-msgstr "Lon: "
-
-#: class-wo-update.php:244
-msgid "Note: location information was not available, this is normal if on a private network."
-msgstr "Not: konum bilgilerini, bu normal bir özel ağ eğer mevcut değildi."
-
-#: class-wo-update.php:253
-#: visitor-maps.php:35
-#: visitor-maps.php:46
-#: visitor-maps.php:628
-msgid "View Who's Online"
-msgstr "Şuan kimler online"
-
-#: class-wo-update.php:254
-#: class-wo-view.php:103
-#: visitor-maps.php:34
-msgid "Visitor Maps Options"
-msgstr "Ziyaretçi Harita Seçenekleri"
-
-#: class-wo-update.php:283
-#: class-wo-view.php:680
-msgid "error: could not connect to remote file"
-msgstr "hata: uzak dosya bağlantısı kurulamadı "
-
-#: class-wo-update.php:296
-#: class-wo-view.php:693
-msgid "error: fetching timestamp failed for URL, 404 not found?"
-msgstr "hata: alma zaman damgası URL, 404 için başarısız bulunamadı? "
-
-#: class-wo-update.php:328
-#: class-wo-view.php:725
-msgid "error: fetching timestamp failed for URL 404 not found?"
-msgstr "hata: alma damgası URL 404 için başarısız bulunamadı? "
-
-#: class-wo-update.php:341
-#: class-wo-view.php:738
-msgid "error: could not connect to remote URL"
-msgstr "hata: Uzaktan URL bağlantısı kurulamadı "
-
-#: class-wo-update.php:346
-msgid "Please allow plenty of time for the approximately 19meg file to download."
-msgstr "Lütfen indirmek için yaklaşık 19 mb dosya alanı olmalı"
-
-#: class-wo-update.php:347
-msgid "The time needed depends on your server download speed."
-msgstr "Zaman gerekli sunucu download hızına bağlıdır. "
-
-#: class-wo-update.php:348
-msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
-msgstr "Eğer bağlantı gerçekten 3 dakikadan  fazla sürecekse bu yavaş bir bağlantı olabilir. "
-
-#: class-wo-update.php:356
-msgid "error: reading or opening file"
-msgstr "hata: okuma veya dosya açma"
-
-#: class-wo-update.php:357
-#: class-wo-update.php:375
-msgid "error: cannot write to file, check server permission settings"
-msgstr "hata: dosya, sunucu izin ayarlarınızı kontrol yazamazsınız "
-
-#: class-wo-update.php:358
-msgid "Download started, (counting megs)"
-msgstr "Yükleme, (megs sayma) başladı "
-
-#: class-wo-update.php:382
-msgid "error: CHMOD 0644 download file failed"
-msgstr "hata: CHMOD 0644 dosya indirme başarısız oldu"
-
-#: class-wo-view.php:23
-#: class-wo-view.php:31
-msgid "None"
-msgstr "Hiçbiri "
-
-#: class-wo-view.php:32
-msgid "All"
-msgstr "Hepsi"
-
-#: class-wo-view.php:33
-#: class-wo-view.php:450
-msgid "Bots"
-msgstr "Botlar "
-
-#: class-wo-view.php:34
-#: class-wo-view.php:446
-msgid "Guests"
-msgstr "Konuklar "
-
-#: class-wo-view.php:98
+#: class-wo-view.php:125
 msgid "Refresh Rate:"
-msgstr "Yenileme Hızı: "
+msgstr "Yenileme Hızı:"
 
-#: class-wo-view.php:99
-msgid "Profile Display:"
-msgstr "Profil Göster: "
-
-#: class-wo-view.php:100
-msgid "Show Bots:"
-msgstr "Botları Göster"
-
-#: class-wo-view.php:111
-#: class-wo-view.php:525
-msgid "Active Guest"
-msgstr "Aktif Ziyaretçi "
-
-#: class-wo-view.php:113
-#: class-wo-view.php:518
-msgid "Inactive Guest"
-msgstr "İnaktif Ziyaretçi"
-
-#: class-wo-view.php:117
-#: class-wo-view.php:512
-msgid "Active Bot"
-msgstr "Aktif Bot"
-
-#: class-wo-view.php:119
-#: class-wo-view.php:509
-msgid "Inactive Bot"
-msgstr "İnaktif Bot"
-
-#: class-wo-view.php:131
+#: class-wo-view.php:169
 msgid "Last refresh at"
-msgstr "Son yenileme zamanı"
+msgstr "Son yenileme saati"
 
-#: class-wo-view.php:142
+#: class-wo-view.php:180
 msgid "Online"
-msgstr "Bağlı"
+msgstr "Çevrimiçi"
 
-#: class-wo-view.php:143
-msgid "Who"
-msgstr "Kim"
-
-#: class-wo-view.php:144
-msgid "IP Address"
-msgstr "İP Adresi"
-
-#: class-wo-view.php:145
-msgid "Location"
-msgstr "Yer"
-
-#: class-wo-view.php:146
+#: class-wo-view.php:184
 msgid "Entry"
 msgstr "Giriş"
 
-#: class-wo-view.php:147
+#: class-wo-view.php:185
 msgid "Last Click"
-msgstr "Son tıklanan"
+msgstr "Son Tıklama"
 
-#: class-wo-view.php:150
-msgid "Last URL"
-msgstr "Son URL"
-
-#: class-wo-view.php:153
-msgid "Referer"
-msgstr "Misafir"
-
-#: class-wo-view.php:261
-msgid "Guest"
-msgstr "Ziyaretçi"
-
-#: class-wo-view.php:265
-#: class-wo-view.php:454
-msgid "You"
-msgstr "Sen"
-
-#: class-wo-view.php:283
-msgid "Error"
-msgstr "HATA"
-
-#: class-wo-view.php:298
-msgid "visits"
-msgstr "ziyaretler"
-
-#: class-wo-view.php:303
-msgid "host lookups not enabled"
-msgstr "konak aramaları etkin değil"
-
-#: class-wo-view.php:325
-msgid "unknown"
-msgstr "Bilinmiyor"
-
-#: class-wo-view.php:389
-msgid "No"
-msgstr "Hayır"
-
-#: class-wo-view.php:391
-msgid "Yes"
-msgstr "Evet"
-
-#: class-wo-view.php:405
-msgid "Last URL:"
-msgstr "Son URL: "
-
-#: class-wo-view.php:428
-#, php-format
+#: class-wo-view.php:469
 msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
-msgstr "Ziyaretçi online ( sonra etkin %1$d dakika düşündü. %2$d dakika sonra kaldırıldı)"
-
-#: class-wo-view.php:435
-msgid "Duplicate IPs"
-msgstr "Yinelenen IP'leri"
-
-#: class-wo-view.php:442
-msgid "Members (includes you)"
-msgstr "Üye (siz) içerir"
-
-#: class-wo-view.php:446
-msgid "are active"
-msgstr "etkin "
-
-#: class-wo-view.php:460
-msgid "Your IP Address:"
-msgstr "IP Adresiniz: "
-
-#: class-wo-view.php:466
-msgid "Your Host:"
-msgstr "Kişisel web adresiniz:"
-
-#: class-wo-view.php:471
-#: visitor-maps.php:648
-msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
-msgstr "GeoLiteCity MaxMind tarafından oluşturuldu, http://www.maxmind.com adresinden bilgi edinilebilir"
-
-#: class-wo-view.php:474
-#: class-wo-view.php:478
-#, php-format
-msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
-msgstr "GeoLiteCity veri son güncellenme tarihi %1$s (%2$d gün önce)"
-
-#: class-wo-view.php:475
-msgid "an update is available"
-msgstr "bir güncelleştirme kullanılabilir"
+msgstr "Ziyaretçi Çevrimiçi  (%1$d dakika sonra inaktif olarak isaretlenir. %2$d dakika sonra da otomatikman kaldırılır)"
 
 #: class-wo-view.php:476
+msgid "Duplicate IPs"
+msgstr "Yinelenen IP"
+
+#: class-wo-view.php:483
+msgid "Members (includes you)"
+msgstr "Üye (siz dahil)"
+
+#: class-wo-view.php:487
+msgid "are active"
+msgstr "aktif"
+
+#: class-wo-view.php:501
+msgid "Your IP Address:"
+msgstr "Sizin IP Adresiniz:"
+
+#: class-wo-view.php:507
+msgid "Your Host:"
+msgstr "Sizin İnternet Sunucunuz:"
+
+#: class-wo-view.php:512
+#: visitor-maps-admin.php:255
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr "Burada MaxMind(http://www.maxmind.com) GeoLiteCity verilerinden faydalanılmaktadır."
+
+#: class-wo-view.php:515
+#: class-wo-view.php:519
+msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
+msgstr "GeoLiteCity en son veri güncellenme tarihi %1$s (%2$d gün önce)"
+
+#: class-wo-view.php:516
+msgid "an update is available"
+msgstr "güncelleme bulundu"
+
+#: class-wo-view.php:517
 msgid "click here to update"
 msgstr "güncellemek için tıklayın"
 
-#: class-wo-view.php:536
-msgid "User Agent:"
-msgstr "Kullanıcı ayarı:"
-
-#: class-wo-view.php:542
-msgid "Host:"
-msgstr "Siteniz:"
-
-#: class-wo-view.php:548
-msgid "Referer:"
-msgstr "Ziyaretler:"
-
-#: class-wo-worldmap.php:27
-#: visitor-maps.php:1142
-msgid "error: geolocation data not enabled or installed"
-msgstr "hata: geolocation veri etkin değil veya yüklü değil"
-
-#: class-wo-worldmap.php:243
-#, php-format
-msgid "%1$d visitors since %2$d %3$s ago"
-msgstr "%1$d Ziyaretler %2$d %3$s gün önce"
-
-#: class-wo-worldmap.php:246
-#, php-format
-msgid "%1$d visitors since %2$d ago"
-msgstr "%1$d Ziyaretler %2$d gün önce"
-
-#: visitor-maps.php:42
-#: visitor-maps.php:497
-msgid "You do not have permissions for managing this option"
-msgstr "Bu seçeneği yönetmek için izniniz yok"
-
-#: visitor-maps.php:75
-#, php-format
-msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
-msgstr "Haritaları görmek için <a href=\"%s\">Haritada Göster</a>"
-
-#: visitor-maps.php:77
-#: visitor-maps.php:234
-#: visitor-maps.php:735
-#: visitor-maps.php:1718
-#: visitor-maps.php:1747
-msgid "Powered by"
-msgstr "Yapımcı"
-
-#: visitor-maps.php:168
-msgid "Close"
-msgstr "Çıkış"
-
-#: visitor-maps.php:170
-msgid "Powered by Visitor Maps"
-msgstr "Ziyaretçi kökenini hazırlayan"
-
-#: visitor-maps.php:175
-#: visitor-maps.php:237
-msgid "Visitor Maps geolocation is disabled in settings."
-msgstr "Ziyaretçi Haritalar geolocation ayarlarında devre dışı bırakılmıştır."
-
-#: visitor-maps.php:232
-msgid "View more maps in the "
-msgstr "Daha fazla harita Görüntüle"
-
-#: visitor-maps.php:232
-msgid "Visitor Map Viewer"
-msgstr "Ziyaretçi Haritası Viewer"
-
-#: visitor-maps.php:348
-msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
-msgstr "Ziyaretçi Haritalar eklentisi MaxMind GeoLiteCity veritabanı ihtiyaçlarını yüklü."
-
-#: visitor-maps.php:348
-#: visitor-maps.php:650
-msgid "Install Now"
-msgstr "Şimdi Yükle"
-
-#: visitor-maps.php:430
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: visitor-maps.php:560
+#: visitor-maps-admin.php:91
 msgid "Options saved."
-msgstr "Ayarları kaydet"
+msgstr "Ayarlar kaydedildi."
 
-#: visitor-maps.php:563
+#: visitor-maps-admin.php:94
 msgid "Visitor Maps and Who's Online Options"
-msgstr "Ziyaretçi Haritaları ve Kimler Online Seçenekleri"
+msgstr "Ziyaretçi Haritası ve Kimler Çevrimiçi Ayarları"
 
-#: visitor-maps.php:576
+#: visitor-maps-admin.php:107
 msgid "Changelog"
-msgstr "Girişi değiştir"
+msgstr "Değişim Günlüğü"
 
-#: visitor-maps.php:577
+#: visitor-maps-admin.php:108
 msgid "FAQ"
-msgstr "Sık sorulanlar"
+msgstr "Sık Sorulanlar"
 
-#: visitor-maps.php:578
+#: visitor-maps-admin.php:109
+#: visitor-maps-admin.php:204
 msgid "Rate This"
-msgstr "Bu oran "
+msgstr "Derecelendirin"
 
-#: visitor-maps.php:579
+#: visitor-maps-admin.php:110
 msgid "Support"
 msgstr "Destek"
 
-#: visitor-maps.php:580
-#: visitor-maps.php:588
+#: visitor-maps-admin.php:111
+#: visitor-maps-admin.php:173
 msgid "Donate"
 msgstr "Bağış"
 
-#: visitor-maps.php:581
+#: visitor-maps-admin.php:112
 msgid "Free PHP Scripts"
-msgstr "Ücrestsiz yazılım"
+msgstr "Ücretsiz yazılım"
 
-#: visitor-maps.php:582
+#: visitor-maps-admin.php:113
 msgid "Contact"
 msgstr "İrtibat"
 
-#: visitor-maps.php:600
-msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to further development. Thanks for your kind support!"
-msgstr "Lütfen daha da gelişmesine katkıda bulunmak için küçük bir bağış yapmayı düşünün bu eklenti sizin için yararlı olabilir. destekleriniz için teşekkür ederiz!"
+#: visitor-maps-admin.php:146
+msgid "Downloaded %s times"
+msgstr "%s kere indirildi"
 
-#: visitor-maps.php:616
+#: visitor-maps-admin.php:151
+#: visitor-maps-admin.php:159
+msgid "(Average rating based on %s ratings)"
+msgstr "(% s puan bazlı ortalama derece)"
+
+#: visitor-maps-admin.php:153
+msgid "5 stars"
+msgstr "5 yıldız"
+
+#: visitor-maps-admin.php:154
+msgid "4 stars"
+msgstr "4 yıldız"
+
+#: visitor-maps-admin.php:155
+msgid "3 stars"
+msgstr "3 yıldız"
+
+#: visitor-maps-admin.php:156
+msgid "2 stars"
+msgstr "2 yıldız"
+
+#: visitor-maps-admin.php:157
+msgid "1 star"
+msgstr "1 yıldız"
+
+#: visitor-maps-admin.php:159
+msgid "rate"
+msgstr "derecelendir"
+
+#: visitor-maps-admin.php:175
+msgid "Please donate to keep this plugin FREE"
+msgstr "Lütfen bu eklentiyi ÜCRETSİZ tutmak için bağış yapın"
+
+#: visitor-maps-admin.php:176
+msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to my time invested and to further development. Thanks for your kind support!"
+msgstr "Bu eklenti sizin için yararlı olduysa lütfen daha da gelişmesine katkıda bulunmak için küçük bir bağış yapmayı düşünün. Destekleriniz için teşekkür ederiz!"
+
+#: visitor-maps-admin.php:176
+msgid "More from Mike Challis"
+msgstr "Diğer Mike Challis eklentileri:"
+
+#: visitor-maps-admin.php:189
+msgid "ThemeFuse Original WP Themes"
+msgstr "ThemeFuse Original WP Themes"
+
+#: visitor-maps-admin.php:190
+msgid "Try <a href=\"%s\" target=\"_blank\">ThemeFuse</a>, they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services. Check out some of their themes!"
+msgstr "Try <a href=\"%s\" target=\"_blank\">ThemeFuse</a>, they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services. Check out some of their themes!"
+
+#: visitor-maps-admin.php:192
+msgid "ThemeFuse"
+msgstr "ThemeFuse"
+
+#: visitor-maps-admin.php:202
+msgid "Mike Challis says: \"Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK."
+msgstr "Mike Challis diyor ki: \"Merhaba, ben sırf sizin için bu eklentiyi kodlamak adına yüzlerce saat harcadım eğer programlardan ve verdiğim destekten memnun kaldıysanız mümkünse lütfen küçük bir bağış yapmayı düşünün."
+
+#: visitor-maps-admin.php:203
+msgid "Most people donate $3, $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin.\""
+msgstr "Çoğu insan, $ 3, $ 5, $ 10, $ 20 veya daha fazla bağış yapıyor. Hiçbir miktarı çok az değil. Bağışlar PayPal hesabı ile yapılabilir, ya da güvenli ortamda kredi kartı kullanarak olabilir. Benim eklentimi değerlendirin lütfen. \""
+
+#: visitor-maps-admin.php:206
+msgid "Close this message"
+msgstr "Bu mesajı kapat"
+
+#: visitor-maps-admin.php:220
 msgid "I have donated to help contribute for the development of this plugin."
-msgstr "Bu eklentinin geliştirilmesi için katkıda bulunmak için bağış yap"
+msgstr "Ben bu eklentinin gelişimine katkıda bulunmak için bağış yaptım."
 
-#: visitor-maps.php:619
+#: visitor-maps-admin.php:223
 msgid "Usage"
-msgstr "Kullanım "
+msgstr "Kullanım"
 
-#: visitor-maps.php:621
-msgid "Add the shortcode <b>[visitor-maps]</b> in a Page(not a Post). That page will become your Visitor Maps page."
-msgstr "Hata ekle <b>[visitor-maps]</b>sayfasında(mesaj değil). Bu sayfa, Ziyaretçi Haritalar sayfası olacaktır."
+#: visitor-maps-admin.php:225
+msgid "Add the shortcode [visitor-maps] in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr "Sayfalar 'a shortcode [visitor-maps] ekleyebilirsiniz (fakat Yazılar 'a ekleyemezsiniz). Bu sayfa sizin Ziyaretçi Haritası sayfanız olacaktır."
 
-#: visitor-maps.php:621
-#: visitor-maps.php:624
-#: visitor-maps.php:679
-#: visitor-maps.php:686
-#: visitor-maps.php:693
-#: visitor-maps.php:706
-#: visitor-maps.php:749
-#: visitor-maps.php:756
-#: visitor-maps.php:763
-#: visitor-maps.php:770
+#: visitor-maps-admin.php:225
+#: visitor-maps-admin.php:228
+#: visitor-maps-admin.php:273
+#: visitor-maps-admin.php:281
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:297
+#: visitor-maps-admin.php:305
+#: visitor-maps-admin.php:313
+#: visitor-maps-admin.php:321
+#: visitor-maps-admin.php:329
+#: visitor-maps-admin.php:336
+#: visitor-maps-admin.php:429
+#: visitor-maps-admin.php:437
+#: visitor-maps-admin.php:451
+#: visitor-maps-admin.php:458
+#: visitor-maps-admin.php:465
+#: visitor-maps-admin.php:473
+#: visitor-maps-admin.php:481
+#: visitor-maps-admin.php:489
+#: visitor-maps-admin.php:497
+#: visitor-maps-admin.php:511
+#: visitor-maps-admin.php:532
+#: visitor-maps-admin.php:540
+#: visitor-maps-admin.php:548
+#: visitor-maps-admin.php:561
+#: visitor-maps-admin.php:569
+#: visitor-maps-admin.php:577
+#: visitor-maps-admin.php:585
+#: visitor-maps-admin.php:602
+#: visitor-maps-admin.php:609
+#: visitor-maps-admin.php:616
+#: visitor-maps-admin.php:623
 msgid "help"
-msgstr "Yardım"
+msgstr "yardım "
 
-#: visitor-maps.php:624
+#: visitor-maps-admin.php:228
 msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
-msgstr "Kimler Online Kenar Çubuğuna Eklemek için Görünüm, bileşenler, sonra sağ kenar çubuğunda sütun içine sürükleyin."
+msgstr "Kimler Online Kenar Çubuğunu eklemek için Görünüm, Bileşenler'e tıklayın , sonra da Kimler Online Bileşenini sağdaki  kenar çubuğuna sürükleyin."
 
-#: visitor-maps.php:630
-#, php-format
-msgid "<a href=\"%s\">Visitor Map Viewer</a>"
-msgstr "<a href=\"%s\">Ziyaretçi Haritası önizleme</a>"
+#: visitor-maps-admin.php:234
+msgid "View Who's Been Online"
+msgstr "Kimler Çevrimiçi İdi"
 
-#: visitor-maps.php:633
+#: visitor-maps-admin.php:240
 msgid "Options"
 msgstr "Ayarlar"
 
-#: visitor-maps.php:636
-#: visitor-maps.php:783
+#: visitor-maps-admin.php:243
+#: visitor-maps-admin.php:636
 msgid "Update Options"
-msgstr "Ayarlar güncellendi"
+msgstr "Ayarları Güncelleştir "
 
-#: visitor-maps.php:644
+#: visitor-maps-admin.php:251
 msgid "GeoLocation:"
-msgstr "Coğrafi Yer:"
+msgstr "Coğrafi Konum:"
 
-#: visitor-maps.php:650
+#: visitor-maps-admin.php:257
 msgid "The Maxmind GeoLiteCity database is not yet installed."
 msgstr "MaxMind GeoLiteCity veritabanı henüz yüklü değil"
 
-#: visitor-maps.php:652
+#: visitor-maps-admin.php:259
 msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
-msgstr "MaxMind GeoLiteCity veritabanı yüklü ama etkin değil aşağıdaki ayarı kontrol edin."
+msgstr "MaxMind GeoLiteCity veritabanı yüklü ama etkin değil. (aşağıdaki ayarları kontrol edin)"
 
-#: visitor-maps.php:654
+#: visitor-maps-admin.php:261
 msgid "The Maxmind GeoLiteCity database is installed and enabled."
 msgstr "MaxMind GeoLiteCity veritabanı yüklü ve etkin."
 
-#: visitor-maps.php:660
+#: visitor-maps-admin.php:267
 msgid "Enable geolocation."
-msgstr "Coğrafi Yer etkin"
+msgstr "Coğrafi Konumu etkinleştir."
 
-#: visitor-maps.php:661
+#: visitor-maps-admin.php:268
 msgid "Update Now"
-msgstr "Şimdi güncelle"
+msgstr "Şimdi Güncelle"
 
-#: visitor-maps.php:665
-msgid "Enable display of bots on geolocation maps."
-msgstr "Coğrafi  haritalarda botları görüntülemeyi etkinleştirin. "
+#: visitor-maps-admin.php:272
+msgid "Disable text on geolocation maps (missing map background fix)."
+msgstr "Coğrafi Konum haritalarında yazıları devre dışı bırak.( harita arka planı hatalarını düzeltmek için) "
 
-#: visitor-maps.php:669
-msgid "Enable display of city, state next to country flag."
-msgstr "Devlet yada ülke bayrağını etkinleştirin."
-
-#: visitor-maps.php:675
-msgid "Visitors:"
-msgstr "Ziyaretçi:"
-
-#: visitor-maps.php:678
-msgid "Active time (minutes)"
-msgstr "Etkin süresi (dakika)"
-
-#: visitor-maps.php:679
-#: visitor-maps.php:686
-#: visitor-maps.php:693
-#: visitor-maps.php:706
-#: visitor-maps.php:749
-#: visitor-maps.php:756
-#: visitor-maps.php:763
-#: visitor-maps.php:770
+#: visitor-maps-admin.php:273
+#: visitor-maps-admin.php:281
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:297
+#: visitor-maps-admin.php:305
+#: visitor-maps-admin.php:313
+#: visitor-maps-admin.php:321
+#: visitor-maps-admin.php:329
+#: visitor-maps-admin.php:336
+#: visitor-maps-admin.php:429
+#: visitor-maps-admin.php:437
+#: visitor-maps-admin.php:451
+#: visitor-maps-admin.php:458
+#: visitor-maps-admin.php:465
+#: visitor-maps-admin.php:473
+#: visitor-maps-admin.php:481
+#: visitor-maps-admin.php:489
+#: visitor-maps-admin.php:497
+#: visitor-maps-admin.php:511
+#: visitor-maps-admin.php:532
+#: visitor-maps-admin.php:540
+#: visitor-maps-admin.php:548
+#: visitor-maps-admin.php:561
+#: visitor-maps-admin.php:569
+#: visitor-maps-admin.php:577
+#: visitor-maps-admin.php:585
+#: visitor-maps-admin.php:602
+#: visitor-maps-admin.php:609
+#: visitor-maps-admin.php:616
+#: visitor-maps-admin.php:623
 msgid "Click for Help!"
 msgstr "Yardım için tıklayın!"
 
-#: visitor-maps.php:681
+#: visitor-maps-admin.php:275
+msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
+msgstr "Bazı PHP sunucuları Ziyaretçi Haritası resminin üzerindeki metni basma fonksiyonunu desteklemez.Eğer Ziyaretçi Haritası üzerinde  sadece oklar görüyor ve dünya ya da ülkelerin resmini görmüyorsanız , bu ayarı seçin. Bu ayarı seçtikten sonra,  haritanın çalışıp çalışmadığını görmek için ziyaretçi haritaları sayfasına tekrar bakın."
+
+#: visitor-maps-admin.php:280
+msgid "Enable display of city, state next to country flag."
+msgstr "Ülke bayrağının yanındaki sehir,eyalet gösterimini etkinleştir."
+
+#: visitor-maps-admin.php:283
+#: visitor-maps-admin.php:291
+#: visitor-maps-admin.php:542
+#: visitor-maps-admin.php:550
+msgid "Changes display options on Who's Online dashboard pages."
+msgstr "Kimler Online sayfalarının seçeneklerini görüntüleyen değişiklikler "
+
+#: visitor-maps-admin.php:288
+msgid "Enable visitor map on Who's Online dashboard."
+msgstr "Kimler Online panosunda Ziyaretçi Haritasını etkinlestir."
+
+#: visitor-maps-admin.php:296
+msgid "Enable visitor map on Visitor Map shortcode page."
+msgstr "Ziyaretçi Haritası shortcode sayfasında ziyaretçi haritasını etkinleştir."
+
+#: visitor-maps-admin.php:299
+msgid "Changes map display options on the page where you inserted the visitor map shortcode."
+msgstr "Ziyaretçi Haritası shortcode 'u eklenen sayfadaki harita görüntüleme ayarları değişiklikleri  "
+
+#: visitor-maps-admin.php:304
+msgid "Enable visitor map link on Who's Online widget."
+msgstr "Kimler Çevrimiçi bileşeninde ziyaretçi harita bağlantısını etkinleştir."
+
+#: visitor-maps-admin.php:307
+msgid "Changes display options on Who's Online widget."
+msgstr "Kimler Çevrimiçi bileşeninde seçenekleri görüntüleyen değişiklikler"
+
+#: visitor-maps-admin.php:312
+msgid "Enable hover labels for location pins on visitor map page."
+msgstr "Ziyaretçi haritası sayfasında yer pimleri etiketlerinde hover efektini(mouse'la üzerine gelince beliren metin) etkinleştir."
+
+#: visitor-maps-admin.php:315
+msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
+msgstr "Bazı temalar Ziyaretçi Haritaları sayfasında yer pimlerinin düzgün görüntülenmesine izin vermez. Bu ayarı etkinleştirdikten sonra, pimlerin doğru şekilde görüntülendiğinden emin olmak için ziyaretçi haritaları sayfasını kontrol edin. Eğer harita üzerindeki yer pimleri yaklaşık 10 pikselse çok düşük , bu ayarı etkisizleştirin."
+
+#: visitor-maps-admin.php:320
+msgid "Enable user names on hover labels for location pins on visitor map page."
+msgstr "Ziyaretçi harita sayfasında, yer pimleri etiketlerindeki kullanıcı adları üzerinde hover efektini etkinleştir."
+
+#: visitor-maps-admin.php:323
+msgid "When enabled, registered users will have green location pins on the Visitor Maps page. Also the hover tag will include the user name."
+msgstr "Etkinleştirildiğinde, kayıtlı kullanıcılar Ziyaretçi Haritası sayfasında yeşil yer imleriyle işaretlenecek. Ayrıca hover efektiyle kullanıcı adı görüntülenecektir."
+
+#: visitor-maps-admin.php:328
+msgid "Hide map viewing by non administrators."
+msgstr "Yönetici olmayanlara haritaları  gizle."
+
+#: visitor-maps-admin.php:331
+msgid "This setting restricts viewing the Visitor Map Viewer page to administrators only."
+msgstr "Bu ayar etkinleştirildiğinde, Ziyaretçi Haritası yalnızca yöneticiler tarafindan görüntülenebilir."
+
+#: visitor-maps-admin.php:335
+msgid "Limit for map pins"
+msgstr "Harita işaretçileri için limit"
+
+#: visitor-maps-admin.php:338
+msgid "This limit protects server resources by limiting pins when displaying maps. Default is 2000. The human eye will not be able to see more than 2000 pins anyway."
+msgstr "Bu limit, haritalar görüntülenirken pim adedini sınırlayarak, sunucu kaynaklarını korur. Varsayılan adet 2000 dir.Insan gözü zaten 2000'den fazla pimi göremez."
+
+#: visitor-maps-admin.php:342
+msgid "Default Visitor Map"
+msgstr "Varsayılan Ziyaretçi Haritası"
+
+#: visitor-maps-admin.php:431
+msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
+msgstr "Ziyaretçi haritası sayfasında varsayılan harita. Bunu ayardan sonra, haritanın doğru şekilde görüntülendiğinden emin olmak için ziyaretçi haritaları sayfasını kontrol edin.Harita çok geniş ise, bir sonraki küçük olanı seçin."
+
+#: visitor-maps-admin.php:435
+msgid "Users who can view the dashboard pages:"
+msgstr "Pano sayfalarını görüntülemeye yetkili kullanıcılar:"
+
+#: visitor-maps-admin.php:439
+msgid "By default, only Administrators can view the dashboard pages. Change this setting to also allow Editors, Authors, or Contributors to view the dashboard pages. When set to Authors, you are also allowing Administrator and Editors."
+msgstr "Varsayılan olarak, yalnızca Yöneticiler pano sayfalarını görebilir. Pano sayfalarının Editörler, Yazarlar ve Katkıda Bulunanlar tarafından görülebilmesi için bu ayarı değiştirmelisiniz. Yazarlara izin verildiğinde, Yönetici ve Editörler için de izin vermiş olursunuz."
+
+#: visitor-maps-admin.php:447
+msgid "Visitors:"
+msgstr "Ziyaretçi:"
+
+#: visitor-maps-admin.php:450
+msgid "Active time (minutes)"
+msgstr "Aktif olduğu süre (dakika)"
+
+#: visitor-maps-admin.php:453
 msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
-msgstr "Dakikadır bir ziyaretçi kabul edilir \"aktif \". Varsayılan 5 dakikadır."
+msgstr "Bir ziyaretçi belli bir dakika için \"aktif  kabul edilir \". Varsayılan 5 dakikadır."
 
-#: visitor-maps.php:685
+#: visitor-maps-admin.php:457
 msgid "Inactive time (minutes)"
-msgstr "Inaktif süresi (dakika)"
+msgstr "İnaktif olduğu süre (dakika)"
 
-#: visitor-maps.php:688
+#: visitor-maps-admin.php:460
 msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
-msgstr "Dakikadır bir ziyaretçinin önce Saniye ekran kaldırılır. Varsayılan 15 dakikadır."
+msgstr "Ziyaretçi belli bir süre inaktif kalırsa ekrandan kaldırılır. Varsayılan 15 dakikadır."
 
-#: visitor-maps.php:692
+#: visitor-maps-admin.php:464
 msgid "Days to store visitor data"
-msgstr "Gün ziyaretçi verileri saklamak için"
+msgstr "Ziyaretçi verilerini saklamak için belirlenen gün sayısı"
 
-#: visitor-maps.php:695
+#: visitor-maps-admin.php:467
 msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
-msgstr "Gün veri tabanı tablosundaki ziyaretçi verileri saklamak için. Bu veri geolocation haritalar için kullanılır. Varsayılan 30 gündür. "
+msgstr "Veri tabanı tablosundaki ziyaretçi verilerini saklamak için belirlenen gün sayısı. Bu veri geolocation haritaları için kullanılır. Varsayılan 30 gündür."
 
-#: visitor-maps.php:702
+#: visitor-maps-admin.php:472
+msgid "Do not include administrators count or location on the maps."
+msgstr "Yönetici sayısını veya haritada yerlerini gösterme."
+
+#: visitor-maps-admin.php:475
+msgid "Changes display options on Who's Online maps."
+msgstr "Kimler Online haritasında seçenekleri görüntüleyen değişiklikler"
+
+#: visitor-maps-admin.php:480
+msgid "Do not include search bots in the visitors online count on widgets."
+msgstr "Bileşenlerde arama robotlarını online ziyaretçi sayısına dahil etme."
+
+#: visitor-maps-admin.php:483
+#: visitor-maps-admin.php:491
+msgid "Changes display options on Who's Online widgets."
+msgstr "Kimler Online bileşeninde seçenekleri görüntüleyen değişiklikler "
+
+#: visitor-maps-admin.php:488
+msgid "Combine guests and members on widgets so they are only shown as visitors."
+msgstr "Bileşenlerde, misafir ve üyeleri birleştir, hepsini ziyaretçi olarak göster."
+
+#: visitor-maps-admin.php:492
+msgid "Use this setting when your site has registration turned off and all your visitors are guests and not members."
+msgstr "Siteniz kayıta kapalı ve tüm ziyaretçiler misafir ve üye olmayanlardan oluşuyorsa bu ayarı kullanın."
+
+#: visitor-maps-admin.php:496
+msgid "IP Addresses to ignore"
+msgstr "Göz ardı edilecek IP Adresleri"
+
+#: visitor-maps-admin.php:499
+msgid "Optional list of IP addresses for visitors you do not want shown on maps."
+msgstr "Harita üzerinde gösterilmesini istemediğiniz ziyaretçiler için, isteğe bağlı IP adreslerinin listesi"
+
+#: visitor-maps-admin.php:500
+#: visitor-maps-admin.php:516
+msgid "Start each entry on a new line."
+msgstr "Her girişi yeni bir satırda başlat."
+
+#: visitor-maps-admin.php:501
+msgid "Use <strong>*</strong> for wildcards."
+msgstr "Wildcard için <strong>*</ strong> kullanın."
+
+#: visitor-maps-admin.php:502
+#: visitor-maps-admin.php:517
+msgid "Examples:"
+msgstr "Örnekler:"
+
+#: visitor-maps-admin.php:510
+msgid "URLs to ignore"
+msgstr "Göz ardı edilecek URL'ler"
+
+#: visitor-maps-admin.php:513
+msgid "Optional list of URLs on your site you do not want in any Who's Online data."
+msgstr "Sitenizdeki Kimler Online verilerinde istemediginiz URL'lerin isteğe bağlı listesi"
+
+#: visitor-maps-admin.php:514
+msgid "This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat."
+msgstr "Bu özellik, /wp-admin/ gibi URL'leri engellemek veya WP SlimStat gibi diğer eklentilerle uyumluluk için kullanılabilir."
+
+#: visitor-maps-admin.php:515
+msgid "Use partial URL or full URL. The filter will match any part of the URL."
+msgstr "Kısmi bir URL ya da full URL kullan.Filtre URL 'nin herhangi bir bölümünü eşleyecekltir."
+
+#: visitor-maps-admin.php:528
 msgid "Lookups:"
-msgstr "Aramaları:"
+msgstr "Arama:"
 
-#: visitor-maps.php:705
+#: visitor-maps-admin.php:531
 msgid "Who Is Lookup URL"
-msgstr "Kim Arama URL"
+msgstr "Kim Bu Arama URL'si"
 
-#: visitor-maps.php:708
+#: visitor-maps-admin.php:534
 msgid "URL to open when an IP address is clicked on."
-msgstr "URL zaman bir IP adresi açmak için tıkladım."
+msgstr "IP adresi tıklandığında açılacak URL."
 
-#: visitor-maps.php:713
+#: visitor-maps-admin.php:539
 msgid "Enable open Who Is Lookup URL on a pop-up."
-msgstr "Kim bir pop-up Arama URL açık etkinleştirin."
+msgstr "Kim Bu Arama URL'sini yeni pencerede açmayı etkinleştir."
 
-#: visitor-maps.php:717
+#: visitor-maps-admin.php:547
 msgid "Enable host lookups for IP addresses."
-msgstr "IP adresleri için ev sahibi aramaları etkinleştirin."
+msgstr "IP adresleri için servis sunucusu aramalarını etkinleştir."
 
-#: visitor-maps.php:724
+#: visitor-maps-admin.php:557
 msgid "Stats:"
 msgstr "İstatistikler:"
 
-#: visitor-maps.php:727
+#: visitor-maps-admin.php:560
 msgid "Enable stats display in blog footer."
-msgstr "İstatistiklerin ekranda görünmesini etkinleştirin."
+msgstr "İstatistik bilgilerini blog sayfa altlığında etkinleştir."
 
-#: visitor-maps.php:731
+#: visitor-maps-admin.php:563
+#: visitor-maps-admin.php:571
+#: visitor-maps-admin.php:579
+msgid "Shows how many visitors are online now and records of the most users online at one time."
+msgstr "Şuanda kaç ziyaretçinin çevrimiçi olduğunu ve aynı anda çevrimiçi olan en fazla kullanıcı kayıtları gösterir."
+
+#: visitor-maps-admin.php:568
 msgid "Enable stats display in admin footer."
-msgstr "Admin altbilgi İstatistik ekranını etkinleştirin."
+msgstr "İstatistik bilgilerini admin sayfa altlığında etkinleştir."
 
-#: visitor-maps.php:735
+#: visitor-maps-admin.php:576
+msgid "Enable stats display on map page."
+msgstr "İstatistiklerin harita sayfasında görüntülenmesini etkinleştir."
+
+#: visitor-maps-admin.php:584
 msgid "Enable plugin credit link:"
-msgstr "Izin eklenti kredi link:"
+msgstr "Eklenti kredi linkini etkinleştir:"
 
-#: visitor-maps.php:741
+#: visitor-maps-admin.php:587
+msgid "The credit link is not mandatory, yes you can disable it if you want."
+msgstr "Kredi linki zorunlu değildir, isterseniz devre dışı bırakabilirsiniz."
+
+#: visitor-maps-admin.php:594
 msgid "Times:"
-msgstr "Zaman:"
+msgstr "Kere:"
 
-#: visitor-maps.php:745
+#: visitor-maps-admin.php:598
 msgid "Table of date format characters."
-msgstr "Tablo tarih biçimini karakter."
+msgstr "Tarih formatı karakter tablosu."
 
-#: visitor-maps.php:748
+#: visitor-maps-admin.php:601
 msgid "Time format (Max Users Today)"
-msgstr "Saat biçimi (Max Kullanıcılar Bugün)"
+msgstr "Saat formatı (Bugünku Maksimum Ziyaretçi)"
 
-#: visitor-maps.php:751
+#: visitor-maps-admin.php:604
 msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
-msgstr "Saat biçimi \"Max kullanıcıları bugün\" ve \"Son yenileme süresi\" ekran. Varsayılan olarak, h:i a T (02:25 pm PST)"
+msgstr "\"Bugünkü Maksimum Kullanıcı Sayısı\" ve \"Son Yenileme Zamanı\" için Saat Formatı. Varsayılan , h:i a T (02:25 pm PST)"
 
-#: visitor-maps.php:755
+#: visitor-maps-admin.php:608
 msgid "Time format (Last Click)"
-msgstr "Saat biçimi (Son tıklayın) "
+msgstr "Saat formatı (Son Tıklama)"
 
-#: visitor-maps.php:758
+#: visitor-maps-admin.php:611
 msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
-msgstr "Saat biçimi \"Giriş\" ve \"Son tıklama\" ekran. Varsayılan olarak, h:i:sa (02:25:25pm)"
+msgstr "\"Giriş\" ve \"Son Tıklama\" için Saat Formatı. Varsayılan , h:i:sa (02:25:25pm)"
 
-#: visitor-maps.php:762
+#: visitor-maps-admin.php:615
 msgid "Date/Time format (All Time Records)"
-msgstr "Tarih / Saat biçimi (Tüm zamanı kaydeder) "
+msgstr "Tarih / Saat formatı (Tüm Kayıtlar)"
 
-#: visitor-maps.php:765
+#: visitor-maps-admin.php:618
 msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
-msgstr "Tarih / Saat biçimi ay, yıl, tüm zamanların kaydeder. Varsayılan, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "Ay, yıl, tüm zamanlara ait kayıtları için Tarih / Saat formatı. Varsayılan, m-d-Y h:i a T (12-14-2008 02:25 pm PST) "
 
-#: visitor-maps.php:769
+#: visitor-maps-admin.php:622
 msgid "Date/Time format (GeoLite data)"
-msgstr "Tarih / Saat biçimi (GeoLite veri) "
+msgstr "Tarih / Saat formatı (Geolite verileri)"
 
-#: visitor-maps.php:772
+#: visitor-maps-admin.php:625
 msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
-msgstr "Tarih / Saat biçimi için \"GeoLite veri son güncellendi ... \". Varsayılan, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr "\"GeoLite verileri en son ... tarihinde güncellendi \" için Tarih Saat formatı. Varsayılan, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
 
-#: visitor-maps.php:787
+#: visitor-maps-admin.php:643
 msgid "More WordPress plugins by Mike Challis:"
-msgstr "Mike Challis in Wordpress eklentileri:"
+msgstr "Mike Challis'in diğer Wordpress eklentileri:"
 
-#: visitor-maps.php:789
-msgid "Fast and Secure Contact Form"
+#: visitor-maps-admin.php:645
+msgid "Fast Secure Contact Form"
 msgstr "Hızlı ve Güvenli İletişim Formu"
 
-#: visitor-maps.php:790
+#: visitor-maps-admin.php:646
 msgid "SI CAPTCHA Anti-Spam"
 msgstr "SI CAPTCHA Anti-Spam"
 
-#. #-#-#-#-#  plugin.pot (PACKAGE VERSION)  #-#-#-#-#
-#. Plugin Name of an extension
-#: visitor-maps.php:791
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.5.8)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: visitor-maps-admin.php:647
 msgid "Visitor Maps and Who's Online"
-msgstr "Ziyaretçi Haritaları ve Kimler online"
+msgstr "Ziyaretçi Haritaları ve Kimler Çevrimiçi"
 
-#: visitor-maps.php:1101
-#: visitor-maps.php:1740
-#, php-format
-msgid "%d visitors online now"
-msgstr "%d ziyaretçiler şu anda çevrimiçi"
+#: visitor-maps-admin.php:652
+msgid "\"I recommend <a href=\"%s\" target=\"_blank\">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer great features for WordPress users. If you click this link and start an account at HostGator, I get a small commission.\" - Mike Challis"
+msgstr "\"I recommend <a href=\"%s\" target=\"_blank\">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer great features for WordPress users. If you click this link and start an account at HostGator, I get a small commission.\" - Mike Challis"
 
-#: visitor-maps.php:1102
-#: visitor-maps.php:1741
-#, php-format
-msgid "%d guests"
-msgstr "%d misafir"
+#: visitor-maps-admin.php:654
+msgid "Web Site Hosting"
+msgstr "Web Hosting Şirketi"
 
-#: visitor-maps.php:1103
-#: visitor-maps.php:1742
-#, php-format
-msgid "%d members"
-msgstr "%d üye"
+#: visitor-maps-worldmap.php:355
+#: visitor-maps-worldmap.php:375
+msgid "from"
+msgstr "den"
 
-#: visitor-maps.php:1113
-#: visitor-maps.php:1114
-msgid "Max visitors today"
-msgstr "Bugün Max ziyaretçiler"
-
-#: visitor-maps.php:1113
-#: visitor-maps.php:1114
-#: visitor-maps.php:1117
-#: visitor-maps.php:1118
-#: visitor-maps.php:1121
-#: visitor-maps.php:1122
-#: visitor-maps.php:1125
-#: visitor-maps.php:1126
-msgid "at"
-msgstr "Kişi"
-
-#: visitor-maps.php:1117
-#: visitor-maps.php:1118
-msgid "This month"
-msgstr "Bu ay "
-
-#: visitor-maps.php:1121
-#: visitor-maps.php:1122
-msgid "This year"
-msgstr "Bu yıl"
-
-#: visitor-maps.php:1125
-#: visitor-maps.php:1126
-msgid "All time"
-msgstr "Tüm zamanlar"
-
-#: visitor-maps.php:1711
-#: visitor-maps.php:1723
-#: visitor-maps.php:1744
-msgid "Who's Online"
-msgstr "Kimler Çevrimiçi"
-
-#. Plugin URI of an extension
+#. Plugin URI of the plugin/theme
 msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
 msgstr "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
 
-#. Description of an extension
-msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Donate</a>"
-msgstr "Ziyaretçilerinizin hangi ülke veya nereden geldiğini görmek aynı zamanda kaç kullanıcı online durumda göstermek için Kenar Çubuğunda ziyaretçi ayrıntıları görüntülenir ayrıca Çevrimiçi Yönetici Tablosu ve Ziyaretçi ayrıntıları içerir: ziyaretçilerin, IP adresi, ana arama, online saat, şehir, eyalet, ülke, coğrafi haritalar ve daha ne olduğunu görmek için  API anahtarı gerekli.   <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Ayarlar</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Bağış yap</a>"
+#. Description of the plugin/theme
+msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG\">Donate</a>"
+msgstr "Ziyaretçilerinizin hangi ülke,sehir veya nereden geldiğini gösterir. Aynı zamanda Kimler Çevrimiçi Kenar Çubuğunda kaç ziyaretçinin çevrimiçi olduğunu,admin panosunda ziyaretçi ayrıntılarını görüntüler. Ziyaretçi ayrıntıları : ziyaretçi hangi sayfada, IP adresi, host arama, online olduğu süre, şehir, eyalet, ülke, coğrafi konum ve benzerleri.API anahtarı gerekmemektedir. <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Ayarlar</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8600876\">Bağış yap</a>"
 
-#. Author of an extension
+#. Author of the plugin/theme
 msgid "Mike Challis"
 msgstr "Mike Challis"
 
-#. Author URI of an extension
+#. Author URI of the plugin/theme
 msgid "http://www.642weather.com/weather/scripts.php"
 msgstr "http://www.642weather.com/weather/scripts.php"
 
