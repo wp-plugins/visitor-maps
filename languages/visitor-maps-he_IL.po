@@ -1,0 +1,1483 @@
+# Copyright (C) 2010 Visitor Maps and Who's Online
+# This file is distributed under the same license as the Visitor Maps and Who's Online package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Visitor Maps and Who's Online 1.5.8\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/visitor-maps\n"
+"POT-Creation-Date: 2011-12-08 01:46:24+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-01-16 22:42+0200\n"
+"Last-Translator: Udi Burg <udi.burg@gmail.com>\n"
+"Language-Team: Udi Burg <blog@udiburg.com>\n"
+"X-Poedit-Language: Hebrew\n"
+"X-Poedit-Country: ISRAEL\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: class-wo-worldmap.php:27
+#: visitor-maps-worldmap.php:14
+msgid "error: geolocation data not enabled or installed"
+msgstr "שגיאה: המידע על המיקום לא מופעל או לא מותקן"
+
+#: class-wo-worldmap.php:145
+#: class-wo-map-page.php:52
+#: visitor-maps-admin.php:349
+msgid "minutes"
+msgstr "דקות"
+
+#: class-wo-worldmap.php:149
+#: class-wo-map-page.php:53
+#: visitor-maps-admin.php:350
+msgid "hours"
+msgstr "שעות"
+
+#: class-wo-worldmap.php:153
+#: class-wo-map-page.php:54
+#: visitor-maps-admin.php:351
+msgid "days"
+msgstr ""
+
+#: class-wo-worldmap.php:279
+msgid "%1$d visitors since %2$d %3$s ago"
+msgstr ""
+
+#: class-wo-worldmap.php:282
+msgid "%1$d visitors since %2$d ago"
+msgstr ""
+
+#: visitor-maps.php:69
+#: class-wo-been.php:165
+#: class-wo-update.php:312
+#: class-wo-view.php:131
+msgid "Visitor Maps Options"
+msgstr "אפשרויות מפת המבקרים"
+
+#: visitor-maps.php:70
+#: visitor-maps.php:1413
+#: visitor-maps.php:1425
+#: visitor-maps.php:1429
+#: visitor-maps.php:1436
+#: class-wo-been.php:163
+msgid "Who's Online"
+msgstr "מי כרגע בבלוג?"
+
+#: visitor-maps.php:71
+#: visitor-maps.php:100
+#: class-wo-view.php:129
+msgid "Who's Been Online"
+msgstr "מי היה אונליין"
+
+#: visitor-maps.php:77
+msgid "Administrators"
+msgstr "מנהלים"
+
+#: visitor-maps.php:78
+msgid "Editors"
+msgstr "עורכים"
+
+#: visitor-maps.php:79
+msgid "Authors"
+msgstr "יוצרים"
+
+#: visitor-maps.php:80
+msgid "Contributors"
+msgstr "תורמים"
+
+#: visitor-maps.php:96
+#: visitor-maps.php:144
+#: visitor-maps-admin.php:7
+#: visitor-maps-admin.php:22
+msgid "You do not have permissions for managing this option"
+msgstr "אין לך הרשאות לנהל את האפשרות הזאת"
+
+#: visitor-maps.php:100
+#: visitor-maps.php:134
+#: visitor-maps.php:148
+#: visitor-maps.php:183
+#: visitor-maps.php:207
+#: visitor-maps.php:346
+#: visitor-maps.php:378
+#: visitor-maps.php:1413
+#: visitor-maps.php:1420
+#: visitor-maps.php:1492
+#: class-wo-update.php:83
+#: class-wo-map-page.php:43
+#: visitor-maps-admin.php:584
+msgid "Visitor Maps"
+msgstr "מפות המבקרים"
+
+#: visitor-maps.php:130
+#: visitor-maps.php:179
+msgid "View more maps in the <a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "צפו בעוד מפות פה <a href=\"%s\">מראה המפות</a>"
+
+#: visitor-maps.php:134
+#: visitor-maps.php:183
+#: visitor-maps.php:378
+#: visitor-maps.php:1420
+#: visitor-maps.php:1492
+#: visitor-maps-admin.php:584
+msgid "Powered by"
+msgstr "מופעל ע\"י"
+
+#: visitor-maps.php:148
+#: class-wo-update.php:311
+#: visitor-maps-admin.php:232
+msgid "View Who's Online"
+msgstr "ראו מי נמצא כרגע אונליין"
+
+#: visitor-maps.php:276
+msgid "Close"
+msgstr "סגור"
+
+#: visitor-maps.php:278
+msgid "Powered by Visitor Maps"
+msgstr "מופעל ע\"י Visitor Maps"
+
+#: visitor-maps.php:283
+msgid "Visitor Maps geolocation is disabled in settings."
+msgstr ""
+
+#: visitor-maps.php:349
+msgid "View more maps in the "
+msgstr "ראו עוד מפות ב"
+
+#: visitor-maps.php:349
+msgid "Visitor Map Viewer"
+msgstr "מראה המפות"
+
+#: visitor-maps.php:359
+#: visitor-maps.php:1136
+#: visitor-maps.php:1137
+msgid "Max visitors today"
+msgstr "מספר המבקרים הגבוה היום"
+
+#: visitor-maps.php:359
+#: visitor-maps.php:361
+#: visitor-maps.php:363
+#: visitor-maps.php:365
+#: visitor-maps.php:1136
+#: visitor-maps.php:1137
+#: visitor-maps.php:1140
+#: visitor-maps.php:1141
+#: visitor-maps.php:1144
+#: visitor-maps.php:1145
+#: visitor-maps.php:1148
+#: visitor-maps.php:1149
+msgid "at"
+msgstr "ב"
+
+#: visitor-maps.php:361
+#: visitor-maps.php:1140
+#: visitor-maps.php:1141
+msgid "This month"
+msgstr "בחודש זה"
+
+#: visitor-maps.php:363
+#: visitor-maps.php:1144
+#: visitor-maps.php:1145
+msgid "This year"
+msgstr "בשנה זו"
+
+#: visitor-maps.php:365
+#: visitor-maps.php:1148
+#: visitor-maps.php:1149
+msgid "All time"
+msgstr "בכל הזמנים"
+
+#: visitor-maps.php:368
+msgid "Records of the most visitors online at once:"
+msgstr "שיא המבקרים בו זמנית"
+
+#: visitor-maps.php:596
+msgid "Visitor Maps plugin needs the Maxmind GeoLiteCity database installed."
+msgstr ""
+
+#: visitor-maps.php:596
+#: visitor-maps-admin.php:257
+msgid "Install Now"
+msgstr "התקן עכשיו"
+
+#: visitor-maps.php:662
+msgid "Settings"
+msgstr "הגדרות"
+
+#: visitor-maps.php:1118
+#: visitor-maps.php:1468
+msgid "%d visitors online now"
+msgstr "%d מבקרים עכשיו"
+
+#: visitor-maps.php:1119
+#: visitor-maps.php:1469
+#: visitor-maps.php:1477
+msgid "%d guests"
+msgstr "%d אורחים "
+
+#: visitor-maps.php:1121
+#: visitor-maps.php:1473
+msgid "%d bots"
+msgstr "%d סורקי אינטרנט"
+
+#: visitor-maps.php:1123
+#: visitor-maps.php:1470
+msgid "%d members"
+msgstr "%d חברים רשומים"
+
+#: visitor-maps.php:1488
+msgid "<a id=\"visitor-maps-link\" href=\"%s\">Map of Visitors</a>"
+msgstr "<a id=\"visitor-maps-link\" href=\"%s\">מפת המבקרים</a>"
+
+#: class-wo-been.php:32
+#: class-wo-view.php:24
+#: class-wo-view.php:32
+msgid "None"
+msgstr "כלום"
+
+#: class-wo-been.php:33
+#: class-wo-view.php:33
+msgid "All"
+msgstr "הכל"
+
+#: class-wo-been.php:34
+#: class-wo-view.php:34
+#: class-wo-view.php:491
+msgid "Bots"
+msgstr "סורקי אינטרנט"
+
+#: class-wo-been.php:35
+#: class-wo-view.php:35
+#: class-wo-view.php:487
+msgid "Guests"
+msgstr "אורחים"
+
+#: class-wo-been.php:44
+#: class-wo-been.php:230
+#: class-wo-view.php:181
+msgid "Who"
+msgstr "מי"
+
+#: class-wo-been.php:45
+#: class-wo-been.php:231
+msgid "Visits"
+msgstr "כניסות"
+
+#: class-wo-been.php:46
+#: class-wo-been.php:232
+msgid "Last Visit"
+msgstr "כניסה אחרונה"
+
+#: class-wo-been.php:47
+#: class-wo-been.php:233
+#: class-wo-view.php:182
+msgid "IP Address"
+msgstr "כתובת IP"
+
+#: class-wo-been.php:48
+#: class-wo-been.php:234
+#: class-wo-view.php:183
+msgid "Location"
+msgstr "nheuo"
+
+#: class-wo-been.php:49
+#: class-wo-been.php:238
+#: class-wo-view.php:188
+msgid "Last URL"
+msgstr "כתובת URL אחרונה"
+
+#: class-wo-been.php:66
+msgid "Descending"
+msgstr "יורד"
+
+#: class-wo-been.php:67
+msgid "Ascending"
+msgstr "עולה"
+
+#: class-wo-been.php:90
+#: class-wo-been.php:478
+#: class-wo-view.php:38
+#: class-wo-view.php:429
+msgid "No"
+msgstr "לא"
+
+#: class-wo-been.php:91
+#: class-wo-been.php:480
+#: class-wo-view.php:39
+#: class-wo-view.php:431
+msgid "Yes"
+msgstr "כן"
+
+#: class-wo-been.php:157
+#: class-wo-view.php:124
+msgid "Profile Display:"
+msgstr "תצוגת פרופיל:"
+
+#: class-wo-been.php:158
+msgid "Sort:"
+msgstr "מיון:"
+
+#: class-wo-been.php:160
+#: class-wo-view.php:126
+msgid "Show Bots:"
+msgstr "הראה סורקי אינטרנט:"
+
+#: class-wo-been.php:167
+#: class-wo-view.php:134
+#: visitor-maps-admin.php:236
+msgid "<a href=\"%s\">Visitor Map Viewer</a>"
+msgstr "<a href=\"%s\">מראה המפות</a>"
+
+#: class-wo-been.php:177
+#: class-wo-been.php:575
+#: class-wo-view.php:144
+#: class-wo-view.php:566
+msgid "Active Guest"
+msgstr "מבקרים פעילים"
+
+#: class-wo-been.php:179
+#: class-wo-been.php:568
+#: class-wo-view.php:146
+#: class-wo-view.php:559
+msgid "Inactive Guest"
+msgstr "מבקרים לא פעילים"
+
+#: class-wo-been.php:183
+#: class-wo-been.php:562
+#: class-wo-view.php:150
+#: class-wo-view.php:553
+msgid "Active Bot"
+msgstr "סורקי אינטרנט פעילים"
+
+#: class-wo-been.php:185
+#: class-wo-been.php:559
+#: class-wo-view.php:152
+#: class-wo-view.php:550
+msgid "Inactive Bot"
+msgstr "סורקי אינטרנט לא פעילים"
+
+#: class-wo-been.php:197
+#: class-wo-view.php:164
+msgid "%1$d visitors since %2$s"
+msgstr "%1$d מבקרים מאז %2$s"
+
+#: class-wo-been.php:197
+#: class-wo-view.php:164
+msgid "installation"
+msgstr "התקנה"
+
+#: class-wo-been.php:204
+#: class-wo-been.php:206
+#: class-wo-been.php:525
+#: class-wo-been.php:527
+msgid "FIRST"
+msgstr "ראשון"
+
+#: class-wo-been.php:204
+#: class-wo-been.php:208
+#: class-wo-been.php:525
+#: class-wo-been.php:529
+msgid "PREV"
+msgstr "הקודם"
+
+#: class-wo-been.php:210
+#: class-wo-been.php:531
+msgid "Page %1$d of %2$d"
+msgstr "עמוד %1$d מתוך %2$d"
+
+#: class-wo-been.php:212
+#: class-wo-been.php:215
+#: class-wo-been.php:533
+#: class-wo-been.php:536
+msgid "NEXT"
+msgstr "הבא"
+
+#: class-wo-been.php:212
+#: class-wo-been.php:216
+#: class-wo-been.php:533
+#: class-wo-been.php:537
+msgid "LAST"
+msgstr "אחרון"
+
+#: class-wo-been.php:241
+#: class-wo-view.php:191
+msgid "Referer"
+msgstr "מייצג"
+
+#: class-wo-been.php:348
+#: class-wo-view.php:301
+msgid "Guest"
+msgstr "מבקר"
+
+#: class-wo-been.php:352
+#: class-wo-view.php:305
+#: class-wo-view.php:495
+msgid "You"
+msgstr "אתה"
+
+#: class-wo-been.php:370
+#: class-wo-view.php:323
+msgid "Error"
+msgstr "שגיאה"
+
+#: class-wo-been.php:392
+#: class-wo-view.php:338
+msgid "visits"
+msgstr "כניסות"
+
+#: class-wo-been.php:397
+#: class-wo-view.php:343
+msgid "host lookups not enabled"
+msgstr "חיפוש מבקר לא מאופשר"
+
+#: class-wo-been.php:419
+#: class-wo-view.php:365
+msgid "unknown"
+msgstr "לא ידוע"
+
+#: class-wo-been.php:494
+#: class-wo-view.php:445
+msgid "Last URL:"
+msgstr "כתובת URL אחרונה"
+
+#: class-wo-been.php:586
+#: class-wo-view.php:577
+msgid "User Agent:"
+msgstr ""
+
+#: class-wo-been.php:592
+#: class-wo-view.php:583
+msgid "Host:"
+msgstr ""
+
+#: class-wo-been.php:598
+#: class-wo-view.php:589
+msgid "Referer:"
+msgstr "מייצג:"
+
+#: class-wo-update.php:90
+msgid "Preparing a first time install of the Maxmind GeoLiteCity database"
+msgstr ""
+
+#: class-wo-update.php:95
+msgid "Checking for updates for the Maxmind GeoLiteCity database"
+msgstr ""
+
+#: class-wo-update.php:106
+msgid "PHP Memory Limit is unknown, increase is not available."
+msgstr ""
+
+#: class-wo-update.php:108
+msgid "PHP Memory Limit is %1$s, temporarily increasing to %2$s"
+msgstr ""
+
+#: class-wo-update.php:113
+msgid "completed."
+msgstr "הושלם."
+
+#: class-wo-update.php:115
+msgid "failed."
+msgstr "נכשל."
+
+#: class-wo-update.php:122
+msgid "PHP Memory Limit is %s, increasing is not needed."
+msgstr ""
+
+#: class-wo-update.php:128
+msgid "Connecting to this URL:"
+msgstr ""
+
+#: class-wo-update.php:136
+msgid "Warning: Your web host has PHP safe_mode turned on."
+msgstr ""
+
+#: class-wo-update.php:138
+msgid "PHP safe_mode can cause problems with this updater such as file permission errors."
+msgstr ""
+
+#: class-wo-update.php:139
+msgid "PHP safe_mode is better turned off, relying on this feature might work, but is highly discouraged. Contact your web host for support."
+msgstr ""
+
+#: class-wo-update.php:145
+msgid "Warning: Your web host has the PHP setting allow_url_fopen turned off."
+msgstr ""
+
+#: class-wo-update.php:147
+msgid "PHP allow_url_fopen setting is required for this automatic update feature. Contact your web host for support."
+msgstr ""
+
+#: class-wo-update.php:148
+msgid "The geolite database is really just a file. As a workaround, you can manually download the GeoLiteCity.dat.gz file from this URL: http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz"
+msgstr ""
+
+#: class-wo-update.php:149
+msgid "Unzip the file and FTP upload GeoLiteCity.dat to the /plugins/visitor-maps/ folder. When the file is not installed, the blog still works, but the location information for a user is skipped. "
+msgstr ""
+
+#: class-wo-update.php:154
+msgid "Warning: Your web host has not upgraded from PHP4 to PHP5."
+msgstr ""
+
+#: class-wo-update.php:156
+msgid "PHP4 was officially discontinued August 8, 2008 and is no longer considered safe."
+msgstr ""
+
+#: class-wo-update.php:157
+msgid "PHP5 is faster, has more features, and is and safer. Using PHP4 might still work, but is highly discouraged. Contact your web host for support."
+msgstr ""
+
+#: class-wo-update.php:199
+msgid "You have the latest available Maxmind GeoLiteCity database"
+msgstr ""
+
+#: class-wo-update.php:200
+msgid "Note: Maxmind usually updates GeoLiteCity once monthly on the 1st, but sometimes they update on the 2nd or 3rd or even later dates!"
+msgstr ""
+
+#: class-wo-update.php:201
+msgid "Maxmind last updated it %1$s (%2$d days ago)"
+msgstr ""
+
+#: class-wo-update.php:202
+msgid "this is the <a href=\"%s\" target=\"_new\">newest file available</a>"
+msgstr ""
+
+#: class-wo-update.php:204
+msgid "You updated to the current GeoLiteCity database on %s (%d days ago)"
+msgstr ""
+
+#: class-wo-update.php:205
+msgid "No new updates are available today."
+msgstr "אין עדכונים חדשים היום."
+
+#: class-wo-update.php:218
+msgid "Error: Download failed, the GeoLiteCity.dat.gz download file was not found"
+msgstr ""
+
+#: class-wo-update.php:221
+msgid "Download success, uncompressing file, please wait"
+msgstr ""
+
+#: class-wo-update.php:227
+msgid "unzip error: opening GeoLiteCity.dat file"
+msgstr ""
+
+#: class-wo-update.php:229
+msgid "unzip error: gzopen opening GeoLiteCity.dat.gz file"
+msgstr ""
+
+#: class-wo-update.php:238
+msgid "unzip error: Chmod 0644 GeoLiteCity.dat file failed"
+msgstr ""
+
+#: class-wo-update.php:243
+msgid "Error: the GeoLiteCity.dat file was not found"
+msgstr ""
+
+#: class-wo-update.php:247
+msgid "Install/Update completed"
+msgstr ""
+
+#: class-wo-update.php:271
+msgid "Testing a lookup with your IP address:"
+msgstr ""
+
+#: class-wo-update.php:277
+msgid "test_lookup error: the GeoLiteCity.dat file was not found"
+msgstr ""
+
+#: class-wo-update.php:280
+msgid "test_lookup error: the include-whos-online-geoip.php file was not found"
+msgstr ""
+
+#: class-wo-update.php:291
+msgid "IP:"
+msgstr "כתובת אי.פי:"
+
+#: class-wo-update.php:292
+msgid "City:"
+msgstr "עיר:"
+
+#: class-wo-update.php:293
+msgid "State Name:"
+msgstr "מדינה:"
+
+#: class-wo-update.php:294
+msgid "State Code:"
+msgstr "קוד מדינה:"
+
+#: class-wo-update.php:295
+msgid "Country Name:"
+msgstr "שם המדינה:"
+
+#: class-wo-update.php:296
+msgid "Country Code:"
+msgstr "קוד המדינה:"
+
+#: class-wo-update.php:297
+msgid "Lat:"
+msgstr ""
+
+#: class-wo-update.php:298
+msgid "Lon: "
+msgstr ""
+
+#: class-wo-update.php:302
+msgid "Note: location information was not available, this is normal if on a private network."
+msgstr "הערה: מידע על המיקום לא אפשרי כרגע, זו אפשרות סבירה אם אתה נמצא ברשת פרטית"
+
+#: class-wo-update.php:341
+#: class-wo-view.php:721
+msgid "error: could not connect to remote file"
+msgstr ""
+
+#: class-wo-update.php:354
+#: class-wo-view.php:734
+msgid "error: fetching timestamp failed for URL, 404 not found?"
+msgstr ""
+
+#: class-wo-update.php:386
+#: class-wo-view.php:766
+msgid "error: fetching timestamp failed for URL 404 not found?"
+msgstr ""
+
+#: class-wo-update.php:399
+#: class-wo-view.php:779
+msgid "error: could not connect to remote URL"
+msgstr ""
+
+#: class-wo-update.php:404
+msgid "Please allow plenty of time for the approximately 19meg file to download."
+msgstr ""
+
+#: class-wo-update.php:405
+msgid "The time needed depends on your server download speed."
+msgstr ""
+
+#: class-wo-update.php:406
+msgid "A timeout can happen if the connection is really slow causing this to take more than 3 minutes."
+msgstr ""
+
+#: class-wo-update.php:414
+msgid "error: reading or opening file"
+msgstr ""
+
+#: class-wo-update.php:415
+#: class-wo-update.php:433
+msgid "error: cannot write to file, check server permission settings"
+msgstr ""
+
+#: class-wo-update.php:416
+msgid "Download started, (counting megs)"
+msgstr ""
+
+#: class-wo-update.php:440
+msgid "error: CHMOD 0644 download file failed"
+msgstr ""
+
+#: class-wo-map-page.php:45
+msgid "Select a time period up to %d days ago"
+msgstr "בחר את תחום הזמן עד %d ימים אחורה"
+
+#: class-wo-map-page.php:46
+#: visitor-maps-admin.php:343
+msgid "Time:"
+msgstr "זמן:"
+
+#: class-wo-map-page.php:48
+#: visitor-maps-admin.php:345
+msgid "Units:"
+msgstr "יחידות:"
+
+#: class-wo-map-page.php:71
+#: visitor-maps-admin.php:362
+msgid "Map:"
+msgstr "מפה:"
+
+#: class-wo-map-page.php:75
+#: visitor-maps-admin.php:368
+msgid "World (smallest)"
+msgstr "עולם (קטן מאוד)"
+
+#: class-wo-map-page.php:76
+#: visitor-maps-admin.php:369
+msgid "World (small)"
+msgstr "עולם (קטן)"
+
+#: class-wo-map-page.php:77
+#: visitor-maps-admin.php:370
+msgid "World (medium)"
+msgstr "עולם (בינוני)"
+
+#: class-wo-map-page.php:78
+#: visitor-maps-admin.php:371
+msgid "World (large)"
+msgstr "עולם (גדול)"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:80
+msgid "US"
+msgstr "ארה\"ב"
+
+#: class-wo-map-page.php:79
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:116
+#: class-wo-map-page.php:118
+#: class-wo-map-page.php:120
+msgid "(black)"
+msgstr "(שחור)"
+
+#: class-wo-map-page.php:80
+#: class-wo-map-page.php:82
+#: class-wo-map-page.php:84
+#: class-wo-map-page.php:86
+#: class-wo-map-page.php:88
+#: class-wo-map-page.php:90
+#: class-wo-map-page.php:92
+#: class-wo-map-page.php:94
+#: class-wo-map-page.php:96
+#: class-wo-map-page.php:98
+#: class-wo-map-page.php:100
+#: class-wo-map-page.php:102
+#: class-wo-map-page.php:104
+#: class-wo-map-page.php:106
+#: class-wo-map-page.php:108
+#: class-wo-map-page.php:110
+#: class-wo-map-page.php:112
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:117
+#: class-wo-map-page.php:119
+#: class-wo-map-page.php:121
+msgid "(brown)"
+msgstr "(חום)"
+
+#: class-wo-map-page.php:81
+#: class-wo-map-page.php:82
+msgid "Canada and US"
+msgstr "קנדה וארה\"ב"
+
+#: class-wo-map-page.php:83
+#: class-wo-map-page.php:84
+msgid "Asia"
+msgstr "אסיה"
+
+#: class-wo-map-page.php:85
+#: class-wo-map-page.php:86
+msgid "Australia and NZ"
+msgstr "אוסטרליה וניו זילנד"
+
+#: class-wo-map-page.php:87
+#: class-wo-map-page.php:88
+msgid "Europe Central"
+msgstr "מרכז אירופה"
+
+#: class-wo-map-page.php:89
+#: class-wo-map-page.php:90
+msgid "Europe"
+msgstr "אירופה"
+
+#: class-wo-map-page.php:91
+#: class-wo-map-page.php:92
+msgid "Scandinavia"
+msgstr "סקנדינביה"
+
+#: class-wo-map-page.php:93
+#: class-wo-map-page.php:94
+msgid "Great Britain"
+msgstr "אנגליה"
+
+#: class-wo-map-page.php:95
+#: class-wo-map-page.php:96
+msgid "US Midwest"
+msgstr "ארה\"ב מרכז-מערב"
+
+#: class-wo-map-page.php:97
+#: class-wo-map-page.php:98
+msgid "US Upper Midwest"
+msgstr "ארה\"ב צפון-מרכז"
+
+#: class-wo-map-page.php:99
+#: class-wo-map-page.php:100
+msgid "US Northeast"
+msgstr "ארה\"ב צפון מזרח"
+
+#: class-wo-map-page.php:101
+#: class-wo-map-page.php:102
+msgid "US Northwest"
+msgstr "ארה\"ב צפון מערב"
+
+#: class-wo-map-page.php:103
+#: class-wo-map-page.php:104
+msgid "US Rocky Mountain"
+msgstr "ארה\"ב הרי הרוקי"
+
+#: class-wo-map-page.php:105
+#: class-wo-map-page.php:106
+msgid "US South"
+msgstr "ארה\"ב דרום"
+
+#: class-wo-map-page.php:107
+#: class-wo-map-page.php:108
+msgid "US Southeast"
+msgstr "ארה\"ב דרום מזרח"
+
+#: class-wo-map-page.php:109
+#: class-wo-map-page.php:110
+msgid "US Southwest"
+msgstr "ארה\"ב דרום מערב"
+
+#: class-wo-map-page.php:111
+#: class-wo-map-page.php:112
+msgid "Spain/Portugal"
+msgstr "ספרד/פורטוגל"
+
+#: class-wo-map-page.php:113
+#: class-wo-map-page.php:114
+#: class-wo-map-page.php:115
+msgid "Finland"
+msgstr "פינלנד"
+
+#: class-wo-map-page.php:115
+msgid "(yellow)"
+msgstr "(צהוב)"
+
+#: class-wo-map-page.php:116
+#: class-wo-map-page.php:117
+msgid "Japan"
+msgstr "יפן"
+
+#: class-wo-map-page.php:118
+#: class-wo-map-page.php:119
+msgid "Netherlands"
+msgstr "הולנד"
+
+#: class-wo-map-page.php:120
+#: class-wo-map-page.php:121
+msgid "Brazil"
+msgstr "ברזיל"
+
+#: class-wo-map-page.php:131
+msgid "Go"
+msgstr "בחר"
+
+#: class-wo-view.php:125
+msgid "Refresh Rate:"
+msgstr "קצב רענון:"
+
+#: class-wo-view.php:169
+msgid "Last refresh at"
+msgstr "רוענן לאחרונה ב"
+
+#: class-wo-view.php:180
+msgid "Online"
+msgstr "אונליין"
+
+#: class-wo-view.php:184
+msgid "Entry"
+msgstr "כניסה"
+
+#: class-wo-view.php:185
+msgid "Last Click"
+msgstr "קליק אחרון"
+
+#: class-wo-view.php:469
+msgid "Visitors online (Considered inactive after %1$d minutes. Removed after %2$d minutes)"
+msgstr ""
+
+#: class-wo-view.php:476
+msgid "Duplicate IPs"
+msgstr ""
+
+#: class-wo-view.php:483
+msgid "Members (includes you)"
+msgstr "מבקרים (כולל אותך)"
+
+#: class-wo-view.php:487
+msgid "are active"
+msgstr "פעילים"
+
+#: class-wo-view.php:501
+msgid "Your IP Address:"
+msgstr "כתובת האיי.פי שלך:"
+
+#: class-wo-view.php:507
+msgid "Your Host:"
+msgstr "הספק שלך:"
+
+#: class-wo-view.php:512
+#: visitor-maps-admin.php:255
+msgid "Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com"
+msgstr ""
+
+#: class-wo-view.php:515
+#: class-wo-view.php:519
+msgid "The GeoLiteCity data was last updated on %1$s (%2$d days ago)"
+msgstr ""
+
+#: class-wo-view.php:516
+msgid "an update is available"
+msgstr "יש עדכון זמין"
+
+#: class-wo-view.php:517
+msgid "click here to update"
+msgstr "לחץ כאן כדי לעדכן"
+
+#: visitor-maps-admin.php:91
+msgid "Options saved."
+msgstr "האפשרויות נשמרו"
+
+#: visitor-maps-admin.php:94
+msgid "Visitor Maps and Who's Online Options"
+msgstr "אפשרויות מפת המבקרים ומי אונליין"
+
+#: visitor-maps-admin.php:107
+msgid "Changelog"
+msgstr "לוג שינויים"
+
+#: visitor-maps-admin.php:108
+msgid "FAQ"
+msgstr "שאלות ותשובות"
+
+#: visitor-maps-admin.php:109
+#: visitor-maps-admin.php:204
+msgid "Rate This"
+msgstr "דרג את זה"
+
+#: visitor-maps-admin.php:110
+msgid "Support"
+msgstr "תמיכה"
+
+#: visitor-maps-admin.php:111
+#: visitor-maps-admin.php:173
+msgid "Donate"
+msgstr "תרום"
+
+#: visitor-maps-admin.php:112
+msgid "Free PHP Scripts"
+msgstr ""
+
+#: visitor-maps-admin.php:113
+msgid "Contact"
+msgstr "צור קשר"
+
+#: visitor-maps-admin.php:146
+msgid "Downloaded %s times"
+msgstr ""
+
+#: visitor-maps-admin.php:151
+#: visitor-maps-admin.php:159
+msgid "(Average rating based on %s ratings)"
+msgstr ""
+
+#: visitor-maps-admin.php:153
+msgid "5 stars"
+msgstr "5 כוכבים"
+
+#: visitor-maps-admin.php:154
+msgid "4 stars"
+msgstr "4 כוכבים"
+
+#: visitor-maps-admin.php:155
+msgid "3 stars"
+msgstr "3 כוכבים"
+
+#: visitor-maps-admin.php:156
+msgid "2 stars"
+msgstr "2 כוכבים"
+
+#: visitor-maps-admin.php:157
+msgid "1 star"
+msgstr "כוכב אחד"
+
+#: visitor-maps-admin.php:159
+msgid "rate"
+msgstr "דרג"
+
+#: visitor-maps-admin.php:175
+msgid "Please donate to keep this plugin FREE"
+msgstr ""
+
+#: visitor-maps-admin.php:176
+msgid "If you find this plugin useful to you, please consider making a small donation to help contribute to my time invested and to further development. Thanks for your kind support!"
+msgstr ""
+
+#: visitor-maps-admin.php:176
+msgid "More from Mike Challis"
+msgstr ""
+
+#: visitor-maps-admin.php:189
+msgid "ThemeFuse Original WP Themes"
+msgstr ""
+
+#: visitor-maps-admin.php:190
+msgid "Try <a href=\"%s\" target=\"_blank\">ThemeFuse</a>, they make some amazing original WP themes that have a cool 1 click auto install feature and excellent after care support services. Check out some of their themes!"
+msgstr ""
+
+#: visitor-maps-admin.php:192
+msgid "ThemeFuse"
+msgstr ""
+
+#: visitor-maps-admin.php:202
+msgid "Mike Challis says: \"Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK."
+msgstr ""
+
+#: visitor-maps-admin.php:203
+msgid "Most people donate $3, $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin.\""
+msgstr ""
+
+#: visitor-maps-admin.php:206
+msgid "Close this message"
+msgstr ""
+
+#: visitor-maps-admin.php:220
+msgid "I have donated to help contribute for the development of this plugin."
+msgstr ""
+
+#: visitor-maps-admin.php:223
+msgid "Usage"
+msgstr ""
+
+#: visitor-maps-admin.php:225
+msgid "Add the shortcode [visitor-maps] in a Page(not a Post). That page will become your Visitor Maps page."
+msgstr ""
+
+#: visitor-maps-admin.php:225
+#: visitor-maps-admin.php:228
+#: visitor-maps-admin.php:273
+#: visitor-maps-admin.php:281
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:297
+#: visitor-maps-admin.php:305
+#: visitor-maps-admin.php:313
+#: visitor-maps-admin.php:321
+#: visitor-maps-admin.php:329
+#: visitor-maps-admin.php:336
+#: visitor-maps-admin.php:429
+#: visitor-maps-admin.php:437
+#: visitor-maps-admin.php:451
+#: visitor-maps-admin.php:458
+#: visitor-maps-admin.php:465
+#: visitor-maps-admin.php:473
+#: visitor-maps-admin.php:481
+#: visitor-maps-admin.php:489
+#: visitor-maps-admin.php:497
+#: visitor-maps-admin.php:511
+#: visitor-maps-admin.php:532
+#: visitor-maps-admin.php:540
+#: visitor-maps-admin.php:548
+#: visitor-maps-admin.php:561
+#: visitor-maps-admin.php:569
+#: visitor-maps-admin.php:577
+#: visitor-maps-admin.php:585
+#: visitor-maps-admin.php:602
+#: visitor-maps-admin.php:609
+#: visitor-maps-admin.php:616
+#: visitor-maps-admin.php:623
+msgid "help"
+msgstr "עזרה"
+
+#: visitor-maps-admin.php:228
+msgid "Add the Who's Online sidebar. Click on Appearance, Widgets, then drag the Who's Online widget to the sidebar column on the right."
+msgstr ""
+
+#: visitor-maps-admin.php:234
+msgid "View Who's Been Online"
+msgstr "ראה מי היה אונליין"
+
+#: visitor-maps-admin.php:240
+msgid "Options"
+msgstr "אפשרויות"
+
+#: visitor-maps-admin.php:243
+#: visitor-maps-admin.php:636
+msgid "Update Options"
+msgstr "אפשרויות עדכון"
+
+#: visitor-maps-admin.php:251
+msgid "GeoLocation:"
+msgstr "מידע מיקום:"
+
+#: visitor-maps-admin.php:257
+msgid "The Maxmind GeoLiteCity database is not yet installed."
+msgstr ""
+
+#: visitor-maps-admin.php:259
+msgid "The Maxmind GeoLiteCity database is installed but not enabled (check the setting below)."
+msgstr ""
+
+#: visitor-maps-admin.php:261
+msgid "The Maxmind GeoLiteCity database is installed and enabled."
+msgstr ""
+
+#: visitor-maps-admin.php:267
+msgid "Enable geolocation."
+msgstr "הפעל מידע מיקום."
+
+#: visitor-maps-admin.php:268
+msgid "Update Now"
+msgstr "עדכן עכשיו"
+
+#: visitor-maps-admin.php:272
+msgid "Disable text on geolocation maps (missing map background fix)."
+msgstr ""
+
+#: visitor-maps-admin.php:273
+#: visitor-maps-admin.php:281
+#: visitor-maps-admin.php:289
+#: visitor-maps-admin.php:297
+#: visitor-maps-admin.php:305
+#: visitor-maps-admin.php:313
+#: visitor-maps-admin.php:321
+#: visitor-maps-admin.php:329
+#: visitor-maps-admin.php:336
+#: visitor-maps-admin.php:429
+#: visitor-maps-admin.php:437
+#: visitor-maps-admin.php:451
+#: visitor-maps-admin.php:458
+#: visitor-maps-admin.php:465
+#: visitor-maps-admin.php:473
+#: visitor-maps-admin.php:481
+#: visitor-maps-admin.php:489
+#: visitor-maps-admin.php:497
+#: visitor-maps-admin.php:511
+#: visitor-maps-admin.php:532
+#: visitor-maps-admin.php:540
+#: visitor-maps-admin.php:548
+#: visitor-maps-admin.php:561
+#: visitor-maps-admin.php:569
+#: visitor-maps-admin.php:577
+#: visitor-maps-admin.php:585
+#: visitor-maps-admin.php:602
+#: visitor-maps-admin.php:609
+#: visitor-maps-admin.php:616
+#: visitor-maps-admin.php:623
+msgid "Click for Help!"
+msgstr "לחץ לעזרה!"
+
+#: visitor-maps-admin.php:275
+msgid "Some PHP servers do not have full support for printing text on the Visitor Map image. Only if the Visitor Map just displays pins and no image for the world or countries, select this setting. After selecting this setting, check your visitor maps page to see if the map is now working."
+msgstr ""
+
+#: visitor-maps-admin.php:280
+msgid "Enable display of city, state next to country flag."
+msgstr ""
+
+#: visitor-maps-admin.php:283
+#: visitor-maps-admin.php:291
+#: visitor-maps-admin.php:542
+#: visitor-maps-admin.php:550
+msgid "Changes display options on Who's Online dashboard pages."
+msgstr ""
+
+#: visitor-maps-admin.php:288
+msgid "Enable visitor map on Who's Online dashboard."
+msgstr ""
+
+#: visitor-maps-admin.php:296
+msgid "Enable visitor map on Visitor Map shortcode page."
+msgstr ""
+
+#: visitor-maps-admin.php:299
+msgid "Changes map display options on the page where you inserted the visitor map shortcode."
+msgstr ""
+
+#: visitor-maps-admin.php:304
+msgid "Enable visitor map link on Who's Online widget."
+msgstr ""
+
+#: visitor-maps-admin.php:307
+msgid "Changes display options on Who's Online widget."
+msgstr ""
+
+#: visitor-maps-admin.php:312
+msgid "Enable hover labels for location pins on visitor map page."
+msgstr ""
+
+#: visitor-maps-admin.php:315
+msgid "Some themes interfere with the proper display of the location pins on the Visitor Maps page. After enabling this setting, check your visitor maps page to make sure the pins are placed correctly. If the pins are about 10 pixels too low on the map, undo this setting."
+msgstr ""
+
+#: visitor-maps-admin.php:320
+msgid "Enable user names on hover labels for location pins on visitor map page."
+msgstr ""
+
+#: visitor-maps-admin.php:323
+msgid "When enabled, registered users will have green location pins on the Visitor Maps page. Also the hover tag will include the user name."
+msgstr ""
+
+#: visitor-maps-admin.php:328
+msgid "Hide map viewing by non administrators."
+msgstr ""
+
+#: visitor-maps-admin.php:331
+msgid "This setting restricts viewing the Visitor Map Viewer page to administrators only."
+msgstr ""
+
+#: visitor-maps-admin.php:335
+msgid "Limit for map pins"
+msgstr ""
+
+#: visitor-maps-admin.php:338
+msgid "This limit protects server resources by limiting pins when displaying maps. Default is 2000. The human eye will not be able to see more than 2000 pins anyway."
+msgstr ""
+
+#: visitor-maps-admin.php:342
+msgid "Default Visitor Map"
+msgstr ""
+
+#: visitor-maps-admin.php:431
+msgid "Default map to display on the Visitor Maps page. After setting this, check your visitor maps page to make sure it fits correctly. If the map is too wide, select the next smaller one."
+msgstr ""
+
+#: visitor-maps-admin.php:435
+msgid "Users who can view the dashboard pages:"
+msgstr ""
+
+#: visitor-maps-admin.php:439
+msgid "By default, only Administrators can view the dashboard pages. Change this setting to also allow Editors, Authors, or Contributors to view the dashboard pages. When set to Authors, you are also allowing Administrator and Editors."
+msgstr ""
+
+#: visitor-maps-admin.php:447
+msgid "Visitors:"
+msgstr "מבקרים:"
+
+#: visitor-maps-admin.php:450
+msgid "Active time (minutes)"
+msgstr "זמן פעיל (דקות)"
+
+#: visitor-maps-admin.php:453
+msgid "Minutes that a visitor is considered \"active\". Default is 5 minutes."
+msgstr ""
+
+#: visitor-maps-admin.php:457
+msgid "Inactive time (minutes)"
+msgstr "זמן לא פעיל (דקות)"
+
+#: visitor-maps-admin.php:460
+msgid "Minutes until an inactive visitor is removed from display. Default is 15 minutes."
+msgstr ""
+
+#: visitor-maps-admin.php:464
+msgid "Days to store visitor data"
+msgstr ""
+
+#: visitor-maps-admin.php:467
+msgid "Days to store visitor data in database table. This data is used for the geolocation maps. Default is 30 days."
+msgstr ""
+
+#: visitor-maps-admin.php:472
+msgid "Do not include administrators count or location on the maps."
+msgstr ""
+
+#: visitor-maps-admin.php:475
+msgid "Changes display options on Who's Online maps."
+msgstr ""
+
+#: visitor-maps-admin.php:480
+msgid "Do not include search bots in the visitors online count on widgets."
+msgstr ""
+
+#: visitor-maps-admin.php:483
+#: visitor-maps-admin.php:491
+msgid "Changes display options on Who's Online widgets."
+msgstr ""
+
+#: visitor-maps-admin.php:488
+msgid "Combine guests and members on widgets so they are only shown as visitors."
+msgstr ""
+
+#: visitor-maps-admin.php:492
+msgid "Use this setting when your site has registration turned off and all your visitors are guests and not members."
+msgstr ""
+
+#: visitor-maps-admin.php:496
+msgid "IP Addresses to ignore"
+msgstr ""
+
+#: visitor-maps-admin.php:499
+msgid "Optional list of IP addresses for visitors you do not want shown on maps."
+msgstr ""
+
+#: visitor-maps-admin.php:500
+#: visitor-maps-admin.php:516
+msgid "Start each entry on a new line."
+msgstr ""
+
+#: visitor-maps-admin.php:501
+msgid "Use <strong>*</strong> for wildcards."
+msgstr ""
+
+#: visitor-maps-admin.php:502
+#: visitor-maps-admin.php:517
+msgid "Examples:"
+msgstr ""
+
+#: visitor-maps-admin.php:510
+msgid "URLs to ignore"
+msgstr ""
+
+#: visitor-maps-admin.php:513
+msgid "Optional list of URLs on your site you do not want in any Who's Online data."
+msgstr ""
+
+#: visitor-maps-admin.php:514
+msgid "This feature can be used to block any URLs such as /wp-admin/, or for compatibility with other plugins such as WP SlimStat."
+msgstr ""
+
+#: visitor-maps-admin.php:515
+msgid "Use partial URL or full URL. The filter will match any part of the URL."
+msgstr ""
+
+#: visitor-maps-admin.php:528
+msgid "Lookups:"
+msgstr ""
+
+#: visitor-maps-admin.php:531
+msgid "Who Is Lookup URL"
+msgstr ""
+
+#: visitor-maps-admin.php:534
+msgid "URL to open when an IP address is clicked on."
+msgstr ""
+
+#: visitor-maps-admin.php:539
+msgid "Enable open Who Is Lookup URL on a pop-up."
+msgstr ""
+
+#: visitor-maps-admin.php:547
+msgid "Enable host lookups for IP addresses."
+msgstr ""
+
+#: visitor-maps-admin.php:557
+msgid "Stats:"
+msgstr "סטטיסטיקות:"
+
+#: visitor-maps-admin.php:560
+msgid "Enable stats display in blog footer."
+msgstr ""
+
+#: visitor-maps-admin.php:563
+#: visitor-maps-admin.php:571
+#: visitor-maps-admin.php:579
+msgid "Shows how many visitors are online now and records of the most users online at one time."
+msgstr ""
+
+#: visitor-maps-admin.php:568
+msgid "Enable stats display in admin footer."
+msgstr ""
+
+#: visitor-maps-admin.php:576
+msgid "Enable stats display on map page."
+msgstr ""
+
+#: visitor-maps-admin.php:584
+msgid "Enable plugin credit link:"
+msgstr ""
+
+#: visitor-maps-admin.php:587
+msgid "The credit link is not mandatory, yes you can disable it if you want."
+msgstr ""
+
+#: visitor-maps-admin.php:594
+msgid "Times:"
+msgstr "זמנים:"
+
+#: visitor-maps-admin.php:598
+msgid "Table of date format characters."
+msgstr ""
+
+#: visitor-maps-admin.php:601
+msgid "Time format (Max Users Today)"
+msgstr "מבנה תצוגת זמן (שיא המבקרים היום)"
+
+#: visitor-maps-admin.php:604
+msgid "Time format for \"Max users today\" and \"Last refresh time\" display. Default, h:i a T (02:25 pm PST)"
+msgstr ""
+
+#: visitor-maps-admin.php:608
+msgid "Time format (Last Click)"
+msgstr ""
+
+#: visitor-maps-admin.php:611
+msgid "Time format for \"Entry\" and \"Last Click\" display. Default, h:i:sa (02:25:25pm)"
+msgstr ""
+
+#: visitor-maps-admin.php:615
+msgid "Date/Time format (All Time Records)"
+msgstr ""
+
+#: visitor-maps-admin.php:618
+msgid "Date/Time format for month, year, an all time records. Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr ""
+
+#: visitor-maps-admin.php:622
+msgid "Date/Time format (GeoLite data)"
+msgstr ""
+
+#: visitor-maps-admin.php:625
+msgid "Date/Time format for \"The GeoLite data was last updated on...\". Default, m-d-Y h:i a T (12-14-2008 02:25 pm PST)"
+msgstr ""
+
+#: visitor-maps-admin.php:643
+msgid "More WordPress plugins by Mike Challis:"
+msgstr ""
+
+#: visitor-maps-admin.php:645
+msgid "Fast Secure Contact Form"
+msgstr ""
+
+#: visitor-maps-admin.php:646
+msgid "SI CAPTCHA Anti-Spam"
+msgstr ""
+
+#. #-#-#-#-#  plugin.pot (Visitor Maps and Who's Online 1.5.8)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: visitor-maps-admin.php:647
+msgid "Visitor Maps and Who's Online"
+msgstr ""
+
+#: visitor-maps-admin.php:652
+msgid "\"I recommend <a href=\"%s\" target=\"_blank\">HostGator Web Hosting</a>. All my sites are hosted there. The prices are great and they offer great features for WordPress users. If you click this link and start an account at HostGator, I get a small commission.\" - Mike Challis"
+msgstr ""
+
+#: visitor-maps-admin.php:654
+msgid "Web Site Hosting"
+msgstr ""
+
+#: visitor-maps-worldmap.php:355
+#: visitor-maps-worldmap.php:375
+msgid "from"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href=\"plugins.php?page=visitor-maps/visitor-maps.php\">Settings</a> | <a href=\"https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG\">Donate</a>"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Mike Challis"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.642weather.com/weather/scripts.php"
+msgstr ""
+

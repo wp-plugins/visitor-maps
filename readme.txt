@@ -168,6 +168,7 @@ The following translations are included in the download zip file:
 * Dutch (nl_NL) - Translated by [Ton Strijbosch](http://www.westkreek.nl/weblog/)
 * French (fr_FR) - Translated by [Whiler](http://blogs.wittwer.fr/)
 * German (de_DE) - Translated by [JZDM](http://jzdm.de)
+* Hebrew (he_IL) - Translated by [Udi Burg](http://blog.udiburg.com/)
 * Hungarian (hu_HU) - Translated by [varnyu]
 * Indonesian (id_ID) - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
@@ -194,6 +195,9 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
+= 1.5.8.1 =
+- (18 Jan 2012) -
+- Added Hebrew (he_IL) - Translated by [Udi Burg](http://blog.udiburg.com/)
 - Updated Italian language (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/ "Gianni Diurno")
 
 = 1.5.8 =
