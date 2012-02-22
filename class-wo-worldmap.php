@@ -439,10 +439,10 @@ function validate_color_wo($string) {
  // protect form input color fields from hackers and check for valid css color code hex
  // only allow simple 6 char hex codes with or without # like this 336699 or #336699
 
- if (preg_match("/^#[a-f0-9]{6}$/i", trim($string))) {
+ if ( is_string($string) && preg_match("/^#[a-f0-9]{6}$/i", trim($string))) {
     return true;
  }
- if (preg_match("/^[a-f0-9]{6}$/i", trim($string))) {
+ if ( is_string($string) && preg_match("/^[a-f0-9]{6}$/i", trim($string))) {
     return true;
  }
  return false;

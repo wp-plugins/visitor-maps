@@ -498,7 +498,7 @@ function wo_map_console(url) {
   } // end if(isset($_GET['page'])
 
 // only load this header stuff on the whos online settings page
-if(isset($_GET['page']) && preg_match('/visitor-maps.php$/',$_GET['page']) ) { 
+if(isset($_GET['page']) && is_string($_GET['page']) && preg_match('/visitor-maps.php$/',$_GET['page']) ) {
 ?>
 <!-- begin visitor maps - settings page header code -->
 <script type="text/javascript">
@@ -1235,10 +1235,10 @@ function validate_color_wo($string) {
  // protect form input color fields from hackers and check for valid css color code hex
  // only allow simple 6 char hex codes with or without # like this 336699 or #336699
 
- if (preg_match("/^#[a-f0-9]{6}$/i", trim($string))) {
+ if ( is_string($string) && preg_match("/^#[a-f0-9]{6}$/i", trim($string))) {
     return true;
  }
- if (preg_match("/^[a-f0-9]{6}$/i", trim($string))) {
+ if ( is_string($string) && preg_match("/^[a-f0-9]{6}$/i", trim($string))) {
     return true;
  }
  return false;

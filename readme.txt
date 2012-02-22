@@ -195,6 +195,8 @@ Please read [How to update a translation of Visitor Maps for WordPress](http://w
 
 == Changelog ==
 
+- Fix possible error: preg_match() expects parameter to be string. 
+
 = 1.5.8.1 =
 - (18 Jan 2012) -
 - Added Hebrew (he_IL) - Translated by [Udi Burg](http://blog.udiburg.com/)
