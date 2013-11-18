@@ -194,6 +194,9 @@ Yes, please read [How to update a translation of Visitor Maps for WordPress](htt
 
 == Changelog ==
 
+= 1.5.8.3 =
+- (18 Nov 2013) - Fix Array to string conversion notice class-wo-worldmap.php(343)
+
 = 1.5.8.2 =
 - (17 Nov 2013) - Fix compatibility with WP 3.7.1
 - Fix possible error: preg_match() expects parameter to be string. 

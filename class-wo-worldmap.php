@@ -338,10 +338,7 @@ function textoverlay($text, $image_p, $new_width, $new_height) {
     $fscolor = imagecolorallocate($image_p, $fsarr["red"], $fsarr["green"], $fsarr["blue"]);
     if ($ttfont != '') {
        # using ttf fonts
-       $alpha   = range("a", "z");
-       $alpha_u = range("A", "Z");
-       $alpha = $alpha.$alpha_u.range(0, 9);
-       $_b = imageTTFBbox($fontsize,0,$ttfont,$alpha);
+       $_b = imageTTFBbox($fontsize,0,$ttfont,'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789');
        $fontheight = abs($_b[7]-$_b[1]);
     } else {
       $font = $fontstyle;
