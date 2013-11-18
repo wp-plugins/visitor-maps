@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.8.1
+Version: 1.5.8.2
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -509,11 +509,12 @@ function wo_map_console(url) {
 //-->
 </script>
 <style type="text/css">
-div.star-holder { position: relative; height:19px; width:100px; font-size:19px;}
-div.star {height: 100%; position:absolute; top:0px; left:0px; background-color: transparent; letter-spacing:1ex; border:none;}
-.star1 {width:20%;} .star2 {width:40%;} .star3 {width:60%;} .star4 {width:80%;} .star5 {width:100%;}
-.star.star-rating {background-color: #fc0;}
-.star img{display:block; position:absolute; right:0px; border:none; text-decoration:none;}
+div.vm-star-holder { position: relative; height:19px; width:100px; font-size:19px;}
+div.vm-star {height: 100%; position:absolute; top:0px; left:0px; background-color: transparent; letter-spacing:1ex; border:none;}
+.vm-star1 {width:20%;} .vm-star2 {width:40%;} .vm-star3 {width:60%;} .vm-star4 {width:80%;} .vm-star5 {width:100%;}
+.vm-star.vm-star-rating {background-color: #fc0;}
+.vm-star img{display:block; position:absolute; right:0px; border:none; text-decoration:none;}
+div.vm-star img {width:19px; height:19px; border-left:1px solid #fff; border-right:1px solid #fff;}
 div.star img {width:19px; height:19px; border-left:1px solid #fff; border-right:1px solid #fff;}
 </style>
 <!-- end visitor maps - settings page header code -->
@@ -869,44 +870,44 @@ function visitor_maps_activity_do() {
         // have an entry, update it
         $query = "UPDATE " . $wo_table_wo . "
         SET
-        user_id          = '" . $wpdb->escape($wo_user_id) . "',
-        name             = '" . $wpdb->escape($name) . "',
-        ip_address       = '" . $wpdb->escape($ip_address) . "',";
+        user_id          = '" . esc_sql($wo_user_id) . "',
+        name             = '" . esc_sql($name) . "',
+        ip_address       = '" . esc_sql($ip_address) . "',";
 
         // sometimes the country is blank, look it up again
         // this can happen if you just enabled the location plugin
         if ($visitor_maps_opt['enable_location_plugin'] && $stored_user->country_code == '') {
             $location_info = $this->get_location_info($ip_address);
 
-            $query .= "country_name = '" . $wpdb->escape($location_info['country_name']) . "',
-                       country_code = '" . $wpdb->escape($location_info['country_code']) . "',
-                       city_name    = '" . $wpdb->escape($location_info['city_name']) . "',
-                       state_name   = '" . $wpdb->escape($location_info['state_name']) . "',
-                       state_code   = '" . $wpdb->escape($location_info['state_code']) . "',
-                       latitude     = '" . $wpdb->escape($location_info['latitude']) . "',
-                       longitude    = '" . $wpdb->escape($location_info['longitude']) . "',";
+            $query .= "country_name = '" . esc_sql($location_info['country_name']) . "',
+                       country_code = '" . esc_sql($location_info['country_code']) . "',
+                       city_name    = '" . esc_sql($location_info['city_name']) . "',
+                       state_name   = '" . esc_sql($location_info['state_name']) . "',
+                       state_code   = '" . esc_sql($location_info['state_code']) . "',
+                       latitude     = '" . esc_sql($location_info['latitude']) . "',
+                       longitude    = '" . esc_sql($location_info['longitude']) . "',";
         }
         // is a nickname user coming back online? then need to re-set the time entry and online time
         if ( $stored_user->time_last_click < $xx_mins_ago ) {
             $hostname = ($visitor_maps_opt['enable_host_lookups']) ? $this->gethostbyaddr_timeout($ip_address,2) : '';
-            $query .= "num_visits       = '" . $wpdb->escape($stored_user->num_visits + 1) . "',
-                       time_entry       = '" . $wpdb->escape($current_time) . "',
-                       time_last_click  = '" . $wpdb->escape($current_time) . "',
-                       last_page_url    = '" . $wpdb->escape($last_page_url) . "',
-                       http_referer     = '" . $wpdb->escape($http_referer) . "',
-                       hostname         = '" . $wpdb->escape($hostname) . "',
-                       user_agent       = '" . $wpdb->escape($user_agent) . "'
-                       WHERE session_id = '" . $wpdb->escape($ip_address) . "'";
+            $query .= "num_visits       = '" . esc_sql($stored_user->num_visits + 1) . "',
+                       time_entry       = '" . esc_sql($current_time) . "',
+                       time_last_click  = '" . esc_sql($current_time) . "',
+                       last_page_url    = '" . esc_sql($last_page_url) . "',
+                       http_referer     = '" . esc_sql($http_referer) . "',
+                       hostname         = '" . esc_sql($hostname) . "',
+                       user_agent       = '" . esc_sql($user_agent) . "'
+                       WHERE session_id = '" . esc_sql($ip_address) . "'";
         } else {
             if ($visitor_maps_opt['enable_host_lookups']) {
                     $hostname = (empty($stored_user->hostname)) ? $this->gethostbyaddr_timeout($ip_address,2) : $stored_user->hostname;
             } else {
                     $hostname = '';
             }
-            $query .= "time_last_click  = '" . $wpdb->escape($current_time) . "',
-                       hostname         = '" . $wpdb->escape($hostname) . "',
-                       last_page_url    = '" . $wpdb->escape($last_page_url) . "'
-                       WHERE session_id = '" . $wpdb->escape($ip_address) . "'";
+            $query .= "time_last_click  = '" . esc_sql($current_time) . "',
+                       hostname         = '" . esc_sql($hostname) . "',
+                       last_page_url    = '" . esc_sql($last_page_url) . "'
+                       WHERE session_id = '" . esc_sql($ip_address) . "'";
         }
           //echo 'updated';
       } else {
@@ -953,23 +954,23 @@ function visitor_maps_activity_do() {
         time_last_click,
         num_visits)
         values (
-                '" . $wpdb->escape($ip_address) . "',
-                '" . $wpdb->escape($ip_address) . "',
-                '" . $wpdb->escape($wo_user_id) . "',
-                '" . $wpdb->escape($name) . "',
-                '" . $wpdb->escape($country_name) . "',
-                '" . $wpdb->escape($country_code) . "',
-                '" . $wpdb->escape($city_name) . "',
-                '" . $wpdb->escape($state_name) . "',
-                '" . $wpdb->escape($state_code) . "',
-                '" . $wpdb->escape($latitude) . "',
-                '" . $wpdb->escape($longitude) . "',
-                '" . $wpdb->escape($last_page_url) . "',
-                '" . $wpdb->escape($http_referer) . "',
-                '" . $wpdb->escape($user_agent) . "',
-                '" . $wpdb->escape($hostname) . "',
-                '" . $wpdb->escape($current_time) . "',
-                '" . $wpdb->escape($current_time) . "',
+                '" . esc_sql($ip_address) . "',
+                '" . esc_sql($ip_address) . "',
+                '" . esc_sql($wo_user_id) . "',
+                '" . esc_sql($name) . "',
+                '" . esc_sql($country_name) . "',
+                '" . esc_sql($country_code) . "',
+                '" . esc_sql($city_name) . "',
+                '" . esc_sql($state_name) . "',
+                '" . esc_sql($state_code) . "',
+                '" . esc_sql($latitude) . "',
+                '" . esc_sql($longitude) . "',
+                '" . esc_sql($last_page_url) . "',
+                '" . esc_sql($http_referer) . "',
+                '" . esc_sql($user_agent) . "',
+                '" . esc_sql($hostname) . "',
+                '" . esc_sql($current_time) . "',
+                '" . esc_sql($current_time) . "',
                 '1')";
 
                  //echo 'inserted';
@@ -1575,7 +1576,7 @@ if (isset($visitor_maps)) {
   if (
      (isset($_POST['visitor_maps_enable_location_plugin']) && !is_file($path_visitor_maps.'GeoLiteCity.dat') )
    ||
-     (!isset($_POST['visitor_maps_set']) && !isset($_GET['do_geo']) && $visitor_maps_opt['enable_location_plugin'] && !is_file($path_visitor_maps.'GeoLiteCity.dat'))
+     (!isset($_POST['visitor_maps_set']) && !isset($_GET['do_geo']) && isset($visitor_maps_opt['enable_location_plugin']) && $visitor_maps_opt['enable_location_plugin'] && !is_file($path_visitor_maps.'GeoLiteCity.dat'))
    ) {
 
       add_action( 'admin_notices', array(&$visitor_maps,'visitor_maps_activation_notice'),1);
@@ -1625,4 +1626,3 @@ if (isset($visitor_maps)) {
      register_uninstall_hook(__FILE__, 'visitor_maps_unset_options');
 }
 
-?>

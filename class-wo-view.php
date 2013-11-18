@@ -956,5 +956,3 @@ function error_exit($error) {
 } // end function error_exit
 
 } // end class
-
-?>

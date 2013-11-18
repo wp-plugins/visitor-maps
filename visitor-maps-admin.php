@@ -104,13 +104,13 @@
 </script>
 
 <p>
-<a href="http://wordpress.org/extend/plugins/visitor-maps/changelog/" target="_blank"><?php echo __('Changelog', 'visitor-maps'); ?></a> |
-<a href="http://wordpress.org/extend/plugins/visitor-maps/faq/" target="_blank"><?php echo __('FAQ', 'visitor-maps'); ?></a> |
-<a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php echo __('Rate This', 'visitor-maps'); ?></a> |
-<a href="http://wordpress.org/tags/visitor-maps?forum_id=10" target="_blank"><?php echo __('Support', 'visitor-maps'); ?></a> |
+<a href="http://wordpress.org/plugins/visitor-maps/changelog/" target="_blank"><?php echo __('Changelog', 'visitor-maps'); ?></a> |
+<a href="http://wordpress.org/plugins/visitor-maps/faq/" target="_blank"><?php echo __('FAQ', 'visitor-maps'); ?></a> |
+<a href="http://wordpress.org/support/view/plugin-reviews/visitor-maps?rate=5#postform" target="_blank"><?php echo __('Rate This', 'visitor-maps'); ?></a> |
+<a href="http://wordpress.org/support/plugin/visitor-maps" target="_blank"><?php echo __('Support', 'visitor-maps'); ?></a> |
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG" target="_blank"><?php echo __('Donate', 'visitor-maps'); ?></a> |
 <a href="http://www.642weather.com/weather/scripts.php" target="_blank"><?php echo __('Free PHP Scripts', 'visitor-maps'); ?></a> |
-<a href="http://www.642weather.com/weather/wxblog/support/" target="_blank"><?php echo __('Contact', 'visitor-maps'); ?> Mike Challis</a>
+<a href="http://www.fastsecurecontactform.com/support" target="_blank"><?php echo __('Contact', 'visitor-maps'); ?> Mike Challis</a>
 </p>
 
 <?php
@@ -148,15 +148,15 @@ if (function_exists('get_transient')) {
       }
 ?>
 		<?php if ( ! empty($api->rating) ) : ?>
-		<div class="star-holder" title="<?php echo esc_attr(sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings))); ?>">
-			<div class="star star-rating" style="width: <?php echo esc_attr($api->rating) ?>px"></div>
-			<div class="star star5"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('5 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star4"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('4 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star3"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('3 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star2"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('2 stars', 'visitor-maps') ?>" /></div>
-			<div class="star star1"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('1 star', 'visitor-maps') ?>" /></div>
+		<div class="vm-star-holder" title="<?php echo esc_attr(sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings))); ?>">
+			<div class="vm-star vm-star-rating" style="width: <?php echo esc_attr($api->rating) ?>px"></div>
+			<div class="vm-star vm-star5"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('5 stars', 'visitor-maps') ?>" /></div>
+			<div class="vm-star vm-star4"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('4 stars', 'visitor-maps') ?>" /></div>
+			<div class="vm-star vm-star3"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('3 stars', 'visitor-maps') ?>" /></div>
+			<div class="vm-star vm-star2"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('2 stars', 'visitor-maps') ?>" /></div>
+			<div class="vm-star vm-star1"><img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/star.png" alt="<?php _e('1 star', 'visitor-maps') ?>" /></div>
 		</div>
-		<small><?php echo sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings)); ?> <a target="_blank" href="http://wordpress.org/extend/plugins/<?php echo $api->slug ?>/"> <?php _e('rate', 'visitor-maps') ?></a></small>
+		<small><?php echo sprintf(__('(Average rating based on %s ratings)', 'visitor-maps'),number_format_i18n($api->num_ratings)); ?> <a target="_blank" href="http://wordpress.org/support/view/plugin-reviews/visitor-maps?rate=5#postform"> <?php _e('rate', 'visitor-maps') ?></a></small>
         <br /> <br />
 		<?php endif;
   } // if ( !is_wp_error($api)
@@ -201,7 +201,7 @@ _e('If you find this plugin useful to you, please consider making a small donati
 <img src="<?php echo WP_PLUGIN_URL; ?>/visitor-maps/visitor-maps.jpg" width="250" height="185" alt="Mike Challis" /><br />
 <?php _e('Mike Challis says: "Hello, I have spent hundreds of hours coding this plugin just for you. If you are satisfied with my programs and support please consider making a small donation. If you are not able to, that is OK.', 'visitor-maps'); ?>
 <?php echo ' '; _e('Most people donate $3, $5, $10, $20, or more. Though no amount is too small. Donations can be made with your PayPal account, or securely using any of the major credit cards. Please also rate my plugin."', 'visitor-maps'); ?>
- <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php _e('Rate This', 'visitor-maps'); ?></a>.
+ <a href="http://wordpress.org/support/view/plugin-reviews/visitor-maps?rate=5#postform" target="_blank"><?php _e('Rate This', 'visitor-maps'); ?></a>.
 <br />
 <a style="cursor:pointer;" title="Close" onclick="toggleVisibility('mike_challis_tip');"><?php _e('Close this message', 'visitor-maps'); ?></a>
 </div>
@@ -581,7 +581,7 @@ foreach ($map_units_array as $k => $v) {
       <br />
 
       <input name="visitor_maps_enable_credit_link" id="visitor_maps_enable_credit_link" type="checkbox" <?php if ( $visitor_maps_opt['enable_credit_link'] ) echo ' checked="checked" '; ?> />
-      <label for="visitor_maps_enable_credit_link"><?php echo __('Enable plugin credit link:', 'visitor-maps') ?></label> <small><?php echo __('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps'); ?></a></small>
+      <label for="visitor_maps_enable_credit_link"><?php echo __('Enable plugin credit link:', 'visitor-maps') ?></label> <small><?php echo __('Powered by', 'visitor-maps'). ' <a href="http://wordpress.org/plugins/visitor-maps/" target="_new">'.__('Visitor Maps', 'visitor-maps'); ?></a></small>
       <a style="cursor:pointer;" title="<?php echo __('Click for Help!', 'visitor-maps'); ?>" onclick="toggleVisibility('visitor_maps_enable_credit_link_tip');"><?php echo __('help', 'visitor-maps'); ?></a>
       <div style="text-align:left; display:none" id="visitor_maps_enable_credit_link_tip">
       <?php echo __('The credit link is not mandatory, yes you can disable it if you want.', 'visitor-maps'); ?>
@@ -643,8 +643,8 @@ foreach ($map_units_array as $k => $v) {
 <p><strong><?php _e('More WordPress plugins by Mike Challis:', 'visitor-maps') ?></strong></p>
 <ul>
 <li><a href="http://www.FastSecureContactForm.com/" target="_blank"><?php echo __('Fast Secure Contact Form', 'visitor-maps'); ?></a></li>
-<li><a href="http://wordpress.org/extend/plugins/si-captcha-for-wordpress/" target="_blank"><?php echo __('SI CAPTCHA Anti-Spam', 'visitor-maps'); ?></a></li>
-<li><a href="http://wordpress.org/extend/plugins/visitor-maps/" target="_blank"><?php echo __('Visitor Maps and Who\'s Online', 'visitor-maps'); ?></a></li>
+<li><a href="http://wordpress.org/plugins/si-captcha-for-wordpress/" target="_blank"><?php echo __('SI CAPTCHA Anti-Spam', 'visitor-maps'); ?></a></li>
+<li><a href="http://wordpress.org/plugins/visitor-maps/" target="_blank"><?php echo __('Visitor Maps and Who\'s Online', 'visitor-maps'); ?></a></li>
 </ul>
 <?php
   if (!$visitor_maps_opt['donated']) { ?>

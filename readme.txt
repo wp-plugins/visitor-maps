@@ -2,9 +2,9 @@
 Contributors: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG
-Tags: plugin, plugins, users, user, visitors, visitor, whos, online, map, maps, geo, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
+Tags: plugin, plugins, users, visitors, visitor, whos online, map, maps, geolocation, location, country, statistics, stats, widget, sidebar, admin, dashboard, multilingual, wpmu, buddypress
 Requires at least: 2.8
-Tested up to: 3.3.2
+Tested up to: 3.7.1
 Stable tag: trunk
 
 Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar. Has an admin dashboard to view visitor details.
@@ -33,7 +33,7 @@ Features:
 
 Requirements/Restrictions:
 -------------------------
- * Works with Wordpress 2.8+, WPMU, and BuddyPress. (Wordpress 3.0+ is highly recommended)
+ * Works with Wordpress 2.8+, WPMU, and BuddyPress. (Wordpress 3.7+ is highly recommended)
  * PHP5
  * 30 megs of server space(with geolocation enabled)
  * PHP register_globals and safe_mode should be set to "Off"
@@ -173,6 +173,7 @@ The following translations are included in the download zip file:
 * Indonesian (id_ID) - Translated by [Masino Sinaga](http://www.masinosinaga.com/)
 * Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/)
 * Japanese (ja) - Translated by [Chestnut]
+* Lithuanian (lt_LT) - Translated by [Vincent G](http://www.Host1Free.com)
 * Polish (pl_PL) - Translated by Krzysztof Adamski(http://www.aton-ht.com/)
 * Portuguese (pt_PT) - Translated by Jose
 * Romanian (ro_RO) - Translated by [Anunturi Jibo](http://www.jibo.ro)
@@ -183,23 +184,23 @@ The following translations are included in the download zip file:
 
 = Can I provide a new translation? =
 
-Yes, It will be very gratefully received. 
-Please read [How to translate Visitor Maps for WordPress](http://www.fastsecurecontactform.com/translate-visitor-maps) 
+Yes, please read [How to translate Visitor Maps for WordPress](http://www.fastsecurecontactform.com/translate-visitor-maps) 
 
 = Can I update a translation? =
 
-Yes, It will be very gratefully received. 
-Please read [How to update a translation of Visitor Maps for WordPress](http://www.fastsecurecontactform.com/update-translation-visitor-maps) 
+Yes, please read [How to update a translation of Visitor Maps for WordPress](http://www.fastsecurecontactform.com/update-translation-visitor-maps) 
 
 
 
 == Changelog ==
 
+= 1.5.8.2 =
+- (17 Nov 2013) - Fix compatibility with WP 3.7.1
 - Fix possible error: preg_match() expects parameter to be string. 
+- Added Lithuanian (lt_LT) - Translated by [Vincent G](http://www.Host1Free.com)
 
 = 1.5.8.1 =
-- (18 Jan 2012) -
-- Added Hebrew (he_IL) - Translated by [Udi Burg](http://blog.udiburg.com/)
+- (18 Jan 2012) - Added Hebrew (he_IL) - Translated by [Udi Burg](http://blog.udiburg.com/)
 - Updated Italian (it_IT) - Translated by [Gianni Diurno](http://gidibao.net/ "Gianni Diurno")
 - Updated Turkish (tr_TR) - Translated by Sergio
 

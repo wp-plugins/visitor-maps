@@ -836,4 +836,3 @@ function validate_input_color($string) {
 }
 
 } // end class
-?>

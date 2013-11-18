@@ -422,4 +422,4 @@ $maps_in_tables and $string .= '</td>
 </table>
 ';
 
-?>
+// end file

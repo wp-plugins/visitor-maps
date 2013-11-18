@@ -489,9 +489,6 @@ function get_location_info($user_ip) {
 
 function get_ip_address() {
    // determine the visitors ip address
-/*   if (getenv('REMOTE_ADDR')) {
-        $ip = getenv('REMOTE_ADDR');
-   } else*/
    if (isset($_SERVER['REMOTE_ADDR'])) {
         $ip = $_SERVER['REMOTE_ADDR'];
    } else {
@@ -502,4 +499,3 @@ function get_ip_address() {
 
 } // end class
 
-?>

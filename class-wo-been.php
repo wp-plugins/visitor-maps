@@ -822,4 +822,3 @@ function error_exit($error) {
 
 } // end class
 
-?>

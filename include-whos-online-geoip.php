@@ -5112,4 +5112,3 @@ function GeoIP_record_by_addr_VMWO($gi,$addr){
   return _get_record_VMWO($gi, $ipnum);
 }
 
-?>

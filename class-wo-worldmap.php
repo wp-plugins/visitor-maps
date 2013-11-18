@@ -458,5 +458,3 @@ function validate_text_align($string) {
 } // end function validate_text_align
 
 } // end class
-
-?>
