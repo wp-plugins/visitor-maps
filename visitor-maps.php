@@ -3,11 +3,11 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.8.3
+Version: 1.5.8.4
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
-/*  Copyright (C) 2008-2011 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
+/*  Copyright (C) 2008-2014 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -932,7 +932,7 @@ function visitor_maps_activity_do() {
                $longitude    = '0.0000';
         }
 
-        $hostname = ($visitor_maps_opt['enable_host_lookups']) ? $this->gethostbyaddr_timeout($ip_address,2) : '';  
+        $hostname = ($visitor_maps_opt['enable_host_lookups']) ? $this->gethostbyaddr_timeout($ip_address,2) : '';
 
         $query = "INSERT IGNORE INTO " . $wo_table_wo . "
         (session_id,
@@ -1302,7 +1302,14 @@ function gethost_lin ($ip,$timeout_secs = 2) {
  $time_end = microtime(true);  // check the timer
  if(($time_end - $time_start) > $timeout_secs) return 'n/a'; // bail because it timed out
  if (empty($output)) return gethostbyaddr($ip); // plan b, but without timeout
- $host = (($output[0] ? end ( explode (' ', $output[0])) : $ip)); // plan a continues
+ //$host = isset($output[0]) ? end ( explode (' ', $output[0])) : $ip; // plan a continues
+ // mjc applied fix for PHP 5.4  Strict Standards: Only variables should be passed by reference error
+ if ( isset($output[0]) ) {
+         $array = explode (' ', $output[0]);
+         $host = end( $array );
+ } else {
+         $host = $ip;
+ }
  $host = rtrim($host, "\n");
  $host = rtrim($host, '.');
  return (preg_match("/.*\.[a-zA-Z]{2,3}/", $host)) ? $host : 'n/a';
@@ -1626,3 +1633,4 @@ if (isset($visitor_maps)) {
      register_uninstall_hook(__FILE__, 'visitor_maps_unset_options');
 }
 
+// end of file
