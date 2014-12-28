@@ -86,11 +86,12 @@ if( $visitor_maps_opt['enable_location_plugin'] ){
   $since = $wpdb->get_var("SELECT time_last_click FROM " . $wo_table_wo ." ORDER BY time_last_click ASC LIMIT 1");
 
 // Time to remove old entries
-$xx_mins_ago = (time() - absint(($visitor_maps_opt['track_time'] * 60)));
+$current_time = (int) current_time( 'timestamp' );
+$xx_mins_ago = ($current_time - absint(($visitor_maps_opt['track_time'] * 60)));
 
 if ($visitor_maps_opt['store_days'] > 0) {
        // remove visitor entries that have expired after $visitor_maps_opt['store_days'], save nickname friends
-       $xx_days_ago_time = (time() - (absint($visitor_maps_opt['store_days']) * 60*60*24));
+       $xx_days_ago_time = ($current_time - (absint($visitor_maps_opt['store_days']) * 60*60*24));
        $wpdb->query("DELETE from " . $wo_table_wo . "
                  WHERE (time_last_click < '" . absint($xx_days_ago_time) . "' and nickname = '')
                   OR   (time_last_click < '" . absint($xx_days_ago_time) . "' and nickname IS NULL)");
@@ -166,7 +167,7 @@ echo '<table border="0" width="99%">
  </tr>
  <tr>
    <td align="center">
-     <b><?php echo esc_html( __( 'Last refresh at', 'visitor-maps' ) ) .' '.  date( $visitor_maps_opt['time_format'] ); ?></b>
+     <b><?php echo esc_html( __( 'Last refresh at', 'visitor-maps' ) ) .' '.  date($visitor_maps_opt['time_format'], current_time('timestamp') ); ?></b>
    </td>
  </tr>
  <tr>
@@ -370,7 +371,7 @@ echo '<table border="0" width="99%">
 
          if ( $visitor_maps_opt['enable_state_display'] ) {
                  $newguy = false;
-                if (is_numeric($refresh) && $whos_online['time_entry'] > (time() - absint($refresh))) {
+                if (is_numeric($refresh) && $whos_online['time_entry'] > ($current_time - absint($refresh))) {
                    $newguy = true; // Holds the italicized "new lookup" indication for 1 refresh cycle
                  }
              if ($whos_online['city_name'] != '') {
@@ -512,11 +513,15 @@ echo '<table border="0" width="99%">
                                echo '<p>'.esc_html( __( 'Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com', 'visitor-maps' ) ).'<br />';
                                if( $geoip_old ){
                                    echo '<span style="color:red">'.
-                                   sprintf( __('The GeoLiteCity data was last updated on %1$s (%2$d days ago)','visitor-maps'),date($visitor_maps_opt['geoip_date_format'], $geoip_file_time),$geoip_days_ago).' '.
+                                   //sprintf( __('The GeoLiteCity data was last updated on %1$s (%2$d days ago)','visitor-maps'),date($visitor_maps_opt['geoip_date_format'], $geoip_file_time),$geoip_days_ago).' '.
+                                   sprintf( __('The GeoLiteCity data was last updated %d days ago','visitor-maps'),$geoip_days_ago).' '.
+
                                    esc_html( __( 'an update is available', 'visitor-maps' ) ).',
                                    <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&do_geo=1">'.esc_html( __( 'click here to update', 'visitor-maps' ) ).'</a></span>';
                                } else {
-                                   echo sprintf(__('The GeoLiteCity data was last updated on %1$s (%2$d days ago)','visitor-maps'),date($visitor_maps_opt['geoip_date_format'], $geoip_file_time),$geoip_days_ago);                                               ;
+                                   //echo sprintf(__('The GeoLiteCity data was last updated on %1$s (%2$d days ago)','visitor-maps'),date($visitor_maps_opt['geoip_date_format'], $geoip_file_time),$geoip_days_ago);                                               ;
+                                echo sprintf(__('The GeoLiteCity data was last updated %d days ago','visitor-maps'),$geoip_days_ago);                                               ;
+
                                }
                                echo '</p>';
                             }
@@ -540,9 +545,9 @@ echo '<table border="0" width="99%">
 // Determines status of visitor and displays appropriate icon.
   function check_status($whos_online) {
     global $wpdb,$visitor_maps_opt, $path_visitor_maps, $url_visitor_maps;
-
+     $current_time = (int) current_time( 'timestamp' );
     // Determine if visitor active/inactive
-    $xx_mins_ago_long = (time() - ($visitor_maps_opt['active_time'] * 60));
+    $xx_mins_ago_long = ($current_time - ($visitor_maps_opt['active_time'] * 60));
 
     if ($whos_online['name'] != 'Guest' && $whos_online['user_id'] == 0) {   // bot
       // inactive bot
@@ -647,17 +652,17 @@ function check_geoip_date($geoip_file_time) {
 
   // check timestamp
   $time_last_check = $wpdb->get_var("SELECT time_last_check FROM " . $wo_table_ge);
-
+  $current_time = (int) current_time( 'timestamp' );
   // was a timestamp there?
   if (!$time_last_check ) {
      // jump start the timestamp now
      //echo "jump starting the timestamp now...<br />";
-     $time_last_check   = time() - (7 * 60*60);
+     $time_last_check   = $current_time - (7 * 60*60);
      $wpdb->query("INSERT INTO " . $wo_table_ge . " (`time_last_check`) VALUES ('" .absint($time_last_check ) . "');");
   }
 
   // have I checked this already in the last 6 hours?
-  if ($time_last_check < time() - (6 * 60*60) ) { // $time_last_check more than 6 hours ago
+  if ($time_last_check < $current_time - (6 * 60*60) ) { // $time_last_check more than 6 hours ago
            // time to check it again, reset the needs_update flag first
            //echo "resetting the needs_update flag...<br />";
            $wpdb->query("UPDATE " . $wo_table_ge . " SET needs_update = '0'");
@@ -680,10 +685,10 @@ function check_geoip_date($geoip_file_time) {
 
   // set a new timestamp
   //echo "set a new timestamp (now)...<br />";
-  $wpdb->query("UPDATE " . $wo_table_ge . " SET time_last_check = '" . time() . "'");
+  $wpdb->query("UPDATE " . $wo_table_ge . " SET time_last_check = '" . $current_time . "'");
 
   // sanity check the remote date
-  if ($remote_file_time < (time() - (365*24*60*60)) ) { // $remote_file_time less than 1 year ago
+  if ($remote_file_time < ($current_time - (365*24*60*60)) ) { // $remote_file_time less than 1 year ago
            echo "Warning: The last modified date of the Maxmind GeoLiteCity database ($remote_file_time) is out of expected range<br />";
            return 0;
   }
@@ -704,7 +709,7 @@ function curl_last_mod($remote_file) {
     if ( !function_exists('curl_init') ) {
        return $this->http_last_mod($remote_file,1);
     }
-
+     $current_time = (int) current_time( 'timestamp' );
     $last_modified = $ch = $resultString = $headers = '';
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.9.1.3) Gecko/20090824 Firefox/3.5.3 (.NET CLR 3.5.30729)');
@@ -737,7 +742,7 @@ function curl_last_mod($remote_file) {
   // sanity check the remote_file date
   // sometimes CURL returns -1 instead of the timestamp on some peoples servers
   // use http to check the date instead.
-  if ($last_modified < (time() - (365*24*60*60)) ) { // $remote_file_time less than 1 year ago
+  if ($last_modified < ($current_time - (365*24*60*60)) ) { // $remote_file_time less than 1 year ago
        return $this->http_last_mod($remote_file,1);
   }
 

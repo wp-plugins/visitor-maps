@@ -549,9 +549,9 @@ echo '<table border="0" width="99%">
 // Determines status of visitor and displays appropriate icon.
   function check_status($whos_online) {
     global $wpdb,$visitor_maps_opt, $path_visitor_maps, $url_visitor_maps;
-
+    $current_time = (int) current_time( 'timestamp' );
     // Determine if visitor active/inactive
-    $xx_mins_ago_long = (time() - ($visitor_maps_opt['active_time'] * 60));
+    $xx_mins_ago_long = ($current_time - ($visitor_maps_opt['active_time'] * 60));
 
     if ($whos_online['name'] != 'Guest' && $whos_online['user_id'] == 0) {   // bot
       // inactive bot

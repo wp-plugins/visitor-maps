@@ -209,7 +209,8 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
   //$green = imagecolorallocate ($map_im, 0,255,0);
 
   // Time to remove old entries
-  $xx_secs_ago = (time() - $seconds_ago);
+  $current_time = (int) current_time( 'timestamp' );
+  $xx_secs_ago = ($current_time - $seconds_ago);
 
   $rows_arr = array();
   if ($visitor_maps_opt['hide_bots']) {

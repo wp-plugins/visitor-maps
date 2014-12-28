@@ -193,8 +193,8 @@ $C['image_pin_3'] = 'wo-pin-green5x5.jpg';
   } else {
         $type = 'png';
   }
-
-  $xx_secs_ago = (time() - $seconds_ago);
+  $current_time = (int) current_time( 'timestamp' );
+  $xx_secs_ago = ($current_time - $seconds_ago);
   // get image data
   list($image_worldmap_width, $image_worldmap_height, $image_worldmap_type) = getimagesize($image_worldmap_path);
   list($image_pin_width, $image_pin_height, $image_pin_type) = getimagesize($image_pin_path);

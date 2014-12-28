@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.8.5
+Version: 1.5.8.6
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -356,13 +356,13 @@ function visitor_maps_map_short_code() {
 
      foreach( $visitors_arr as $visitors ) {
         if($visitors['type'] == 'day')
-           $day = esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime($visitors['time']));
+           $day = esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime(current_time($visitors['time'])));
         if($visitors['type'] == 'month')
-           $month = esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
+           $month = esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time'])));
         if($visitors['type'] == 'year')
-           $year = esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
+           $year = esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time'])));
         if($visitors['type'] == 'all')
-           $all = esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
+           $all = esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time'])));
      }
 
      $string .= '<p>'.__('Records of the most visitors online at once:', 'visitor-maps');
@@ -629,7 +629,7 @@ function visitor_maps_install() {
         PRIMARY KEY  (`session_id`),
         KEY `nickname_time_last_click` (`nickname`,`time_last_click`))");
 	}
-
+    $now = current_time( 'mysql' );
     if($wpdb->get_var("show tables like '". $wo_table_st . "'") != $wo_table_st) {
 	   $wpdb->query("CREATE TABLE IF NOT EXISTS `". $wo_table_st . "` (
         `type`  varchar(14) NOT NULL default '',
@@ -637,10 +637,10 @@ function visitor_maps_install() {
         `time`  datetime NOT NULL default '0000-00-00 00:00:00',
          PRIMARY KEY  (`type`))");
 
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('day', '1', now())");
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('month', '1', now())");
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('year', '1', now())");
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('all', '1', now())");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('day', '1', `". $now . "`)");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('month', '1', `". $now . "`)");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('year', '1', `". $now . "`)");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('all', '1', `". $now . "`)");
 	}
 
     if($wpdb->get_var("show tables like '". $wo_table_ge . "'") != $wo_table_ge) {
@@ -669,13 +669,13 @@ function visitor_maps_plugin_action_links( $links, $file ) {
 function visitor_maps_init() {
 
  // set timezone according to wp admin - settings - general - timezone  (PHP5 only)
- if (  function_exists( 'date_default_timezone_set' ) && function_exists( 'timezone_identifiers_list' ) && function_exists( 'timezone_open' ) && function_exists( 'timezone_offset_get' ) && $timezone_string = get_option( 'timezone_string' ) ) {
+ //if (  function_exists( 'date_default_timezone_set' ) && function_exists( 'timezone_identifiers_list' ) && function_exists( 'timezone_open' ) && function_exists( 'timezone_offset_get' ) && $timezone_string = get_option( 'timezone_string' ) ) {
       // Set timezone in PHP5 manner
-      @date_default_timezone_set( $timezone_string );
- }
+ //     @date_default_timezone_set( $timezone_string );
+ //}
 
  if (function_exists('load_plugin_textdomain')) {
-      load_plugin_textdomain('visitor-maps', WP_PLUGIN_DIR.'/'.dirname(plugin_basename(__FILE__)).'/languages', dirname(plugin_basename(__FILE__)).'/languages' );
+      load_plugin_textdomain('visitor-maps', false, 'visitor-maps/languages' );
  }
 
 } // end function visitor_maps_init
@@ -692,10 +692,10 @@ function visitor_maps_get_options() {
    'dashboard_permissions' => 'manage_options',
    'ips_to_ignore' =>          '',
    'urls_to_ignore' =>         'wp-slimstat-js.php',
-   'time_format' =>            'h:i a T',
+   'time_format' =>            'h:i a',
    'time_format_hms' =>        'h:i:sa' ,
-   'date_time_format' =>       'm-d-Y h:i a T',
-   'geoip_date_format' =>      'm-d-Y h:i a T',
+   'date_time_format' =>       'm-d-Y h:i a',
+   'geoip_date_format' =>      'm-d-Y h:i a',
    'whois_url' =>              'http://www.ip-adress.com/ip_tracer/',
    'whois_url_popup' =>        1,
    'enable_host_lookups' =>    1,
@@ -773,7 +773,7 @@ function visitor_maps_activity_do() {
     $http_referer  = $this->get_http_referer();
     $user_agent    = $this->get_http_user_agent();
     $user_agent_lower = strtolower($user_agent);
-    $current_time  = time();
+    $current_time  = (int) current_time( 'timestamp' );
     $xx_mins_ago   = ($current_time - absint(($visitor_maps_opt['track_time'] * 60)));
 
     // see if the user is a spider (bot) or not
@@ -807,7 +807,7 @@ function visitor_maps_activity_do() {
 
     if ($visitor_maps_opt['store_days'] > 0) {
             // remove visitor entries that have expired after $visitor_maps_opt['store_days'], save nickname friends
-            $xx_days_ago_time = (time() - ($visitor_maps_opt['store_days'] * 60*60*24));
+            $xx_days_ago_time = ($current_time - ($visitor_maps_opt['store_days'] * 60*60*24));
             $wpdb->query("DELETE from " . $wo_table_wo . "
                       WHERE (time_last_click < '" . $xx_days_ago_time . "' and nickname = '')
                       OR   (time_last_click < '" . $xx_days_ago_time . "' and nickname IS NULL)");
@@ -1044,17 +1044,17 @@ function set_whos_records() {
     $wo_table_ge = $wpdb->prefix . 'visitor_maps_ge';
 
   // now() adjusted to php timezone, othersize mysql date time could be off
-  $mysql_now = date( 'Y-m-d H:i:s' );
-
+  $mysql_now = current_time( 'mysql' );
+  $current_time = (int) current_time( 'timestamp' );
   if ($visitor_maps_opt['hide_bots']) {
        // select the 'visitors online now' count, except for bots and our nickname friends not online now
        $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE (name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')
-       OR (user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')");
+       WHERE (name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "')
+       OR (user_id > '0' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "')");
   } else {
        // select the 'visitors online now' count, all users
        $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       WHERE time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
   }
 
   // set today record if day changes or count is higher than stored count
@@ -1101,20 +1101,21 @@ function get_whos_records($visitors_count) {
 
   $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
   $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
+  $current_time = (int) current_time( 'timestamp' );
 
   if ($visitor_maps_opt['hide_bots']) {
     $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
   } else {
     $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
     $bots_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-     WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+     WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
   }
 
   $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-  WHERE user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  WHERE user_id > '0' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
   $visitor_maps_stats['visitors'] = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
   $visitor_maps_stats['guests'] = sprintf( __('%d guests','visitor-maps'),$guests_count);
@@ -1134,20 +1135,20 @@ function get_whos_records($visitors_count) {
 
   foreach( $visitors_arr as $visitors ) {
      if($visitors['type'] == 'day') {
-        $visitor_maps_stats['today'] = esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime($visitors['time']));
-        $string .= esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime($visitors['time'])).'<br />';
+        $visitor_maps_stats['today'] = esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime(current_time($visitors['time'])));
+        $string .= esc_html( __('Max visitors today', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['time_format'],strtotime(current_time($visitors['time']))).'<br />';
      }
      if($visitors['type'] == 'month'){
-       $visitor_maps_stats['month'] = esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
-       $string .= esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime($visitors['time'])).'<br />';
+       $visitor_maps_stats['month'] = esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time'])));
+       $string .= esc_html( __('This month', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '. date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time']))).'<br />';
      }
      if($visitors['type'] == 'year') {
-       $visitor_maps_stats['year'] = esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
-       $string .= esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time'])).'<br />';
+       $visitor_maps_stats['year'] = esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time'])));
+       $string .= esc_html( __('This year', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time']))).'<br />';
      }
      if($visitors['type'] == 'all') {
-        $visitor_maps_stats['all'] = esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time']));
-        $string .= esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime($visitors['time'])).'<br />';
+        $visitor_maps_stats['all'] = esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time'])));
+        $string .= esc_html( __('All time', 'visitor-maps')).': ' . $visitors['count'] .' '.esc_html( __('at', 'visitor-maps')).' '.  date($visitor_maps_opt['date_time_format'],strtotime(current_time($visitors['time']))).'<br />';
      }
   }
   return $string;
@@ -1450,28 +1451,28 @@ function visitor_maps_widget_content() {
     global $visitor_maps_stats, $visitor_maps_opt, $wpdb;
 
     $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
-
+    $current_time = (int) current_time( 'timestamp' );
     if ($visitor_maps_opt['hide_bots']) {
        $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE (name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')
-       OR (user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "')");
+       WHERE (name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "')
+       OR (user_id > '0' AND time_last_click > '" . ($current_time- absint(($visitor_maps_opt['track_time'] * 60))) . "')");
 
        $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
     } else {
        $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       WHERE time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
        $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
        $bots_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
     }
 
     $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE user_id > '0' AND time_last_click > '" . (time() - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    WHERE user_id > '0' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
 
     $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
     $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);
@@ -1552,13 +1553,13 @@ if (class_exists("VisitorMaps")) {
 
 if (isset($visitor_maps)) {
 
-  $url_visitor_maps  = WP_PLUGIN_URL . '/visitor-maps/';
+  $url_visitor_maps  = plugin_dir_url( __FILE__ );  // http://www.yoursite.com/wp-content/plugins/visitor-maps/
 
   if ( defined('PATH_VISITOR_MAPS') ) {
       // define('PATH_VISITOR_MAPS', '/home/nflfirst/public_html/nfl_blog/wp-content/plugins/visitor-maps/');
      $path_visitor_maps = PATH_VISITOR_MAPS;
   } else {
-     $path_visitor_maps = WP_PLUGIN_DIR . '/visitor-maps/';
+     $path_visitor_maps = plugin_dir_path( __FILE__ );  // /path/to/wp-content/plugins/visitor-maps/
   }
 
 

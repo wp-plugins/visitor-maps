@@ -1,4 +1,4 @@
-    <?php
+<?php
 /*
 
 This file reads the whos-online database and makes a PNG image worldmap to display

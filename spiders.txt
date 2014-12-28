@@ -30,6 +30,7 @@ accoona
 adressendeutschland
 appie
 architext
+archive
 asterias
 atlocal
 atomz
@@ -38,6 +39,7 @@ bannana_bot
 baypup
 bdfetch
 biglotron
+bing
 blaiz
 blo.
 blog
