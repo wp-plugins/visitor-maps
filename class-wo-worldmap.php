@@ -216,14 +216,14 @@ $this->set['image_pin_3'] = 'wo-pin-green5x5.jpg';
   if ($visitor_maps_opt['hide_bots']) {
 
        $rows_arr = $wpdb->get_results("SELECT SQL_CALC_FOUND_ROWS user_id, name, longitude, latitude FROM ".$wo_table_wo."
-                 WHERE name = 'Guest' AND time_last_click > '" . $xx_secs_ago . "' LIMIT ".$visitor_maps_opt['pins_limit'] ."",ARRAY_A );
+                 WHERE name = 'Guest' AND time_last_click > '" . $xx_secs_ago . "' LIMIT ".absint($visitor_maps_opt['pins_limit']) ."",ARRAY_A );
 
        $rows_count = $wpdb->get_var("SELECT FOUND_ROWS()");
 
   } else {
 
        $rows_arr = $wpdb->get_results("SELECT SQL_CALC_FOUND_ROWS user_id, name, longitude, latitude FROM ".$wo_table_wo."
-                 WHERE time_last_click > '" . $xx_secs_ago . "' LIMIT ".$visitor_maps_opt['pins_limit'] ."",ARRAY_A );
+                 WHERE time_last_click > '" . $xx_secs_ago . "' LIMIT ".absint($visitor_maps_opt['pins_limit']) ."",ARRAY_A );
 
        $rows_count = $wpdb->get_var("SELECT FOUND_ROWS()");
   }

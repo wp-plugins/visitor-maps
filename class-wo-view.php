@@ -205,7 +205,7 @@ echo '<table border="0" width="99%">
   $whos_online_arr = array();
   $even_odd = 0;
 
-  $whos_online_arr = $wpdb->get_results("SELECT
+  $whos_online_arr = $wpdb->get_results( $wpdb->prepare("SELECT
         session_id,
         ip_address,
         user_id,
@@ -226,8 +226,8 @@ echo '<table border="0" width="99%">
         time_last_click,
         num_visits
             FROM " . $wo_table_wo . "
-            WHERE time_last_click > '" . $xx_mins_ago . "'
-            ORDER BY time_last_click DESC", ARRAY_A);
+            WHERE time_last_click > %d
+            ORDER BY time_last_click DESC",$xx_mins_ago), ARRAY_A);
 
   $total_sess = 0;
  if ($whos_online_arr) { // check of there are any visitors

@@ -3,11 +3,11 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.8.6
+Version: 1.5.8.7
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
-/*  Copyright (C) 2008-2014 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
+/*  Copyright (C) 2008-2015 Mike Challis  (http://www.642weather.com/weather/contact_us.php)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -427,7 +427,7 @@ if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps' ) {
    }
 
    $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
-   if ( isset($_GET['bots']) && array('0','1') ) {
+   if ( isset($_GET['bots']) && in_array($_GET['bots'], array('0','1')) ) {
      // bots
       $wo_prefs_arr['bots'] = $_GET['bots'];
       $bots = $_GET['bots'];
@@ -808,14 +808,14 @@ function visitor_maps_activity_do() {
     if ($visitor_maps_opt['store_days'] > 0) {
             // remove visitor entries that have expired after $visitor_maps_opt['store_days'], save nickname friends
             $xx_days_ago_time = ($current_time - ($visitor_maps_opt['store_days'] * 60*60*24));
-            $wpdb->query("DELETE from " . $wo_table_wo . "
-                      WHERE (time_last_click < '" . $xx_days_ago_time . "' and nickname = '')
-                      OR   (time_last_click < '" . $xx_days_ago_time . "' and nickname IS NULL)");
+            $wpdb->query( $wpdb->prepare("DELETE from " . $wo_table_wo . "
+                      WHERE (time_last_click < %d and nickname = '')
+                      OR   (time_last_click < %d and nickname IS NULL)", $xx_days_ago_time, $xx_days_ago_time));
     } else {
             // remove visitor entries that have expired after $visitor_maps_opt['track_time'], save nickname friends
-            $wpdb->query("DELETE from " . $wo_table_wo . "
-                      WHERE (time_last_click < '" . $xx_mins_ago . "' and nickname = '')
-                      OR   (time_last_click < '" . $xx_mins_ago . "' and nickname IS NULL)");
+            $wpdb->query( $wpdb->prepare("DELETE from " . $wo_table_wo . "
+                      WHERE (time_last_click < %d and nickname = '')
+                      OR   (time_last_click < %d and nickname IS NULL)", $xx_mins_ago, $xx_mins_ago));
     }
 
     // see if the current site visitor has an entry
@@ -848,7 +848,7 @@ function visitor_maps_activity_do() {
 			$regexp = str_replace ('*', '.+', $regexp);
 			if(preg_match("/^$regexp$/", $ip_address)) {
 			    // ignore this user
-                $wpdb->query("DELETE from " . $wo_table_wo . " WHERE ip_address = '" . $ip_address . "'");
+                $wpdb->query( $wpdb->prepare("DELETE from " . $wo_table_wo . " WHERE ip_address = %s",$ip_address) );
                 $ip_address = '';
                 break;
 			}
@@ -861,7 +861,7 @@ function visitor_maps_activity_do() {
     if ($visitor_maps_opt['hide_administrators'] && $user_ID != '' && current_user_can('level_10') ){
       // hide admin activity
       $ip_address = '';
-      $wpdb->query("DELETE from " . $wo_table_wo . " WHERE name = '" . $name . "'");
+      $wpdb->query($wpdb->prepare("DELETE from " . $wo_table_wo . " WHERE name = %s",$name) );
     }
 
     if ($name != '' && $ip_address != '') { // skip if empty
@@ -1046,15 +1046,16 @@ function set_whos_records() {
   // now() adjusted to php timezone, othersize mysql date time could be off
   $mysql_now = current_time( 'mysql' );
   $current_time = (int) current_time( 'timestamp' );
+  $query_time = ($current_time - absint(($visitor_maps_opt['track_time'] * 60)));
   if ($visitor_maps_opt['hide_bots']) {
        // select the 'visitors online now' count, except for bots and our nickname friends not online now
-       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE (name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "')
-       OR (user_id > '0' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "')");
+       $visitors_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE (name = 'Guest' AND time_last_click > %d)
+       OR (user_id > '0' AND time_last_click > %d)",$query_time, $query_time ) );
   } else {
        // select the 'visitors online now' count, all users
-       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       $visitors_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE time_last_click > %d",$query_time ) );
   }
 
   // set today record if day changes or count is higher than stored count
@@ -1102,20 +1103,20 @@ function get_whos_records($visitors_count) {
   $wo_table_st = $wpdb->prefix . 'visitor_maps_st';
   $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
   $current_time = (int) current_time( 'timestamp' );
-
+  $query_time = ($current_time - absint(($visitor_maps_opt['track_time'] * 60)));
   if ($visitor_maps_opt['hide_bots']) {
-    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    $guests_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > %d",$query_time ) );
   } else {
-    $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    $guests_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+     WHERE user_id = '0' AND name = 'Guest' AND time_last_click > %d",$query_time ) );
 
-    $bots_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-     WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    $bots_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+     WHERE user_id = '0' AND name != 'Guest' AND time_last_click > %d",$query_time ) );
   }
 
-  $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-  WHERE user_id > '0' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+  $members_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+  WHERE user_id > '0' AND time_last_click > %d",$query_time ) );
 
   $visitor_maps_stats['visitors'] = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
   $visitor_maps_stats['guests'] = sprintf( __('%d guests','visitor-maps'),$guests_count);
@@ -1452,27 +1453,28 @@ function visitor_maps_widget_content() {
 
     $wo_table_wo = $wpdb->prefix . 'visitor_maps_wo';
     $current_time = (int) current_time( 'timestamp' );
+    $query_time = ($current_time - absint(($visitor_maps_opt['track_time'] * 60)));
     if ($visitor_maps_opt['hide_bots']) {
-       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE (name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "')
-       OR (user_id > '0' AND time_last_click > '" . ($current_time- absint(($visitor_maps_opt['track_time'] * 60))) . "')");
+       $visitors_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE (name = 'Guest' AND time_last_click > %d)
+       OR (user_id > '0' AND time_last_click > %d)",$query_time, $query_time ) );
 
-       $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       $guests_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > %d",$query_time ) );
 
     } else {
-       $visitors_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       $visitors_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE time_last_click > %d",$query_time ) );
 
-       $guests_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       $guests_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE user_id = '0' AND name = 'Guest' AND time_last_click > %d",$query_time ) );
 
-       $bots_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-       WHERE user_id = '0' AND name != 'Guest' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+       $bots_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+       WHERE user_id = '0' AND name != 'Guest' AND time_last_click > %d",$query_time ) );
     }
 
-    $members_count = $wpdb->get_var("SELECT count(*) FROM " . $wo_table_wo ."
-    WHERE user_id > '0' AND time_last_click > '" . ($current_time - absint(($visitor_maps_opt['track_time'] * 60))) . "'");
+    $members_count = $wpdb->get_var( $wpdb->prepare("SELECT count(*) FROM " . $wo_table_wo ."
+    WHERE user_id > '0' AND time_last_click > %d",$query_time ) );
 
     $stats_visitors = sprintf( __('%d visitors online now','visitor-maps'),$visitors_count);
     $stats_guests   = sprintf( __('%d guests','visitor-maps'),$guests_count);

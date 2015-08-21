@@ -57,7 +57,7 @@ function view_whos_been_online() {
   $sort_by_ar['url'] = 'last_page_url';
 
   $sort_by = (isset($wo_prefs_arr['sort_by'])) ? $wo_prefs_arr['sort_by'] : 'time';
-  if ( isset($_GET['sort_by']) && array('who','visits','time','ip','location','url') ) {
+  if ( isset($_GET['sort_by']) && in_array($_GET['sort_by'], array('who','visits','time','ip','location','url')) ) {
     $wo_prefs_arr['sort_by'] = $_GET['sort_by'];
     $sort_by = $_GET['sort_by'];
   }
@@ -71,7 +71,7 @@ function view_whos_been_online() {
   $order_ar['asc'] = 'ASC';
 
   $order = (isset($wo_prefs_arr['order'])) ? $wo_prefs_arr['order'] : 'desc';
-  if ( isset($_GET['order']) && array('desc','asc') ) {
+  if ( isset($_GET['order']) && in_array($_GET['order'], array('desc','asc')) ) {
    // bots
     $wo_prefs_arr['order'] = $_GET['order'];
     $order = $_GET['order'];
@@ -91,7 +91,7 @@ function view_whos_been_online() {
   $bots_type[] = array('id' => '1', 'text' => esc_attr( __( 'Yes', 'visitor-maps' ) ));
 
   $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
-  if ( isset($_GET['bots']) && array('0','1') ) {
+  if ( isset($_GET['bots']) && in_array($_GET['bots'], array('0','1')) ) {
    // bots
     $wo_prefs_arr['bots'] = $_GET['bots'];
     $bots = $_GET['bots'];
@@ -254,7 +254,7 @@ echo '<table border="0" width="99%">
   $whos_online_arr = array();
   $even_odd = 0;
 
-  $whos_online_arr = $wpdb->get_results("SELECT
+  $whos_online_arr = $wpdb->get_results( "SELECT
         session_id,
         ip_address,
         user_id,
@@ -275,8 +275,7 @@ echo '<table border="0" width="99%">
         time_last_click,
         num_visits
             FROM " . $wo_table_wo . "
-            ORDER BY ".$sort_by_ar[$sort_by]." ".$order_ar[$order]." $limit", ARRAY_A);
-
+            ORDER BY ".$sort_by_ar[$sort_by]." ".$order_ar[$order]." $limit", ARRAY_A );
 
   $total_sess = 0;
  if ($whos_online_arr) { // check of there are any visitors
