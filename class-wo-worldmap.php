@@ -449,7 +449,7 @@ function validate_color_wo($string) {
 function validate_text_align($string) {
  // only allow proper text align codes
   $allowed = array('ll','ul','lr','ur','c','ct','cb');
- if ( in_array($string, $allowed) ) {
+ if ( in_array($string, $allowed, true) ) {
     return true;
  }
  return false;

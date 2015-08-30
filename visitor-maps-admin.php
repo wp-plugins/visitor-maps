@@ -2,13 +2,13 @@
 
 // the visitor maps admin settings page
 
- if (isset($_GET['do_geo']) ) {
+ if (isset($_GET['do_geo']) && function_exists('visitor_maps_geoip_admin') ) {
           if ( function_exists('current_user_can') && !current_user_can('manage_options') )
                         die(__('You do not have permissions for managing this option', 'visitor-maps'));
 
     check_admin_referer( 'visitor-maps-geo_update'); // nonce
     // install or update the geolocation data file
-    require_once(dirname(__FILE__) .'/class-wo-update.php');
+    require_once( ABSPATH . PLUGINDIR . '/visitor-maps-geoip/class-wo-update.php');
     $wo_update = new WoProGeoLocUpdater();
     $wo_update->update_now();
     $visitor_maps_opt['enable_location_plugin'] = 1;
@@ -243,21 +243,28 @@ _e('If you find this plugin useful to you, please consider making a small donati
       <td>
 
       <?php
-      echo '<strong>'.  __('Uses GeoLiteCity data created by MaxMind, available from http://www.maxmind.com', 'visitor-maps') .'</strong><br />';
-      if ( !is_file($path_visitor_maps.'GeoLiteCity.dat') ) {
-        echo '<span style="background-color:#FFE991; padding:4px;"><strong>'.  __('The Maxmind GeoLiteCity database is not yet installed.', 'visitor-maps'). ' <a style="color:red" href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Install Now', 'visitor-maps'). '</a></strong></span>';
-      } else if (!$visitor_maps_opt['enable_location_plugin']) {
-              echo '<span style="background-color:#FFE991; padding:4px;"><strong>'.  __('The Maxmind GeoLiteCity database is installed but not enabled (check the setting below).', 'visitor-maps'). '</strong></span>';
-      } else {
-             echo '<span style="background-color:#99CC99; padding:4px;"><strong>'.  __('The Maxmind GeoLiteCity database is installed and enabled.', 'visitor-maps'). '</strong></span>';
-      }
-      ?>
 
+if (!function_exists('visitor_maps_geoip_admin')) { // skip if the plugin is already installed and activated
+
+      echo '<div style="background-color:#FFE991; padding:4px;"><p><strong>'.__('Visitor Maps plugin needs the "Visitor Maps Geolocation Addon" plugin installed to enable the Maps and Geolocation.', 'visitor-maps').' <a href="http://www.642weather.com/weather/scripts-wordpress-visitor-maps-geoip.php" target="_blank">'. __('View download page', 'visitor-maps'). '</a></strong></p></div>';
+
+  if ( is_file(WP_CONTENT_DIR .'/visitor-maps-geoip/GeoLiteCity.dat') ) {
+     ?>
       <br />
       <input name="visitor_maps_enable_location_plugin" id="visitor_maps_enable_location_plugin" type="checkbox" <?php if( $visitor_maps_opt['enable_location_plugin'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_enable_location_plugin"><?php echo __('Enable geolocation.', 'visitor-maps'); ?></label>
-      <?php if( $visitor_maps_opt['enable_location_plugin'] && is_file($path_visitor_maps.'GeoLiteCity.dat')) echo ' <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Update Now', 'visitor-maps'). '</a>';?>
+
       <br />
+
+       <?php
+   }
+} else {
+   	    // hook for geoip settings
+	    do_action( 'visitor_maps_geoip', $visitor_maps_opt );
+}
+?>
+
+
 
       <input name="visitor_maps_hide_text_on_worldmap" id="visitor_maps_hide_text_on_worldmap" type="checkbox" <?php if( $visitor_maps_opt['hide_text_on_worldmap'] ) echo 'checked="checked"'; ?> />
       <label for="visitor_maps_hide_text_on_worldmap"><?php echo __('Disable text on geolocation maps (missing map background fix).', 'visitor-maps'); ?></label>

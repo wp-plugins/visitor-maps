@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.8.7
+Version: 1.5.8.8
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -40,6 +40,7 @@ function visitor_maps_unset_options() {
 
   delete_option('visitor_maps');
   delete_option('visitor_maps_upgrade_1');
+  delete_option('visitor_maps_upgrade_2');
 
 } // end function visitor_maps_unset_options
 
@@ -62,6 +63,24 @@ function visitor_maps_upgrade_1() {
     add_option('visitor_maps_upgrade_1',  array( 'upgraded' => 'true' ), '', 'yes');
   }
 } // end function visitor_maps_upgrade_1
+
+ // upgrade path from version 1.5.8.6 or older
+function visitor_maps_upgrade_2() {
+  if (!get_option('visitor_maps_upgrade_2')) {
+    // just now updating, run upgrade patch
+    if (!is_dir(WP_CONTENT_DIR .'/visitor-maps-geoip')) mkdir(WP_CONTENT_DIR .'/visitor-maps-geoip');
+    if ( !file_exists(WP_CONTENT_DIR .'/visitor-maps-geoip/GeoLiteCity.dat') ) {
+      $from = dirname(__FILE__) .'/GeoLiteCity.dat';
+      $to = WP_CONTENT_DIR .'/visitor-maps-geoip/GeoLiteCity.dat';
+      if (is_file($from)) {
+        rename($from, $to);
+        chmod($to, 0644);
+        @unlink($from);
+      }
+    }
+    add_option('visitor_maps_upgrade_2',  array( 'upgraded' => 'true' ), '', 'yes');
+  }
+} // end function visitor_maps_upgrade_2
 
 function visitor_maps_add_tabs() {
     global $visitor_maps_opt;
@@ -427,34 +446,44 @@ if(isset($_GET['page']) && $_GET['page'] == 'visitor-maps' ) {
    }
 
    $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
-   if ( isset($_GET['bots']) && in_array($_GET['bots'], array('0','1')) ) {
-     // bots
-      $wo_prefs_arr['bots'] = $_GET['bots'];
-      $bots = $_GET['bots'];
+
+   if ( isset($_GET['bots'])) {
+      $get_bots = sanitize_key($_GET['bots']);
+      if ( in_array($get_bots, array('0','1'), true) ) {
+         // bots
+         $wo_prefs_arr['bots'] = $get_bots;
+         $bots = $get_bots;
+      }
    }
    $refresh = (isset($wo_prefs_arr['refresh'])) ? $wo_prefs_arr['refresh'] : 'none';
-   if ( isset($_GET['refresh']) && in_array($_GET['refresh'], array('none','30','60','120','300','600')) ) {
-     // refresh
-      $wo_prefs_arr['refresh'] = $_GET['refresh'];
-      $refresh = $_GET['refresh'];
+   if ( isset($_GET['refresh'])) {
+      $get_refresh = sanitize_key($_GET['refresh']);
+      if ( in_array($get_refresh, array('none','30','60','120','300','600'), true) ) {
+         // refresh
+         $wo_prefs_arr['refresh'] = $get_refresh;
+         $refresh = $get_refresh;
+      }
    }
    $show = (isset($wo_prefs_arr['show'])) ? $wo_prefs_arr['show'] : 'none';
-   if ( isset($_GET['show']) && in_array($_GET['show'], array('none','all','bots','guests')) ) {
-     // show
-     $wo_prefs_arr['show'] = $_GET['show'];
-     $show = $_GET['show'];
+   if ( isset($_GET['show'])) {
+      $get_show = sanitize_key($_GET['show']);
+      if ( in_array($get_show, array('none','all','bots','guests'), true) ) {
+         // show
+         $wo_prefs_arr['show'] = $get_show;
+         $show = $get_show;
+      }
    }
 
    // save settings
    update_option('visitor_maps_wop', $wo_prefs_arr);
 
    echo '<!-- begin visitor maps - whos online page header code -->'."\n";
-   if ( isset($wo_prefs_arr['refresh']) && in_array($wo_prefs_arr['refresh'], array('30','60','120','300','600')) ) {
+   if ( isset($wo_prefs_arr['refresh']) && in_array($wo_prefs_arr['refresh'], array('30','60','120','300','600'), true) ) {
          $query = '&amp;refresh='. $wo_prefs_arr['refresh'];
-         if ( isset($wo_prefs_arr['show']) && in_array($wo_prefs_arr['show'], array('all','bots','guests')) ) {
+         if ( isset($wo_prefs_arr['show']) && in_array($wo_prefs_arr['show'], array('all','bots','guests'), true) ) {
                $query .= '&amp;show='. $wo_prefs_arr['show'];
          }
-         if ( isset($wo_prefs_arr['bots']) && in_array($wo_prefs_arr['bots'], array('0','1')) ) {
+         if ( isset($wo_prefs_arr['bots']) && in_array($wo_prefs_arr['bots'], array('0','1'), true) ) {
               $query .= '&amp;bots='. $wo_prefs_arr['bots'];
          }
          echo '<meta http-equiv="refresh" content="' . $wo_prefs_arr['refresh'] . ';URL=' . admin_url( 'index.php?page=visitor-maps' ) . $query . '" />
@@ -523,7 +552,7 @@ div.star img {width:19px; height:19px; border-left:1px solid #fff; border-right:
 
 
 // only load this header stuff on the whos online settings page
-if(isset($_GET['page']) && $_GET['page'] == 'whos-been-online' ) {
+if(isset($_GET['page']) && is_string($_GET['page']) && $_GET['page'] == 'whos-been-online' ) {
 ?>
 <!-- begin visitor maps - whos been online page header code -->
 <script type="text/javascript">
@@ -594,7 +623,7 @@ function visitor_maps_public_footer_stats() {
 
 function visitor_maps_activation_notice(){
   // print message reminding to install  Maxmind GeoLiteCity database
-  echo '<div id="message" class="error"><p><strong>'.__('Visitor Maps plugin needs the Maxmind GeoLiteCity database installed.', 'visitor-maps').' <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_update') . '&amp;do_geo=1">'. __('Install Now', 'visitor-maps'). '</a></strong></p></div>';
+  echo '<div id="message" class="update-nag"><p><strong>'.__('Visitor Maps plugin needs the "Visitor Maps Geolocation Addon" plugin installed to enable the Maps and Geolocation.', 'visitor-maps').' <a href="http://www.642weather.com/weather/scripts-wordpress-visitor-maps-geoip.php" target="_blank">'. __('View download page', 'visitor-maps'). '</a></strong></p></div>';
 }
 
 function visitor_maps_install() {
@@ -637,20 +666,22 @@ function visitor_maps_install() {
         `time`  datetime NOT NULL default '0000-00-00 00:00:00',
          PRIMARY KEY  (`type`))");
 
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('day', '1', `". $now . "`)");
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('month', '1', `". $now . "`)");
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('year', '1', `". $now . "`)");
-       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('all', '1', `". $now . "`)");
-	}
-
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('day', '1', '". $now . "')");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('month', '1', '". $now . "')");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('year', '1', '". $now . "')");
+       $wpdb->query("INSERT INTO `". $wo_table_st . "` (`type` ,`count` ,`time`) VALUES ('all', '1', '". $now . "')");
+    }
     if($wpdb->get_var("show tables like '". $wo_table_ge . "'") != $wo_table_ge) {
 	   $wpdb->query("CREATE TABLE IF NOT EXISTS `". $wo_table_ge . "` (
          `time_last_check` int(10) unsigned NOT NULL default '0',
          `needs_update` tinyint(1) unsigned NOT NULL default '0')");
 	}
 
-    // add this so the upgrade patch will not be triggered on a fresh install
+    // add this so the upgrade patch 1 will not be triggered on a fresh install
     add_option('visitor_maps_upgrade_1',  array( 'upgraded' => 'true' ), '', 'yes');
+
+    // add this so the upgrade patch 2 will not be triggered on a fresh install
+    add_option('visitor_maps_upgrade_2',  array( 'upgraded' => 'true' ), '', 'yes');
 
 } // end function visitor_maps_install
 
@@ -667,12 +698,6 @@ function visitor_maps_plugin_action_links( $links, $file ) {
 }
 
 function visitor_maps_init() {
-
- // set timezone according to wp admin - settings - general - timezone  (PHP5 only)
- //if (  function_exists( 'date_default_timezone_set' ) && function_exists( 'timezone_identifiers_list' ) && function_exists( 'timezone_open' ) && function_exists( 'timezone_offset_get' ) && $timezone_string = get_option( 'timezone_string' ) ) {
-      // Set timezone in PHP5 manner
- //     @date_default_timezone_set( $timezone_string );
- //}
 
  if (function_exists('load_plugin_textdomain')) {
       load_plugin_textdomain('visitor-maps', false, 'visitor-maps/languages' );
@@ -779,9 +804,9 @@ function visitor_maps_activity_do() {
     // see if the user is a spider (bot) or not
     // based on a list of spiders in spiders.txt file
     $spider_flag = 0;
-    if ($this->wo_not_null($user_agent_lower) && $spiders = file($path_visitor_maps.'spiders.txt') ) {
+    if (!empty($user_agent_lower) && $spiders = file($path_visitor_maps.'spiders.txt') ) {
        for ($i=0, $n=sizeof($spiders); $i<$n; $i++) {
-         if ($this->wo_not_null($spiders[$i]) && is_integer(strpos($user_agent_lower, trim($spiders[$i]))) ) {
+         if (!empty($spiders[$i]) && is_integer(strpos($user_agent_lower, trim($spiders[$i]))) ) {
            $spider_flag = $spiders[$i];
            break;
          }
@@ -832,7 +857,7 @@ function visitor_maps_activity_do() {
              $visitor_maps_opt['enable_location_plugin'] = 0;
        }
 
-       if ( !file_exists($path_visitor_maps.'GeoLiteCity.dat') ) {
+       if ( !file_exists(WP_CONTENT_DIR .'/visitor-maps-geoip/GeoLiteCity.dat') ) {
              // give up, this way the whole site does not error
              $visitor_maps_opt['enable_location_plugin'] = 0;
        }
@@ -1002,7 +1027,7 @@ function get_location_info($user_ip) {
 
   require_once($path_visitor_maps.'include-whos-online-geoip.php');
 
-  $gi = geoip_open_VMWO($path_visitor_maps.'GeoLiteCity.dat', VMWO_GEOIP_STANDARD);
+  $gi = geoip_open_VMWO(WP_CONTENT_DIR .'/visitor-maps-geoip/GeoLiteCity.dat', VMWO_GEOIP_STANDARD);
 
   $record = geoip_record_by_addr_VMWO($gi, "$user_ip");
   geoip_close_VMWO($gi);
@@ -1250,7 +1275,7 @@ function validate_color_wo($string) {
 function validate_text_align($string) {
  // only allow proper text align codes
   $allowed = array('ll','ul','lr','ur','c','ct','cb');
- if ( in_array($string, $allowed) ) {
+ if ( in_array($string, $allowed, true) ) {
     return true;
  }
  return false;
@@ -1333,42 +1358,6 @@ function gethost_win ($ip,$timeout_secs = 2) {
  return 'n/a';
 } // end function gethost_win
 
-// check for empty variable, empty if null, empty if 0, empty if ''
-function wo_not_null($value) {
-    if (is_array($value)) {
-      if (sizeof($value) > 0) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      if (($value != '') && (strtolower($value) != 'null') && (strlen(trim($value)) > 0)) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-}
-
-// functions for protecting and validating form input vars
-function wo_clean_input($string) {
-    if (is_string($string)) {
-      return trim($this->wo_sanitize_string(strip_tags($this->wo_stripslashes($string))));
-    } elseif (is_array($string)) {
-      reset($string);
-      while (list($key, $value) = each($string)) {
-        $string[$key] = $this->wo_clean_input($value);
-      }
-      return $string;
-    } else {
-      return $string;
-    }
-}
-
-function wo_sanitize_string($string) {
-    $string = preg_replace("/ +/", ' ', trim($string));
-    return preg_replace("/[<>]/", '_', $string);
-}
 
 function wo_stripslashes($string) {
         //if (get_magic_quotes_gpc()) {
@@ -1378,44 +1367,6 @@ function wo_stripslashes($string) {
        //         return $string;
        //}
 }
-
-// functions for protecting output against XSS. encode  < > & " ' (less than, greater than, ampersand, double quote, single quote).
-function wo_output_string($string) {
-    $string = str_replace('&', '&amp;', $string);
-    $string = str_replace('"', '&quot;', $string);
-    $string = str_replace("'", '&#39;', $string);
-    $string = str_replace('<', '&lt;', $string);
-    $string = str_replace('>', '&gt;', $string);
-    return $string;
-}
-
-function wo_db_sanitize_input($input) {
-    // Parse array
-    if (is_array($input)) {
-      foreach ($input as $key => $var)
-        $input[$key] = $this->wo_db_sanitize_input($var);
-
-      // Parse string
-    }
-    else {
-      // Check if already escaped
-      //if (get_magic_quotes_gpc()) {
-      // wordpress always has magic_quotes On regardless of PHP settings!!
-        // Remove not needed escapes
-        $input = stripslashes($input);
-     // }
-      // Use proper escape
-      $input = mysql_real_escape_string(trim($input));
-    }
-
-    // Return sanitized string
-    return $input;
-} // end function db_sanitize_input
-
-function wo_sanitize_output($output) {
-    // Return sanitized string
-    return htmlspecialchars($output);
-} // end function wo_sanitize_output
 
 function visitor_maps_add_dashboard_widget() {
   global $visitor_maps_opt;
@@ -1505,31 +1456,18 @@ function visitor_maps_widget_content() {
 
 } // end function visitor_maps_widget
 
-function visitor_maps_upgrader_backup() {
-    global $path_visitor_maps;
-    // prevent plugin updater from deleting the GeoLiteCity.dat file
-    $from = $path_visitor_maps.'GeoLiteCity.dat';
-    $to = WP_CONTENT_DIR .'/visitor-maps-backup';
-    if (is_file($from)) {
-        if (!is_dir($to)) mkdir($to);
-        if (is_dir($to))  rename($from, $to.'/GeoLiteCity.dat');
-    }
-
-} // end function visitor_maps_upgrader_backup
 
 function visitor_maps_upgrader_restore() {
-    global $path_visitor_maps;
-    // prevent plugin updater from deleting the GeoLiteCity.dat file
-    $to = $path_visitor_maps.'GeoLiteCity.dat';
     $from = WP_CONTENT_DIR .'/visitor-maps-backup';
+    $to = WP_CONTENT_DIR .'/visitor-maps-geoip/GeoLiteCity.dat';
+    if (!is_dir(WP_CONTENT_DIR .'/visitor-maps-geoip')) mkdir(WP_CONTENT_DIR .'/visitor-maps-geoip');
     if (is_file($from.'/GeoLiteCity.dat')) {
         rename($from.'/GeoLiteCity.dat', $to);
         chmod($to, 0644);
-	    rmdir($from);
+	    @rmdir($from);
     }
 
 } // end function visitor_maps_upgrader_restore
-
 
 
 } // end of class
@@ -1572,10 +1510,18 @@ if (isset($visitor_maps)) {
   // get the options now
   $visitor_maps->visitor_maps_get_options();
 
+  register_activation_hook(__FILE__, array(&$visitor_maps, 'visitor_maps_install'), 1);
+
   // versions upgraded from < 1.4.2 need a forced database table patch
   // will not be triggered on a fresh install
   if ( !get_option('visitor_maps_upgrade_1') ) {
      $visitor_maps->visitor_maps_upgrade_1();
+  }
+
+  // versions upgraded from 1.5.8.6 or older need a database path change
+  // will not be triggered on a fresh install
+  if ( !get_option('visitor_maps_upgrade_2') ) {
+     $visitor_maps->visitor_maps_upgrade_2();
   }
 
   add_action('plugins_loaded', array(&$visitor_maps,'visitor_maps_register_widget'));
@@ -1583,12 +1529,7 @@ if (isset($visitor_maps)) {
   add_action('wp_dashboard_setup', array(&$visitor_maps,'visitor_maps_add_dashboard_widget'));
 
   // remind admin to install the GeoLite database
-  if (
-     (isset($_POST['visitor_maps_enable_location_plugin']) && !is_file($path_visitor_maps.'GeoLiteCity.dat') )
-   ||
-     (!isset($_POST['visitor_maps_set']) && !isset($_GET['do_geo']) && isset($visitor_maps_opt['enable_location_plugin']) && $visitor_maps_opt['enable_location_plugin'] && !is_file($path_visitor_maps.'GeoLiteCity.dat'))
-   ) {
-
+  if (!function_exists('visitor_maps_geoip_admin')) {
       add_action( 'admin_notices', array(&$visitor_maps,'visitor_maps_activation_notice'),1);
   }
 
@@ -1625,10 +1566,8 @@ if (isset($visitor_maps)) {
   // this is for displaying the map images.
   add_action('parse_request', array(&$visitor_maps,'visitor_maps_do_map_image'),2);
 
-  register_activation_hook(__FILE__, array(&$visitor_maps, 'visitor_maps_install'), 1);
 
   // prevent plugin updater from deleting the GeoLiteCity.dat file
-  add_filter('upgrader_pre_install', array(&$visitor_maps, 'visitor_maps_upgrader_backup'), 10, 2);
   add_filter('upgrader_post_install', array(&$visitor_maps, 'visitor_maps_upgrader_restore'), 10, 2);
 
   // options deleted when this plugin is deleted in WP 2.7+

@@ -389,12 +389,12 @@ if ($rows_arr) { // check of there are any visitors
       if ( $visitor_maps_opt['enable_state_display'] ) {
               if ($row['city_name'] != '') {
                 if ($row['country_code'] == 'US') {
-                     $title = $this->wo_sanitize_output($row['city_name']);
+                     $title = $row['city_name'];
                      if ($row['state_code'] != '')
-                             $title = $this->wo_sanitize_output($row['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($row['state_code']));
+                             $title = $row['city_name'] . ', ' . strtoupper($row['state_code']);
                 }
                 else {      // all non us countries
-                     $title = $this->wo_sanitize_output($row['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($row['country_code']));
+                     $title = $row['city_name'] . ', ' . strtoupper($row['country_code']);
                 }
              }
              else {
@@ -405,7 +405,7 @@ if ($rows_arr) { // check of there are any visitors
       }
       $title = $title_pre . $title;
       $string .= '<div style="cursor:pointer;position:absolute; top:'.$y.'px; left:'.$x.'px;">
-      <img src="'.$this_image_pin.'" style="border:0; margin:0; padding:0;" width="'.$image_pin_width.'" height="'.$image_pin_height.'" alt="" title="'.$this->wo_sanitize_output($title).'" />
+      <img src="'.$this_image_pin.'" style="border:0; margin:0; padding:0;" width="'.$image_pin_width.'" height="'.$image_pin_height.'" alt="" title="'.esc_attr($title).'" />
       </div>';
       $string .= "\n";
     }

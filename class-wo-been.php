@@ -35,9 +35,12 @@ function view_whos_been_online() {
   $show_arr[] = array('id' => 'guests', 'text' => esc_attr( __( 'Guests', 'visitor-maps' ) ));
 
   $show = (isset($wo_prefs_arr['show'])) ? $wo_prefs_arr['show'] : 'none';
-  if ( isset($_GET['show']) && in_array($_GET['show'], array('none','all','bots','guests')) ) {
-    $wo_prefs_arr['show'] = $_GET['show'];
-    $show = $_GET['show'];
+  if ( isset($_GET['show'])) {
+      $get_show = sanitize_key($_GET['show']);
+      if ( in_array($get_show, array('none','all','bots','guests'), true) ) {
+        $wo_prefs_arr['show'] = $get_show;
+        $show = $get_show;
+     }
   }
 
   $sort_by_arr = array();
@@ -57,9 +60,12 @@ function view_whos_been_online() {
   $sort_by_ar['url'] = 'last_page_url';
 
   $sort_by = (isset($wo_prefs_arr['sort_by'])) ? $wo_prefs_arr['sort_by'] : 'time';
-  if ( isset($_GET['sort_by']) && in_array($_GET['sort_by'], array('who','visits','time','ip','location','url')) ) {
-    $wo_prefs_arr['sort_by'] = $_GET['sort_by'];
-    $sort_by = $_GET['sort_by'];
+  if ( isset($_GET['sort_by'])) {
+      $get_sort_by = sanitize_key($_GET['sort_by']);
+      if ( in_array($get_sort_by, array('who','visits','time','ip','location','url'), true) ) {
+         $wo_prefs_arr['sort_by'] = $get_sort_by;
+         $sort_by = $get_sort_by;
+      }
   }
 
   $order_arr = array();
@@ -71,10 +77,12 @@ function view_whos_been_online() {
   $order_ar['asc'] = 'ASC';
 
   $order = (isset($wo_prefs_arr['order'])) ? $wo_prefs_arr['order'] : 'desc';
-  if ( isset($_GET['order']) && in_array($_GET['order'], array('desc','asc')) ) {
-   // bots
-    $wo_prefs_arr['order'] = $_GET['order'];
-    $order = $_GET['order'];
+  if ( isset($_GET['order'])) {
+      $get_order = sanitize_key($_GET['order']);
+      if ( in_array($get_order, array('desc','asc'), true) ) {
+         $wo_prefs_arr['order'] = $get_order;
+         $order = $get_order;
+      }
   }
 
   if ($order == 'asc' && $sort_by == 'location') {
@@ -91,10 +99,12 @@ function view_whos_been_online() {
   $bots_type[] = array('id' => '1', 'text' => esc_attr( __( 'Yes', 'visitor-maps' ) ));
 
   $bots = (isset($wo_prefs_arr['bots'])) ? $wo_prefs_arr['bots'] : '0';
-  if ( isset($_GET['bots']) && in_array($_GET['bots'], array('0','1')) ) {
-   // bots
-    $wo_prefs_arr['bots'] = $_GET['bots'];
-    $bots = $_GET['bots'];
+  if ( isset($_GET['bots'])) {
+      $get_bots = sanitize_key($_GET['bots']);
+      if ( in_array($get_bots, array('0','1'), true) ) {
+         $wo_prefs_arr['bots'] = $get_bots;
+         $bots = $get_bots;
+      }
   }
 
   // save settings
@@ -346,9 +356,9 @@ echo '<table border="0" width="99%">
         if ( $is_guest ){
                  echo esc_html( __( 'Guest', 'visitor-maps' ) ) . '&nbsp;';
         } else if ( $is_user ) {
-                 echo '<a href="'.admin_url( 'user-edit.php?user_id='.$whos_online['user_id']).'">'.esc_html( $whos_online['name'] )  . '</a>&nbsp;';
+                 echo '<a href="'.admin_url( 'user-edit.php?user_id='.(int)$whos_online['user_id']).'">'.esc_html( $whos_online['name'] )  . '</a>&nbsp;';
         } else if ( $is_admin ) {
-                 echo '<a href="'.admin_url( 'user-edit.php?user_id='.$whos_online['user_id']).'">'.esc_html( __( 'You', 'visitor-maps' ) )  . '</a>&nbsp;';
+                 echo '<a href="'.admin_url( 'user-edit.php?user_id='.(int)$whos_online['user_id']).'">'.esc_html( __( 'You', 'visitor-maps' ) )  . '</a>&nbsp;';
         // Check for Bot
         } else if ( $is_bot ) {
             // Tokenize UserAgent and try to find Bots name
@@ -375,7 +385,7 @@ echo '<table border="0" width="99%">
 
 
         <!-- Visits -->
-        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo $whos_online['num_visits'] ?></font></td>
+        <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo esc_html($whos_online['num_visits']) ?></font></td>
 
         <!-- Last Visit -->
         <td valign="top">&nbsp;<font color="<?php echo $fg_color; ?>"><?php echo date($visitor_maps_opt['date_time_format'], $whos_online['time_last_click']); ?></font></td>
@@ -384,22 +394,22 @@ echo '<table border="0" width="99%">
         <td valign="top">&nbsp;
                 <?php
                 if ( $whos_online['ip_address'] == 'unknown' ) {
-                      echo '<font color="' . $fg_color . '">' . $whos_online['ip_address'] . '</font>' . "\n";
+                      echo '<font color="' . $fg_color . '">' . esc_html($whos_online['ip_address']) . '</font>' . "\n";
                 } else {
                          $this_nick = '';
                          if ($whos_online['nickname'] != '') {
-                               $this_nick = ' (' . $this->wo_sanitize_output($whos_online['nickname']) . ' - '.$this->wo_sanitize_output($whos_online['num_visits']).' '.esc_html( __( 'visits', 'visitor-maps' ) ) .')';
+                               $this_nick = ' (' . $whos_online['nickname'] . ' - '.$whos_online['num_visits'].' '. __( 'visits', 'visitor-maps' ) .')';
                          }
                          if ($visitor_maps_opt['enable_host_lookups']) {
                                  $this_host = ($whos_online['hostname'] != '') ? $this->host_to_domain($whos_online['hostname']) : 'n/a';
                          } else {
-                                 $this_host = esc_html( __( 'host lookups not enabled', 'visitor-maps' ) );
+                                 $this_host = __('host lookups not enabled', 'visitor-maps');
                          }
 
                      if ($visitor_maps_opt['whois_url_popup']) {
-                        echo '<a href="'.$visitor_maps_opt['whois_url'] . $whos_online['ip_address'].'" onclick="who_is(this.href); return false;" title="'.$this->wo_sanitize_output($this_host).'">'. $whos_online['ip_address'] . "$this_nick</a>" . "\n";
+                        echo '<a href="'.esc_url($visitor_maps_opt['whois_url'] . $whos_online['ip_address']).'" onclick="who_is(this.href); return false;" title="'.esc_attr($this_host).'">'. esc_html($whos_online['ip_address']) . esc_html($this_nick)."</a>" . "\n";
                      } else {
-                        echo '<a href="'. $visitor_maps_opt['whois_url'] . $whos_online['ip_address'] . '" title="'.$this->wo_sanitize_output($this_host).'" target="_blank">'. $whos_online['ip_address'] . "$this_nick</a>" . "\n";
+                        echo '<a href="'.esc_url($visitor_maps_opt['whois_url'] . $whos_online['ip_address']) . '" title="'.esc_attr($this_host).'" target="_blank">'. esc_html($whos_online['ip_address']) . esc_html($this_nick)."</a>" . "\n";
                      }
                 }
                 echo '</td>';
@@ -413,11 +423,13 @@ echo '<table border="0" width="99%">
 
         <?php
            if ( $whos_online['country_code'] != '' ) {
-              $whos_online['country_code'] = strtolower($whos_online['country_code']);
-             if ($whos_online['country_code'] == '--'){ // unknown
+              $country_code =  sanitize_key($whos_online['country_code']);
+              $country_code = strtolower($country_code);
+
+             if ($country_code == '--'){ // unknown
                 echo '<img src="'.$url_visitor_maps .'images-country-flags/unknown.png" alt="'.esc_attr( __( 'unknown', 'visitor-maps' ) ).'" title="'.esc_attr( __( 'unknown', 'visitor-maps' ) ). '" />';
              } else {
-                echo '<img src="'.$url_visitor_maps .'images-country-flags/' . $whos_online['country_code']  . '.png" alt="'.esc_attr($whos_online['country_name']).'" title="'.esc_attr($whos_online['country_name']).'" />';
+                echo '<img src="'.$url_visitor_maps .'images-country-flags/' . $country_code  . '.png" alt="'.esc_attr($whos_online['country_name']).'" title="'.esc_attr($whos_online['country_name']).'" />';
              }
            }
 
@@ -428,12 +440,12 @@ echo '<table border="0" width="99%">
                  }
              if ($whos_online['city_name'] != '') {
                 if ($whos_online['country_code'] == 'us') {
-                     $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']);
+                     $whos_online['print'] = $whos_online['city_name'];
                      if ($whos_online['state_code'] != '')
-                             $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($whos_online['state_code']));
+                             $whos_online['print'] = $whos_online['city_name'] . ', ' . strtoupper($whos_online['state_code']);
                 }
                 else {      // all non us countries
-                     $whos_online['print'] = $this->wo_sanitize_output($whos_online['city_name']) . ', ' . $this->wo_sanitize_output(strtoupper($whos_online['country_code']));
+                     $whos_online['print'] = $whos_online['city_name'] . ', ' . strtoupper($whos_online['country_code']);
                 }
              }
              else {
@@ -441,7 +453,7 @@ echo '<table border="0" width="99%">
              }
              if ($newguy)
                 echo '<em>';
-             echo '<font color="' . $fg_color . '">  ' . $this->wo_sanitize_output($whos_online['print']) . '</font>';
+             echo '<font color="' . $fg_color . '">  ' . esc_html($whos_online['print']) . '</font>';
              if ($newguy)
                 echo '</em>';
          }
@@ -461,9 +473,8 @@ echo '<table border="0" width="99%">
                 $temp_url_link = $display_link;
                 $uri = parse_url(get_option('siteurl'));
                 isset($uri['path']) and $display_link = str_replace($uri['path'],'',$display_link);
-                $display_link = htmlspecialchars($display_link);
                 //$display_link = wordwrap($display_link, $this->set['lasturl_wordwrap_chars'], "<br />", true);
-                echo '<a href="' . htmlspecialchars($temp_url_link) . '" target="_blank">' . $display_link . '</a>';
+                echo '<a href="' . esc_url($temp_url_link) . '" target="_blank">' . esc_html($display_link) . '</a>';
 
         echo '</td>' . "\n";
              } // end if ($this->set['allow_last_url_display']
@@ -476,7 +487,7 @@ echo '<table border="0" width="99%">
                 if ($whos_online['http_referer'] == '') {
                     echo esc_html( __( 'No', 'visitor-maps' ) ) ;
                 }else{
-                   echo '<a href="' . htmlspecialchars($whos_online['http_referer']) . '" target="_blank">'.esc_html( __( 'Yes', 'visitor-maps' ) ) .'</a>';
+                   echo '<a href="' . esc_url($whos_online['http_referer']) . '" target="_blank">'.esc_html( __( 'Yes', 'visitor-maps' ) ) .'</a>';
                 }
                 echo '</font></td>' . "\n";
 
@@ -490,7 +501,7 @@ echo '<table border="0" width="99%">
                 isset($uri['path']) and $display_link = str_replace($uri['path'],'',$display_link);
               ?>
 
-              <td style="text-align:left" colspan="8"><?php echo esc_html( __( 'Last URL:', 'visitor-maps' ) ).' <a href="' . htmlspecialchars($whos_online['last_page_url']) . '" target="_blank">' . htmlspecialchars($display_link) . '</a>';  ?></td>
+              <td style="text-align:left" colspan="8"><?php echo esc_html( __( 'Last URL:', 'visitor-maps' ) ).' <a href="' . esc_url($whos_online['last_page_url']) . '" target="_blank">' . esc_html($display_link) . '</a>';  ?></td>
                     </tr>
               <?php
                 }
@@ -582,19 +593,19 @@ echo '<table border="0" width="99%">
     global $visitor_maps_opt;
 
     // Display User Agent
-    echo esc_html( __( 'User Agent:', 'visitor-maps' ) ) . ' ' .  wordwrap($this->wo_sanitize_output($whos_online['user_agent']), $this->set['useragent_wordwrap_chars'] , "<br />", true);
+    echo esc_html( __( 'User Agent:', 'visitor-maps' ) ) . ' ' .  wordwrap(esc_html($whos_online['user_agent']), $this->set['useragent_wordwrap_chars'] , "<br />", true);
     echo '<br />';
 
     if ($visitor_maps_opt['enable_host_lookups']) {
       $this_host = ($whos_online['hostname'] != '') ? $this->host_to_domain($whos_online['hostname']) : 'n/a';
       // Display Hostname
-      echo esc_html( __( 'Host:', 'visitor-maps' ) ) . ' (' . $this->wo_sanitize_output($this_host) . ') '. $this->wo_sanitize_output($whos_online['hostname']);
+      echo esc_html( __( 'Host:', 'visitor-maps' ) ) . ' (' . esc_html($this_host) . ') '. esc_html($whos_online['hostname']);
       echo '<br />';
     }
 
     // Display Referer if available
     if($whos_online['http_referer'] != '' ) {
-      echo esc_html( __( 'Referer:', 'visitor-maps' ) ) . ' <a href="' . htmlspecialchars($whos_online['http_referer']) . '" target="_blank">' . wordwrap(htmlspecialchars($whos_online['http_referer']), $this->set['referer_wordwrap_chars'], '<br />', true) . '</a>';
+      echo esc_html( __( 'Referer:', 'visitor-maps' ) ) . ' <a href="' . esc_url($whos_online['http_referer']) . '" target="_blank">' . wordwrap(esc_html($whos_online['http_referer']), $this->set['referer_wordwrap_chars'], '<br />', true) . '</a>';
       echo '<br />';
     }
     echo '<br clear="all" />';
@@ -605,9 +616,9 @@ echo '<table border="0" width="99%">
   function draw_pull_down_menu($name, $values, $default = '', $parameters = '', $required = false) {
     global $_GET, $_POST;
 
-    $field = '<select name="' . $this->wo_output_string($name) . '"';
+    $field = '<select name="' . esc_attr($name) . '"';
 
-    if ($this->wo_not_null($parameters)) $field .= ' ' . $parameters;
+    if (!empty($parameters)) $field .= ' ' . $parameters;
 
     $field .= '>'."\n";
 
@@ -620,12 +631,12 @@ echo '<table border="0" width="99%">
     }
 
     for ($i=0, $n=sizeof($values); $i<$n; $i++) {
-      $field .= '<option value="' . $this->wo_output_string($values[$i]['id']) . '"';
+      $field .= '<option value="' . esc_attr($values[$i]['id']) . '"';
       if ($default == $values[$i]['id']) {
         $field .= ' selected="selected"';
       }
 
-      $field .= '>' . $this->wo_output_string($values[$i]['text'], array('"' => '&quot;', '\'' => '&#039;', '<' => '&lt;', '>' => '&gt;')) . '</option>'."\n";
+      $field .= '>' . esc_attr($values[$i]['text']) . '</option>'."\n";
     }
     $field .= '</select>'."\n";
 
@@ -726,90 +737,6 @@ function gethost_win ($ip,$timeout_secs = 2) {
  }
  return 'n/a';
 } // end function gethost_win
-
-// check for empty variable, empty if null, empty if 0, empty if ''
-function wo_not_null($value) {
-    if (is_array($value)) {
-      if (sizeof($value) > 0) {
-        return true;
-      } else {
-        return false;
-      }
-    } else {
-      if (($value != '') && (strtolower($value) != 'null') && (strlen(trim($value)) > 0)) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-}
-
-// functions for protecting and validating form input vars
-function wo_clean_input($string) {
-    if (is_string($string)) {
-      return trim($this->wo_sanitize_string(strip_tags($this->wo_stripslashes($string))));
-    } elseif (is_array($string)) {
-      reset($string);
-      while (list($key, $value) = each($string)) {
-        $string[$key] = $this->wo_clean_input($value);
-      }
-      return $string;
-    } else {
-      return $string;
-    }
-}
-
-function wo_sanitize_string($string) {
-    $string = preg_replace("/ +/", ' ', trim($string));
-    return preg_replace("/[<>]/", '_', $string);
-}
-
-function wo_stripslashes($string) {
-        //if (get_magic_quotes_gpc()) {
-        // wordpress always has magic_quotes On regardless of PHP settings!!
-                return stripslashes($string);
-       // } else {
-       //         return $string;
-       //}
-}
-
-// functions for protecting output against XSS. encode  < > & " ' (less than, greater than, ampersand, double quote, single quote).
-function wo_output_string($string) {
-    $string = str_replace('&', '&amp;', $string);
-    $string = str_replace('"', '&quot;', $string);
-    $string = str_replace("'", '&#39;', $string);
-    $string = str_replace('<', '&lt;', $string);
-    $string = str_replace('>', '&gt;', $string);
-    return $string;
-}
-
-function wo_db_sanitize_input($input) {
-    // Parse array
-    if (is_array($input)) {
-      foreach ($input as $key => $var)
-        $input[$key] = $this->wo_db_sanitize_input($var);
-
-      // Parse string
-    }
-    else {
-      // Check if already escaped
-      //if (get_magic_quotes_gpc()) {
-      // wordpress always has magic_quotes On regardless of PHP settings!!
-        // Remove not needed escapes
-        $input = stripslashes($input);
-     // }
-      // Use proper escape
-      $input = mysql_real_escape_string(trim($input));
-    }
-
-    // Return sanitized string
-    return $input;
-} // end function db_sanitize_input
-
-function wo_sanitize_output($output) {
-    // Return sanitized string
-    return htmlspecialchars($output);
-} // end function wo_sanitize_output
 
 
 function error_exit($error) {

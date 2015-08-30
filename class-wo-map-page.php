@@ -49,14 +49,14 @@ if (isset($_POST['map']) && is_numeric($_POST['map'])) {
 <select id="units" name="units">
 <?php
 $map_units_array =array(
-'minutes' => esc_attr(__('minutes', 'visitor-maps')),
-'hours' => esc_attr(__('hours', 'visitor-maps')),
-'days' => esc_attr(__('days', 'visitor-maps')),
+'minutes' => __('minutes', 'visitor-maps'),
+'hours' => __('hours', 'visitor-maps'),
+'days' => __('days', 'visitor-maps'),
 );
 $selected = '';
 foreach ($map_units_array as $k => $v) {
  if ($map_units == "$k")  $selected = ' selected="selected"';
- echo '<option value="'.$k.'"'.$selected.'>'.$v.'</option>'."\n";
+ echo '<option value="'.esc_attr($k).'"'.$selected.'>'.esc_html($v).'</option>'."\n";
  $selected = '';
 }
 ?>
@@ -123,7 +123,7 @@ $map_select_array = array(
 $selected = '';
 foreach ($map_select_array as $k => $v) {
  if ($map_selected == "$k")  $selected = ' selected="selected"';
- echo '<option value="'.$k.'"'.$selected.'>'.$v.'</option>'."\n";
+echo '<option value="'.esc_attr($k).'"'.$selected.'>'.esc_html($v).'</option>'."\n";
  $selected = '';
 }
 ?>
@@ -816,7 +816,7 @@ echo '
 function validate_map_units($string) {
  // only allow proper text align codes
   $allowed = array('minutes','hours','days');
- if ( in_array($string, $allowed) ) {
+ if ( in_array($string, $allowed, true) ) {
     return true;
  }
  return false;
