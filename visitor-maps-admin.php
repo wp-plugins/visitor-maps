@@ -17,6 +17,22 @@
     return;
  }
 
+  if (isset($_GET['dismiss_geo_message']) ) {
+    // they clicked to dismiss the admin message to install the geoip addon
+          if ( function_exists('current_user_can') && !current_user_can('manage_options') )
+                        die(__('You do not have permissions for managing this option', 'visitor-maps'));
+
+    check_admin_referer( 'visitor-maps-geo_message'); // nonce
+
+    // save updated option to the database
+     if ( !get_option('visitor_maps_dismiss') ) {
+        add_option('visitor_maps_dismiss',  array( 'dismiss' => 'true' ), '', 'yes');
+     }
+     ?>
+    <div id="message" class="updated"><p><strong><?php _e('Options saved.', 'visitor-maps') ?></strong></p></div>
+    <?php
+ }
+
   if (isset($_POST['submit'])) {
           if ( function_exists('current_user_can') && !current_user_can('manage_options') )
                         die(__('You do not have permissions for managing this option', 'visitor-maps'));

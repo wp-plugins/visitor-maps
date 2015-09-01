@@ -3,7 +3,7 @@
 Plugin Name: Visitor Maps and Who's Online
 Plugin URI: http://www.642weather.com/weather/scripts-wordpress-visitor-maps.php
 Description: Displays Visitor Maps with location pins, city, and country. Includes a Who's Online Sidebar to show how many users are online. Includes a Who's Online admin dashboard to view visitor details. The visitor details include: what page the visitor is on, IP address, host lookup, online time, city, state, country, geolocation maps and more. No API key needed.  <a href="plugins.php?page=visitor-maps/visitor-maps.php">Settings</a> | <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=V3BPEZ9WGYEYG">Donate</a>
-Version: 1.5.8.8
+Version: 1.5.8.10
 Author: Mike Challis
 Author URI: http://www.642weather.com/weather/scripts.php
 */
@@ -41,6 +41,7 @@ function visitor_maps_unset_options() {
   delete_option('visitor_maps');
   delete_option('visitor_maps_upgrade_1');
   delete_option('visitor_maps_upgrade_2');
+  delete_option('visitor_maps_dismiss');
 
 } // end function visitor_maps_unset_options
 
@@ -622,8 +623,10 @@ function visitor_maps_public_footer_stats() {
 }
 
 function visitor_maps_activation_notice(){
-  // print message reminding to install  Maxmind GeoLiteCity database
-  echo '<div id="message" class="update-nag"><p><strong>'.__('Visitor Maps plugin needs the "Visitor Maps Geolocation Addon" plugin installed to enable the Maps and Geolocation.', 'visitor-maps').' <a href="http://www.642weather.com/weather/scripts-wordpress-visitor-maps-geoip.php" target="_blank">'. __('View download page', 'visitor-maps'). '</a></strong></p></div>';
+    if ( !get_option('visitor_maps_dismiss') ) {
+      // print message reminding to install  Maxmind GeoLiteCity database
+      echo '<div id="message" class="update-nag"><p><strong>'.__('Visitor Maps plugin needs the "Visitor Maps Geolocation Addon" plugin installed to enable the Maps and Geolocation.', 'visitor-maps').' <a href="http://www.642weather.com/weather/scripts-wordpress-visitor-maps-geoip.php" target="_blank">'. __('View download page', 'visitor-maps'). '</a> | <a href="' . wp_nonce_url(admin_url( 'plugins.php?page=visitor-maps/visitor-maps.php' ),'visitor-maps-geo_message') . '&amp;dismiss_geo_message=1">'. __('Dismiss', 'visitor-maps'). '</a></strong></p></div>';
+    }
 }
 
 function visitor_maps_install() {

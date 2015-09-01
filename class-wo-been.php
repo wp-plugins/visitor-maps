@@ -425,6 +425,7 @@ echo '<table border="0" width="99%">
            if ( $whos_online['country_code'] != '' ) {
               $country_code =  sanitize_key($whos_online['country_code']);
               $country_code = strtolower($country_code);
+              $whos_online['country_code'] = strtolower($whos_online['country_code']); 
 
              if ($country_code == '--'){ // unknown
                 echo '<img src="'.$url_visitor_maps .'images-country-flags/unknown.png" alt="'.esc_attr( __( 'unknown', 'visitor-maps' ) ).'" title="'.esc_attr( __( 'unknown', 'visitor-maps' ) ). '" />';

@@ -352,7 +352,7 @@ if ($rows_arr) { // check of there are any visitors
       if ($visitor_maps_opt['enable_users_map_hover'] && $row['user_id'] > 0 && $row['name'] != '') {
          // find name for logged in user
          // different pin color for logged in user
-         $title_pre = $this->wo_sanitize_output($row['name']).' '.__('from', 'visitor-maps').' ';
+         $title_pre = $row['name'].' '.__('from', 'visitor-maps').' ';
          if($G['pin'] == 1){
            $this_image_pin = str_replace('.jpg','-user.jpg',$image_pin);
          }
@@ -360,9 +360,9 @@ if ($rows_arr) { // check of there are any visitors
       if ( !$visitor_maps_opt['hide_bots'] && $row['user_id'] == 0 && $row['name'] != 'Guest') {
          //  find name for bot
          // different pin color for bot
-         if ( $this->wo_not_null($row['name'])  ) {
+         if ( !empty($row['name'])  ) {
            for ($i=0, $n=sizeof($spiders); $i<$n; $i++) {
-               if ($this->wo_not_null($spiders[$i]) && is_integer(strpos($row['name'], trim($spiders[$i]))) ) {
+               if (!empty($spiders[$i]) && is_integer(strpos($row['name'], trim($spiders[$i]))) ) {
                    // Tokenize UserAgent and try to find Bots name
                    $tok = strtok($row['name']," ();/");
                    while ($tok !== false) {
@@ -372,7 +372,7 @@ if ($rows_arr) { // check of there are any visitors
                            !strstr(strtolower($tok), "msie") &&
                            !strstr(strtolower($tok), "windows")
                            ) {
-                           $title_pre = $this->wo_sanitize_output($tok).' '.__('from', 'visitor-maps').' ';
+                           $title_pre = $tok.' '.__('from', 'visitor-maps').' ';
                            if($G['pin'] == 1){
                                $this_image_pin = str_replace('.jpg','-bot.jpg',$image_pin);
                            }
